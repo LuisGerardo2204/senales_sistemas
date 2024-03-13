@@ -13,7 +13,7 @@ kernelspec:
   name: Octave
 ---
 
-# Análisis de señales y sistemas
+# Introducción
 
 Este libro web fué elaborado como un complemento al curso de análisis de señales y sistemas. Este material es un medio auxiliar para compartir teoría de análisis de señales y algunas prácticas se simulación.
 
