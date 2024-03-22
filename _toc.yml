@@ -4,8 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: Análisis de señales y sistemas.md
-#- file: Practica1
+- file: sistemas_lineales.md
+- file: Practica1
 #- file: Practica2
 #- file: Practica3
 #- file: Practica4

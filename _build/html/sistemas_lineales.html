@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Búsqueda - Apuntes de análisis de señales y sistemas UPIIH IPN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Análisis de sistemas de tiempo contínuo. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
   
@@ -63,12 +64,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'search';</script>
-  <script src="_static/searchtools.js"></script>
-  <script src="_static/language_data.js"></script>
-  <script src="searchindex.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sistemas_lineales';</script>
     <link rel="index" title="Índice" href="genindex.html" />
-    <link rel="search" title="Búsqueda" href="#" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Práctica 1: Comprobación de linealidad con MATLAB" href="Practica1.html" />
+    <link rel="prev" title="Análisis de señales y sistemas" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -96,7 +98,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="#"
+      action="search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -159,8 +161,8 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo contínuo.</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis de sistemas de tiempo contínuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -207,6 +209,54 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/sistemas_lineales.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Modo de pantalla completa"
@@ -247,42 +297,72 @@ document.write(`
 </div>
               
               
-  <div class="bd-search-container">
-    <h1>Búsqueda</h1>
-    <noscript>
-      <div class="admonition error">
-        <p class="admonition-title">Error</p>
-        <p>Por favor, active JavaScript para habilitar la funcionalidad de búsqueda.</p>
-      </div>
-    </noscript>
-    
-<form class="bd-search d-flex align-items-center"
-      action="#"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-    <div id="search-results"></div>
-  </div>
-  <script>
-    // Activate the search field on page load
-    let searchInput = document.querySelector("form.bd-search input");
-    if (searchInput) {
-        searchInput.focus();
-        searchInput.select();
-        console.log("[PST]: Set focus on search field.");
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Análisis de sistemas de tiempo contínuo.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="analisis-de-sistemas-de-tiempo-continuo">
+<h1>Análisis de sistemas de tiempo contínuo.<a class="headerlink" href="#analisis-de-sistemas-de-tiempo-continuo" title="Permalink to this heading">#</a></h1>
+<p>Una vez definido el concepto de señales y las operaciones que se realizan en ellas, es posible utilizar esas herramientas para analizar a los sistemas. En general se dice que un sistema es un énte que produce una o varia señales de salida como respuesta a estímulos o señales de entrada (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id8" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>). En el contexto de las matemáticas, un sistema es una transformación. Una transformación en el contexto de los sistemas es un conjunto de fórmulas u operaciones matemáticas que tienen una gran diversidad de complejidades, desde la estructura más simples hasta los sistemas de ecuaciones integro-diferenciales.</p>
+<p>En el contexto de la ingeniería, dos características muy deseables de los sistemas es que estos cumplan con dos propiedades principales: la linealidad y la invarianza en el tiempo.</p>
+<div class="admonition-conceptos-de-linealidad-e-invarianza-en-el-tiempo admonition">
+<p class="admonition-title">Conceptos de linealidad e invarianza en el tiempo</p>
+<ul class="simple">
+<li><p><strong>Linealidad:</strong> Se dice que un sistema es lineal cuando es predecible y poco sensible ante cambios en condiciones iniciales, un sistema lineal es un ente físico que ofrece una salida expresada en forma de una formula o ecuación matemática perfectamente estructurada.</p></li>
+<li><p><strong>Invarianza en el tiempo:</strong> Un sistema es invariante en el tiempo si sus parámetros no cambian con el paso del tiempo como variable independiente, es decir, la expresión matemática, transformación, fórmula o ecuación permanece inmutable en estructura sin importar el momento en el tiempo en el que se aplique un estímulo y se produzca la salida específica.</p></li>
+</ul>
+</div>
+<p>Matemáticamente, se dice que un sistema es lineal si su estructura cumple con las siguientes expresiones, para <span class="math notranslate nohighlight">\(k \in \mathbb{R}\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-cond-lienalidad">
+<span class="eqno">(1)<a class="headerlink" href="#equation-cond-lienalidad" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+  &amp;Transf\{x_1(t) + x_2(t)\}=Transf\{x_1(t)\} + Transf\{x_2(t)\} \\
+   &amp;Transf\{kx_1(t)\}=kTransf\{x_1(t)\}  
+	\end{eqnarray}\end{split}\]</div>
+<p>La condicion expresdada en estas ecuaciones se conoce como la regla de aditividad. la cual expresa que: <code class="docutils literal notranslate"><span class="pre">La</span> <span class="pre">respuesta</span> <span class="pre">de</span> <span class="pre">un</span> <span class="pre">sistema</span> <span class="pre">lineal</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">suma</span> <span class="pre">de</span> <span class="pre">dos</span> <span class="pre">señales</span> <span class="pre">de</span> <span class="pre">entrada</span> <span class="pre">o</span> <span class="pre">estímulos</span> <span class="pre">es</span> <span class="pre">igual</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">suma</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">respuestas</span> <span class="pre">individuales</span></code>. La segunda ecuación se conoce como la regla de la homogeneidad, la cual establece que: <code class="docutils literal notranslate"><span class="pre">El</span> <span class="pre">escalamiento</span> <span class="pre">por</span> <span class="pre">una</span> <span class="pre">constante</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">señal</span> <span class="pre">de</span> <span class="pre">estímulo</span> <span class="pre">o</span> <span class="pre">entrada</span> <span class="pre">a</span> <span class="pre">un</span> <span class="pre">sistema,</span> <span class="pre">produce</span> <span class="pre">una</span> <span class="pre">salida</span> <span class="pre">del</span> <span class="pre">sistema</span> <span class="pre">escalada</span> <span class="pre">por</span> <span class="pre">la</span> <span class="pre">misma</span> <span class="pre">constante</span></code>. La combinación de estas dos reglas dan como resultado el proncipio de superposición de los sistemas lineales.</p>
+<div class="admonition-principio-de-superposicion admonition">
+<p class="admonition-title">Principio de superposición:</p>
+<div class="math notranslate nohighlight" id="equation-superposicion">
+<span class="eqno">(2)<a class="headerlink" href="#equation-superposicion" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  Transf\{k_1x_1(t)+k_2x(t)_2\}=k_1Transf\{x_1(t)\}+k_2Transf\{x_2(t)\}
+\end{equation}\]</div>
+</div>
+<p>Los sistemas expresados como una transformación matemática <span class="math notranslate nohighlight">\(Transf\{\}\)</span> son lineales si satisfacen el principio de superposición, para cualesquier par de señales <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> y para cualquier par de constantes arbitrarias <span class="math notranslate nohighlight">\(k_1,k_2 \in \mathbb{R}\)</span>.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "Octave"
+        },
+        kernelOptions: {
+            name: "Octave",
+            path: "./."
+        },
+        predefinedOutput: true
     }
-  </script>
+    </script>
+    <script>kernelName = 'Octave'</script>
+
+                </article>
+              
 
               
               
@@ -292,6 +372,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Análisis de señales y sistemas</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Practica1.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Práctica 1: Comprobación de linealidad con MATLAB</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
