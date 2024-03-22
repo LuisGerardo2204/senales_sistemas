@@ -324,7 +324,7 @@ para los sistemas:</p>
   &amp;y(t)=4.5x(t)-3\\
   &amp;y(t)=(x(t))^2-5x(t)+2\\
   &amp;y(t)=cos(3x(t))+2x(t)\\
-  &amp;y(t)=e^{(-4.5x(t))}cos(20t)
+  &amp;y(t)=e^{(-4.5x(t))}cos(20x(t))
 	\end{eqnarray}
 \end{split}\]</div>
 <p>Con dos funciones impulso arbitrarias <span class="math notranslate nohighlight">\(x_1(t)=sen(2\pi t)\)</span> y <span class="math notranslate nohighlight">\(x_2=e^{-4t}cos(3.5t)\)</span>. Para realizar la prueba de linealidad, se utiliza el código siguiente:</p>
@@ -343,7 +343,7 @@ para los sistemas:</p>
 <span class="n">Transf_b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span>
 <span class="n">Transf_c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
 <span class="n">Transf_d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
-<span class="n">Transf_e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="n">Transf_e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
 <span class="c">% Prueba de linealidad</span>
 <span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_a</span><span class="p">(</span><span class="n">x1</span><span class="p">);</span>
 <span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_a</span><span class="p">(</span><span class="n">x2</span><span class="p">);</span>
@@ -372,8 +372,8 @@ para los sistemas:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f4c8c754b059a2548986736243a0af9d18def726c270be32ff4dbeb78f05d25b.png" src="_images/f4c8c754b059a2548986736243a0af9d18def726c270be32ff4dbeb78f05d25b.png" />
-<img alt="_images/b1ce013ce7c9b490447a07cdc4bc7cd9fc05ebc5c4c1b49edb8d70e60294c489.png" src="_images/b1ce013ce7c9b490447a07cdc4bc7cd9fc05ebc5c4c1b49edb8d70e60294c489.png" />
+<img alt="_images/48272d4dc223083885ed207c001cb49a2170da95b482e44d10e3779d9ea13398.png" src="_images/48272d4dc223083885ed207c001cb49a2170da95b482e44d10e3779d9ea13398.png" />
+<img alt="_images/b058b52738beaa883c81d28558b18c5c7890acdb5c3f8fef0ea185e10aab25a7.png" src="_images/b058b52738beaa883c81d28558b18c5c7890acdb5c3f8fef0ea185e10aab25a7.png" />
 </div>
 </div>
 </div>
