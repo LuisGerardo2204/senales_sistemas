@@ -372,8 +372,106 @@ para los sistemas:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/685fcdaac4b7c5a3e9c4f4df4640a7ff46c6faa5a2ded85261bbcafddc69e1b7.png" src="_images/685fcdaac4b7c5a3e9c4f4df4640a7ff46c6faa5a2ded85261bbcafddc69e1b7.png" />
-<img alt="_images/fa0b20eaeff4c5e2f8e8fad907423662de5ada43e3ebc41e5e99db3c4ae15abe.png" src="_images/fa0b20eaeff4c5e2f8e8fad907423662de5ada43e3ebc41e5e99db3c4ae15abe.png" />
+<img alt="_images/eecd76328f959e18d34167c0c26bd23efae943a25b252e4582ca4ef832bcba0b.png" src="_images/eecd76328f959e18d34167c0c26bd23efae943a25b252e4582ca4ef832bcba0b.png" />
+<img alt="_images/550b1d4a688031d215d421a2a869896b5785ecdca3e8872dec660343925ad79c.png" src="_images/550b1d4a688031d215d421a2a869896b5785ecdca3e8872dec660343925ad79c.png" />
+</div>
+</div>
+<p>Como es posible observar en la gráfica anterior, el sistema <span class="math notranslate nohighlight">\(y(t)=2.5x(t)\)</span> es lineal, dado que cumple con el principio de superposición, dado que las gráficas de <span class="math notranslate nohighlight">\(y_{esperada}\)</span> y <span class="math notranslate nohighlight">\(y_{real}\)</span> son exactamente las mismas, si el mismo código se ejecuta, pero esta vez evaluando el sistema definido como <span class="math notranslate nohighlight">\(y(t)=x(t)^2-5x(t)+2\)</span> se obtiene:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span><span class="w">               </span><span class="c">% Vector de tiempo</span>
+<span class="n">x1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span><span class="w">           </span><span class="c">% Tseñal 1</span>
+<span class="n">x2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">3.5</span><span class="o">*</span><span class="n">t</span><span class="p">);</span><span class="w">             </span><span class="c">% señal 2</span>
+<span class="n">k1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">4.5</span><span class="p">;</span><span class="w">                   </span><span class="c">% constante k1</span>
+<span class="n">k2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">5.25</span><span class="p">;</span><span class="w">                </span><span class="c">%   constante k2</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">;</span><span class="w">      </span><span class="c">% Señal combinada</span>
+<span class="c">% Se deinen las funciones Transf para el sistema</span>
+<span class="n">Transf_a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="n">Transf_b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mf">4.5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">Transf_c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">Transf_d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="n">Transf_e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<span class="c">% Prueba de linealidad</span>
+<span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_c</span><span class="p">(</span><span class="n">x1</span><span class="p">);</span>
+<span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_c</span><span class="p">(</span><span class="n">x2</span><span class="p">);</span>
+<span class="n">y_esperada</span><span class="p">=</span><span class="w"> </span><span class="n">k1</span><span class="o">*</span><span class="n">y1</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">y2</span><span class="p">;</span><span class="w">  </span><span class="c">% Respuesta esperada para un sistema lineal</span>
+<span class="n">y_real</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_c</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">             </span><span class="c">% Respuesta real del sistema</span>
+<span class="nb">clf</span><span class="p">;</span><span class="w">                          </span><span class="c">% Limpiar figura</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">               </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_esperada</span><span class="p">);</span><span class="w">                </span><span class="c">% Se grafica la respuesta esperada</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;y_{esp} = k_1 y_1 + k_2 y_2&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t (segundos)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitud&#39;</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_real</span><span class="p">);</span><span class="w">                </span><span class="c">% Se grafica la respuesta real   </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;y_{real} = Transf\{k_1 x_1 + k_2 x_2\}&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t (segundos)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitud&#39;</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(t,y_esperada)</span><span class="p">;</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_real</span><span class="p">,</span><span class="s">&#39;k--&#39;</span><span class="p">);</span><span class="w">  </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Comparación&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t (segundos)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitud&#39;</span><span class="p">);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;y_{esp} = k_1 y_1 + k_2 y_2&quot;</span><span class="p">,</span><span class="s">&quot;y_{real} = Transf\{k_1 x_1 + k_2 x_2\}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/585161635b28bb9b91ae8fe52023a49f44670f371a3cd3082130587a27781446.png" src="_images/585161635b28bb9b91ae8fe52023a49f44670f371a3cd3082130587a27781446.png" />
+<img alt="_images/fea6a345c25d466ca0efd628d572d09ebec443cf999ce93c8dbac9ed699b2c3a.png" src="_images/fea6a345c25d466ca0efd628d572d09ebec443cf999ce93c8dbac9ed699b2c3a.png" />
+</div>
+</div>
+<p>En este caso el sistema es no-lineal, dado que las gráficas de <span class="math notranslate nohighlight">\(y_{esperada}\)</span> y <span class="math notranslate nohighlight">\(y_{real}\)</span> son diferentes. Finalmente, si las constantes <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(K_2\)</span> cambian, incluso de signo, para un sistema lineal, el principio de superposición se sigue cumpliendo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span><span class="w">               </span><span class="c">% Vector de tiempo</span>
+<span class="n">x1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span><span class="w">           </span><span class="c">% Tseñal 1</span>
+<span class="n">x2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">3.5</span><span class="o">*</span><span class="n">t</span><span class="p">);</span><span class="w">             </span><span class="c">% señal 2</span>
+<span class="n">k1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mf">4.5</span><span class="p">;</span><span class="w">                   </span><span class="c">% constante k1</span>
+<span class="n">k2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">15.25</span><span class="p">;</span><span class="w">                </span><span class="c">%   constante k2</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">;</span><span class="w">      </span><span class="c">% Señal combinada</span>
+<span class="c">% Se deinen las funciones Transf para el sistema</span>
+<span class="n">Transf_a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="n">Transf_b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mf">4.5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">Transf_c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">Transf_d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="n">Transf_e</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">4.5</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<span class="c">% Prueba de linealidad</span>
+<span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_a</span><span class="p">(</span><span class="n">x1</span><span class="p">);</span>
+<span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_a</span><span class="p">(</span><span class="n">x2</span><span class="p">);</span>
+<span class="n">y_esperada</span><span class="p">=</span><span class="w"> </span><span class="n">k1</span><span class="o">*</span><span class="n">y1</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">y2</span><span class="p">;</span><span class="w">  </span><span class="c">% Respuesta esperada para un sistema lineal</span>
+<span class="n">y_real</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Transf_a</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w">             </span><span class="c">% Respuesta real del sistema</span>
+<span class="nb">clf</span><span class="p">;</span><span class="w">                          </span><span class="c">% Limpiar figura</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">               </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_esperada</span><span class="p">);</span><span class="w">                </span><span class="c">% Se grafica la respuesta esperada</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;y_{esp} = k_1 y_1 + k_2 y_2&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t (segundos)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitud&#39;</span><span class="p">);</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_real</span><span class="p">);</span><span class="w">                </span><span class="c">% Se grafica la respuesta real   </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;y_{real} = Transf\{k_1 x_1 + k_2 x_2\}&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t (segundos)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitud&#39;</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(t,y_esperada)</span><span class="p">;</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_real</span><span class="p">,</span><span class="s">&#39;k--&#39;</span><span class="p">);</span><span class="w">  </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&#39;Comparación&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&#39;t (segundos)&#39;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitud&#39;</span><span class="p">);</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;y_{esp} = k_1 y_1 + k_2 y_2&quot;</span><span class="p">,</span><span class="s">&quot;y_{real} = Transf\{k_1 x_1 + k_2 x_2\}&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/26a45f2f8c97f933b06c687b48e851fdf005646232eef1c5e079d977960b4030.png" src="_images/26a45f2f8c97f933b06c687b48e851fdf005646232eef1c5e079d977960b4030.png" />
+<img alt="_images/4f779fbec06a828d95406c2c16e833d1666487660b8041e5c0c08f6a521b0017.png" src="_images/4f779fbec06a828d95406c2c16e833d1666487660b8041e5c0c08f6a521b0017.png" />
 </div>
 </div>
 </div>
