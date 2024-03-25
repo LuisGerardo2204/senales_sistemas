@@ -341,7 +341,7 @@ para los sistemas:</p>
   &amp;y(t)=e^{(-4.5x(t))}cos(20(t))
 	\end{eqnarray}
 \end{split}\]</div>
-<p>Con dos funciones impulso arbitrarias <span class="math notranslate nohighlight">\(x_1(t)=sen(2\pi t)\)</span> y <span class="math notranslate nohighlight">\(x_2=e^{-4t}cos(3.5t)\)</span>. Para realizar la prueba de linealidad, se utiliza el código siguiente:</p>
+<p>Con una función arbitraria de entrada <span class="math notranslate nohighlight">\(x(t)=e^{-0.5t}cos(25t)u(t)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -368,7 +368,7 @@ para los sistemas:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2e24b360e3536bd9d5eb1d435efd1fb06da861d2ea38f9b5cf9d8b5f768975b8.png" src="_images/2e24b360e3536bd9d5eb1d435efd1fb06da861d2ea38f9b5cf9d8b5f768975b8.png" />
+<img alt="_images/4eea2e2aaa90e522c1beffa67f731d6f77ebd86601109450e2c3a53409b39aea.png" src="_images/4eea2e2aaa90e522c1beffa67f731d6f77ebd86601109450e2c3a53409b39aea.png" />
 </div>
 </div>
 <p>Como es posible observar en la gráfica anterior, el sistema <span class="math notranslate nohighlight">\(y(t-2.5)=2.5x(t-2.5)\)</span> es invariante en el tiempo, dado que cumple con el principio de invarianza. Si el mismo código se ejecuta, pero esta vez evaluando el sistema definido como <span class="math notranslate nohighlight">\(y(t)=x(t)^2-5tx(t)+2\)</span> se obtiene:</p>
