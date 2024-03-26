@@ -7,7 +7,7 @@ chapters:
 - file: sistemas_lineales.md
 - file: Practica1
 - file: Practica2
-#- file: Practica3
-#- file: Practica4
+- file: ecuaciones_diferenciales_sistemas.md
+- file: Practica3
 - file: Bibliografía
 
