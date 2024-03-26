@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -163,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo contínuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
@@ -317,7 +316,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-3-solucion-de-ecuaciones-diferenciales-lineales-con-coeficientes-constantes">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-3-solucion-de-ecuaciones-diferenciales-lineales-con-coeficientes-constantes">
 <h1>Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.<a class="headerlink" href="#practica-3-solucion-de-ecuaciones-diferenciales-lineales-con-coeficientes-constantes" title="Permalink to this heading">#</a></h1>
 <p>Las ecuaciones diferenicales de la forma:</p>
 <div class="math notranslate nohighlight" id="equation-edo-lineal-gral">
@@ -332,6 +331,10 @@ document.write(`
 <p>Al encontrar las raices de la ecuacion auxiliar <a class="reference internal" href="#equation-edo-lineal-aux">(11)</a> se encuetra la estructura general de la solución de la ecuación diferencial dada por la  ecuación <a class="reference internal" href="#equation-edo-lineal-gral">(10)</a>. La siguiente tabla nos dice las posibilidades:</p>
 <table class="table" id="tabla-sol">
 <caption><span class="caption-number">Tabla 1 </span><span class="caption-text">Tabla de soluciones para la EDO homogénea</span><a class="headerlink" href="#tabla-sol" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Raices de la ecuación auxiliar</p></th>
 <th class="head"><p>Función solución candidata</p></th>
@@ -362,6 +365,10 @@ document.write(`
 Las raices de la ecuación auxiliar se pueden calcular usando MATLAB, por medio del comando <code class="docutils literal notranslate"><span class="pre">roots()</span></code>. Por ejemplo, se puede encontrar la función de movimiento del sistema masa resorte amortiguador, cuyos parámetros se presentan en la <a class="reference internal" href="#tabla-param"><span class="std std-numref">Tabla 2</span></a> y condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.025~[m]\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0~[m/s]\)</span></p>
 <table class="table" id="tabla-param">
 <caption><span class="caption-number">Tabla 2 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -473,7 +480,7 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 <img alt="_images/9f3119288fb8b3f9b8e15b273561c9aac87de820fea69e329d94940c8641370b.png" src="_images/9f3119288fb8b3f9b8e15b273561c9aac87de820fea69e329d94940c8641370b.png" />
 </div>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
