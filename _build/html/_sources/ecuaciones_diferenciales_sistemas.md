@@ -44,7 +44,7 @@ Sistema masa resorte amortiguador.
 Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:
 
 ```{math}
-:label: edombk
+:label: edombk1
 \begin{equation}
   m\frac{d^2x(t)}{dt^2}+b_1\frac{dx(t)}{dt}+k_1x(t)=f(t)
 	\end{equation}
@@ -70,7 +70,7 @@ $$
 Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la {numref}`RLC`
 
 ```{figure} /images/Fig1.png
-:height: 400px
+:height: 300px
 :name: RLC
 Circuito RLC.
 ```
@@ -87,6 +87,10 @@ Con $L$ la inductancia en $[H]$, $C$ la capacitancia en $[F]$ y $R$ la resistenc
 ```{math}
 :label: edoRLC
 \begin{equation}
-  LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=f(t)
+  LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
 	\end{equation}
 ```
+
+
+
+
