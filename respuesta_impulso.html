@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Respuesta al impulso de sistemas de tiempo continuo. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/myfile-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'respuesta_impulso';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Integral de convolución en sistemas lineales." href="integral_convolucion.html" />
+    <link rel="prev" title="Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes." href="Practica3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Análisis de señales y sistemas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integral_convolucion.html">Integral de convolución en sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/respuesta_impulso.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Respuesta al impulso de sistemas de tiempo continuo.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-la-respuesta-al-impulso-de-un-sistema">Determinación de la respuesta al impulso de un sistema</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="respuesta-al-impulso-de-sistemas-de-tiempo-continuo">
+<h1>Respuesta al impulso de sistemas de tiempo continuo.<a class="headerlink" href="#respuesta-al-impulso-de-sistemas-de-tiempo-continuo" title="Permalink to this heading">#</a></h1>
+<p>Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se puede utilizar como el modelo matemático o la respresentación de un sistema dinámico. Existe una representación alternativa que resulta muy útil para el modelado de los sistemas es llamada <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">respuesta</span> <span class="pre">al</span> <span class="pre">impulso</span> <span class="pre">del</span> <span class="pre">sistema</span></code>(<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>, <span id="id2">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La función umpulso unitario, conocida como función Delta de Dirac se define matemáticamente como:</p>
+<div class="math notranslate nohighlight" id="equation-impulso">
+<span class="eqno">(23)<a class="headerlink" href="#equation-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         \delta(t)= \left\{ \begin{array}{lcc} 1 &amp; si &amp; 0 = t \\ \\ 0 &amp; si &amp;  t \neq 0   \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>Cuando la función <span class="math notranslate nohighlight">\(\delta(t)\)</span> se usa como una función estímulo para un sistema, a la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se le denomina respuesta al impulso del sistema y se usa la notación <span class="math notranslate nohighlight">\(h(t)\)</span> para distinguirla de las posibles salidas adel sistema ante entradas o estímulos arbitrarios <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
+<section id="determinacion-de-la-respuesta-al-impulso-de-un-sistema">
+<h2>Determinación de la respuesta al impulso de un sistema<a class="headerlink" href="#determinacion-de-la-respuesta-al-impulso-de-un-sistema" title="Permalink to this heading">#</a></h2>
+<p>Como hemos observado en la Práctica 3, es posible determinar la salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema, al resolver la ecuación diferencial que modela al sistema. Esta ecuación puede ser homogénea o forzada, con las soluciones candidatas condensadas en
+<a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y <a class="reference internal" href="Practica3.html#tabla-forzada"><span class="std std-numref">Tabla 3</span></a>. Entre las funciones candidatas mostradas en tales tablas, no se presenta en ningún caso la función impulso unitario definida en la ecuación <a class="reference internal" href="#equation-impulso">(23)</a>, sin embargo se cumple que:</p>
+<div class="math notranslate nohighlight" id="equation-deriv-impulso">
+<span class="eqno">(24)<a class="headerlink" href="#equation-deriv-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+          \frac{du(t)}{dt}=\delta(t)
+		 \end{equation}\]</div>
+<div class="admonition-determinacion-de-la-respuesta-al-impulso-de-un-sistema admonition">
+<p class="admonition-title">Determinación de la respuesta al impulso de un sistema:</p>
+<p>Para poder encontrar la respuesta forzada de un sistema cuando el estímulo o entrada es una señal del tipo impulso unitario se procede a encontrar la respuesta al escalón unitario del sistema (caso cuando la entrada es una constante de amlitud 1) y se obtiene la derivada de la respuesta resultante.</p>
+<p>Sea <span class="math notranslate nohighlight">\(y(t)\)</span> la respuesta al escalón unitario <span class="math notranslate nohighlight">\(u(t)\)</span> de un sistema, es decir <span class="math notranslate nohighlight">\(y(t)=Transf\{u(t)\}\)</span>, la respuesta al impulso unitario <span class="math notranslate nohighlight">\(h(t)=Transf\{\delta(t)\}\)</span> de ese sistema es:</p>
+<div class="math notranslate nohighlight" id="equation-resp-impulso">
+<span class="eqno">(25)<a class="headerlink" href="#equation-resp-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+          \frac{dy(t)}{dt}=h(t)
+		 \end{equation}\]</div>
+</div>
+<p>Por ejemplo para el sistema eléctrico analizado en el caso anterior, cuyo diagrama se muestra en la <a class="reference internal" href="Practica3.html#rlceq1"><span class="std std-numref">Figura 4</span></a> y cuyos parámetros son los de la <a class="reference internal" href="Practica3.html#tabla-paramrlc"><span class="std std-numref">Tabla 4</span></a>, la respuesta al impulso de obtiene encontrando primero su respuesta al escalón unitario, es decir, cuando el modelo del sistema es:</p>
+<div class="math notranslate nohighlight" id="equation-rlc-escalon">
+<span class="eqno">(26)<a class="headerlink" href="#equation-rlc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=u(t)
+	\end{equation}\]</div>
+<p>Se consideran condiciones iniciales cero, es decir: <span class="math notranslate nohighlight">\(v(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}(0)=0\)</span> y además <span class="math notranslate nohighlight">\(u(t)=1\)</span> para <span class="math notranslate nohighlight">\(t&gt;0\)</span> para obtener:</p>
+<div class="math notranslate nohighlight" id="equation-rlc-escalon2">
+<span class="eqno">(27)<a class="headerlink" href="#equation-rlc-escalon2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=1
+	\end{equation}\]</div>
+<p>De aquí se desprende que, de acuerdo con la <a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y deaa auerdo con el ejemplo anterior, donde se calcularon las raices complejas <span class="math notranslate nohighlight">\(-0.5298 \pm 2.3958i\)</span> la solución de la homogenea asociada es:</p>
+<div class="math notranslate nohighlight">
+\[
+v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
+\]</div>
+<p>Para este sistema, se cumple que la solución particular es una constante, <span class="math notranslate nohighlight">\(v_{cp}=1\)</span>, por lo tanto la solución completa para el voltaje en el capacitor adquiere la forma:</p>
+<div class="math notranslate nohighlight" id="equation-sol-rlc-escalon">
+<span class="eqno">(28)<a class="headerlink" href="#equation-sol-rlc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+   v_c(t)=v_{ch}+v_{p}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}+1
+\end{equation}\]</div>
+<p>Sabiendo que <span class="math notranslate nohighlight">\(v_c(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)=0\)</span> y sustituyendo la ecuación <a class="reference internal" href="#equation-sol-rlc-escalon">(28)</a> en la ecuación <a class="reference internal" href="#equation-rlc-escalon">(26)</a> se obiene el valor de los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+ v_c(t)=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}+1\\
+\dot{v}_c(t)=\frac{d[(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}+1]}{dt}\\
+\end{eqnarray}
+\end{split}\]</div>
+<p>Evaluando <span class="math notranslate nohighlight">\(v_c(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)\)</span>:</p>
+<div class="math notranslate nohighlight" id="equation-eval-v0-escalon">
+<span class="eqno">(29)<a class="headerlink" href="#equation-eval-v0-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+ v_c(0)=(C_1cos(239.58(0))+C_2sen(239.58(0)))e^{-52.98(0)}+1=0\\
+\dot{v}_c(0)=(-239.58C_1sen(0)+239.58C_2cos(0))e^{0}-52.98(C_1cos(0)+C_2sen(0))e^{0}
+\end{eqnarray}\end{split}\]</div>
+<p>Las ecuaciones <a class="reference internal" href="#equation-eval-v0-escalon">(29)</a> conducen a:</p>
+<div class="math notranslate nohighlight">
+\[
+v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1
+\]</div>
+<p>Sustituyendo <span class="math notranslate nohighlight">\(C_1\)</span> en la ecuación <a class="reference internal" href="Practica3.html#equation-eval-v0">(21)</a></p>
+<div class="math notranslate nohighlight">
+\[
+\dot{v}_c(0)=(390.5154sen(0)+239.58C_2cos(0))e^{0}-52.98(-cos(0)+C_2sen(0))e^{0}=0
+\]</div>
+<p>De donde se obtiene que:</p>
+<div class="math notranslate nohighlight">
+\[
+239.58C_2+52.98=0\Longrightarrow C_2=-0.2211
+\]</div>
+<p>Luego entonces, la solución completa de la ecuación diferencial, o bien el voltaje en el capacitor <span class="math notranslate nohighlight">\(v_c(t)\)</span> es:</p>
+<div class="math notranslate nohighlight" id="equation-sol-vc-escalon">
+<span class="eqno">(30)<a class="headerlink" href="#equation-sol-vc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+   v_c(t)=v_{ch}+v_{cp}=(-cos(239.58t)-0.2211sen(239.58t))e^{-52.98t}+1
+\end{equation}\]</div>
+<p>La respuesta al impulso es la derivada de <span class="math notranslate nohighlight">\(v_c(t)\)</span> respecto del tiempo, entonces:</p>
+<div class="math notranslate nohighlight" id="equation-h-rlc-deriv">
+<span class="eqno">(31)<a class="headerlink" href="#equation-h-rlc-deriv" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+   h(t)=\frac{v_c(t)}{dt}=\frac{(-cos(239.58t)-0.2211sen(239.58t))e^{-52.98t}+1}{dt}
+\end{equation}\]</div>
+<p>Luego entonces:</p>
+<div class="math notranslate nohighlight" id="equation-h-rlc-final">
+<span class="eqno">(32)<a class="headerlink" href="#equation-h-rlc-final" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{eqnarray}
+   h(t)=(250.7588sen(239.58t)-0.0089cos(239.58t))e^{-52.98t}
+\end{eqnarray}\]</div>
+<p>La gráfica de la respuesta al impulso del sistema se puede obtener en MATLAB con las siguientes líneas de código:</p>
+<div class="cell tag_remove-stderr docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> 
+<span class="nb">close</span> <span class="nb">all</span>
+
+<span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
+
+<span class="n">ht</span><span class="p">=(</span><span class="mf">250.7588</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mf">239.58</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mf">0.0089</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">239.58</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">52.98</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Respuesta al impulso&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t [s]&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;v_c(t) [V]&quot;</span><span class="p">)</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">30</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8b1123e471e332997ff73d860fcb48cc1722dffb926c3e993ae3a0e9799cc4c2.png" src="_images/8b1123e471e332997ff73d860fcb48cc1722dffb926c3e993ae3a0e9799cc4c2.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "Octave"
+        },
+        kernelOptions: {
+            name: "Octave",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'Octave'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Practica3.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="integral_convolucion.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Integral de convolución en sistemas lineales.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-la-respuesta-al-impulso-de-un-sistema">Determinación de la respuesta al impulso de un sistema</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Dr. Luis Gerardo Trujillo Franco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

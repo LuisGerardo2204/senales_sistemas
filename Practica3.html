@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica3';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="Respuesta al impulso de sistemas de tiempo continuo." href="respuesta_impulso.html" />
     <link rel="prev" title="Ecuaciones diferenciales y sistemas lineales." href="ecuaciones_diferenciales_sistemas.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -168,6 +168,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integral_convolucion.html">Integral de convolución en sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -316,6 +318,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-masa-resorte-amortiguador">Sistema masa resorte amortiguador.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-la-respuesta-forzada-de-sistemas">Determinación de la respuesta forzada de sistemas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-rlc-serie">Circuito RLC serie.</a></li>
 </ul>
             </nav>
@@ -445,7 +448,7 @@ Las raices de la ecuación auxiliar se pueden calcular usando MATLAB, por medio 
   -0.0174 -10.0000i
 </pre></body></html></div></div>
 </div>
-<p>Entonces la solución <span class="math notranslate nohighlight">\(x(t)\)</span> para este sistema es la función de movimiento de la masa <span class="math notranslate nohighlight">\(m\)</span> y toma la forma:</p>
+<p>Entonces, de acuerdo con la <a class="reference internal" href="#tabla-sol"><span class="std std-numref">Tabla 1</span></a>, la solución <span class="math notranslate nohighlight">\(x(t)\)</span> para este sistema es la función de movimiento de la masa <span class="math notranslate nohighlight">\(m\)</span> y toma la forma:</p>
 <div class="math notranslate nohighlight" id="equation-ec-mov">
 <span class="eqno">(14)<a class="headerlink" href="#equation-ec-mov" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
  x(t)=(C_1cos(10t)+C_2sen(10t))e^{-0.0174t}
@@ -492,13 +495,49 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/deb797ba899ca88b3d50f051c6d242d97e4aabcbf4db9b12eebbdc0b4b146b98.png" src="_images/deb797ba899ca88b3d50f051c6d242d97e4aabcbf4db9b12eebbdc0b4b146b98.png" />
+<img alt="_images/036b090c0b21d609b7a7566241ad1637c5dccdf673506180113f8880de33f194.png" src="_images/036b090c0b21d609b7a7566241ad1637c5dccdf673506180113f8880de33f194.png" />
 </div>
 </div>
 </section>
+<section id="determinacion-de-la-respuesta-forzada-de-sistemas">
+<h2>Determinación de la respuesta forzada de sistemas.<a class="headerlink" href="#determinacion-de-la-respuesta-forzada-de-sistemas" title="Permalink to this heading">#</a></h2>
+<p>En el ejemplo anterior se encontró la solución de la ecuación diferencial de movimiento de un sistema masa resorte amortiguador, en condicion de vibración libre y sujeto a condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)\)</span>. El modelo matemático del sistema en estas condiciones es una ecuación diferencial homogénea como la expresada en la ecuación (<a class="reference internal" href="#equation-edo-lineal-gral">(10)</a>), cuando la ecuación diferencial que modela al sistema no es homogenea, se trata del modelo matemático de la respuesta forzada del sistema. Para determinar la respuesta forzada de un sistema lienal e invariante en el tiempo, el procedimiento se divide en dos pasos principales, encontrar la solución de la ecuación diferencial homogenena y sumar la solución particular o forzada. Bajo esta premisa, se concluye que ante cualquier perturbación, el sistema responde conforme a su propia naturaleza (determinada por la solución homogénea), esta respuesta se desvanece con el tiempo y se conoce como estado transitorio. Después de que se desvanece el estado transitorio el sistema tendrá una respuesta que permanece en el tiempo que se conoce como estado estacionario y estará determinada por la naturaleza de la perturbación. La forma de la solución particular o estacionaria incluye a la perturbación o estímulo de entrada al sistema <span class="math notranslate nohighlight">\(x(t)\)</span> y todas sus derivadas linealmente independientes (que no se pueden reperentar como una suma de las otras derivadas multiplidadas por constantes reales <span class="math notranslate nohighlight">\(k_i\in \mathbb{R}\)</span>)
+asumiendo que la solución particular propuesta tiene un número finito de derivadas (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Por ejemplo para una señal estímulo <span class="math notranslate nohighlight">\(x(t)=cos(a t)\)</span>, se construye una solución particular de la forma:</p>
+<div class="math notranslate nohighlight" id="equation-yp-cos">
+<span class="eqno">(15)<a class="headerlink" href="#equation-yp-cos" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+ y_p(t)=k_1cos(at)+k_2sen(at)
+\end{equation}\]</div>
+<p>Los parámetros <span class="math notranslate nohighlight">\(k_1,k_2 \in \mathbb{R}\)</span> se determinan por la estructura própia de la ecuación diferencial que modela al sistema. En la siguiente tabla se muestra un conjunto de estructuras posibles para la solución particular de la ecuación diferencial no homogénea (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>).</p>
+<table class="table" id="tabla-forzada">
+<caption><span class="caption-number">Tabla 3 </span><span class="caption-text">Tabla de soluciones particulares</span><a class="headerlink" href="#tabla-forzada" title="Enlace permanente a esta tabla">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Señal de entrada</p></th>
+<th class="head"><p>Solución particular candidata</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k_1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(ke^{at}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k_1e^{at}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(kcos(at)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k_1cos(at)+k_2sen(at)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(ksen(at)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k_1cos(at)+k_2sen(at)\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(kt^{n}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(k_nt^{n}+k_{n-1}t^{n-1}+\cdots k_1t+k_0\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Los coeficientes de la solución particular se determinan por la estructura de la ecuación diferencial, asumiendo condiciones iniciales iguales a cero, debido a que <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">solución</span> <span class="pre">particular</span> <span class="pre">o</span> <span class="pre">forzada</span> <span class="pre">no</span> <span class="pre">depende</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">condiciones</span> <span class="pre">iniciales</span> <span class="pre">o</span> <span class="pre">del</span> <span class="pre">estado</span> <span class="pre">inicial</span> <span class="pre">del</span> <span class="pre">sistema</span></code>. Las condiciones iniciales especiíficas se se imponen en un paso posterior para determinar los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span> de la solución particular. A continuación se presenta un ejemplo para ilustar el procedimiento para determinar la respuesta forzada de los sistemas ante un estímulo <span class="math notranslate nohighlight">\(x(t)\neq 0\)</span>.</p>
+</section>
 <section id="circuito-rlc-serie">
 <h2>Circuito RLC serie.<a class="headerlink" href="#circuito-rlc-serie" title="Permalink to this heading">#</a></h2>
-<p>Otro ejemplo clásico de aplicación de los modelos matemáticos consiste en el analisis de corriente y voltaje de un circuito que consta de una resistencia, un capacitor y un inductor en serie como se muestra en la <a class="reference internal" href="#rlceq1"><span class="std std-numref">Figura 4</span></a>, cuyos parámetros se reportan en la <a class="reference internal" href="#tabla-paramrlc"><span class="std std-numref">Tabla 3</span></a>.</p>
+<p>Otro ejemplo clásico de aplicación de los modelos matemáticos consiste en el analisis de corriente y voltaje de un circuito que consta de una resistencia, un capacitor y un inductor en serie como se muestra en la <a class="reference internal" href="#rlceq1"><span class="std std-numref">Figura 4</span></a>, cuyos parámetros se reportan en la <a class="reference internal" href="#tabla-paramrlc"><span class="std std-numref">Tabla 4</span></a>.</p>
 <figure class="align-default" id="rlceq1">
 <a class="reference internal image-reference" href="_images/Imagen8.png"><img alt="_images/Imagen8.png" src="_images/Imagen8.png" style="height: 300px;" /></a>
 <figcaption>
@@ -506,7 +545,7 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 </figcaption>
 </figure>
 <table class="table" id="tabla-paramrlc">
-<caption><span class="caption-number">Tabla 3 </span><span class="caption-text">Tabla de parámetros del circuito RLC</span><a class="headerlink" href="#tabla-paramrlc" title="Enlace permanente a esta tabla">#</a></caption>
+<caption><span class="caption-number">Tabla 4 </span><span class="caption-text">Tabla de parámetros del circuito RLC</span><a class="headerlink" href="#tabla-paramrlc" title="Enlace permanente a esta tabla">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -563,22 +602,22 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 </table>
 <p>De las relaciones constitutivas de los elementos del sistema eléctricos descritas en la ecuación <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-relconst2">(8)</a> y dado que  <span class="math notranslate nohighlight">\(i_C(t)=i(t)=C\frac{dv_c}{dt}\)</span>. La ecuación diferencial que modela a este sistema eléctrico se escribe como:</p>
 <div class="math notranslate nohighlight" id="equation-edorlc2">
-<span class="eqno">(15)<a class="headerlink" href="#equation-edorlc2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(16)<a class="headerlink" href="#equation-edorlc2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
 	\end{equation}\]</div>
 <p>O bien, en notación compacta:</p>
 <div class="math notranslate nohighlight" id="equation-edorlccomp">
-<span class="eqno">(16)<a class="headerlink" href="#equation-edorlccomp" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(17)<a class="headerlink" href="#equation-edorlccomp" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   LC\ddot{v}_c+RC\dot{v}_c+v_c=V_s
 	\end{equation}\]</div>
-<p>la ecuación diferencial, se encuentra sustituyendo los valores de <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span> y <span class="math notranslate nohighlight">\(C\)</span> en la ecuación diferencial <a class="reference internal" href="#equation-edorlc2">(15)</a> para obtener:</p>
+<p>la ecuación diferencial, se encuentra sustituyendo los valores de <span class="math notranslate nohighlight">\(R\)</span>, <span class="math notranslate nohighlight">\(L\)</span> y <span class="math notranslate nohighlight">\(C\)</span> en la ecuación diferencial <a class="reference internal" href="#equation-edorlc2">(16)</a> para obtener:</p>
 <div class="math notranslate nohighlight" id="equation-edorlc3">
-<span class="eqno">(17)<a class="headerlink" href="#equation-edorlc3" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(18)<a class="headerlink" href="#equation-edorlc3" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=1.63
 	\end{equation}\]</div>
 <p>En este caso, la ecuación diferencial es no homogenea. Por lo tanto la solución está formada por la solución homogénea mas la solución particular, de manera que la solución toma la forma <span class="math notranslate nohighlight">\(v_c(t)=v_{ch}+v_{cp}\)</span>, con <span class="math notranslate nohighlight">\(v_{ch}\)</span> la solución de la homogénea asocciada y <span class="math notranslate nohighlight">\(v_{cp}\)</span> la solución particular. Por otra parte la ecuación auxiliar, para determinar la solución homogénea toma la forma:</p>
 <div class="math notranslate nohighlight" id="equation-edo-auxrlc">
-<span class="eqno">(18)<a class="headerlink" href="#equation-edo-auxrlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(19)<a class="headerlink" href="#equation-edo-auxrlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   1.661\times 10^{-5}D^2+0.0018D+1=0
 \end{equation}\]</div>
 <p>Las raices se obtienen usado la siguiente instrucción en MATLAB:</p>
@@ -605,12 +644,12 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 \[
 v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
 \]</div>
-<p>Para este sistema, se cumple que la solución particular es una constante, <span class="math notranslate nohighlight">\(v_{cp}=1.63\)</span>, por lo tanto la solución completa para el voltaje en el capacitor adquiere la forma:</p>
+<p>Para este sistema, se cumple que la solución particular es una constante, <span class="math notranslate nohighlight">\(v_{cp}=1.63\)</span>, de acuerdo con la <a class="reference internal" href="#tabla-forzada"><span class="std std-numref">Tabla 3</span></a>, por lo tanto la solución completa para el voltaje en el capacitor adquiere la forma:</p>
 <div class="math notranslate nohighlight" id="equation-sol-comprlc">
-<span class="eqno">(19)<a class="headerlink" href="#equation-sol-comprlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(20)<a class="headerlink" href="#equation-sol-comprlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    v_c(t)=v_{ch}+v_{p}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}+1.63
 \end{equation}\]</div>
-<p>Sabiendo que <span class="math notranslate nohighlight">\(v_c(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)=0\)</span> y sustituyendo la ecuación <a class="reference internal" href="#equation-sol-comprlc">(19)</a> en la ecuación <a class="reference internal" href="#equation-edorlc3">(17)</a> se obiene el valor de los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span>.</p>
+<p>Sabiendo que <span class="math notranslate nohighlight">\(v_c(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)=0\)</span> y sustituyendo la ecuación <a class="reference internal" href="#equation-sol-comprlc">(20)</a> en la ecuación <a class="reference internal" href="#equation-edorlc3">(18)</a> se obiene el valor de los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -620,16 +659,16 @@ v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
 \end{split}\]</div>
 <p>Evaluando <span class="math notranslate nohighlight">\(v_c(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eval-v0">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eval-v0" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(21)<a class="headerlink" href="#equation-eval-v0" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
  v_c(0)=(C_1cos(239.58(0))+C_2sen(239.58(0)))e^{-52.98(0)}+1.63=0\\
 \dot{v}_c(0)=(-239.58C_1sen(0)+239.58C_2cos(0))e^{0}-52.98(C_1cos(0)+C_2sen(0))e^{0}
 \end{eqnarray}\end{split}\]</div>
-<p>Las ecuaciones <a class="reference internal" href="#equation-eval-v0">(20)</a> conducen a:</p>
+<p>Las ecuaciones <a class="reference internal" href="#equation-eval-v0">(21)</a> conducen a:</p>
 <div class="math notranslate nohighlight">
 \[
 v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
 \]</div>
-<p>Sustituyendo <span class="math notranslate nohighlight">\(C_1\)</span> en la ecuación <a class="reference internal" href="#equation-eval-v0">(20)</a></p>
+<p>Sustituyendo <span class="math notranslate nohighlight">\(C_1\)</span> en la ecuación <a class="reference internal" href="#equation-eval-v0">(21)</a></p>
 <div class="math notranslate nohighlight">
 \[
 \dot{v}_c(0)=(390.5154sen(0)+239.58C_2cos(0))e^{0}-52.98(-1.63cos(0)+C_2sen(0))e^{0}=0
@@ -641,7 +680,7 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
 \]</div>
 <p>Luego entonces, la solución completa de la ecuación diferencial, o bien el voltaje en el capacitor <span class="math notranslate nohighlight">\(v_c(t)\)</span> es:</p>
 <div class="math notranslate nohighlight" id="equation-sol-vc">
-<span class="eqno">(21)<a class="headerlink" href="#equation-sol-vc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(22)<a class="headerlink" href="#equation-sol-vc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    v_c(t)=v_{ch}+v_{cp}=(-1.63cos(239.58t)-0.3605sen(239.58t))e^{-52.98t}+1.63
 \end{equation}\]</div>
 <p>La gráfica del voltaje en el capacitor contra el tiempo se grafica con las instrucciones de MATLAB:</p>
@@ -659,7 +698,7 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2613ddb01fd8b811815d1e2f99393c9f4993cfae014eb51393faf0f398f89f86.png" src="_images/2613ddb01fd8b811815d1e2f99393c9f4993cfae014eb51393faf0f398f89f86.png" />
+<img alt="_images/174aa9efda9ef0efc53dd48bb9db63bb59debf89c0e194738a8e961a68fca59d.png" src="_images/174aa9efda9ef0efc53dd48bb9db63bb59debf89c0e194738a8e961a68fca59d.png" />
 </div>
 </div>
 </section>
@@ -706,11 +745,11 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="respuesta_impulso.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Respuesta al impulso de sistemas de tiempo continuo.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -733,6 +772,7 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-masa-resorte-amortiguador">Sistema masa resorte amortiguador.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-la-respuesta-forzada-de-sistemas">Determinación de la respuesta forzada de sistemas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-rlc-serie">Circuito RLC serie.</a></li>
 </ul>
   </nav></div>

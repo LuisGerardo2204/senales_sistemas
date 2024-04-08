@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Ecuaciones diferenciales y sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
+    <title>Integral de convolución en sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
   
@@ -67,11 +67,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ecuaciones_diferenciales_sistemas';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'integral_convolucion';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes." href="Practica3.html" />
-    <link rel="prev" title="Práctica 2: Comprobación de invarianza en el tiempo con MATLAB" href="Practica2.html" />
+    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="prev" title="Respuesta al impulso de sistemas de tiempo continuo." href="respuesta_impulso.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -166,10 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ecuaciones diferenciales y sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="integral_convolucion.html">Integral de convolución en sistemas lineales.</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral de convolución en sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -225,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/ecuaciones_diferenciales_sistemas.md" target="_blank"
+      <li><a href="_sources/integral_convolucion.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Descargar archivo fuente"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -305,7 +305,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Ecuaciones diferenciales y sistemas lineales.</h1>
+    <h1>Integral de convolución en sistemas lineales.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -319,63 +319,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales-y-sistemas-lineales">
-<h1>Ecuaciones diferenciales y sistemas lineales.<a class="headerlink" href="#ecuaciones-diferenciales-y-sistemas-lineales" title="Permalink to this heading">#</a></h1>
-<p>Un método para representar la relación que existe entre las entradas y las salidas en los sistemas es
-una ecuación diferencial. A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incognita a una funcion. Una ecuación diferencial en el contexto de los sistemas, involucra a las
-señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:</p>
-<div class="math notranslate nohighlight" id="equation-edo1">
-<span class="eqno">(5)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  2\frac{d^2y(t)}{dt^2}+5x(t)+300y(t)=4.5x(t)
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-de-convolucion-en-sistemas-lineales">
+<h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
+<p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
+<div class="math notranslate nohighlight" id="equation-convolucion">
+<span class="eqno">(33)<a class="headerlink" href="#equation-convolucion" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  y(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau
 	\end{equation}\]</div>
-<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(5)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar tambien aceleración. En el caso de los sistemas eléctricos, los alamacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las realciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la leu de Newton son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst1">
-<span class="eqno">(6)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
+<p>La ecuación <a class="reference internal" href="#equation-convolucion">(33)</a> se conoce como la integral de convolución para sistemas de tiempo continuo (<span id="id1">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Se dice entonces, que la señal de salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema se obtiene aplicando la convolución de la señal de entrada o estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> con la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema. La convolución se representa por medio del operador <span class="math notranslate nohighlight">\(*\)</span>, el cual se denomina el operador convolución.</p>
+<div class="math notranslate nohighlight" id="equation-convolucion-operador">
+<span class="eqno">(34)<a class="headerlink" href="#equation-convolucion-operador" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  y(t)=x(t)*h(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau
 	\end{equation}\]</div>
-<p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acurdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posicion y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 1</span></a> muestra un típico sistema masa resorte amortiguador:</p>
-<figure class="align-default" id="mbk">
-<a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 1 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
-<div class="math notranslate nohighlight" id="equation-edombk1">
-<span class="eqno">(7)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  m\frac{d^2x(t)}{dt^2}+b_1\frac{dx(t)}{dt}+k_1x(t)=f(t)
-	\end{equation}\]</div>
-<p>En este caso, la salida se nombra <span class="math notranslate nohighlight">\(x(t)\)</span> dado que es un desplazamiento causado por la fuerza de entrada <span class="math notranslate nohighlight">\(f(t)\)</span>, que sería equivalente a la función estímulo o de entrada, se dice entoces que para este sistema, la entrada es una fuerza y la salida un desplazamiento.</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Es común usar la notación abreviada para las ecuaciones diferenciales:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{d^2x(t)}{dt^2}=\ddot{x}~~\frac{x(t)}{dt}=\dot{x}
-\]</div>
-<p>Usando esta notación se obtiene la forma alternativa de la ecuación diferencial de movimiento o modelo matemático del sistema masa resorte amortiguador como:</p>
-<div class="math notranslate nohighlight">
-\[
-m\ddot{x}+b\dot{x}+kx=f
-\]</div>
+<div class="admonition-convolucion-de-sistemas-de-tiempo-continuo admonition">
+<p class="admonition-title">Convolución de sistemas de tiempo contínuo:</p>
+<p>El operador convolución de la señal de entrada <span class="math notranslate nohighlight">\(x(t)\)</span> y la respuesta al impulso de un sistema <span class="math notranslate nohighlight">\(h(t)\)</span> proporciona la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema como:</p>
+<div class="math notranslate nohighlight" id="equation-convolucion-conmuta">
+<span class="eqno">(35)<a class="headerlink" href="#equation-convolucion-conmuta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+  y(t)=x(t)*h(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau\\
+  y(t)=h(t)*x(t)=\int^{\infty}_{-\infty}h(\tau)x(t-\tau)d\tau\\
+	\end{eqnarray}\end{split}\]</div>
 </div>
-<p>Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 2</span></a></p>
-<figure class="align-default" id="rlc">
-<a class="reference internal image-reference" href="_images/Fig1.png"><img alt="_images/Fig1.png" src="_images/Fig1.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 2 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Las relaciones constitutivas del sistema eléctrico son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst2">
-<span class="eqno">(8)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     v_L=L\frac{di(t)}{dt}~~i_C=C\frac{dv_c(t)}{dt}~~v_R=i(t)R
-	\end{equation}\]</div>
-<p>Con <span class="math notranslate nohighlight">\(L\)</span> la inductancia en <span class="math notranslate nohighlight">\([H]\)</span>, <span class="math notranslate nohighlight">\(C\)</span> la capacitancia en <span class="math notranslate nohighlight">\([F]\)</span> y <span class="math notranslate nohighlight">\(R\)</span> la resistencia en <span class="math notranslate nohighlight">\([\Omega]\)</span>. Además, por la ley de Kirchoff, la corriente en el capacitor <span class="math notranslate nohighlight">\(i_C(t)=i(t)\)</span>. En este caso, la salida se nombra <span class="math notranslate nohighlight">\(v_c(t)\)</span> el voltaje en el capacitor, debido a la presencia de la fuente de alimentación <span class="math notranslate nohighlight">\(V_s(t)\)</span>, que sería equivalente a la función estímulo o de entrada. La ecuación diferencial que modela a este sistema eléctrico es:</p>
-<div class="math notranslate nohighlight" id="equation-edorlc">
-<span class="eqno">(9)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
-	\end{equation}\]</div>
+<p>La operación de convolución es conmutativa.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -410,20 +375,20 @@ m\ddot{x}+b\dot{x}+kx=f
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Practica2.html"
+       href="respuesta_impulso.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</p>
+        <p class="prev-next-title">Respuesta al impulso de sistemas de tiempo continuo.</p>
       </div>
     </a>
     <a class="right-next"
-       href="Practica3.html"
+       href="Bibliograf%C3%ADa.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</p>
+        <p class="prev-next-title">Bibliografía</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

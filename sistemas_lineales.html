@@ -168,6 +168,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="integral_convolucion.html">Integral de convolución en sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -319,7 +321,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="analisis-de-sistemas-de-tiempo-continuo">
 <h1>Análisis de sistemas de tiempo continuo.<a class="headerlink" href="#analisis-de-sistemas-de-tiempo-continuo" title="Permalink to this heading">#</a></h1>
-<p>Una vez definido el concepto de señales y las operaciones que se realizan en ellas, es posible utilizar esas herramientas para analizar a los sistemas. En general se dice que un sistema es un énte que produce una o varia señales de salida como respuesta a estímulos o señales de entrada (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>). En el contexto de las matemáticas, un sistema es una transformación. Una transformación en el contexto de los sistemas es un conjunto de fórmulas u operaciones matemáticas que tienen una gran diversidad de complejidades, desde la estructura más simples hasta los sistemas de ecuaciones integro-diferenciales.</p>
+<p>Una vez definido el concepto de señales y las operaciones que se realizan en ellas, es posible utilizar esas herramientas para analizar a los sistemas. En general se dice que un sistema es un ente que produce una o varia señales de salida como respuesta a estímulos o señales de entrada (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>). En el contexto de las matemáticas, un sistema es una transformación. Una transformación en el contexto de los sistemas es un conjunto de fórmulas u operaciones matemáticas que tienen una gran diversidad de complejidades, desde la estructura más simples hasta los sistemas de ecuaciones integro-diferenciales.</p>
 <p>En el contexto de la ingeniería, dos características muy deseables de los sistemas es que estos cumplan con dos propiedades principales: la linealidad y la invarianza en el tiempo.</p>
 <div class="admonition-conceptos-de-linealidad-e-invarianza-en-el-tiempo admonition">
 <p class="admonition-title">Conceptos de linealidad e invarianza en el tiempo</p>
