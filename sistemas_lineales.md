@@ -15,7 +15,7 @@ kernelspec:
 
 # Análisis de sistemas de tiempo continuo.
 
-Una vez definido el concepto de señales y las operaciones que se realizan en ellas, es posible utilizar esas herramientas para analizar a los sistemas. En general se dice que un sistema es un énte que produce una o varia señales de salida como respuesta a estímulos o señales de entrada ({cite:t}`KamenMATLAB`). En el contexto de las matemáticas, un sistema es una transformación. Una transformación en el contexto de los sistemas es un conjunto de fórmulas u operaciones matemáticas que tienen una gran diversidad de complejidades, desde la estructura más simples hasta los sistemas de ecuaciones integro-diferenciales.
+Una vez definido el concepto de señales y las operaciones que se realizan en ellas, es posible utilizar esas herramientas para analizar a los sistemas. En general se dice que un sistema es un ente que produce una o varia señales de salida como respuesta a estímulos o señales de entrada ({cite:t}`KamenMATLAB`). En el contexto de las matemáticas, un sistema es una transformación. Una transformación en el contexto de los sistemas es un conjunto de fórmulas u operaciones matemáticas que tienen una gran diversidad de complejidades, desde la estructura más simples hasta los sistemas de ecuaciones integro-diferenciales.
 
 En el contexto de la ingeniería, dos características muy deseables de los sistemas es que estos cumplan con dos propiedades principales: la linealidad y la invarianza en el tiempo.
 
