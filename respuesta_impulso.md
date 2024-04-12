@@ -106,7 +106,7 @@ Las ecuaciones {eq}`eval_v0_escalon` conducen a:
 
 
 $$
-v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1
+v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1=0\Longrightarrow C_1=-1
 $$
 
 Sustituyendo $C_1$ en la ecuación {eq}`eval_v0`
@@ -142,7 +142,7 @@ Luego entonces:
 ```{math}
 :label: h_RLC_final
 \begin{eqnarray}
-   h(t)=(251.2958sen(239.58t))e^{-52.98t}
+   h(t)=(261.7287sen(239.58t))e^{-52.98t}
 \end{eqnarray}
 ````
 
@@ -154,15 +154,18 @@ La gráfica de la respuesta al impulso del sistema se puede obtener en MATLAB co
 clear 
 close all
 
+
 t=[0:0.001:0.3];
 
-ht=(251.2958*sin(239.58*t)).*exp(-52.98*t);
+ht=(261.7287*sin(239.58*t)).*exp(-52.98*t);
 
 plot(t,ht)
+set(gcf,'Visible','on')
 title("Respuesta al impulso")
 xlabel("t [s]")
 ylabel("v_c(t) [V]")
-set(gca,'fontsize',30);
+
+
 ```
 En este caso, tambien se puede obtener una generalización de la respuesta al impulso, ante cambios en alguno de los parámetros del sistema R, L o C dado que la estructura es la misma.
 
@@ -189,7 +192,7 @@ Usando las partes real e imaginaria de la primera raiz, se encuentra el valor de
 \begin{eqnarray}
    k=1\\
    C_1=-1\\
-   C_2=\frac{-\alpha}{\beta}
+   C_2=\frac{-\alpha C_1}{\beta}=\frac{-\alpha}{\beta}
 \end{eqnarray}
 ````
 Así, la respuesta al escalón en general es:
@@ -197,7 +200,7 @@ Así, la respuesta al escalón en general es:
 ```{math}
 :label: sol_imp_RLC
 \begin{equation}
-   v_c(t)=(-cos(\beta t)-\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1
+   v_c(t)=(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1
 \end{equation}
 ````
 La respuesta al ipulso se encuentra al derivar la ecuacion {eq}`sol_imp_RLC` respecto del tiempo:
@@ -205,7 +208,7 @@ La respuesta al ipulso se encuentra al derivar la ecuacion {eq}`sol_imp_RLC` res
 ```{math}
 :label: h_RLC_imp
 \begin{equation}
-   h(t)=\frac{(-cos(\beta t)-\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1}{dt}
+   h(t)=\frac{(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1}{dt}
 \end{equation}
 ````
 Obteniéndose la expresión general:
@@ -213,7 +216,7 @@ Obteniéndose la expresión general:
 ```{math}
 :label: h_final1
 \begin{equation}
-   h(t)=(\beta cos(\beta t)-\beta sen(\beta t))e^{\alpha t}+\alpha\left(-cos(\beta t)-\frac{\alpha}{\beta}sen(\beta t)\right)e^{\alpha t}
+   h(t)=(\beta sen(\beta t)+\alpha cos(\beta t))e^{\alpha t}+\alpha\left(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t)\right)e^{\alpha t}
 \end{equation}
 ````
 
@@ -228,9 +231,11 @@ El siguiente código en MATLAB permite graficar la respuesta al escalón con dif
 ```{code-cell} Octave
 :tags: [remove-stderr]
 
+
 clear 
 close all
 clc
+
 
 R=1600;
 L=15.1; % Parámetros originales o de referencia
@@ -276,7 +281,8 @@ k=vs;
 h_c2=(betha+(alpha^2)/betha)*sin(betha*t).*exp(alpha*t);
 plot(t,h_c2)
 legend ('h_c cuando R=1600 \Omega', strcat('h_c cuando R=',num2str(R),' \Omega'));
-set(gca,'fontsize',30);
+set(gca,'fontsize',20);
 legend ("boxoff");
+set(gcf,'Visible','on')
 
 ```
