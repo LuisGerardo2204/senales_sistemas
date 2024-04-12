@@ -69,7 +69,7 @@ Se consideran condiciones iniciales cero, es decir: $v(0)=0$ y $\dot{v}(0)=0$ y 
   1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=1
 	\end{equation}
 ```
-De aquí se desprende que, de acuerdo con la {numref}`Tabla_sol` y deaa auerdo con el ejemplo anterior, donde se calcularon las raices complejas $-0.5298 \pm 2.3958i$ la solución de la homogenea asociada es:
+De aquí se desprende que, de acuerdo con la {numref}`Tabla_sol` y deaa auerdo con el ejemplo anterior, donde se calcularon las raices complejas $-52.98 \pm 239.58i$ la solución de la homogenea asociada es:
 
 $$
 v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
@@ -142,7 +142,7 @@ Luego entonces:
 ```{math}
 :label: h_RLC_final
 \begin{eqnarray}
-   h(t)=(250.7588sen(239.58t)-0.0089cos(239.58t))e^{-52.98t}
+   h(t)=(251.2958sen(239.58t))e^{-52.98t}
 \end{eqnarray}
 ````
 
@@ -156,11 +156,127 @@ close all
 
 t=[0:0.001:0.3];
 
-ht=(250.7588*sin(239.58*t)-0.0089*cos(239.58*t)).*exp(-52.98*t);
+ht=(251.2958*sin(239.58*t)).*exp(-52.98*t);
 
 plot(t,ht)
 title("Respuesta al impulso")
 xlabel("t [s]")
 ylabel("v_c(t) [V]")
 set(gca,'fontsize',30);
+```
+En este caso, tambien se puede obtener una generalización de la respuesta al impulso, ante cambios en alguno de los parámetros del sistema R, L o C dado que la estructura es la misma.
+
+## Respuesta al impulso con diferentes parámetros.
+
+Es posible encontrar diferentes respuestas del sistema usando una estructura general para el caso particular cuando la función de estímulo es una constante. Para el caso particular del circuito RLC serie, en el que la respuesta forzada completa obedece la estructura:
+
+```{math}
+:label: sol_compRLC_unitario
+\begin{equation}
+   v_c(t)=(C_1cos(\beta t)+C_2sen(\beta t))e^{\alpha t}+1
+\end{equation}
+````
+En este caso, dado que se usa un escalón unitario, se determina que $k=1$. Cuando las condiciones iniciales $v_c(0)$ y $\dot{v}_c(0)$ las constantes $C_1$, $C_2$ y $k$ se pueden obtener al encontrar las raices $r_{i},~i=1,2$ del polinomio auxiliar {eq}`edo_auxRLC`:
+
+$$
+r_{i}=\alpha \pm \beta i
+$$
+
+Usando las partes real e imaginaria de la primera raiz, se encuentra el valor de dichas constantes:
+
+```{math}
+:label: calculo_impulso
+\begin{eqnarray}
+   k=1\\
+   C_1=-1\\
+   C_2=\frac{-\alpha}{\beta}
+\end{eqnarray}
+````
+Así, la respuesta al escalón en general es:
+
+```{math}
+:label: sol_imp_RLC
+\begin{equation}
+   v_c(t)=(-cos(\beta t)-\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1
+\end{equation}
+````
+La respuesta al ipulso se encuentra al derivar la ecuacion {eq}`sol_imp_RLC` respecto del tiempo:
+
+```{math}
+:label: h_RLC_imp
+\begin{equation}
+   h(t)=\frac{(-cos(\beta t)-\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1}{dt}
+\end{equation}
+````
+Obteniéndose la expresión general:
+
+```{math}
+:label: h_final1
+\begin{equation}
+   h(t)=(\beta cos(\beta t)-\beta sen(\beta t))e^{\alpha t}+\alpha\left(-cos(\beta t)-\frac{\alpha}{\beta}sen(\beta t)\right)e^{\alpha t}
+\end{equation}
+````
+
+```{math}
+:label: h_final2
+\begin{equation}
+   h(t)=\left( \beta+\frac{\alpha^2}{\beta} \right)sen(\beta t)e^{\alpha t}
+\end{equation}
+````
+El siguiente código en MATLAB permite graficar la respuesta al escalón con diferentes valores de los parámetros RLC para fines comparativos, se genera una respuesta de referencia y después se calculan las raices del nuevo polinomio auxiliar definido en la ecuación {eq}`edo_auxRLC`, para graficar las dos respuestas y compararlas.
+
+```{code-cell} Octave
+:tags: [remove-stderr]
+
+clear 
+close all
+clc
+
+R=1600;
+L=15.1; % Parámetros originales o de referencia
+C=1.01e-6;
+
+vs=1.63; % Voltaje de la fuente o escalón
+
+t=[0:0.001:0.3]; %Vector de tiempo
+
+raices=roots([L*C R*C 1]); % Cálculo de las raices del polinomio auxiliar
+
+alpha=real(raices(1)); % Se extraen las partes real e imaginaria
+betha=imag(raices(1)); 
+
+% Se determinan los valores de C1 y C2 de la solución homogénea
+C1=-1;
+C2=-alpha*C1/betha;
+
+
+h_c=(betha+(alpha^2)/betha)*sin(betha*t).*exp(alpha*t);;
+plot(t,h_c)
+xlabel("t [s]")
+ylabel("v_c(t) [V]")
+hold on % Se deja abierta la imagen para graficar la respuesta con 
+% un valor diferente de algún parámetro para fines comparativos
+
+%-------------------------------------------------------------
+%  Se calcula la nueva respuesta vc con R=5600
+%-------------------------------------------------------------
+
+R=5600; % se acualiza el valor de R
+
+raices=roots([L*C R*C 1]); % Cálculo de las raices del polinomio auxiliar
+
+alpha=real(raices(1)); % Se extraen las partes real e imaginaria
+betha=imag(raices(1)); 
+
+% Se determinan los valores de C1 y C2 de la solución homogénea
+C1=-1;
+C2=-alpha*C1/betha;
+k=vs;
+
+h_c2=(betha+(alpha^2)/betha)*sin(betha*t).*exp(alpha*t);
+plot(t,h_c2)
+legend ('h_c cuando R=1600 \Omega', strcat('h_c cuando R=',num2str(R),' \Omega'));
+set(gca,'fontsize',30);
+legend ("boxoff");
+
 ```

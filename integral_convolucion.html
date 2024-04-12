@@ -323,19 +323,19 @@ document.write(`
 <h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion">
-<span class="eqno">(33)<a class="headerlink" href="#equation-convolucion" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(41)<a class="headerlink" href="#equation-convolucion" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   y(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau
 	\end{equation}\]</div>
-<p>La ecuación <a class="reference internal" href="#equation-convolucion">(33)</a> se conoce como la integral de convolución para sistemas de tiempo continuo (<span id="id1">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Se dice entonces, que la señal de salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema se obtiene aplicando la convolución de la señal de entrada o estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> con la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema. La convolución se representa por medio del operador <span class="math notranslate nohighlight">\(*\)</span>, el cual se denomina el operador convolución.</p>
+<p>La ecuación <a class="reference internal" href="#equation-convolucion">(41)</a> se conoce como la integral de convolución para sistemas de tiempo continuo (<span id="id1">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Se dice entonces, que la señal de salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema se obtiene aplicando la convolución de la señal de entrada o estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> con la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema. La convolución se representa por medio del operador <span class="math notranslate nohighlight">\(*\)</span>, el cual se denomina el operador convolución.</p>
 <div class="math notranslate nohighlight" id="equation-convolucion-operador">
-<span class="eqno">(34)<a class="headerlink" href="#equation-convolucion-operador" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(42)<a class="headerlink" href="#equation-convolucion-operador" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   y(t)=x(t)*h(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau
 	\end{equation}\]</div>
 <div class="admonition-convolucion-de-sistemas-de-tiempo-continuo admonition">
 <p class="admonition-title">Convolución de sistemas de tiempo contínuo:</p>
 <p>El operador convolución de la señal de entrada <span class="math notranslate nohighlight">\(x(t)\)</span> y la respuesta al impulso de un sistema <span class="math notranslate nohighlight">\(h(t)\)</span> proporciona la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion-conmuta">
-<span class="eqno">(35)<a class="headerlink" href="#equation-convolucion-conmuta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(43)<a class="headerlink" href="#equation-convolucion-conmuta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
   y(t)=x(t)*h(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau\\
   y(t)=h(t)*x(t)=\int^{\infty}_{-\infty}h(\tau)x(t-\tau)d\tau\\
 	\end{eqnarray}\end{split}\]</div>

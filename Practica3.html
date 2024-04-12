@@ -320,6 +320,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-masa-resorte-amortiguador">Sistema masa resorte amortiguador.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-la-respuesta-forzada-de-sistemas">Determinación de la respuesta forzada de sistemas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-rlc-serie">Circuito RLC serie.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#respuesta-forzada-con-diferentes-parametros">Respuesta forzada con diferentes parámetros.</a></li>
 </ul>
             </nav>
         </div>
@@ -495,7 +496,7 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/036b090c0b21d609b7a7566241ad1637c5dccdf673506180113f8880de33f194.png" src="_images/036b090c0b21d609b7a7566241ad1637c5dccdf673506180113f8880de33f194.png" />
+<img alt="_images/dd99b3f8b114b2f578301d875c2c2dbf8c0e635b34752210898c3982b5cb1dec.png" src="_images/dd99b3f8b114b2f578301d875c2c2dbf8c0e635b34752210898c3982b5cb1dec.png" />
 </div>
 </div>
 </section>
@@ -698,7 +699,85 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/174aa9efda9ef0efc53dd48bb9db63bb59debf89c0e194738a8e961a68fca59d.png" src="_images/174aa9efda9ef0efc53dd48bb9db63bb59debf89c0e194738a8e961a68fca59d.png" />
+<img alt="_images/7723c7c8eef4786cf4c72984140dfe03c79c856bd6c2d01ef29efd7f00a230fb.png" src="_images/7723c7c8eef4786cf4c72984140dfe03c79c856bd6c2d01ef29efd7f00a230fb.png" />
+</div>
+</div>
+</section>
+<section id="respuesta-forzada-con-diferentes-parametros">
+<h2>Respuesta forzada con diferentes parámetros.<a class="headerlink" href="#respuesta-forzada-con-diferentes-parametros" title="Permalink to this heading">#</a></h2>
+<p>Es posible encontrar diferentes respuestas del sistema usando una estructura general para el caso particular cuando la función de estímulo es una constante. Para el caso particular del circuito RLC serie, en el que la respuesta forzada completa obedece la estructura:</p>
+<div class="math notranslate nohighlight" id="equation-sol-comprlc-general">
+<span class="eqno">(23)<a class="headerlink" href="#equation-sol-comprlc-general" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+   v_c(t)=(C_1cos(\beta t)+C_2sen(\beta t))e^{\alpha t}+k
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(k\)</span> es la amplitud del para una señal tipo escalón. Cuando las condiciones iniciales <span class="math notranslate nohighlight">\(v_c(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)\)</span> las constantes <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span> y <span class="math notranslate nohighlight">\(k\)</span> se pueden obtener al encontrar las raices <span class="math notranslate nohighlight">\(r_{i},~i=1,2\)</span> del polinomio auxiliar <a class="reference internal" href="#equation-edo-auxrlc">(19)</a>:</p>
+<div class="math notranslate nohighlight">
+\[
+r_{i}=\alpha \pm \beta i
+\]</div>
+<p>Usando las partes real e imaginaria de la primera raiz, se encuentra el valor de dichas constantes:</p>
+<div class="math notranslate nohighlight" id="equation-calculo-constantes">
+<span class="eqno">(24)<a class="headerlink" href="#equation-calculo-constantes" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+   k=v_s\\
+   C_1=-v_s\\
+   C_2=\frac{-\alpha C_1}{\beta}
+\end{eqnarray}\end{split}\]</div>
+<p>El siguiente código en MATLAB permite graficar la respuesta al escalón con diferentes valores de los parámetros RLC para fines comparativos, se genera una respuesta de referencia y después se calculan las raices del nuevo polinomio auxiliar definido en la ecuación <a class="reference internal" href="#equation-edo-auxrlc">(19)</a>, para graficar las dos respuestas y compararlas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span><span class="w"> </span>
+<span class="nb">clc</span><span class="w"> </span>
+
+<span class="n">R</span><span class="p">=</span><span class="mi">1600</span><span class="p">;</span>
+<span class="n">L</span><span class="p">=</span><span class="mf">15.1</span><span class="p">;</span><span class="w"> </span><span class="c">% Parámetros originales o de referencia</span>
+<span class="n">C</span><span class="p">=</span><span class="mf">1.01e-6</span><span class="p">;</span>
+
+<span class="n">vs</span><span class="p">=</span><span class="mf">1.63</span><span class="p">;</span><span class="w"> </span><span class="c">% Voltaje de la fuente o escalón</span>
+
+<span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span><span class="w"> </span><span class="c">%Vector de tiempo</span>
+
+<span class="n">raices</span><span class="p">=</span><span class="nb">roots</span><span class="p">([</span><span class="n">L</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"> </span><span class="c">% Cálculo de las raices del polinomio auxiliar</span>
+
+<span class="nb">alpha</span><span class="p">=</span><span class="nb">real</span><span class="p">(</span><span class="n">raices</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">% Se extraen las partes real e imaginaria</span>
+<span class="n">betha</span><span class="p">=</span><span class="nb">imag</span><span class="p">(</span><span class="n">raices</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span>
+
+<span class="c">% Se determinan los valores de C1 y C2 de la solución homogénea</span>
+<span class="n">C1</span><span class="p">=</span><span class="o">-</span><span class="n">vs</span><span class="p">;</span>
+<span class="n">C2</span><span class="p">=</span><span class="o">-</span><span class="nb">alpha</span><span class="o">*</span><span class="n">C1</span><span class="o">/</span><span class="n">betha</span><span class="p">;</span>
+<span class="n">k</span><span class="p">=</span><span class="n">vs</span><span class="p">;</span>
+
+<span class="n">v_c</span><span class="p">=(</span><span class="n">C1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">betha</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">betha</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">vs</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_c</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t [s]&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;v_c(t) [V]&quot;</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="c">% Se deja abierta la imagen para graficar la respuesta con </span>
+<span class="c">% un valor diferente de algún parámetro para fines comparativos</span>
+
+<span class="c">%-------------------------------------------------------------</span>
+<span class="c">%  Se calcula la nueva respuesta vc con R=5600</span>
+<span class="c">%-------------------------------------------------------------</span>
+
+<span class="n">R</span><span class="p">=</span><span class="mi">5600</span><span class="p">;</span><span class="w"> </span><span class="c">% se acualiza el valor de R</span>
+
+<span class="n">raices</span><span class="p">=</span><span class="nb">roots</span><span class="p">([</span><span class="n">L</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span><span class="w"> </span><span class="c">% Cálculo de las raices del polinomio auxiliar</span>
+
+<span class="nb">alpha</span><span class="p">=</span><span class="nb">real</span><span class="p">(</span><span class="n">raices</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span><span class="c">% Se extraen las partes real e imaginaria</span>
+<span class="n">betha</span><span class="p">=</span><span class="nb">imag</span><span class="p">(</span><span class="n">raices</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="w"> </span>
+
+<span class="c">% Se determinan los valores de C1 y C2 de la solución homogénea</span>
+<span class="n">C1</span><span class="p">=</span><span class="o">-</span><span class="n">vs</span><span class="p">;</span>
+<span class="n">C2</span><span class="p">=</span><span class="o">-</span><span class="nb">alpha</span><span class="o">*</span><span class="n">C1</span><span class="o">/</span><span class="n">betha</span><span class="p">;</span>
+<span class="n">k</span><span class="p">=</span><span class="n">vs</span><span class="p">;</span>
+
+<span class="n">v_c</span><span class="p">=(</span><span class="n">C1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">betha</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">betha</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="nb">alpha</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">vs</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v_c</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;v_c cuando R=1600 \Omega&quot;</span><span class="p">,</span><span class="s">&quot;v_c cuando R=&quot;</span><span class="o">+</span><span class="nb">num2str</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="o">+</span><span class="s">&quot; \Omega&quot;</span><span class="w"> </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/98aa8c9ebebcb705264f7afdaa5e8cab4e7c12373d4325dfc530673f38fb6f02.png" src="_images/98aa8c9ebebcb705264f7afdaa5e8cab4e7c12373d4325dfc530673f38fb6f02.png" />
 </div>
 </div>
 </section>
@@ -774,6 +853,7 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-masa-resorte-amortiguador">Sistema masa resorte amortiguador.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinacion-de-la-respuesta-forzada-de-sistemas">Determinación de la respuesta forzada de sistemas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#circuito-rlc-serie">Circuito RLC serie.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#respuesta-forzada-con-diferentes-parametros">Respuesta forzada con diferentes parámetros.</a></li>
 </ul>
   </nav></div>
 
