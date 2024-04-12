@@ -192,7 +192,7 @@ Usando las partes real e imaginaria de la primera raiz, se encuentra el valor de
 \begin{eqnarray}
    k=1\\
    C_1=-1\\
-   C_2=\frac{-\alpha C_1}{\beta}=\frac{-\alpha}{\beta}
+   C_2=\frac{-\alpha C_1}{\beta}=\frac{\alpha}{\beta}
 \end{eqnarray}
 ````
 Así, la respuesta al escalón en general es:
