@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integral de convolución en sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -319,7 +318,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integral-de-convolucion-en-sistemas-lineales">
+  <div class="tex2jax_ignore mathjax_ignore section" id="integral-de-convolucion-en-sistemas-lineales">
 <h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion">
@@ -342,7 +341,7 @@ document.write(`
 </div>
 <p>La operación de convolución es conmutativa. A continuación se muestra de forma gráfica la operación de convoución para determinar la respuesta de los sistemas, usando la respuesta al impulso.</p>
 <ol class="arabic simple">
-<li><p>Primero, dibuje la señal <span class="math notranslate nohighlight">\(x(\lambda)\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span> será considerada como una nueva variable independiente. como se muestra abajo:</p></li>
+<li><p>Primero, dibuje la señal <span class="math notranslate nohighlight">\(x(\tau)\)</span>, <span class="math notranslate nohighlight">\(\tau\)</span> será considerada como una nueva variable independiente. como se muestra abajo:</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -364,23 +363,23 @@ document.write(`
 
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\lambda&quot;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\lambda)&quot;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Cambio de variable t \rightarrow \lambda&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Cambio de variable t \rightarrow \tau&quot;</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 <span class="n">grid</span><span class="w"> </span><span class="s">on</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9208fc1f905c47654d9ae1d02299ced960c3e29df12f27532abb47a53d38869.png" src="_images/b9208fc1f905c47654d9ae1d02299ced960c3e29df12f27532abb47a53d38869.png" />
+<img alt="_images/b9cd1e4881917012567da5408cd04f24548c314a606cb13fd2fa8d82f6a76f39.png" src="_images/b9cd1e4881917012567da5408cd04f24548c314a606cb13fd2fa8d82f6a76f39.png" />
 </div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Después, para un valor en específico de la variable independiente <span class="math notranslate nohighlight">\(t\)</span>, dibuje la gráfica de la señal <span class="math notranslate nohighlight">\(h(t-\lambda)\)</span>. Esta tarea se llevará a cabo en dos pasos principales:</p></li>
 </ol>
-<p>a. Dibuje <span class="math notranslate nohighlight">\(h(-\lambda)\)</span>. Esto significa hacer la operación de reversión en el tiempo.
-b. En <span class="math notranslate nohighlight">\(h(\lambda)\)</span>, sustitúyase <span class="math notranslate nohighlight">\(\lambda \rightarrow | \lambda-t\)</span>. Esto significa un desplazaemiento en el tiempo de la función <span class="math notranslate nohighlight">\(h(-\lambda)\)</span> en <span class="math notranslate nohighlight">\(t\)</span> unidades.</p>
+<p>a. Dibuje <span class="math notranslate nohighlight">\(h(-\tau)\)</span>. Esto significa hacer la operación de reversión en el tiempo.
+b. En <span class="math notranslate nohighlight">\(h(\tau)\)</span>, sustitúyase <span class="math notranslate nohighlight">\(\tau \rightarrow | \tau-t\)</span>. Esto significa un desplazaemiento en el tiempo de la función <span class="math notranslate nohighlight">\(h(-\tau)\)</span> en <span class="math notranslate nohighlight">\(t\)</span> unidades.</p>
 <p>El siguiente código muestra la gráfica de lo anteriormente expuesto:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -397,33 +396,33 @@ b. En <span class="math notranslate nohighlight">\(h(\lambda)\)</span>, sustitú
 
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\lambda&quot;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(\lambda)&quot;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Cambio de variable t \rightarrow \lambda&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Cambio de variable t \rightarrow \tau&quot;</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 <span class="n">grid</span><span class="w"> </span><span class="s">on</span>
 
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(-\lambda)&quot;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Reversión \lambda \rightarrow -\lambda &quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Reversión \tau \rightarrow -\tau &quot;</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 <span class="n">grid</span><span class="w"> </span><span class="s">on</span>
 
 <span class="n">t2</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,(</span><span class="o">-</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.1</span><span class="p">)</span><span class="o">.*</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.1</span><span class="p">))</span>
-<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\lambda&quot;</span><span class="p">)</span>
-<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\lambda)&quot;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\lambda)&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 <span class="n">grid</span><span class="w"> </span><span class="s">on</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/555fce430ee66ed225e860e9a0d6e4b6a2878d715548adc6d97eca8f5f049676.png" src="_images/555fce430ee66ed225e860e9a0d6e4b6a2878d715548adc6d97eca8f5f049676.png" />
+<img alt="_images/46e3b422b3e49eccc597d4a319d19b2c1b2ca6e254c79d69a388d05e65e803ac.png" src="_images/46e3b422b3e49eccc597d4a319d19b2c1b2ca6e254c79d69a388d05e65e803ac.png" />
 </div>
 </div>
 <ol class="arabic simple" start="3">
@@ -431,10 +430,10 @@ b. En <span class="math notranslate nohighlight">\(h(\lambda)\)</span>, sustitú
 </ol>
 <div class="math notranslate nohighlight">
 \[
-f(\lambda)=x(\lambda)h(t-\lambda)
+f(\tau)=x(\tau)h(t-\tau)
 \]</div>
 <ol class="arabic simple" start="4">
-<li><p>Calcular el area bajo la curva formada por el producto <span class="math notranslate nohighlight">\(f(\lambda)=x(\lambda)h(t-\lambda)\)</span>, por medio de la integral respecto de la variable independiente <span class="math notranslate nohighlight">\(\lambda\)</span>. El resultado es el valor de la señal en el instante de tiempo específico <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>Calcular el area bajo la curva formada por el producto <span class="math notranslate nohighlight">\(f(\tau)=x(\tau)h(t-\tau)\)</span>, por medio de la integral respecto de la variable independiente <span class="math notranslate nohighlight">\(\tau\)</span>. El resultado es el valor de la señal en el instante de tiempo específico <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
 <li><p>Repita los pasos 1 al 4 para todos los valores de <span class="math notranslate nohighlight">\(t\)</span> que son de interés.</p></li>
 </ol>
 <p>Usando la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema RLC como se expresa en la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-h-rlc-final">(34)</a> y la instrucción <code class="docutils literal notranslate"><span class="pre">cumtrapz()</span></code> que permite el cálculo de la respuesta al impulso se puede graficar la respuesta al est <span class="math notranslate nohighlight">\(x(t)=1.63u(t)\)</span></p>
@@ -444,17 +443,17 @@ f(\lambda)=x(\lambda)h(t-\lambda)
 <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mf">0.0001</span><span class="o">*</span><span class="nb">cumtrapz</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">.*</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="n">xt</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y(t)&quot;</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y(t)=\int^{0.3}_{-0.1}x(\lambda)h(t-\lambda)d\lambda&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y(t)=\int^{0.3}_{-0.1}x(\tau)h(t-\tau)d\tau&quot;</span><span class="p">)</span>
 <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
 <span class="n">grid</span><span class="w"> </span><span class="s">on</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc17c9cf31775a31838ca8a24dd0e6b4393bd0f3646c17796fda09a342524740.png" src="_images/fc17c9cf31775a31838ca8a24dd0e6b4393bd0f3646c17796fda09a342524740.png" />
+<img alt="_images/27541f243d38153eb37443ef663c60fb8ff5ba20885fe6a9767807ea3d82fa46.png" src="_images/27541f243d38153eb37443ef663c60fb8ff5ba20885fe6a9767807ea3d82fa46.png" />
 </div>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
