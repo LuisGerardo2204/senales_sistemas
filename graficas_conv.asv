@@ -1,0 +1,65 @@
+clear
+close all
+clc
+
+t=[0:0.001:3];
+xt= @(x) sin(11.5*x).*exp(-3*x);
+
+subplot(1,2,1)
+plot(t,xt(t))
+xlabel("t")
+ylabel("x(t)")
+title("Señal original")
+set(gca,'fontsize',10);
+grid on
+
+subplot(1,2,2)
+plot(t,xt(t))
+xlabel("\lambda")
+ylabel("x(\lambda)")
+title("Cambio de variable t \rightarrow \lambda")
+set(gca,'fontsize',10);
+grid on
+
+
+figure
+
+t=[0:0.001:3];
+ht= @(x) 3.5*exp(-2.1*x);
+
+subplot(2,2,1)
+plot(t,ht(t))
+xlabel("t")
+ylabel("h(t)")
+title("Señal original")
+set(gca,'fontsize',10);
+grid on
+
+subplot(2,2,2)
+plot(t,ht(t))
+xlabel("\lambda")
+ylabel("h(\lambda)")
+title("Cambio de variable t \rightarrow \lambda")
+set(gca,'fontsize',10);
+grid on
+
+subplot(2,2,3)
+plot(-t,ht(t))
+xlabel("t")
+ylabel("h(-\lambda)")
+title("Reversión \lambda \rightarrow -\lambda ")
+set(gca,'fontsize',10);
+grid on
+
+t2=[-3:0.001:5];
+subplot(2,2,4)
+plot(-t2,(-t2<=1).*ht(t2+1))
+xlabel("\lambda")
+ylabel("h(t-\lambda)")
+title("h(t-\lambda)")
+set(gca,'fontsize',10);
+grid on
+
+
+figure
+plot(-t,0.001*cumtrapz((-t<=1).*ht(t+1).*xt(t)))

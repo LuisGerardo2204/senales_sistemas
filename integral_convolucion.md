@@ -45,3 +45,5 @@ El operador convolución de la señal de entrada $x(t)$ y la respuesta al impuls
 	\end{eqnarray}
 ```
 La operación de convolución es conmutativa.
+
+

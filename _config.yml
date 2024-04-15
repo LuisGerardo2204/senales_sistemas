@@ -15,6 +15,7 @@ execute:
                 - Practica1.ipynb
                 - Practica3.ipynb
                 - Practica4.ipynb
+                - Convolucion.ipynb
 
 # Define the name of the latex output file for PDF builds
 latex:

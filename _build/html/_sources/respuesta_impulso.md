@@ -164,7 +164,7 @@ set(gcf,'Visible','on')
 title("Respuesta al impulso")
 xlabel("t [s]")
 ylabel("v_c(t) [V]")
-
+set(gca,'fontsize',20);
 
 ```
 En este caso, tambien se puede obtener una generalización de la respuesta al impulso, ante cambios en alguno de los parámetros del sistema R, L o C dado que la estructura es la misma.
@@ -255,7 +255,7 @@ C1=-1;
 C2=-alpha*C1/betha;
 
 
-h_c=(betha+(alpha^2)/betha)*sin(betha*t).*exp(alpha*t);;
+h_c=(betha+(alpha^2)/betha)*sin(betha*t).*exp(alpha*t);
 plot(t,h_c)
 xlabel("t [s]")
 ylabel("v_c(t) [V]")
