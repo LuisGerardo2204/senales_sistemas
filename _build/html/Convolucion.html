@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Integral de convolución en sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -293,7 +294,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -309,6 +312,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">Calculo de la integral de convolución usando la función conv()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion">Ejemplo de aplicación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -318,7 +333,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="integral-de-convolucion-en-sistemas-lineales">
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-de-convolucion-en-sistemas-lineales">
 <h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion">
@@ -372,7 +387,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b9cd1e4881917012567da5408cd04f24548c314a606cb13fd2fa8d82f6a76f39.png" src="_images/b9cd1e4881917012567da5408cd04f24548c314a606cb13fd2fa8d82f6a76f39.png" />
+<img alt="_images/6ec8dc513430d2fdbb0b7d46e898771f041c5f9db210d409ec860c3122ab187f.png" src="_images/6ec8dc513430d2fdbb0b7d46e898771f041c5f9db210d409ec860c3122ab187f.png" />
 </div>
 </div>
 <ol class="arabic simple" start="2">
@@ -422,7 +437,7 @@ b. En <span class="math notranslate nohighlight">\(h(\tau)\)</span>, sustitúyas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/46e3b422b3e49eccc597d4a319d19b2c1b2ca6e254c79d69a388d05e65e803ac.png" src="_images/46e3b422b3e49eccc597d4a319d19b2c1b2ca6e254c79d69a388d05e65e803ac.png" />
+<img alt="_images/7dbdd433d56b1b52ac16f5d8c0ce6babb93721e8f96a1c75ab9ef8eea1df03ea.png" src="_images/7dbdd433d56b1b52ac16f5d8c0ce6babb93721e8f96a1c75ab9ef8eea1df03ea.png" />
 </div>
 </div>
 <ol class="arabic simple" start="3">
@@ -450,10 +465,396 @@ f(\tau)=x(\tau)h(t-\tau)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/27541f243d38153eb37443ef663c60fb8ff5ba20885fe6a9767807ea3d82fa46.png" src="_images/27541f243d38153eb37443ef663c60fb8ff5ba20885fe6a9767807ea3d82fa46.png" />
+<img alt="_images/a794b223de61ceedf855ad0318ed2d3d6e8eebae35262d5312aa4a65796959cb.png" src="_images/a794b223de61ceedf855ad0318ed2d3d6e8eebae35262d5312aa4a65796959cb.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
+<span class="c">%xt= @(x) sin(11.5*x).*exp(-3*x);</span>
+<span class="n">xt</span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mf">1.63</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">ht</span><span class="p">=@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="mf">261.7287</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mf">239.58</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">52.98</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+
+
+<span class="n">figure</span>
+<span class="s">plot(t,0.0001*cumtrapz((t&gt;=0).*ht(t).*xt(t)))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y(t)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y(t)=\int^{0.3}_{-0.1}x(\tau)h(t-\tau)d\tau&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span>
+</pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e318a14b0c0ed71e0586c62c929772868659fa7767ce94b8b2be4012e39f7a24.png" src="_images/e318a14b0c0ed71e0586c62c929772868659fa7767ce94b8b2be4012e39f7a24.png" />
+</div>
+</div>
+<section id="calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">
+<h2>Calculo de la integral de convolución usando la función conv()<a class="headerlink" href="#calculo-de-la-integral-de-convolucion-usando-la-funcion-conv" title="Permalink to this heading">#</a></h2>
+<p>En MATLAB, es posible calcular la integral de convolución de forma numérica usando una sola instrucción, tomando en consideración algunos aspectos importantes como la necesidad de escalar la salida unsando el incremento del vector de tiempo y el desplazamiento en el tiempo de la señal que resulta de usar esta función nativa de MATLAB. El siguiente código calcula la salida del sistema RLC modelado por la ecuación diferencial <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(9)</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
+<span class="n">xt</span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="mf">1.63</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">ht</span><span class="p">=@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="mf">261.7287</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mf">239.58</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">52.98</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+
+<span class="n">yt</span><span class="p">=</span><span class="mf">0.0001</span><span class="o">*</span><span class="nb">conv</span><span class="p">(</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="n">t_conv</span><span class="p">=</span><span class="mf">0.0001</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">yt</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(t_conv,yt)</span><span class="p">;</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y(t)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y(t)=\int^{0.6}_{-0.2}x(\tau)h(t-\tau)d\tau&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8f1e690dcb626bbd1a8a84d574c810c5e66245bdc98e669f33332243411992b8.png" src="_images/8f1e690dcb626bbd1a8a84d574c810c5e66245bdc98e669f33332243411992b8.png" />
+</div>
+</div>
+<p>Es importante notar como la salida <span class="math notranslate nohighlight">\(y(t)\)</span> calculada considera a un vector de tiempo mas largo, sin embargo este no es un problema que impida o invalide el uso de la función <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
+</section>
+<section id="ejemplo-de-aplicacion">
+<h2>Ejemplo de aplicación<a class="headerlink" href="#ejemplo-de-aplicacion" title="Permalink to this heading">#</a></h2>
+<p>Para ilustrar un poco más a profundidad el concepto de la integral de convolución usaremos el ejemplo propuesto en el libro (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), generaremos las gráficas usnado MATLAB y haremos el cálculo numérico de la salida del sistema usando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
+<section id="ejercicio">
+<h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
+<p>Encuentre la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema cuya respuesta al impulso es:</p>
+<div class="math notranslate nohighlight">
+\[
+h(t)=e^{-t}(u(t)-u(t-2))
+\]</div>
+<p>Cuando la señal de excitación es:</p>
+<div class="math notranslate nohighlight" id="equation-pulso-entrada">
+<span class="eqno">(44)<a class="headerlink" href="#equation-pulso-entrada" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         x(t)= \left\{ \begin{array}{lcc} 1 &amp; si &amp; 0 \leq t &lt; 1\\ -1 &amp; si &amp; 1 \leq t &lt;2\\ 0 &amp; en~otro~caso &amp;   \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>Las gráficas correspondientes a la señal de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> se generan en MATLAB con el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+<span class="n">dt</span><span class="p">=</span><span class="mf">0.0001</span><span class="p">;</span>
+
+<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="n">dt</span><span class="p">:</span><span class="mi">3</span><span class="p">];</span>
+<span class="n">ht</span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">2</span><span class="p">));</span>
+<span class="n">pt</span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">((</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">))</span><span class="o">-</span><span class="p">((</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">));</span>
+
+
+<span class="n">figure</span>
+<span class="s">subplot(1,2,1)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(1,2,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(t)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(t)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/531b8ae5df0387838155081b2819e4bc1f97c97a2ea7ffc9871f66c711f4eebb.png" src="_images/531b8ae5df0387838155081b2819e4bc1f97c97a2ea7ffc9871f66c711f4eebb.png" />
+</div>
+</div>
+<p>El cálculo de la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se desglosa en 6 diferentes casos:</p>
+<p><strong>Caso 1</strong></p>
+<p>Cuando <span class="math notranslate nohighlight">\(t \leq 0\)</span>: en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobbreponen, por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=0
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+
+<span class="s">subplot(3,1,3)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.*</span><span class="n">pt</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/355c5336191d805d6963f4ae218dae61bfb7250342ab25794c6b858d7e20cdc8.png" src="_images/355c5336191d805d6963f4ae218dae61bfb7250342ab25794c6b858d7e20cdc8.png" />
+</div>
+</div>
+<p><strong>Caso 2</strong></p>
+<p>Cuando <span class="math notranslate nohighlight">\(0 &lt; t \leq 1\)</span> :
+$<span class="math notranslate nohighlight">\(
+y(t)=\int^t_0(1)e^{-(t-\tau)}d\tau+\int^t_1(-1)e^{-(t-\tau)}d\tau
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=1-e^{-t}~~si~~0 &lt; t \leq 1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,3)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.*</span><span class="n">pt</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/198461eccbcaee085b22d407d8df02f028e8edb4beefc9d333491082afe11b12.png" src="_images/198461eccbcaee085b22d407d8df02f028e8edb4beefc9d333491082afe11b12.png" />
+</div>
+</div>
+<p><strong>Caso 3</strong></p>
+<p>Cuando <span class="math notranslate nohighlight">\(1 &lt; t \leq 2\)</span> : en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobbreponen, por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=\int^1_0(1)e^{-(t-\tau)}d\tau+\int^t_1(-1)e^{-(t-\tau)}d\tau
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t)=-1+4.4366e^{-t}~~si~~1 &lt; t \leq 2
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,3)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">1.5</span><span class="p">)</span><span class="o">.*</span><span class="n">pt</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e2fefa5f66615a59ebe135123f80ac4a852e7a821f6cdddbfe243fe03b7c8787.png" src="_images/e2fefa5f66615a59ebe135123f80ac4a852e7a821f6cdddbfe243fe03b7c8787.png" />
+</div>
+</div>
+<p><strong>Caso 4</strong></p>
+<p>Cuando <span class="math notranslate nohighlight">\(2 &lt; t \leq 3\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=\int^1_{t-2}(1)e^{-(t-\tau)}d\tau+\int^2_1(-1)e^{-(t-\tau)}d\tau
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t)=-0.1353-1.9525e^{-t}~~si~~2 &lt; t \leq 3
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">2.5</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+
+<span class="s">subplot(3,1,3)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">2.5</span><span class="p">)</span><span class="o">.*</span><span class="n">pt</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c7f8c263a4e476bc7b6c231fdcaf045c76fbc0d0e50fefb3823214fdc32bf9d6.png" src="_images/c7f8c263a4e476bc7b6c231fdcaf045c76fbc0d0e50fefb3823214fdc32bf9d6.png" />
+</div>
+</div>
+<p><strong>Caso 5</strong></p>
+<p>Cuando <span class="math notranslate nohighlight">\(3 &lt; t \leq 4\)</span> :</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=\int^2_{t-2}(-1)e^{-(t-\tau)}d\tau
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t)=0.1353-7.3891e^{-t}~~si~~3 &lt; t \leq 4
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">3.5</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,3)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">3.5</span><span class="p">)</span><span class="o">.*</span><span class="n">pt</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/45d064866789fe6c2a49a36f5b02329ad276df3b59607a0f44b0155591e7d65f.png" src="_images/45d064866789fe6c2a49a36f5b02329ad276df3b59607a0f44b0155591e7d65f.png" />
+</div>
+</div>
+<p><strong>Caso 6</strong></p>
+<p>Cuando <span class="math notranslate nohighlight">\(t&gt;4\)</span>: en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobbreponen, por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+y(t)=0
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,2)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">4.5</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+
+<span class="s">subplot(3,1,3)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">4.5</span><span class="p">)</span><span class="o">.*</span><span class="n">pt</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\tau&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x(\tau)h(t-\tau)&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/93f8ce526e6a923f3de1791276f78bc90c0e1ca35433e16ae313bc46ce0e8c02.png" src="_images/93f8ce526e6a923f3de1791276f78bc90c0e1ca35433e16ae313bc46ce0e8c02.png" />
+</div>
+</div>
+<p>La salida completa se obiente usando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>como se muestra a continuación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">=</span><span class="n">dt</span><span class="o">*</span><span class="nb">conv</span><span class="p">(</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">pt</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="n">ty</span><span class="p">=</span><span class="mf">0.0001</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(ty,y)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y(t)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y(t)=\int^{6}_{-6}x(\tau)h(t-\tau)d\tau&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="n">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9b59cac3d6421687e7f23a6f7ca03b8e1d1a9aba3856bb606596bcd11664a7cf.png" src="_images/9b59cac3d6421687e7f23a6f7ca03b8e1d1a9aba3856bb606596bcd11664a7cf.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -513,6 +914,24 @@ f(\tau)=x(\tau)h(t-\tau)
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">Calculo de la integral de convolución usando la función conv()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejemplo-de-aplicacion">Ejemplo de aplicación</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

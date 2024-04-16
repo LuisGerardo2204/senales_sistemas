@@ -1,65 +1,184 @@
 clear
 close all
 clc
+dt=0.0001;
 
-t=[0:0.001:3];
-xt= @(x) sin(11.5*x).*exp(-3*x);
+t=[-2:dt:3];
+ht= @(x) exp(-x).*((x>=0)-(x>=2));
+pt= @(x) ((x>=0)&(x<1))-((x>=1)&(x<2));
 
-subplot(1,2,1)
-plot(t,xt(t))
-xlabel("t")
-ylabel("x(t)")
-title("Señal original")
+
+figure
+plot(t,ht(t))
+figure
+plot(t,pt(t))
+
+figure
+
+subplot(3,3,1)
+plot(t,pt(t))
+xlabel("\tau")
+ylabel("x(\tau)")
+title("x(\tau)")
 set(gca,'fontsize',10);
-grid on
+grid
 
-subplot(1,2,2)
-plot(t,xt(t))
-xlabel("\lambda")
-ylabel("x(\lambda)")
-title("Cambio de variable t \rightarrow \lambda")
+subplot(3,3,4)
+plot(-t,ht(t-0.2))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
 set(gca,'fontsize',10);
-grid on
+grid
+
+
+subplot(3,3,7)
+plot(-t,ht(t-0.5).*pt(-t))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+
+subplot(3,3,2)
+plot(t,pt(t))
+xlabel("\tau")
+ylabel("x(\tau)")
+title("x(\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,5)
+plot(-t,ht(t+0.5))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,8)
+plot(-t,ht(t+0.5).*pt(-t))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+
+
+subplot(3,3,3)
+plot(t,pt(t))
+xlabel("\tau")
+ylabel("x(\tau)")
+title("x(\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,6)
+plot(-t,ht(t+1.5))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,9)
+plot(-t,ht(t+1.5).*pt(-t))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
 
 
 figure
 
-t=[0:0.001:3];
-ht= @(x) 3.5*exp(-2.1*x);
-
-subplot(2,2,1)
-plot(t,ht(t))
-xlabel("t")
-ylabel("h(t)")
-title("Señal original")
+subplot(3,3,1)
+plot(t,pt(t))
+xlabel("\tau")
+ylabel("x(\tau)")
+title("x(\tau)")
 set(gca,'fontsize',10);
-grid on
+grid
 
-subplot(2,2,2)
-plot(t,ht(t))
-xlabel("\lambda")
-ylabel("h(\lambda)")
-title("Cambio de variable t \rightarrow \lambda")
+subplot(3,3,4)
+plot(-t,ht(t-0.2))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
 set(gca,'fontsize',10);
-grid on
+grid
 
-subplot(2,2,3)
-plot(-t,ht(t))
-xlabel("t")
-ylabel("h(-\lambda)")
-title("Reversión \lambda \rightarrow -\lambda ")
-set(gca,'fontsize',10);
-grid on
 
-t2=[-3:0.001:5];
-subplot(2,2,4)
-plot(-t2,(-t2<=1).*ht(t2+1))
-xlabel("\lambda")
-ylabel("h(t-\lambda)")
-title("h(t-\lambda)")
+subplot(3,3,7)
+plot(-t,ht(t-0.5).*pt(-t))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
 set(gca,'fontsize',10);
-grid on
+grid
+
+
+subplot(3,3,2)
+plot(t,pt(t))
+xlabel("\tau")
+ylabel("x(\tau)")
+title("x(\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,5)
+plot(-t,ht(t+0.5))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,8)
+plot(-t,ht(t+0.5).*pt(-t))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+
+
+subplot(3,3,3)
+plot(t,pt(t))
+xlabel("\tau")
+ylabel("x(\tau)")
+title("x(\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,6)
+plot(-t,ht(t+1.5))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+subplot(3,3,9)
+plot(-t,ht(t+1.5).*pt(-t))
+xlabel("\tau")
+ylabel("h(t-\tau)")
+title("h(t-\tau)")
+set(gca,'fontsize',10);
+grid
+
+
+
+
+y=dt*conv(ht(t),pt(t));
+ty=0.0001*(1:length(y))+2*min(t);
+
+
 
 
 figure
-plot(-t,0.001*cumtrapz((-t<=1).*ht(t+1).*xt(t)))
+plot(ty,y)
+grid

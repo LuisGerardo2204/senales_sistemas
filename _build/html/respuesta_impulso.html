@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Respuesta al impulso de sistemas de tiempo continuo. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -329,7 +330,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="respuesta-al-impulso-de-sistemas-de-tiempo-continuo">
+  <section class="tex2jax_ignore mathjax_ignore" id="respuesta-al-impulso-de-sistemas-de-tiempo-continuo">
 <h1>Respuesta al impulso de sistemas de tiempo continuo.<a class="headerlink" href="#respuesta-al-impulso-de-sistemas-de-tiempo-continuo" title="Permalink to this heading">#</a></h1>
 <p>Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se puede utilizar como el modelo matemático o la respresentación de un sistema dinámico. Existe una representación alternativa que resulta muy útil para el modelado de los sistemas es llamada <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">respuesta</span> <span class="pre">al</span> <span class="pre">impulso</span> <span class="pre">del</span> <span class="pre">sistema</span></code>(<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>, <span id="id2">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La función umpulso unitario, conocida como función Delta de Dirac se define matemáticamente como:</p>
 <div class="math notranslate nohighlight" id="equation-impulso">
@@ -337,7 +338,7 @@ document.write(`
          \delta(t)= \left\{ \begin{array}{lcc} 1 &amp; si &amp; 0 = t \\ \\ 0 &amp; si &amp;  t \neq 0   \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Cuando la función <span class="math notranslate nohighlight">\(\delta(t)\)</span> se usa como una función estímulo para un sistema, a la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se le denomina respuesta al impulso del sistema y se usa la notación <span class="math notranslate nohighlight">\(h(t)\)</span> para distinguirla de las posibles salidas adel sistema ante entradas o estímulos arbitrarios <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
-<div class="section" id="determinacion-de-la-respuesta-al-impulso-de-un-sistema">
+<section id="determinacion-de-la-respuesta-al-impulso-de-un-sistema">
 <h2>Determinación de la respuesta al impulso de un sistema<a class="headerlink" href="#determinacion-de-la-respuesta-al-impulso-de-un-sistema" title="Permalink to this heading">#</a></h2>
 <p>Como hemos observado en la Práctica 3, es posible determinar la salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema, al resolver la ecuación diferencial que modela al sistema. Esta ecuación puede ser homogénea o forzada, con las soluciones candidatas condensadas en
 <a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y <a class="reference internal" href="Practica3.html#tabla-forzada"><span class="std std-numref">Tabla 3</span></a>. Entre las funciones candidatas mostradas en tales tablas, no se presenta en ningún caso la función impulso unitario definida en la ecuación <a class="reference internal" href="#equation-impulso">(25)</a>, sin embargo se cumple que:</p>
@@ -439,12 +440,12 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1=0\Longrightarrow C_1=-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cbdfc141baf5c4fbf0d4ae3093b8c2dd7726662078af1033f62521ed5a88c8f3.png" src="_images/cbdfc141baf5c4fbf0d4ae3093b8c2dd7726662078af1033f62521ed5a88c8f3.png" />
+<img alt="_images/b531a6bf7edc9fb9934c8f2ae8a636a138dadfbc80d1d030efb438931cfb9536.png" src="_images/b531a6bf7edc9fb9934c8f2ae8a636a138dadfbc80d1d030efb438931cfb9536.png" />
 </div>
 </div>
 <p>En este caso, tambien se puede obtener una generalización de la respuesta al impulso, ante cambios en alguno de los parámetros del sistema R, L o C dado que la estructura es la misma.</p>
-</div>
-<div class="section" id="respuesta-al-impulso-con-diferentes-parametros">
+</section>
+<section id="respuesta-al-impulso-con-diferentes-parametros">
 <h2>Respuesta al impulso con diferentes parámetros.<a class="headerlink" href="#respuesta-al-impulso-con-diferentes-parametros" title="Permalink to this heading">#</a></h2>
 <p>Es posible encontrar diferentes respuestas del sistema usando una estructura general para el caso particular cuando la función de estímulo es una constante. Para el caso particular del circuito RLC serie, en el que la respuesta forzada completa obedece la estructura:</p>
 <div class="math notranslate nohighlight" id="equation-sol-comprlc-unitario">
@@ -541,11 +542,11 @@ r_{i}=\alpha \pm \beta i
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/49feaa193580fe792b51edd2f7bc0d6f603276b595c48a872ff7ee8171c32a7e.png" src="_images/49feaa193580fe792b51edd2f7bc0d6f603276b595c48a872ff7ee8171c32a7e.png" />
+<img alt="_images/68f4da6f8387824887343759323361f6f417cf9381fbb22355bd9e4de0d58bdf.png" src="_images/68f4da6f8387824887343759323361f6f417cf9381fbb22355bd9e4de0d58bdf.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
