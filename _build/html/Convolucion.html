@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Integral de convolución en sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -69,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Convolucion';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="Práctica 4: Convolución en sistemas discretos." href="Practica4.html" />
     <link rel="prev" title="Respuesta al impulso de sistemas de tiempo continuo." href="respuesta_impulso.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -169,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral de convolución en sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Convolución en sistemas discretos.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -332,7 +334,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="integral-de-convolucion-en-sistemas-lineales">
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-de-convolucion-en-sistemas-lineales">
 <h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion">
@@ -386,7 +388,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8b40615fe69ccf65e022bc5a0eaca9c3918d5972cb7712aecc332f230c1e1f1.png" src="_images/a8b40615fe69ccf65e022bc5a0eaca9c3918d5972cb7712aecc332f230c1e1f1.png" />
+<img alt="_images/c8c8db7c7f3dc11d7f2772bf73747fedf4b3493fcfbcad62c5164318c79daa44.png" src="_images/c8c8db7c7f3dc11d7f2772bf73747fedf4b3493fcfbcad62c5164318c79daa44.png" />
 </div>
 </div>
 <ol class="arabic simple" start="2">
@@ -436,7 +438,7 @@ b. En <span class="math notranslate nohighlight">\(h(\tau)\)</span>, sustitúyas
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/815b4b90a3de6b48caaf3ef04d85b79af920ae221423533d80f964ab5b682ea9.png" src="_images/815b4b90a3de6b48caaf3ef04d85b79af920ae221423533d80f964ab5b682ea9.png" />
+<img alt="_images/cda46c8588a297cf5a2f2f507b5e9215b96705fbfd0a8fca069dc02d2eb7f991.png" src="_images/cda46c8588a297cf5a2f2f507b5e9215b96705fbfd0a8fca069dc02d2eb7f991.png" />
 </div>
 </div>
 <ol class="arabic simple" start="3">
@@ -464,7 +466,7 @@ f(\tau)=x(\tau)h(t-\tau)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76b0684618c03f0c9f3fde67ce20c025cf6d015ec0fb527d829d682869c5a02e.png" src="_images/76b0684618c03f0c9f3fde67ce20c025cf6d015ec0fb527d829d682869c5a02e.png" />
+<img alt="_images/f533fa5d97e7027f396db4d321f19daf377adf547e2202adc8a077b53f7ec32f.png" src="_images/f533fa5d97e7027f396db4d321f19daf377adf547e2202adc8a077b53f7ec32f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -490,10 +492,10 @@ f(\tau)=x(\tau)h(t-\tau)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d045ea055a1bbe73cee7b47ca11648ecc76bf1491052b2685e7f9ed85f6d4a1d.png" src="_images/d045ea055a1bbe73cee7b47ca11648ecc76bf1491052b2685e7f9ed85f6d4a1d.png" />
+<img alt="_images/4833ec54f9f9ffe076ea8db59c9fa8f22297fce3c251d627a93c98b1eac106c9.png" src="_images/4833ec54f9f9ffe076ea8db59c9fa8f22297fce3c251d627a93c98b1eac106c9.png" />
 </div>
 </div>
-<div class="section" id="calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">
+<section id="calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">
 <h2>Calculo de la integral de convolución usando la función conv()<a class="headerlink" href="#calculo-de-la-integral-de-convolucion-usando-la-funcion-conv" title="Permalink to this heading">#</a></h2>
 <p>En MATLAB, es posible calcular la integral de convolución de forma numérica usando una sola instrucción, tomando en consideración algunos aspectos importantes como la necesidad de escalar la salida unsando el incremento del vector de tiempo y el desplazamiento en el tiempo de la señal que resulta de usar esta función nativa de MATLAB. El siguiente código calcula la salida del sistema RLC modelado por la ecuación diferencial <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(9)</a>.</p>
 <div class="cell docutils container">
@@ -519,15 +521,15 @@ f(\tau)=x(\tau)h(t-\tau)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7f80934fa4cf06e991fbfab5b8c2ccc5bdbe66b038a6698ade38cd23bdce0259.png" src="_images/7f80934fa4cf06e991fbfab5b8c2ccc5bdbe66b038a6698ade38cd23bdce0259.png" />
+<img alt="_images/6ea922be15ed8321e352e5ba7208ae3064afa2e3d255787e05b1d42ab8d46f31.png" src="_images/6ea922be15ed8321e352e5ba7208ae3064afa2e3d255787e05b1d42ab8d46f31.png" />
 </div>
 </div>
 <p>Es importante notar como la salida <span class="math notranslate nohighlight">\(y(t)\)</span> calculada considera a un vector de tiempo mas largo, sin embargo este no es un problema que impida o invalide el uso de la función <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
-</div>
-<div class="section" id="ejemplo-de-aplicacion">
+</section>
+<section id="ejemplo-de-aplicacion">
 <h2>Ejemplo de aplicación<a class="headerlink" href="#ejemplo-de-aplicacion" title="Permalink to this heading">#</a></h2>
 <p>Para ilustrar un poco más a profundidad el concepto de la integral de convolución usaremos el ejemplo propuesto en el libro (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), generaremos las gráficas usnado MATLAB y haremos el cálculo numérico de la salida del sistema usando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
-<div class="section" id="ejercicio">
+<section id="ejercicio">
 <h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
 <p>Encuentre la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema cuya respuesta al impulso es:</p>
 <div class="math notranslate nohighlight">
@@ -572,7 +574,7 @@ h(t)=e^{-t}(u(t)-u(t-2))
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0e3ce837a6c82763fae251ede4a07824f94ccc258f9756497f15f4af33c7a841.png" src="_images/0e3ce837a6c82763fae251ede4a07824f94ccc258f9756497f15f4af33c7a841.png" />
+<img alt="_images/a0ba0e1536039ffd578b1c6316e38255622f2817437c8a9a8038676dad10f7f8.png" src="_images/a0ba0e1536039ffd578b1c6316e38255622f2817437c8a9a8038676dad10f7f8.png" />
 </div>
 </div>
 <p>El cálculo de la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se desglosa en 6 diferentes casos:</p>
@@ -614,7 +616,7 @@ y(t)=0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5b03d096979bf6919479d8a69c1679bb13c69cc63aa881f4a1985611140261b9.png" src="_images/5b03d096979bf6919479d8a69c1679bb13c69cc63aa881f4a1985611140261b9.png" />
+<img alt="_images/541db6a62ba260bf29c72d9cec82d4589e443ae71144e8e50df30e383f9a7ec4.png" src="_images/541db6a62ba260bf29c72d9cec82d4589e443ae71144e8e50df30e383f9a7ec4.png" />
 </div>
 </div>
 <p><strong>Caso 2</strong></p>
@@ -659,7 +661,7 @@ y(t)=1-e^{-t}~~si~~0 &lt; t \leq 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/513430f4898af911ed0060fef63509b89f244057a0b84b14c47ae3d568b1dd5c.png" src="_images/513430f4898af911ed0060fef63509b89f244057a0b84b14c47ae3d568b1dd5c.png" />
+<img alt="_images/0f9c4c36731342c84b2afbfac6c0ae326bd5cd5c1db054805c9372ed96e9464b.png" src="_images/0f9c4c36731342c84b2afbfac6c0ae326bd5cd5c1db054805c9372ed96e9464b.png" />
 </div>
 </div>
 <p><strong>Caso 3</strong></p>
@@ -701,7 +703,7 @@ y(t)=-1+4.4366e^{-t}~~si~~1 &lt; t \leq 2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8a11113fda2aa27e9ae304091a629da3ea149fb656277912fe768fbf96c4dd30.png" src="_images/8a11113fda2aa27e9ae304091a629da3ea149fb656277912fe768fbf96c4dd30.png" />
+<img alt="_images/fd358ef292076f32d935a745d83870a339e11317654061a1139b7d45621717cf.png" src="_images/fd358ef292076f32d935a745d83870a339e11317654061a1139b7d45621717cf.png" />
 </div>
 </div>
 <p><strong>Caso 4</strong></p>
@@ -746,7 +748,7 @@ y(t)=-0.1353-1.9525e^{-t}~~si~~2 &lt; t \leq 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/38734aa19266eafd3e43702491c93c2cfc1fbbf737173fe07e8a2beb152f5033.png" src="_images/38734aa19266eafd3e43702491c93c2cfc1fbbf737173fe07e8a2beb152f5033.png" />
+<img alt="_images/f21e4ea87a6b7ab5a81f61932259c13a7415ffe0c8f71bfe1375d5104b318fff.png" src="_images/f21e4ea87a6b7ab5a81f61932259c13a7415ffe0c8f71bfe1375d5104b318fff.png" />
 </div>
 </div>
 <p><strong>Caso 5</strong></p>
@@ -790,7 +792,7 @@ y(t)=0.1353-7.3891e^{-t}~~si~~3 &lt; t \leq 4
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/30691fc037cdc31f2c8ac61dde075fcb7b527e651ddd2a8095c84e9569e7ffd0.png" src="_images/30691fc037cdc31f2c8ac61dde075fcb7b527e651ddd2a8095c84e9569e7ffd0.png" />
+<img alt="_images/43e9c7231bd1939f08a204b020b76f329378780f56dab5a3820bc41255161bc0.png" src="_images/43e9c7231bd1939f08a204b020b76f329378780f56dab5a3820bc41255161bc0.png" />
 </div>
 </div>
 <p><strong>Caso 6</strong></p>
@@ -830,7 +832,7 @@ y(t)=0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/842db645143cdb3867abe98a2e0a19efeee056a13830140aafc8db569011ff47.png" src="_images/842db645143cdb3867abe98a2e0a19efeee056a13830140aafc8db569011ff47.png" />
+<img alt="_images/13c76cada8703910f56c7f61fcf2e99fe382f3a6237591a341ac1fa86bd18e2a.png" src="_images/13c76cada8703910f56c7f61fcf2e99fe382f3a6237591a341ac1fa86bd18e2a.png" />
 </div>
 </div>
 <p>La señal de salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span> se obtiene combinando las expresiones anteriores:</p>
@@ -852,7 +854,7 @@ y(t)=0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d6f32cbd368c0207e17aeac6e84d65cc1260cf12c24faeb207f14b9b26d24196.png" src="_images/d6f32cbd368c0207e17aeac6e84d65cc1260cf12c24faeb207f14b9b26d24196.png" />
+<img alt="_images/689ef33a3513f010abe6e336948e92f9021c8338717097457cb2232128b8d8b0.png" src="_images/689ef33a3513f010abe6e336948e92f9021c8338717097457cb2232128b8d8b0.png" />
 </div>
 </div>
 <p>Alternativamente, la salida completa se puede obtener usando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>, como se muestra a continuación:</p>
@@ -872,12 +874,40 @@ y(t)=0
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6b5e3ca71050bbe71f82094a069e8ceb0e374832df643330b512bd0477a3bbce.png" src="_images/6b5e3ca71050bbe71f82094a069e8ceb0e374832df643330b512bd0477a3bbce.png" />
+<img alt="_images/baafa412a88e78b33b738431ecbf3c23b33b9224f6155b06633cf0b0be8c182c.png" src="_images/baafa412a88e78b33b738431ecbf3c23b33b9224f6155b06633cf0b0be8c182c.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">dt</span><span class="p">=</span><span class="mf">0.001</span><span class="p">;</span>
+<span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="n">dt</span><span class="p">:</span><span class="mi">4</span><span class="o">*</span><span class="mi">240</span><span class="p">];</span>
+
+<span class="c">%ht= @(x) (x&gt;=0).*(261.7287*sin(239.58*x)).*exp(-52.98*x);</span>
+<span class="n">ht</span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">.*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">52.98</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<span class="n">swt</span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mf">0.25</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">y</span><span class="p">=</span><span class="n">dt</span><span class="o">*</span><span class="nb">conv</span><span class="p">(</span><span class="n">swt</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">ht</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="n">ty</span><span class="p">=</span><span class="n">dt</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(ty,y)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y(t)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y(t)=\int^{1000}_{0}x(\tau)h(t-\tau)d\tau&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="nb">xlim</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)])</span>
+<span class="nb">grid</span>
+</pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/e586c40b057a1d788bcf08a1837d5b53cd4566c5515ad3187fbd053dc6405897.png" src="_images/e586c40b057a1d788bcf08a1837d5b53cd4566c5515ad3187fbd053dc6405897.png" />
 </div>
+</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -920,11 +950,11 @@ y(t)=0
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Practica4.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Práctica 4: Convolución en sistemas discretos.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
