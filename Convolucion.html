@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integral de convolución en sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -171,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral de convolución en sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Convolución en sistemas discretos.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformada_de_Laplace.html">La transformada de Laplace aplicada al análisis de sistemas.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -334,7 +334,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integral-de-convolucion-en-sistemas-lineales">
+  <div class="tex2jax_ignore mathjax_ignore section" id="integral-de-convolucion-en-sistemas-lineales">
 <h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion">
@@ -495,7 +495,7 @@ f(\tau)=x(\tau)h(t-\tau)
 <img alt="_images/4833ec54f9f9ffe076ea8db59c9fa8f22297fce3c251d627a93c98b1eac106c9.png" src="_images/4833ec54f9f9ffe076ea8db59c9fa8f22297fce3c251d627a93c98b1eac106c9.png" />
 </div>
 </div>
-<section id="calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">
+<div class="section" id="calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">
 <h2>Calculo de la integral de convolución usando la función conv()<a class="headerlink" href="#calculo-de-la-integral-de-convolucion-usando-la-funcion-conv" title="Permalink to this heading">#</a></h2>
 <p>En MATLAB, es posible calcular la integral de convolución de forma numérica usando una sola instrucción, tomando en consideración algunos aspectos importantes como la necesidad de escalar la salida unsando el incremento del vector de tiempo y el desplazamiento en el tiempo de la señal que resulta de usar esta función nativa de MATLAB. El siguiente código calcula la salida del sistema RLC modelado por la ecuación diferencial <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(9)</a>.</p>
 <div class="cell docutils container">
@@ -525,11 +525,11 @@ f(\tau)=x(\tau)h(t-\tau)
 </div>
 </div>
 <p>Es importante notar como la salida <span class="math notranslate nohighlight">\(y(t)\)</span> calculada considera a un vector de tiempo mas largo, sin embargo este no es un problema que impida o invalide el uso de la función <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
-</section>
-<section id="ejemplo-de-aplicacion">
+</div>
+<div class="section" id="ejemplo-de-aplicacion">
 <h2>Ejemplo de aplicación<a class="headerlink" href="#ejemplo-de-aplicacion" title="Permalink to this heading">#</a></h2>
 <p>Para ilustrar un poco más a profundidad el concepto de la integral de convolución usaremos el ejemplo propuesto en el libro (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), generaremos las gráficas usnado MATLAB y haremos el cálculo numérico de la salida del sistema usando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
-<section id="ejercicio">
+<div class="section" id="ejercicio">
 <h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
 <p>Encuentre la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema cuya respuesta al impulso es:</p>
 <div class="math notranslate nohighlight">
@@ -905,9 +905,9 @@ y(t)=0
 <img alt="_images/e586c40b057a1d788bcf08a1837d5b53cd4566c5515ad3187fbd053dc6405897.png" src="_images/e586c40b057a1d788bcf08a1837d5b53cd4566c5515ad3187fbd053dc6405897.png" />
 </div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
