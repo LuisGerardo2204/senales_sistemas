@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 4: Convolución en sistemas discretos. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica4';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="La transformada de Laplace aplicada al análisis de sistemas." href="transformada_de_Laplace.html" />
     <link rel="prev" title="Integral de convolución en sistemas lineales." href="Convolucion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -171,6 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Convolucion.html">Integral de convolución en sistemas lineales.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 4: Convolución en sistemas discretos.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformada_de_Laplace.html">La transformada de Laplace aplicada al análisis de sistemas.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -330,7 +330,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-4-convolucion-en-sistemas-discretos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-4-convolucion-en-sistemas-discretos">
 <h1>Práctica 4: Convolución en sistemas discretos.<a class="headerlink" href="#practica-4-convolucion-en-sistemas-discretos" title="Permalink to this heading">#</a></h1>
 <p>La operación de convolución en los sistemas de tiempo discreto se basa en la descomposición en términos de la función impulso de una señal de tiempo discreto (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La operación de convolución para sistemas de tiempo discreto se define como:</p>
 <div class="math notranslate nohighlight" id="equation-conv-discreta">
@@ -341,13 +341,13 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 <div class="admonition-convolucion-de-sistemas-de-tiempo-discreto admonition">
 <p class="admonition-title">Convolución de sistemas de tiempo discreto:</p>
 <p>El operador convolución de la señal de entrada <span class="math notranslate nohighlight">\(x[n]\)</span> y la respuesta al impulso de un sistema de tiempo discreto <span class="math notranslate nohighlight">\(h[n]\)</span> proporciona la salida <span class="math notranslate nohighlight">\(y[n]\)</span> del sistema como:</p>
-<div class="math notranslate nohighlight" id="equation-convolucion-conmuta">
-<span class="eqno">(46)<a class="headerlink" href="#equation-convolucion-conmuta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<div class="math notranslate nohighlight" id="equation-convolucion-conmuta-1">
+<span class="eqno">(46)<a class="headerlink" href="#equation-convolucion-conmuta-1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
   y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty}h[k]x[n-k]\\
   y[n]=h[n]*x[n]=\sum^{\infty}_{k=-\infty}x[k]h[n-k]\\
 	\end{eqnarray}\end{split}\]</div>
 </div>
-<section id="filtrado-de-senales">
+<div class="section" id="filtrado-de-senales">
 <h2>Filtrado de señales<a class="headerlink" href="#filtrado-de-senales" title="Permalink to this heading">#</a></h2>
 <p>Una de las aplicaciónes de la convolución es el filtrado de señales. Hemos calculado la respuesta al impulso de los sistemas RLC y masa-resorte-amortiguador. Estos dos sistemas son considerados filtros pasa bajas, dado que presentan una respuesta annte una señal tipo barrido frecuencial que tiene un máximo en la frecuencia natural o resonancia. El circuito RC es considerado un filtro de primer orden y permite en aplicaciones de electrónica filtrar altas frecuencias e incluso disminuir el ruido.</p>
 <p>El siguiente ejemplo muestra el uso de un sistema o circuito RC como un filtro pasa bajas. Suponga que se desea retirar el ruido de una señal que se obtiene de un micrófono dinámico, el ruido alcanza los 15 milivolts mientras que la señal del micrófono alcanza máximo 10 milivolts. Si el ruido es de alta frecuencia, un circuito RC permitirá eliminarlo de la señal original.</p>
@@ -440,8 +440,8 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 <img alt="_images/aa6a64f670da988d60a3c871e1c4bdd02ba66fe6e08225e7149903677c9ed9fb.png" src="_images/aa6a64f670da988d60a3c871e1c4bdd02ba66fe6e08225e7149903677c9ed9fb.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -484,11 +484,11 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="transformada_de_Laplace.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">La transformada de Laplace aplicada al análisis de sistemas.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
