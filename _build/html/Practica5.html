@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 5: Solución de ecuaciones diferenciales ordinarias lineales usando la transformada de Laplace. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -174,6 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 5: Solución de ecuaciones diferenciales ordinarias lineales usando la transformada de Laplace.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conv_transformada.html">Transformada de Laplace aplicada al análisis de sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Propiedades_transf.html">Propiedades de la transformada de Laplace.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -333,7 +335,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-5-solucion-de-ecuaciones-diferenciales-ordinarias-lineales-usando-la-transformada-de-laplace">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-5-solucion-de-ecuaciones-diferenciales-ordinarias-lineales-usando-la-transformada-de-laplace">
 <h1>Práctica 5: Solución de ecuaciones diferenciales ordinarias lineales usando la transformada de Laplace.<a class="headerlink" href="#practica-5-solucion-de-ecuaciones-diferenciales-ordinarias-lineales-usando-la-transformada-de-laplace" title="Permalink to this heading">#</a></h1>
 <p>En la sección anterior, se encontró la solución a una ecuación diferencial de segundo orden usando la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> para encontrar la similitud de la función <span class="math notranslate nohighlight">\(X(s)\)</span> del caso bajo análisis con algún par de transformadas conocido. En esta práctica usaremos la herramienta MATLAB para enncotrar la solución de ecuaciones diferenciales, aplicando la transformada de Laplace.</p>
 <p>Retomaremos el caso de la ecuación difrencial ordinaria, con condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.01\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0.5\)</span>:</p>
@@ -515,7 +517,7 @@ x(t)=e^{Re(p)t} \left ( 2Re(r)cos(Im(p)t) + 2Im(r)sen(Im(p)t)\right )
 x(t)=e^{-0.0174t} \left ( 2(0.0125)cos(10t) + 2(0)sen(10t)\right )=0.025cos(10t)e^{-0.0174t}
 \]</div>
 <p>El cual es un resultado muy similar al obtenido en la práctica 3.</p>
-<div class="section" id="solucion-de-la-ecuacion-diferencial-no-homogenea">
+<section id="solucion-de-la-ecuacion-diferencial-no-homogenea">
 <h2>Solución de la ecuación diferencial no homogénea<a class="headerlink" href="#solucion-de-la-ecuacion-diferencial-no-homogenea" title="Permalink to this heading">#</a></h2>
 <p>Retomando el caso de estudio del circuito RLC, se puede ejemplificar el uso del método de la descomposición en fracciones parciales con MATLAB para la solución de ecuaciones diferenciales aplicando la transformada de Laplace.</p>
 <p>Para el caso del circuito RLC de la práctica 3, la ecuación diferecial cuando el voltaje de entrada es <span class="math notranslate nohighlight">\(1.63u(t)\)</span> tiene la siguiete forma:</p>
@@ -607,8 +609,8 @@ v_c(t)=1.63-e^{-54.18t} \left ( 1.63cos(239.31t)-0.3690sen(239.31t)\right )
 <img alt="_images/2fa50ff5e3d79564a608152ba98d05abf565f0f138ba7e803a4f8e5e1614b27c.png" src="_images/2fa50ff5e3d79564a608152ba98d05abf565f0f138ba7e803a4f8e5e1614b27c.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

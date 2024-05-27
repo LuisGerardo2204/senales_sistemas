@@ -50,7 +50,7 @@ ylabel('j\omega');
 zlabel('|X(s)|');
 % Se especifica un ángulo de mejor visualización. 
 view(gca,[23.5,38]);
-%set(gca,'fontsize',20);
+set(gca,'fontsize',20);
 %set(gca,'fontname','Times New Roman','FontWeight','Bold'); 
 ```
 Como es claro en la gráfica anterior, la variable compleja $s$ tiene un caso particular cuando la parte real de $s$ es identicamente cero, es ese caso, la transformada de Laplace se convierte en la transformada de Fourier. Algunas propiedades interesantes de la transformada de Laplace se presentan a continuación:
@@ -148,4 +148,35 @@ Por ejemplo para la transformada de la función $\frac{d\left (3cos(4\pi t)\righ
 $$
 \mathscr{L} \left \{ \frac{d\left (3cos(4\pi t)\right )}{dt} \right \} = s\mathscr{L} \left \{ 3cos(4\pi t)\right \}=\frac{3s^2}{s^2+16\pi^2}
 $$
+
+## Diferenciación en el dominio de $s$
+
+Dada una función $x(t)$, la operación producto de $x(t)$ con la variable independiente $t$, implica diferenciación o derivada en el dominio de $s$ de su transformada $X(s)$.
+
+```{admonition} Propiedad de diferenciación en el dominio de $s$:
+
+```{math}
+:label: diff_laplace_s
+
+\mathscr{L} \left \{ tx(t) \right\} \xrightarrow{\mathscr{L}}  -\frac{dX(s)}{ds}
+````
+Por ejemplo, para la función $x(t)=te^{-3t}$, se usa la propiedad de diferenciación en el dominio del tiempo como:
+
+
+$$
+\mathscr{L} \left \{ te^{-3t} \right \} = -\frac{\mathscr{L} \left \{ e^{-3t} \right\}}{ds} =\frac{d \left (  \frac{1}{s+3} \right ) }{ds}=\frac{1}{(s+3)^2}  
+$$
+
+
+## Propiedad de integración 
+
+Dada la integral de una función $x(t)$, la transformada de la integral, al ser la operación inversa de la diferenciación se expresa como:
+
+```{admonition} Propiedad de integración:
+
+```{math}
+:label: diff_laplace_int
+
+\mathscr{L} \left \{ \int^{t}_{-\infty}x(\tau)d\tau \right\} \xrightarrow{\mathscr{L}}  \frac{1}{s}X(s)
+````
 

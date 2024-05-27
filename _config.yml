@@ -18,6 +18,7 @@ execute:
                 - Convolucion.ipynb
                 - Practica5.ipynb
                 - conv_transformada.ipynb
+                - funcion_de_transferencia.ipynb
                 
 # Define the name of the latex output file for PDF builds
 latex:
