@@ -19,6 +19,8 @@ execute:
                 - Practica5.ipynb
                 - conv_transformada.ipynb
                 - funcion_de_transferencia.ipynb
+                - Bode.ipynb
+
                 
 # Define the name of the latex output file for PDF builds
 latex:
