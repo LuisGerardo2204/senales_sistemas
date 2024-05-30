@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Propiedades de la transformada de Laplace. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -341,7 +342,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="propiedades-de-la-transformada-de-laplace">
+  <section class="tex2jax_ignore mathjax_ignore" id="propiedades-de-la-transformada-de-laplace">
 <h1>Propiedades de la transformada de Laplace.<a class="headerlink" href="#propiedades-de-la-transformada-de-laplace" title="Permalink to this heading">#</a></h1>
 <p>La transformada de Laplace, definida  en la ecuación <a class="reference internal" href="transformada_de_Laplace.html#equation-transformada-def">(47)</a> genra una superficie en eñ espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para <span class="math notranslate nohighlight">\({-\infty}&lt;t&lt;{\infty}\)</span>.</p>
 <div class="cell tag_remove-stderr docutils container">
@@ -380,11 +381,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dc39c5960ff2c60f24ea867273610accd9e51864558bda27275ab85e33eac5eb.png" src="_images/dc39c5960ff2c60f24ea867273610accd9e51864558bda27275ab85e33eac5eb.png" />
+<img alt="_images/6d438ee6fb1c4ad3fee0c4cf76cd3018b534b46da37932e357ad3ed1c206c85c.png" src="_images/6d438ee6fb1c4ad3fee0c4cf76cd3018b534b46da37932e357ad3ed1c206c85c.png" />
 </div>
 </div>
 <p>Como es claro en la gráfica anterior, la variable compleja <span class="math notranslate nohighlight">\(s\)</span> tiene un caso particular cuando la parte real de <span class="math notranslate nohighlight">\(s\)</span> es identicamente cero, es ese caso, la transformada de Laplace se convierte en la transformada de Fourier. Algunas propiedades interesantes de la transformada de Laplace se presentan a continuación:</p>
-<div class="section" id="linealidad-de-la-transformada-de-laplace">
+<section id="linealidad-de-la-transformada-de-laplace">
 <h2>Linealidad de la Transformada de Laplace<a class="headerlink" href="#linealidad-de-la-transformada-de-laplace" title="Permalink to this heading">#</a></h2>
 <p>La transformada de Laplace es un operador lineal, de ahí que cobre una importancia particular en la ingeniería. El principio de superposición aplica a la transormada de Laplace y, por ende sustenta la porpiedad de linealidad del operador transformadad como se indica a continuación:</p>
 <div class="admonition-principio-de-linealidad-de-la-transformada-de-laplace admonition">
@@ -401,8 +402,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 &amp;X(s)=\frac{2.8s}{s^2+4}+\frac{5.4}{s+3}+\frac{87.5}{s^2+25}
 \end{eqnarray}
 \end{split}\]</div>
-</div>
-<div class="section" id="propiedad-de-desplazamiento-en-el-tiempo">
+</section>
+<section id="propiedad-de-desplazamiento-en-el-tiempo">
 <h2>Propiedad de desplazamiento en el tiempo<a class="headerlink" href="#propiedad-de-desplazamiento-en-el-tiempo" title="Permalink to this heading">#</a></h2>
 <p>Un desplazamiento en el tiempo, aplicado a una función <span class="math notranslate nohighlight">\(x(t)\)</span> en el dominio del tiempo, por medio de una constante arbitraria <span class="math notranslate nohighlight">\(\tau\)</span>, corresponde al producto de la transformada de Laplace de <span class="math notranslate nohighlight">\(x(t)\)</span> con el factor <span class="math notranslate nohighlight">\(e^{-\tao s}\)</span>:</p>
 <div class="admonition-propiedad-de-desplazamiento-en-el-tiempo-de-la-transformada-de-laplace admonition">
@@ -415,8 +416,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 \[
 \mathscr{L} \left \{ 0.01cos(2(t-3)) \right\} = \frac{se^{-3\tau s}}{s^2+4} 
 \]</div>
-</div>
-<div class="section" id="propiedad-de-desplazamiento-en-el-dominio-de-s">
+</section>
+<section id="propiedad-de-desplazamiento-en-el-dominio-de-s">
 <h2>Propiedad de desplazamiento en el dominio de <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#propiedad-de-desplazamiento-en-el-dominio-de-s" title="Permalink to this heading">#</a></h2>
 <p>Dada una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la transformada de Laplace del producto de tal función con el factor <span class="math notranslate nohighlight">\(s_0\)</span> implica que la transformada de Laplace de <span class="math notranslate nohighlight">\(x(t)\)</span>, sea desplazada <span class="math notranslate nohighlight">\(s_0\)</span> veces en el dominio complejo.</p>
 <div class="admonition-propiedad-de-desplazamiento-en-el-dominio-de-s-de-la-transformada-de-laplace admonition">
@@ -429,8 +430,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 \[
 \mathscr{L} \left \{ e^{-0.5t}cos(6\pi t) \right\} = \frac{6\pi(s+0.5)}{(s+0.5)^2+36\pi^2} 
 \]</div>
-</div>
-<div class="section" id="propiedad-de-escalamiento-en-los-dominios-de-s-y-de-t">
+</section>
+<section id="propiedad-de-escalamiento-en-los-dominios-de-s-y-de-t">
 <h2>Propiedad de escalamiento en los dominios de <span class="math notranslate nohighlight">\(s\)</span> y de <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#propiedad-de-escalamiento-en-los-dominios-de-s-y-de-t" title="Permalink to this heading">#</a></h2>
 <p>Una operacion de escalamiento de una función <span class="math notranslate nohighlight">\(x(t)\)</span>, que porduce una función <span class="math notranslate nohighlight">\(g(t)=x\left( \frac{t}{a}\right )\)</span> tendrá como resultado una función escalada e el dominio de <span class="math notranslate nohighlight">\(s\)</span>, con escalamiento inverso:</p>
 <div class="admonition-propiedad-de-escalamento-en-el-tiempo-y-la-frecuencia-de-la-transformada-de-laplace admonition">
@@ -443,8 +444,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 \[
 \mathscr{L} \left \{ cos \left ( 2\pi\frac{t}{3} \right ) \right \} = 3\frac{3s}{9s^2+4\pi^2}
 \]</div>
-</div>
-<div class="section" id="diferenciacion-en-el-dominio-del-tiempo">
+</section>
+<section id="diferenciacion-en-el-dominio-del-tiempo">
 <h2>Diferenciación en el dominio del tiempo<a class="headerlink" href="#diferenciacion-en-el-dominio-del-tiempo" title="Permalink to this heading">#</a></h2>
 <p>Dada una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la transformada de Laplace de su derivada se expresa como:</p>
 <div class="admonition-propiedad-de-diferenciacion-en-el-dominio-del-tiempo admonition">
@@ -457,8 +458,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 \[
 \mathscr{L} \left \{ \frac{d\left (3cos(4\pi t)\right )}{dt} \right \} = s\mathscr{L} \left \{ 3cos(4\pi t)\right \}=\frac{3s^2}{s^2+16\pi^2}
 \]</div>
-</div>
-<div class="section" id="diferenciacion-en-el-dominio-de-s">
+</section>
+<section id="diferenciacion-en-el-dominio-de-s">
 <h2>Diferenciación en el dominio de <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#diferenciacion-en-el-dominio-de-s" title="Permalink to this heading">#</a></h2>
 <p>Dada una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la operación producto de <span class="math notranslate nohighlight">\(x(t)\)</span> con la variable independiente <span class="math notranslate nohighlight">\(t\)</span>, implica diferenciación o derivada en el dominio de <span class="math notranslate nohighlight">\(s\)</span> de su transformada <span class="math notranslate nohighlight">\(X(s)\)</span>.</p>
 <div class="admonition-propiedad-de-diferenciacion-en-el-dominio-de-s admonition">
@@ -471,8 +472,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 \[
 \mathscr{L} \left \{ te^{-3t} \right \} = -\frac{\mathscr{L} \left \{ e^{-3t} \right\}}{ds} =\frac{d \left (  \frac{1}{s+3} \right ) }{ds}=\frac{1}{(s+3)^2}  
 \]</div>
-</div>
-<div class="section" id="propiedad-de-integracion">
+</section>
+<section id="propiedad-de-integracion">
 <h2>Propiedad de integración<a class="headerlink" href="#propiedad-de-integracion" title="Permalink to this heading">#</a></h2>
 <p>Dada la integral de una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la transformada de la integral, al ser la operación inversa de la diferenciación se expresa como:</p>
 <div class="admonition-propiedad-de-integracion admonition">
@@ -480,8 +481,8 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="math notranslate nohighlight" id="equation-diff-laplace-int">
 <span class="eqno">(56)<a class="headerlink" href="#equation-diff-laplace-int" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \int^{t}_{-\infty}x(\tau)d\tau \right\} \xrightarrow{\mathscr{L}}  \frac{1}{s}X(s)\]</div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

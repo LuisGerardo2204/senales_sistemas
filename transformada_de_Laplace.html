@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>La transformada de Laplace aplicada al análisis de sistemas. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -335,7 +336,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="la-transformada-de-laplace-aplicada-al-analisis-de-sistemas">
+  <section class="tex2jax_ignore mathjax_ignore" id="la-transformada-de-laplace-aplicada-al-analisis-de-sistemas">
 <h1>La transformada de Laplace aplicada al análisis de sistemas.<a class="headerlink" href="#la-transformada-de-laplace-aplicada-al-analisis-de-sistemas" title="Permalink to this heading">#</a></h1>
 <p>Como hemos visto en secciones anteriores, un método para representar la relación que existe entre las entradas y las salidas de un sistemas es una ecuación diferencial e incluso un conjunto de ecuaciones diferenciales cuando se trata de sistemas con algún tipo de acoplamiento. Hemos mencionado tambíen que la solución de la ecuación o sistema de ecuaciones diferenciales del que modelan al sistema, representa la evolución en ele tiempo de la salida del sistema y permite conocer su comportamiento y situación en cada instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>. Hemos usado un método para resolver la ecuación diferencial que consiste en proponer el uso de un polinomio auxiliar para encontrar la solución a la ecuación diferencial homogénea asociada y la solución particular, imponiendo las condiciones iniciales al sistema. Este método tiene su fundamento principalmente en el cálculo diferencial e integral, debido a que involucra derivadas e integrales.</p>
 <p>Por otra parte, hemos visto la importancia del parámetro de la frecuencia en la determinación de la salida de los sistemas ante una señal armónica, es decir, una señal que involucra contenidos sinusoidales. La transformada de Laplace es una herramienta matemática que permite el análisis de los sistemas en términos de la frecuencia. dicho de manera formal, la transformada de Laplace mapea o transforma a los sistemas del dominio del tiempo al dominio de la frecuencia. La definición matemática de la transformada involucra a una integral en términos de una variable independiente que tiene una parte real y una parte imaginaria, es decir es una integral en variable compleja:</p>
@@ -370,10 +371,6 @@ document.write(`
 </div>
 <table class="table" id="tabla-transformadas">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Tabla de transformadas de Laplace comunes</span><a class="headerlink" href="#tabla-transformadas" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[x(t)\]</div>
@@ -443,7 +440,7 @@ document.write(`
 </tbody>
 </table>
 <p>La transformada de laplace es especialmente útil en análisis de sistemas dada su capacidad de algebrizar, o convertrir un problema de cálculo en uno de álgebra. Como se verá a continuación, al aplicar la transformada de Laplace a una ecuación diferencial, la función <span class="math notranslate nohighlight">\(x(t)\)</span> se convierte en una incógita que es sueptible de ser despejada y, por lo tanto ser tratada como una incógnita numérica en una ecuación que antes de aplicar el operador transformada era una función del tiempo <span class="math notranslate nohighlight">\(t\)</span>, expresada en términos de sus derivadas.</p>
-<div class="section" id="ejemplos-de-aplicacion-de-la-transformada-de-laplace-a-la-solucion-de-ecuaciones-diferenciales">
+<section id="ejemplos-de-aplicacion-de-la-transformada-de-laplace-a-la-solucion-de-ecuaciones-diferenciales">
 <h2>Ejemplos de aplicación de la Transformada de Laplace a la solución de ecuaciones diferenciales.<a class="headerlink" href="#ejemplos-de-aplicacion-de-la-transformada-de-laplace-a-la-solucion-de-ecuaciones-diferenciales" title="Permalink to this heading">#</a></h2>
 <p>En esta sección se presentan algunos ejemplos de ecuaciones diferenciales resueltas usando la Transformada de Laplace. Como hemos visto antes, la solución de la ecuación diferencial que modela al sistema nos permite entender al sistema, dado que la función solución describe perfectamente a la evolución en el tiempo de la salida del sistema bajo análisis. A continuación se presentan algunos ejemplos resueltos de ecuaciones diferenciales utilizando la Transformada de Laplace.</p>
 <ol class="arabic simple">
@@ -590,8 +587,8 @@ x(t)=\textcolor{blue}{A}e^{\textcolor{orange}{\alpha}t}sen(\textcolor{green}{\om
 \[
 x(t)= e^{-0.22t} \left ( \frac{0.5022}{\sqrt{77.73}} sen(\sqrt{77.73}t) + 0.01cos(\sqrt{77.73}t) \right )
 \]</div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
