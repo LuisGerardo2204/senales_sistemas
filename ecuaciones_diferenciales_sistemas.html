@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecuaciones diferenciales y sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -178,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -327,7 +327,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ecuaciones-diferenciales-y-sistemas-lineales">
+  <div class="tex2jax_ignore mathjax_ignore section" id="ecuaciones-diferenciales-y-sistemas-lineales">
 <h1>Ecuaciones diferenciales y sistemas lineales.<a class="headerlink" href="#ecuaciones-diferenciales-y-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Un método para representar la relación que existe entre las entradas y las salidas en los sistemas es
 una ecuación diferencial. A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incognita a una funcion. Una ecuación diferencial en el contexto de los sistemas, involucra a las
@@ -342,12 +342,10 @@ señales de entrada y salida, así como diversas derivadas de cualquiera de ella
      m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
 	\end{equation}\]</div>
 <p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acurdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posicion y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 1</span></a> muestra un típico sistema masa resorte amortiguador:</p>
-<figure class="align-default" id="mbk">
+<div class="figure align-default" id="mbk">
 <a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 1 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 1 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
 <div class="math notranslate nohighlight" id="equation-edombk1">
 <span class="eqno">(7)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
@@ -368,12 +366,10 @@ m\ddot{x}+b\dot{x}+kx=f
 \]</div>
 </div>
 <p>Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 2</span></a></p>
-<figure class="align-default" id="rlc">
+<div class="figure align-default" id="rlc">
 <a class="reference internal image-reference" href="_images/Fig1.png"><img alt="_images/Fig1.png" src="_images/Fig1.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 2 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 2 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Las relaciones constitutivas del sistema eléctrico son:</p>
 <div class="math notranslate nohighlight" id="equation-relconst2">
 <span class="eqno">(8)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
@@ -384,7 +380,7 @@ m\ddot{x}+b\dot{x}+kx=f
 <span class="eqno">(9)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
 	\end{equation}\]</div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {

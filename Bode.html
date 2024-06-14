@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diagramas de bode &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -178,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -346,10 +346,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="diagramas-de-bode">
+  <div class="tex2jax_ignore mathjax_ignore section" id="diagramas-de-bode">
 <h1>Diagramas de bode<a class="headerlink" href="#diagramas-de-bode" title="Permalink to this heading">#</a></h1>
 <p>Un diagrama de Bode es una representación gráfica de la respuesta en frecuencia de un sistema dinámico. El diagrama de bode permite una representación asintótica de la respuesta en frecuenciapor medio de la consideración de los factores independientes que componen a una función de transferencia sin la necesidad de conocer de manera exacta a la transformada inversa. Los diagramas de bode se usan en el análisis y diseño de sistemas de control dada su utilidad para mostrar gráficamente la respuesta dinámica de los sistemas.</p>
-<section id="respuesta-de-los-sistemas-a-funciones-sinusoides">
+<div class="section" id="respuesta-de-los-sistemas-a-funciones-sinusoides">
 <h2>Respuesta de los sistemas a funciones sinusoides<a class="headerlink" href="#respuesta-de-los-sistemas-a-funciones-sinusoides" title="Permalink to this heading">#</a></h2>
 <p>Dado un sistema con una función de transferncia <span class="math notranslate nohighlight">\(G(s)=\frac{N(s)}{D(s)}\)</span>, donde el grado del polinomio del numerador, o bien de la función <span class="math notranslate nohighlight">\(N(s)\)</span> es menor que el del denominador <span class="math notranslate nohighlight">\(D(s)\)</span>, la respuesta <span class="math notranslate nohighlight">\(y(t)\)</span> de dicho sistema ante un estímulo o entrada <span class="math notranslate nohighlight">\(x(t)=Acos(\omega_0 t)\)</span>, para <span class="math notranslate nohighlight">\(t\geq 0\)</span>, donde <span class="math notranslate nohighlight">\(A,\omega_0 \in \mathbb{R}\)</span> se obtiene aplicando la transformada de Laplace:</p>
 <div class="math notranslate nohighlight">
@@ -380,8 +380,8 @@ X(s)=\frac{Cs}{(s+j\omega_0)(s-j\omega_0)}
 \end{eqnarray}
 \end{split}\]</div>
 <p>Si se considera la respuesta al impulso de un sistema <span class="math notranslate nohighlight">\(h(t)\)</span>, el resultado anterior permite concluir que la transformada de Fourier de <span class="math notranslate nohighlight">\(h(t)\)</span>, es decir <span class="math notranslate nohighlight">\(\mathscr{F} \left \{ h(t) \right \}=H(j\omega)\)</span> es exactamente <span class="math notranslate nohighlight">\(H(s)|_{s=j\omega}\)</span>. Esto justifica matemáticamente el uso de la función de respuesta en frecuencia como la determinación de la salida de los sistemas ante entradas sinusoides.</p>
-</section>
-<section id="diagramas-o-graficas-de-bode-asintoticas">
+</div>
+<div class="section" id="diagramas-o-graficas-de-bode-asintoticas">
 <h2>Diagramas o gráficas de Bode asintóticas.<a class="headerlink" href="#diagramas-o-graficas-de-bode-asintoticas" title="Permalink to this heading">#</a></h2>
 <p>Undiagrama de bode es esencialmente una gráfica de la magnitud en decibeles <strong>dB</strong> de una función de transferencia <span class="math notranslate nohighlight">\(G(s)\)</span> bajo análisis. Los decibeles se definen como:</p>
 <div class="math notranslate nohighlight">
@@ -409,8 +409,8 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 \end{eqnarray}
 \end{split}\]</div>
 <p>De esta manera, se puede calcular y considerar a cada uno de los factores y su contribución a la función de respuesta en frecuencia de manera individual, debido a que la operación logaritmo convierte al producto en una suma y en una resta para el caso de los factores en el denominador.</p>
-</section>
-<section id="grafica-y-contribucion-del-factor-cero-en-el-origen">
+</div>
+<div class="section" id="grafica-y-contribucion-del-factor-cero-en-el-origen">
 <h2>Gráfica y contribución del factor cero en el origen.<a class="headerlink" href="#grafica-y-contribucion-del-factor-cero-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Cuando se considera el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=s|_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -440,11 +440,11 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/059e9c937aadd1ab5cc9f400f043dae36f67a4269ee032f6fae2052bc0d772f6.png" src="_images/059e9c937aadd1ab5cc9f400f043dae36f67a4269ee032f6fae2052bc0d772f6.png" />
+<img alt="_images/591c71cf7d925c28cd5661ff6bee4412daffa25017574f1d22fff9feb694024f.png" src="_images/591c71cf7d925c28cd5661ff6bee4412daffa25017574f1d22fff9feb694024f.png" />
 </div>
 </div>
-</section>
-<section id="grafica-y-contribucion-del-factor-polo-en-el-origen">
+</div>
+<div class="section" id="grafica-y-contribucion-del-factor-polo-en-el-origen">
 <h2>Gráfica y contribución del factor polo en el origen.<a class="headerlink" href="#grafica-y-contribucion-del-factor-polo-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea ahora el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\frac{1}{s}|_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -474,11 +474,11 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4e6c610f2174d51584e6d06ac99ee3b89dd779470f9c4d3d8c797252ac616304.png" src="_images/4e6c610f2174d51584e6d06ac99ee3b89dd779470f9c4d3d8c797252ac616304.png" />
+<img alt="_images/26d76e2f4badd25479b87d34b7c30743be69092e2d16bf00a53663d4ea7c6115.png" src="_images/26d76e2f4badd25479b87d34b7c30743be69092e2d16bf00a53663d4ea7c6115.png" />
 </div>
 </div>
-</section>
-<section id="cero-real-en-el-origen">
+</div>
+<div class="section" id="cero-real-en-el-origen">
 <h2>Cero real en el origen.<a class="headerlink" href="#cero-real-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\left | 1-\frac{j\omega}{z_i} \right |_{s=j\omega}\)</span> , la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -531,11 +531,11 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/06328e45f0020062833b5ff1c79f65def46ab3cbbd2185e1d4b8596896f89654.png" src="_images/06328e45f0020062833b5ff1c79f65def46ab3cbbd2185e1d4b8596896f89654.png" />
+<img alt="_images/a57eef3ecbc62d9ea1e66a1289b067a19b458299622f22ca9732104903f9d4c2.png" src="_images/a57eef3ecbc62d9ea1e66a1289b067a19b458299622f22ca9732104903f9d4c2.png" />
 </div>
 </div>
-</section>
-<section id="polo-real-en-el-origen">
+</div>
+<div class="section" id="polo-real-en-el-origen">
 <h2>Polo real en el origen.<a class="headerlink" href="#polo-real-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\left | \frac{1}{s-\frac{j\omega}{p_i}}\right |_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -588,11 +588,11 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0efab8fa4370eacf6363b56817714dd196379c8cb397513a4d63e08ebf6f97c1.png" src="_images/0efab8fa4370eacf6363b56817714dd196379c8cb397513a4d63e08ebf6f97c1.png" />
+<img alt="_images/6283534231cdd8e4ed2f9cbdd2bce72112ff5b66ab4d02433ea24b4e6e2917c6.png" src="_images/6283534231cdd8e4ed2f9cbdd2bce72112ff5b66ab4d02433ea24b4e6e2917c6.png" />
 </div>
 </div>
-</section>
-<section id="polos-con-parte-imaginaria-o-polos-conjugados">
+</div>
+<div class="section" id="polos-con-parte-imaginaria-o-polos-conjugados">
 <h2>Polos con parte imaginaria o polos conjugados.<a class="headerlink" href="#polos-con-parte-imaginaria-o-polos-conjugados" title="Permalink to this heading">#</a></h2>
 <p>Hemos analizado sistemas en los que las raices del polinomio característico o el denominador de la función de transferencia tiene raices de la forma <span class="math notranslate nohighlight">\(r_{1,2}=\alpha \pm j\beta\)</span>, con <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span>, estos sistemas pueden considerarse como factores que son parte de un sistema más complejo. Sea el factor dado por la estructura:</p>
 <div class="math notranslate nohighlight">
@@ -603,8 +603,8 @@ G(s)=\frac{1}{a_2s^2+a_1s+a_0}=\frac{p_1p_1^{*}}{(1-s/p_1)(1-s/p_1^{*})}=\frac{|
 <div class="math notranslate nohighlight" id="equation-trasfun-damping">
 <span class="eqno">(67)<a class="headerlink" href="#equation-trasfun-damping" title="Enlace permanente a esta ecuación">#</a></span>\[G(s)=\frac{\omega_n}{s^2+2\xi\omega_n s+\omega_n^2}\]</div>
 <p>de donde se sigue que: <span class="math notranslate nohighlight">\(\omega_n^2=|p_1|^2\)</span> y <span class="math notranslate nohighlight">\(2\xi\omega_n=-2Real\{p_1\}\)</span>. Es importante mencionar, que para un sistema causal y estable, la magnitud <span class="math notranslate nohighlight">\(Real\{p_1\}\)</span> es negativa, mientras que el factor de amortiguamiento <span class="math notranslate nohighlight">\(\xi\)</span> es tal que <span class="math notranslate nohighlight">\(0&lt;\xi&lt;1\)</span> (<span id="id3">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>).</p>
-</section>
-<section id="sistemas-de-segundo-orden">
+</div>
+<div class="section" id="sistemas-de-segundo-orden">
 <h2>Sistemas de segundo orden.<a class="headerlink" href="#sistemas-de-segundo-orden" title="Permalink to this heading">#</a></h2>
 <p>La ecuacion <a class="reference internal" href="#equation-trasfun-damping">(67)</a> expresa de forma muy conveniente la dinámica de los sistemas de segundo orden sin restringirse al caso sub-amortiguado, es decir, sin restringirse al caso en el que solo existe un par de polos complejos conjugados, sabemos que la parte imaginaria de un par de polos complejos conjugados se relaciona con la oscilación. Usando la ecuación <a class="reference internal" href="#equation-trasfun-damping">(67)</a> para el caso general en el que se tienen dos raices o polos <span class="math notranslate nohighlight">\(p_1\)</span> y <span class="math notranslate nohighlight">\(p_2\)</span> en general, es decir, pueden ser reales o complejos, se puede expresar a la función de transferencia <span class="math notranslate nohighlight">\(G(s)\)</span> como  (<span id="id4">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
 <div class="math notranslate nohighlight">
@@ -638,8 +638,8 @@ p_{1,2}=-\xi\omega_n \pm j\omega_n\sqrt{1-\xi^2}
 \]</div>
 <p>En el caso sub-amortiguado <strong><span class="math notranslate nohighlight">\(\xi&lt;1\)</span></strong>.</p>
 </div>
-</section>
-<section id="contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode">
+</div>
+<div class="section" id="contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode">
 <h2>Contribución del factor de segundo orden en el diagrama de Bode.<a class="headerlink" href="#contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode" title="Permalink to this heading">#</a></h2>
 <p>Para determinar la contribución en forma asintótica de un factor de segundo orden, considérese la estructura de la ecuación <a class="reference internal" href="#equation-trasfun-damping">(67)</a>:</p>
 <div class="math notranslate nohighlight">
@@ -702,11 +702,11 @@ G_i(j\omega)=\left | \frac{\omega_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j\o
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0cabfd5bf650cc862c023aaa3f80d8868922799cd062c4afeab6aa73b6c5d0d9.png" src="_images/0cabfd5bf650cc862c023aaa3f80d8868922799cd062c4afeab6aa73b6c5d0d9.png" />
+<img alt="_images/0a74d095f00ae91ce1a7d333a6538da0de95e1334d1a8efc9e3d86f7471da868.png" src="_images/0a74d095f00ae91ce1a7d333a6538da0de95e1334d1a8efc9e3d86f7471da868.png" />
 </div>
 </div>
-</section>
-<section id="ejemplo-diagrama-de-bode-de-una-funcion-de-transferencia">
+</div>
+<div class="section" id="ejemplo-diagrama-de-bode-de-una-funcion-de-transferencia">
 <h2>Ejemplo: diagrama de bode de una función de transferencia<a class="headerlink" href="#ejemplo-diagrama-de-bode-de-una-funcion-de-transferencia" title="Permalink to this heading">#</a></h2>
 <p>Considerese el sistema cuya función de transferencia es:</p>
 <div class="math notranslate nohighlight">
@@ -721,9 +721,9 @@ G(s)=K\frac{(1+s/T_1)\omega_n^2}{(1+s/T_2)(s^2+2\xi\omega_ns+\omega_n^2)}
 <p>Donde <span class="math notranslate nohighlight">\(T_1=40\)</span>, <span class="math notranslate nohighlight">\(T_2=60\)</span>, <span class="math notranslate nohighlight">\(2\xi\omega_n=\frac{3}{2.5}\)</span> y <span class="math notranslate nohighlight">\(\omega_n=\sqrt{\frac{350}{2.5}}\)</span>. <span class="math notranslate nohighlight">\(K\)</span> es una constante que se resulta de la manipulación algebraica de <span class="math notranslate nohighlight">\(G(s)\)</span> para llevarla a la estructura deseada, de manera que:</p>
 <div class="math notranslate nohighlight">
 \[
-K=\frac{40}{60\left ( \frac{350}{2.5} \right )}=0.0022
+K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 \]</div>
-<p>De manera que el primer factor es una recta de <span class="math notranslate nohighlight">\(20log_{10}(0.0022)\)</span> dB, es decir <span class="math notranslate nohighlight">\(K=-53.063\)</span> dB.</p>
+<p>De manera que el primer factor es una recta de <span class="math notranslate nohighlight">\(20log_{10}(0.0019)\)</span> dB, es decir <span class="math notranslate nohighlight">\(K=-54.4032\)</span> dB.</p>
 <ul class="simple">
 <li><p>El segundo factor <span class="math notranslate nohighlight">\((1+s/40)\)</span>  es una recta de pendiente <span class="math notranslate nohighlight">\(20\)</span> dB por década con una frecuencia esquina o codo en <span class="math notranslate nohighlight">\(\omega=40~[rad/s]\)</span> y una aportación de <span class="math notranslate nohighlight">\(90°\)</span> de fase.</p></li>
 <li><p>El tercer factor <span class="math notranslate nohighlight">\(\frac{1}{1+s/60}\)</span>  es una recta de pendiente <span class="math notranslate nohighlight">\(-20\)</span> dB por década con una frecuencia esquina en <span class="math notranslate nohighlight">\(\omega=60~[rad/s]\)</span>, este factor aporta <span class="math notranslate nohighlight">\(-90°\)</span> de fase.</p></li>
@@ -741,7 +741,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )}=0.0022
 <span class="n">wn</span><span class="p">=</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">350</span><span class="o">/</span><span class="mf">2.5</span><span class="p">);</span>
 
 
-<span class="n">K</span><span class="p">=</span><span class="o">-</span><span class="mf">53.0643</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">omega</span><span class="p">));</span>
+<span class="n">K</span><span class="p">=</span><span class="o">-</span><span class="mf">54.4032</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">omega</span><span class="p">));</span>
 <span class="n">fact2</span><span class="p">=(</span><span class="mi">20</span><span class="o">*</span><span class="p">(</span><span class="nb">log10</span><span class="p">(</span><span class="n">omega</span><span class="o">/</span><span class="mi">40</span><span class="p">)))</span><span class="o">.*</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;=</span><span class="mi">40</span><span class="p">);</span>
 <span class="n">fase2</span><span class="p">=(</span><span class="mi">45</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">log10</span><span class="p">(</span><span class="n">omega</span><span class="o">/</span><span class="mf">0.40</span><span class="p">))</span><span class="o">.*</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;</span><span class="mf">0.40</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">log10</span><span class="p">(</span><span class="n">omega</span><span class="o">/</span><span class="mi">40</span><span class="p">))</span><span class="o">.*</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;</span><span class="mi">40</span><span class="p">);</span>
 
@@ -788,7 +788,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )}=0.0022
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/12ea43b448b91d59d5bc53d1df082403b1d32cae95bd4b4990432e064adedaaf.png" src="_images/12ea43b448b91d59d5bc53d1df082403b1d32cae95bd4b4990432e064adedaaf.png" />
+<img alt="_images/984c155e290c9ca8452c56a30ea0ccf50f626d63d5259048dbaf0daa5d378f82.png" src="_images/984c155e290c9ca8452c56a30ea0ccf50f626d63d5259048dbaf0daa5d378f82.png" />
 </div>
 </div>
 <p>Las fases de cada factor independiente se ilustran en las siguientes figuras:</p>
@@ -826,7 +826,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )}=0.0022
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b328a67920087ece3b2becdfb6694fb69c1b58f747e8b3bee629a2480b54d0a6.png" src="_images/b328a67920087ece3b2becdfb6694fb69c1b58f747e8b3bee629a2480b54d0a6.png" />
+<img alt="_images/9a22e8732eb7fd558b8a62249fb51caaff56d4fdb6b4a0a4611d30c7cc966a81.png" src="_images/9a22e8732eb7fd558b8a62249fb51caaff56d4fdb6b4a0a4611d30c7cc966a81.png" />
 </div>
 </div>
 <p>La gráfica asintótica de Bode final es la suma de las curvas anteriores, tanto en magnitud como en fase, en concreto, la obtención de la gráfica de bode consiste en sumar todas las pendientes de cada uno de los factores.</p>
@@ -854,7 +854,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )}=0.0022
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/aefb8e2a888f060f930ee4460c736f13a6f24c34b1ab7e1990e3ccc0dc68fbc3.png" src="_images/aefb8e2a888f060f930ee4460c736f13a6f24c34b1ab7e1990e3ccc0dc68fbc3.png" />
+<img alt="_images/0067ae4cee86ce06f7969edeec62c3e8709c89edca656c2538db8574a956b367.png" src="_images/0067ae4cee86ce06f7969edeec62c3e8709c89edca656c2538db8574a956b367.png" />
 </div>
 </div>
 <p>El comportamiento asintótico de la fase se obtiene también sumando las pendientes de las aportaciones en fase de los componentes individuales:</p>
@@ -877,7 +877,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )}=0.0022
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/af622d00f995345f9cd1355d69e4306dbca2315886de02bb8f9f49282e4394e1.png" src="_images/af622d00f995345f9cd1355d69e4306dbca2315886de02bb8f9f49282e4394e1.png" />
+<img alt="_images/b4a45aafd35ef258b865d2da9167557bf94c27cacd1a33b884adf52332d46da4.png" src="_images/b4a45aafd35ef258b865d2da9167557bf94c27cacd1a33b884adf52332d46da4.png" />
 </div>
 </div>
 <p>Un ultimo ejemplo ilustrará el uso MATLAB para le generación de diagramas de Bode de forma automática e intuitiva. El comando <code class="docutils literal notranslate"><span class="pre">bode(G)</span></code> permite generar gráficas de Bode en escala logarítmica o lineal. Por ejemplo, para la función de transferencia:</p>
@@ -940,7 +940,7 @@ G(s)=\frac{s(s+450)}{(s+15)(s+50)}
 Continuous-time transfer function.
 </pre></div>
 </div>
-<img alt="_images/e1170c11b6fd761c8ee4156a796203ba784cda137ffee7019a0eeaaed530820f.png" src="_images/e1170c11b6fd761c8ee4156a796203ba784cda137ffee7019a0eeaaed530820f.png" />
+<img alt="_images/ee8ac665bbc4ea9ec9ca03d0778600c9e4d7ccbda67599968233147b99079be0.png" src="_images/ee8ac665bbc4ea9ec9ca03d0778600c9e4d7ccbda67599968233147b99079be0.png" />
 </div>
 </div>
 <p>La fase se obtiene de la misma manera y se compara con la curva asintótica.</p>
@@ -962,11 +962,11 @@ Continuous-time transfer function.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/95b20838659050878f39646dc8935946a3ed6cbfe78f95ad744008af1d5744c6.png" src="_images/95b20838659050878f39646dc8935946a3ed6cbfe78f95ad744008af1d5744c6.png" />
+<img alt="_images/37f409bcf3a97e2f7f4c26381a810b60f6c7b597daf97c8c7af64fd7396089bd.png" src="_images/37f409bcf3a97e2f7f4c26381a810b60f6c7b597daf97c8c7af64fd7396089bd.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
