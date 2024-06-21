@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>La serie trigonométrica de Fourier. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -69,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Series_de_fourier';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="La Transformada de Fourier." href="Transformada_de_fourier.html" />
     <link rel="prev" title="Práctica 6: Diagrama de bode de un sistema de dos grados de libertad." href="Practica6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -178,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -339,7 +341,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="la-serie-trigonometrica-de-fourier">
+  <section class="tex2jax_ignore mathjax_ignore" id="la-serie-trigonometrica-de-fourier">
 <h1>La serie trigonométrica de Fourier.<a class="headerlink" href="#la-serie-trigonometrica-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>), una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-serie-fourier">
@@ -359,7 +361,7 @@ a_k=\frac{2}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt
 <span class="eqno">(80)<a class="headerlink" href="#equation-bk" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 \end{equation}\]</div>
-<div class="section" id="ejemplo-1-senal-diente-de-sierra">
+<section id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra">
@@ -386,7 +388,7 @@ b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bc40d6ed0c6201516cc7cf1cde2d3fe69a038049d859659ec4b475017c494866.png" src="_images/bc40d6ed0c6201516cc7cf1cde2d3fe69a038049d859659ec4b475017c494866.png" />
+<img alt="_images/a716e9efb9d9811fbafec27314ca6c0e20333765ff63f275782c9d827de5fe95.png" src="_images/a716e9efb9d9811fbafec27314ca6c0e20333765ff63f275782c9d827de5fe95.png" />
 </div>
 </div>
 <p>Los coeficientes <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(81)</a> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(78)</a>, <a class="reference internal" href="#equation-ak">(79)</a> y <a class="reference internal" href="#equation-bk">(80)</a>. Dado que <span class="math notranslate nohighlight">\(T=0.02\)</span> y <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>:</p>
@@ -432,7 +434,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/24c101bf259d4d431b520ab58a85809b25bcef1558c54ede0b128633ae2d5105.png" src="_images/24c101bf259d4d431b520ab58a85809b25bcef1558c54ede0b128633ae2d5105.png" />
+<img alt="_images/d9c14c058a31d9f043383031cd7afc8f0567129ff11b945b3fccfc83153bc574.png" src="_images/d9c14c058a31d9f043383031cd7afc8f0567129ff11b945b3fccfc83153bc574.png" />
 </div>
 </div>
 <p>Para comparar <span class="math notranslate nohighlight">\(g(t)\)</span> con su aproximación usando la serie trigonométrica de Fourier se unas las instrucciones siguientes:</p>
@@ -451,7 +453,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c39804f2fbd7dcbdcd8c21ff04d7bf7c6175a159f6668926ddf2784da425964e.png" src="_images/c39804f2fbd7dcbdcd8c21ff04d7bf7c6175a159f6668926ddf2784da425964e.png" />
+<img alt="_images/c666700af59ec567ea79533cc242870287d7cd3ee7c58835d1a396cb19dceff3.png" src="_images/c666700af59ec567ea79533cc242870287d7cd3ee7c58835d1a396cb19dceff3.png" />
 </div>
 </div>
 <p>Entre más términos se consideren de la aproximación, es decir, entre mayor sea n en el programa, más parecida será la aproximación, por ejemplo, con <span class="math notranslate nohighlight">\(n=100\)</span>:</p>
@@ -475,12 +477,12 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/31ea530e0eb3df4ac607ff9958d114f4a4a9752105333d7870e2d911917ea8e9.png" src="_images/31ea530e0eb3df4ac607ff9958d114f4a4a9752105333d7870e2d911917ea8e9.png" />
+<img alt="_images/87e00ce64540961a7006d009b21b6e0ead33baeca03fa3058b578bf94b9e9da4.png" src="_images/87e00ce64540961a7006d009b21b6e0ead33baeca03fa3058b578bf94b9e9da4.png" />
 </div>
 </div>
 <p>A la distorción en las siscontinuidades o cambios en la señal se le conoce como fenómeno de Gibbs <span id="id2">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>.</p>
-</div>
-<div class="section" id="ejemplo-2-pulso-cuadrado">
+</section>
+<section id="ejemplo-2-pulso-cuadrado">
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso">
@@ -505,7 +507,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/31bfd7ba717a8ca0d92943f906fc322a72789b75d895183b37fe5bbecfb0e5a8.png" src="_images/31bfd7ba717a8ca0d92943f906fc322a72789b75d895183b37fe5bbecfb0e5a8.png" />
+<img alt="_images/02404b22cbcb4a55c9c9967af0c16298ae4c028c868ed9d96e0a4ebae9429784.png" src="_images/02404b22cbcb4a55c9c9967af0c16298ae4c028c868ed9d96e0a4ebae9429784.png" />
 </div>
 </div>
 <p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(78)</a> a <a class="reference internal" href="#equation-bk">(80)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{2}=\pi\)</span></p>
@@ -571,11 +573,11 @@ b_k=\frac{-1}{k\pi}\left[-1+1\right]=0,~~~k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b647718e981adc4e68eb5f5be9cdc08c85968a4e9971c0a1d8a73bf17c35d8a0.png" src="_images/b647718e981adc4e68eb5f5be9cdc08c85968a4e9971c0a1d8a73bf17c35d8a0.png" />
+<img alt="_images/2b2630c5e0d8f76cda8c4b1c82e691844f0c598fb46f22f80bcd62d08d3f434e.png" src="_images/2b2630c5e0d8f76cda8c4b1c82e691844f0c598fb46f22f80bcd62d08d3f434e.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ejemplo-3-senal-modulada-por-ancho-de-pulso">
+</section>
+<section id="ejemplo-3-senal-modulada-por-ancho-de-pulso">
 <h2>Ejemplo 3, señal modulada por ancho de pulso.<a class="headerlink" href="#ejemplo-3-senal-modulada-por-ancho-de-pulso" title="Permalink to this heading">#</a></h2>
 <p>Considere ahora una señal modulada por ancho de pulso definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pwm">
@@ -602,7 +604,7 @@ b_k=\frac{-1}{k\pi}\left[-1+1\right]=0,~~~k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8bd52604ef4b8f252f480ca88f93e08503837566787433e6d06de42b68bbfa26.png" src="_images/8bd52604ef4b8f252f480ca88f93e08503837566787433e6d06de42b68bbfa26.png" />
+<img alt="_images/288fe12afdfeae9118194b6d5f91bcf91a70c46333a32b08b5f9d99a5843b126.png" src="_images/288fe12afdfeae9118194b6d5f91bcf91a70c46333a32b08b5f9d99a5843b126.png" />
 </div>
 </div>
 <p>Los coficientes de la serie trigonométrica de fourier para la aproximación de la señal <span class="math notranslate nohighlight">\(s(t)\)</span> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(78)</a>, <a class="reference internal" href="#equation-ak">(79)</a> y <a class="reference internal" href="#equation-bk">(80)</a> para obtener:</p>
@@ -662,11 +664,11 @@ b_k=\frac{5}{k\pi}\left[1-cos\left ( \frac{k\pi}{2}t \right )\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c3368f3b58bb8d7d11baf3f888a185e64d4393ea9a14a2332402617e86bbb8d5.png" src="_images/c3368f3b58bb8d7d11baf3f888a185e64d4393ea9a14a2332402617e86bbb8d5.png" />
+<img alt="_images/64df03b266e196112f302c53e638d5064489cfa984dcf2bb6186cf2927f2898e.png" src="_images/64df03b266e196112f302c53e638d5064489cfa984dcf2bb6186cf2927f2898e.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -709,11 +711,11 @@ b_k=\frac{5}{k\pi}\left[1-cos\left ( \frac{k\pi}{2}t \right )\right],k=1,2,3...
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Transformada_de_fourier.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">La Transformada de Fourier.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

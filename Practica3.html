@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -178,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -340,7 +342,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-3-solucion-de-ecuaciones-diferenciales-lineales-con-coeficientes-constantes">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-3-solucion-de-ecuaciones-diferenciales-lineales-con-coeficientes-constantes">
 <h1>Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.<a class="headerlink" href="#practica-3-solucion-de-ecuaciones-diferenciales-lineales-con-coeficientes-constantes" title="Permalink to this heading">#</a></h1>
 <p>Las ecuaciones diferenicales de la forma:</p>
 <div class="math notranslate nohighlight" id="equation-edo-lineal-gral">
@@ -355,10 +357,6 @@ document.write(`
 <p>Al encontrar las raices de la ecuacion auxiliar <a class="reference internal" href="#equation-edo-lineal-aux">(11)</a> se encuetra la estructura general de la solución de la ecuación diferencial dada por la  ecuación <a class="reference internal" href="#equation-edo-lineal-gral">(10)</a>. La siguiente tabla nos dice las posibilidades:</p>
 <table class="table" id="tabla-sol">
 <caption><span class="caption-number">Tabla 1 </span><span class="caption-text">Tabla de soluciones para la EDO homogénea</span><a class="headerlink" href="#tabla-sol" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Raices de la ecuación auxiliar</p></th>
 <th class="head"><p>Función solución candidata</p></th>
@@ -387,19 +385,17 @@ document.write(`
 </table>
 <p>Los valores de las constantes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span> están determinados por las condiciones iniciales <span class="math notranslate nohighlight">\(y(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{y}(0)\)</span>.
 Las raices de la ecuación auxiliar se pueden calcular usando MATLAB, por medio del comando <code class="docutils literal notranslate"><span class="pre">roots()</span></code>.</p>
-<div class="section" id="sistema-masa-resorte-amortiguador">
+<section id="sistema-masa-resorte-amortiguador">
 <h2>Sistema masa resorte amortiguador.<a class="headerlink" href="#sistema-masa-resorte-amortiguador" title="Permalink to this heading">#</a></h2>
 <p>Como un ejemplo de aplicación de las ecuaciones diferenciales, se obtiene la función de movimiento del sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk-payaso"><span class="std std-numref">Figura 3</span></a> y cuyos parámetros se presentan en la <a class="reference internal" href="#tabla-param"><span class="std std-numref">Tabla 2</span></a>, sujeto a condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.025~[m]\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0~[m/s]\)</span></p>
-<div class="figure align-default" id="mbk-payaso">
+<figure class="align-default" id="mbk-payaso">
 <a class="reference internal image-reference" href="_images/payaso.png"><img alt="_images/payaso.png" src="_images/payaso.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 3 </span><span class="caption-text">Sistema masa resorte amortigador.</span><a class="headerlink" href="#mbk-payaso" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 3 </span><span class="caption-text">Sistema masa resorte amortigador.</span><a class="headerlink" href="#mbk-payaso" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <table class="table" id="tabla-param">
 <caption><span class="caption-number">Tabla 2 </span><span class="caption-text">Tabla de parámetros del sistema masa resorte amortiguador</span><a class="headerlink" href="#tabla-param" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -513,8 +509,8 @@ x(t)=e^{-0.0174t}(0.025cos(10t)+4.35\times 10^{-5}sen(10t))~[m]
 <img alt="_images/dd99b3f8b114b2f578301d875c2c2dbf8c0e635b34752210898c3982b5cb1dec.png" src="_images/dd99b3f8b114b2f578301d875c2c2dbf8c0e635b34752210898c3982b5cb1dec.png" />
 </div>
 </div>
-</div>
-<div class="section" id="determinacion-de-la-respuesta-forzada-de-sistemas">
+</section>
+<section id="determinacion-de-la-respuesta-forzada-de-sistemas">
 <h2>Determinación de la respuesta forzada de sistemas.<a class="headerlink" href="#determinacion-de-la-respuesta-forzada-de-sistemas" title="Permalink to this heading">#</a></h2>
 <p>En el ejemplo anterior se encontró la solución de la ecuación diferencial de movimiento de un sistema masa resorte amortiguador, en condicion de vibración libre y sujeto a condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)\)</span>. El modelo matemático del sistema en estas condiciones es una ecuación diferencial homogénea como la expresada en la ecuación (<a class="reference internal" href="#equation-edo-lineal-gral">(10)</a>), cuando la ecuación diferencial que modela al sistema no es homogenea, se trata del modelo matemático de la respuesta forzada del sistema. Para determinar la respuesta forzada de un sistema lienal e invariante en el tiempo, el procedimiento se divide en dos pasos principales, encontrar la solución de la ecuación diferencial homogenena y sumar la solución particular o forzada. Bajo esta premisa, se concluye que ante cualquier perturbación, el sistema responde conforme a su propia naturaleza (determinada por la solución homogénea), esta respuesta se desvanece con el tiempo y se conoce como estado transitorio. Después de que se desvanece el estado transitorio el sistema tendrá una respuesta que permanece en el tiempo que se conoce como estado estacionario y estará determinada por la naturaleza de la perturbación. La forma de la solución particular o estacionaria incluye a la perturbación o estímulo de entrada al sistema <span class="math notranslate nohighlight">\(x(t)\)</span> y todas sus derivadas linealmente independientes (que no se pueden reperentar como una suma de las otras derivadas multiplidadas por constantes reales <span class="math notranslate nohighlight">\(k_i\in \mathbb{R}\)</span>)
 asumiendo que la solución particular propuesta tiene un número finito de derivadas (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Por ejemplo para una señal estímulo <span class="math notranslate nohighlight">\(x(t)=cos(a t)\)</span>, se construye una solución particular de la forma:</p>
@@ -525,10 +521,6 @@ asumiendo que la solución particular propuesta tiene un número finito de deriv
 <p>Los parámetros <span class="math notranslate nohighlight">\(k_1,k_2 \in \mathbb{R}\)</span> se determinan por la estructura própia de la ecuación diferencial que modela al sistema. En la siguiente tabla se muestra un conjunto de estructuras posibles para la solución particular de la ecuación diferencial no homogénea (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>).</p>
 <table class="table" id="tabla-forzada">
 <caption><span class="caption-number">Tabla 3 </span><span class="caption-text">Tabla de soluciones particulares</span><a class="headerlink" href="#tabla-forzada" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Señal de entrada</p></th>
 <th class="head"><p>Solución particular candidata</p></th>
@@ -553,20 +545,18 @@ asumiendo que la solución particular propuesta tiene un número finito de deriv
 </tbody>
 </table>
 <p>Los coeficientes de la solución particular se determinan por la estructura de la ecuación diferencial, asumiendo condiciones iniciales iguales a cero, debido a que <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">solución</span> <span class="pre">particular</span> <span class="pre">o</span> <span class="pre">forzada</span> <span class="pre">no</span> <span class="pre">depende</span> <span class="pre">de</span> <span class="pre">las</span> <span class="pre">condiciones</span> <span class="pre">iniciales</span> <span class="pre">o</span> <span class="pre">del</span> <span class="pre">estado</span> <span class="pre">inicial</span> <span class="pre">del</span> <span class="pre">sistema</span></code>. Las condiciones iniciales especiíficas se se imponen en un paso posterior para determinar los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span> de la solución particular. A continuación se presenta un ejemplo para ilustar el procedimiento para determinar la respuesta forzada de los sistemas ante un estímulo <span class="math notranslate nohighlight">\(x(t)\neq 0\)</span>.</p>
-</div>
-<div class="section" id="circuito-rlc-serie">
+</section>
+<section id="circuito-rlc-serie">
 <h2>Circuito RLC serie.<a class="headerlink" href="#circuito-rlc-serie" title="Permalink to this heading">#</a></h2>
 <p>Otro ejemplo clásico de aplicación de los modelos matemáticos consiste en el analisis de corriente y voltaje de un circuito que consta de una resistencia, un capacitor y un inductor en serie como se muestra en la <a class="reference internal" href="#rlceq1"><span class="std std-numref">Figura 4</span></a>, cuyos parámetros se reportan en la <a class="reference internal" href="#tabla-paramrlc"><span class="std std-numref">Tabla 4</span></a>.</p>
-<div class="figure align-default" id="rlceq1">
+<figure class="align-default" id="rlceq1">
 <a class="reference internal image-reference" href="_images/Imagen8.png"><img alt="_images/Imagen8.png" src="_images/Imagen8.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Figura 4 </span><span class="caption-text">Circuito RLC</span><a class="headerlink" href="#rlceq1" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4 </span><span class="caption-text">Circuito RLC</span><a class="headerlink" href="#rlceq1" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <table class="table" id="tabla-paramrlc">
 <caption><span class="caption-number">Tabla 4 </span><span class="caption-text">Tabla de parámetros del circuito RLC</span><a class="headerlink" href="#tabla-paramrlc" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -722,8 +712,8 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1.63=0\Longrightarrow C_1=-1.63
 <img alt="_images/7723c7c8eef4786cf4c72984140dfe03c79c856bd6c2d01ef29efd7f00a230fb.png" src="_images/7723c7c8eef4786cf4c72984140dfe03c79c856bd6c2d01ef29efd7f00a230fb.png" />
 </div>
 </div>
-</div>
-<div class="section" id="respuesta-forzada-con-diferentes-parametros">
+</section>
+<section id="respuesta-forzada-con-diferentes-parametros">
 <h2>Respuesta forzada con diferentes parámetros.<a class="headerlink" href="#respuesta-forzada-con-diferentes-parametros" title="Permalink to this heading">#</a></h2>
 <p>Es posible encontrar diferentes respuestas del sistema usando una estructura general para el caso particular cuando la función de estímulo es una constante. Para el caso particular del circuito RLC serie, en el que la respuesta forzada completa obedece la estructura:</p>
 <div class="math notranslate nohighlight" id="equation-sol-comprlc-general">
@@ -800,8 +790,8 @@ r_{i}=\alpha \pm \beta i
 <img alt="_images/98aa8c9ebebcb705264f7afdaa5e8cab4e7c12373d4325dfc530673f38fb6f02.png" src="_images/98aa8c9ebebcb705264f7afdaa5e8cab4e7c12373d4325dfc530673f38fb6f02.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

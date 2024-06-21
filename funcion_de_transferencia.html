@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Función de transferencia. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -178,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -337,7 +339,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="funcion-de-transferencia">
+  <section class="tex2jax_ignore mathjax_ignore" id="funcion-de-transferencia">
 <h1>Función de transferencia.<a class="headerlink" href="#funcion-de-transferencia" title="Permalink to this heading">#</a></h1>
 <p>Como se trató en secciones anteriores, la integral de convolución <a class="reference internal" href="Convolucion.html#equation-convolucion">(41)</a> permite encontrar la respuesta de los sistemas lineales e invariantes en el tiempo a partir del conocimiento de su respuesta al impulso. En genral, sabemos que la respuesta <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema dinámico, modelado por medio de una ecuación diferencial de un orden arbitrario, se encuentra a encontrar la función solución a dicha ecuación diferencial. El modelo general de un sistema lineal, invariante en el tiempo adquiere la forma:</p>
 <div class="math notranslate nohighlight" id="equation-edo-sistema-gral">
@@ -359,19 +361,17 @@ Dado que la función de transferencia tiene una analogía con el concepto de gan
 Y(s)=G(s)X(s)
 \]</div>
 <p>Esta última expresión indica que la entrada <span class="math notranslate nohighlight">\(X(s)\)</span>, al ser multiplicada por la ganancia <span class="math notranslate nohighlight">\(G(s)\)</span> produce la salida <span class="math notranslate nohighlight">\(Y(s)\)</span>. Si se sustituye en la ecuación <a class="reference internal" href="#equation-tras-fun">(60)</a> el caso particular cuando la parte real de la variable compeja <span class="math notranslate nohighlight">\(s\)</span> es igual a cero, es decir, se sustituye <span class="math notranslate nohighlight">\(s=j\omega\)</span>. Se obtiene la función de respuesta en frecuencia del sistema.</p>
-<div class="section" id="funcion-de-respuesta-en-frecuencia">
+<section id="funcion-de-respuesta-en-frecuencia">
 <h2>Función de respuesta en frecuencia.<a class="headerlink" href="#funcion-de-respuesta-en-frecuencia" title="Permalink to this heading">#</a></h2>
 <p>Como un ejemplo de aplicación de la función de respuesta en frecuencia, analizaremos nuevamente al sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk-simple"><span class="std std-numref">Figura 5</span></a> y cuyos parámetros se presentan en la <a class="reference internal" href="#tabla-param-simple"><span class="std std-numref">Tabla 6</span></a>,con las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0~[m]\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0~[m/s]\)</span></p>
-<div class="figure align-default" id="mbk-simple">
+<figure class="align-default" id="mbk-simple">
 <a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 5 </span><span class="caption-text">Sistema masa resorte amortigador.</span><a class="headerlink" href="#mbk-simple" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5 </span><span class="caption-text">Sistema masa resorte amortigador.</span><a class="headerlink" href="#mbk-simple" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <table class="table" id="tabla-param-simple">
 <caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Tabla de parámetros del sistema masa resorte amortiguador</span><a class="headerlink" href="#tabla-param-simple" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -443,8 +443,8 @@ X(j\omega)=\frac{1}{4.3(\sqrt{-1}\omega)^2+1.5\sqrt{-1}\omega+430}=\frac{1}{-4.3
 </div>
 </div>
 <p>Como puede observarse, el pico de la gráfica de la función de respuesta en frecuencia coincide con el valor de la frecuencia natural del sistema <span class="math notranslate nohighlight">\(\omega_n=\sqrt{\frac{k}{m}-\frac{b^2}{4m^2}}=\sqrt{\frac{430}{4.3}-\frac{1.5^2}{4(4.3)^2}}=9.9985~rad/s\)</span></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
