@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 4: Convolución en sistemas discretos. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -178,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -337,7 +339,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-4-convolucion-en-sistemas-discretos">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-4-convolucion-en-sistemas-discretos">
 <h1>Práctica 4: Convolución en sistemas discretos.<a class="headerlink" href="#practica-4-convolucion-en-sistemas-discretos" title="Permalink to this heading">#</a></h1>
 <p>La operación de convolución en los sistemas de tiempo discreto se basa en la descomposición en términos de la función impulso de una señal de tiempo discreto (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La operación de convolución para sistemas de tiempo discreto se define como:</p>
 <div class="math notranslate nohighlight" id="equation-conv-discreta">
@@ -354,7 +356,7 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
   y[n]=h[n]*x[n]=\sum^{\infty}_{k=-\infty}x[k]h[n-k]\\
 	\end{eqnarray}\end{split}\]</div>
 </div>
-<div class="section" id="filtrado-de-senales">
+<section id="filtrado-de-senales">
 <h2>Filtrado de señales<a class="headerlink" href="#filtrado-de-senales" title="Permalink to this heading">#</a></h2>
 <p>Una de las aplicaciónes de la convolución es el filtrado de señales. Hemos calculado la respuesta al impulso de los sistemas RLC y masa-resorte-amortiguador. Estos dos sistemas son considerados filtros pasa bajas, dado que presentan una respuesta annte una señal tipo barrido frecuencial que tiene un máximo en la frecuencia natural o resonancia. El circuito RC es considerado un filtro de primer orden y permite en aplicaciones de electrónica filtrar altas frecuencias e incluso disminuir el ruido.</p>
 <p>El siguiente ejemplo muestra el uso de un sistema o circuito RC como un filtro pasa bajas. Suponga que se desea retirar el ruido de una señal que se obtiene de un micrófono dinámico, el ruido alcanza los 15 milivolts mientras que la señal del micrófono alcanza máximo 10 milivolts. Si el ruido es de alta frecuencia, un circuito RC permitirá eliminarlo de la señal original.</p>
@@ -447,8 +449,8 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 <img alt="_images/aa6a64f670da988d60a3c871e1c4bdd02ba66fe6e08225e7149903677c9ed9fb.png" src="_images/aa6a64f670da988d60a3c871e1c4bdd02ba66fe6e08225e7149903677c9ed9fb.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
