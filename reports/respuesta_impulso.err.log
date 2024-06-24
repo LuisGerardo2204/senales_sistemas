@@ -1,9 +1,9 @@
 Traceback (most recent call last):
   File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\nbclient\client.py", line 778, in _async_poll_for_reply
     msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_core\utils\__init__.py", line 182, in ensure_async
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_core\utils\__init__.py", line 198, in ensure_async
     result = await obj
-  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_client\channels.py", line 315, in get_msg
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_client\channels.py", line 313, in get_msg
     raise Empty
 _queue.Empty
 
@@ -14,7 +14,7 @@ Traceback (most recent call last):
     executenb(
   File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\nbclient\client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_core\utils\__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
   File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 616, in run_until_complete
     return future.result()
@@ -30,8 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['clear ', 'close all', 'clc', '', 'R=1600;']
+['clear ', 'close all', 'clc', 'graphics_toolkit("gnuplot")', '']
 ...
-['h_c2=(betha+(alpha^2)/betha)*sin(betha*t).*exp(alpha*t);', 'plot(t,h_c2)', 'l=legend ("v_c cuando R=1600 \\Omega", strcat("v_c cuando R=",num2str(R)," \\Omega"));', 'legend ("boxoff");', "set(l, 'interpreter', 'latex');"]
+["set(gcf,'Visible','on')", 'title("Respuesta al impulso")', 'xlabel("t [s]")', 'ylabel("v_c(t) [V]")', "set(gca,'fontsize',20);"]
 -------------------
 

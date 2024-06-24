@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -82,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -135,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -147,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -287,20 +299,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -442,7 +456,7 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/591c71cf7d925c28cd5661ff6bee4412daffa25017574f1d22fff9feb694024f.png" src="_images/591c71cf7d925c28cd5661ff6bee4412daffa25017574f1d22fff9feb694024f.png" />
+<img alt="_images/7c5753a2e94f95629c38ab8ad67d934660e675c876cb18f8749fe320ac7c2507.png" src="_images/7c5753a2e94f95629c38ab8ad67d934660e675c876cb18f8749fe320ac7c2507.png" />
 </div>
 </div>
 </section>
@@ -476,7 +490,7 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/26d76e2f4badd25479b87d34b7c30743be69092e2d16bf00a53663d4ea7c6115.png" src="_images/26d76e2f4badd25479b87d34b7c30743be69092e2d16bf00a53663d4ea7c6115.png" />
+<img alt="_images/605302e831fbaa06196a90163ff7dd268ea2b75ef282815f154973b72a45ba43.png" src="_images/605302e831fbaa06196a90163ff7dd268ea2b75ef282815f154973b72a45ba43.png" />
 </div>
 </div>
 </section>
@@ -533,7 +547,7 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a57eef3ecbc62d9ea1e66a1289b067a19b458299622f22ca9732104903f9d4c2.png" src="_images/a57eef3ecbc62d9ea1e66a1289b067a19b458299622f22ca9732104903f9d4c2.png" />
+<img alt="_images/d581383c380d47b6b498516aa29a4e2979a92c7daa2fcd762ae3692df892ede5.png" src="_images/d581383c380d47b6b498516aa29a4e2979a92c7daa2fcd762ae3692df892ede5.png" />
 </div>
 </div>
 </section>
@@ -590,7 +604,7 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6283534231cdd8e4ed2f9cbdd2bce72112ff5b66ab4d02433ea24b4e6e2917c6.png" src="_images/6283534231cdd8e4ed2f9cbdd2bce72112ff5b66ab4d02433ea24b4e6e2917c6.png" />
+<img alt="_images/6bc9e327bd22237457ebafdd8fc6822eba955f2a2e7a1872b3c3cdcd3b189b7d.png" src="_images/6bc9e327bd22237457ebafdd8fc6822eba955f2a2e7a1872b3c3cdcd3b189b7d.png" />
 </div>
 </div>
 </section>
@@ -704,7 +718,7 @@ G_i(j\omega)=\left | \frac{\omega_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j\o
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0a74d095f00ae91ce1a7d333a6538da0de95e1334d1a8efc9e3d86f7471da868.png" src="_images/0a74d095f00ae91ce1a7d333a6538da0de95e1334d1a8efc9e3d86f7471da868.png" />
+<img alt="_images/46f3cd772a82665eb1fdc3660ef6babb3a52e0510235177841cdbf3b815d3098.png" src="_images/46f3cd772a82665eb1fdc3660ef6babb3a52e0510235177841cdbf3b815d3098.png" />
 </div>
 </div>
 </section>
@@ -790,7 +804,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/984c155e290c9ca8452c56a30ea0ccf50f626d63d5259048dbaf0daa5d378f82.png" src="_images/984c155e290c9ca8452c56a30ea0ccf50f626d63d5259048dbaf0daa5d378f82.png" />
+<img alt="_images/23751eb3d822728d6b9aacc431c5d86a94b129742f8e1bd15061594623b39963.png" src="_images/23751eb3d822728d6b9aacc431c5d86a94b129742f8e1bd15061594623b39963.png" />
 </div>
 </div>
 <p>Las fases de cada factor independiente se ilustran en las siguientes figuras:</p>
@@ -828,7 +842,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9a22e8732eb7fd558b8a62249fb51caaff56d4fdb6b4a0a4611d30c7cc966a81.png" src="_images/9a22e8732eb7fd558b8a62249fb51caaff56d4fdb6b4a0a4611d30c7cc966a81.png" />
+<img alt="_images/aef403b4cd57ed1427505bd222e94cc4543802daeaf418d440cadf64d6c5021f.png" src="_images/aef403b4cd57ed1427505bd222e94cc4543802daeaf418d440cadf64d6c5021f.png" />
 </div>
 </div>
 <p>La gráfica asintótica de Bode final es la suma de las curvas anteriores, tanto en magnitud como en fase, en concreto, la obtención de la gráfica de bode consiste en sumar todas las pendientes de cada uno de los factores.</p>
@@ -856,7 +870,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0067ae4cee86ce06f7969edeec62c3e8709c89edca656c2538db8574a956b367.png" src="_images/0067ae4cee86ce06f7969edeec62c3e8709c89edca656c2538db8574a956b367.png" />
+<img alt="_images/14812280b8179dedd4f1c361f8d047fd9d52df24905d838544460a8c262ac757.png" src="_images/14812280b8179dedd4f1c361f8d047fd9d52df24905d838544460a8c262ac757.png" />
 </div>
 </div>
 <p>El comportamiento asintótico de la fase se obtiene también sumando las pendientes de las aportaciones en fase de los componentes individuales:</p>
@@ -879,7 +893,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b4a45aafd35ef258b865d2da9167557bf94c27cacd1a33b884adf52332d46da4.png" src="_images/b4a45aafd35ef258b865d2da9167557bf94c27cacd1a33b884adf52332d46da4.png" />
+<img alt="_images/b0d06a7fa308625b4d8f4f54bd97245d3d91cef4948a0d8cd3d7a2f51f391048.png" src="_images/b0d06a7fa308625b4d8f4f54bd97245d3d91cef4948a0d8cd3d7a2f51f391048.png" />
 </div>
 </div>
 <p>Un ultimo ejemplo ilustrará el uso MATLAB para le generación de diagramas de Bode de forma automática e intuitiva. El comando <code class="docutils literal notranslate"><span class="pre">bode(G)</span></code> permite generar gráficas de Bode en escala logarítmica o lineal. Por ejemplo, para la función de transferencia:</p>
@@ -942,7 +956,7 @@ G(s)=\frac{s(s+450)}{(s+15)(s+50)}
 Continuous-time transfer function.
 </pre></div>
 </div>
-<img alt="_images/ee8ac665bbc4ea9ec9ca03d0778600c9e4d7ccbda67599968233147b99079be0.png" src="_images/ee8ac665bbc4ea9ec9ca03d0778600c9e4d7ccbda67599968233147b99079be0.png" />
+<img alt="_images/653ccc1f0a977a6b64be60b231d995a1f2b39f41d8d207d3ac66d8afe47b1f07.png" src="_images/653ccc1f0a977a6b64be60b231d995a1f2b39f41d8d207d3ac66d8afe47b1f07.png" />
 </div>
 </div>
 <p>La fase se obtiene de la misma manera y se compara con la curva asintótica.</p>
@@ -964,7 +978,7 @@ Continuous-time transfer function.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/37f409bcf3a97e2f7f4c26381a810b60f6c7b597daf97c8c7af64fd7396089bd.png" src="_images/37f409bcf3a97e2f7f4c26381a810b60f6c7b597daf97c8c7af64fd7396089bd.png" />
+<img alt="_images/397f21265650d82f02596a346a1b8646c0f310fad50054b18dc54717e5d4d708.png" src="_images/397f21265650d82f02596a346a1b8646c0f310fad50054b18dc54717e5d4d708.png" />
 </div>
 </div>
 </section>
@@ -995,11 +1009,10 @@ Continuous-time transfer function.
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="funcion_de_transferencia.html"
@@ -1019,10 +1032,7 @@ Continuous-time transfer function.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1068,6 +1078,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1094,8 +1105,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -82,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -135,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -147,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -287,20 +299,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -352,7 +366,6 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> 
 <span class="nb">close</span> <span class="nb">all</span>
-
 <span class="p">[</span><span class="n">s_real</span><span class="p">,</span><span class="n">s_imaginaria</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.3</span><span class="p">:</span><span class="mi">5</span><span class="p">],[</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">20</span><span class="p">]);</span>
 <span class="n">s</span> <span class="p">=</span> <span class="n">s_real</span><span class="o">+</span><span class="n">j</span><span class="o">*</span><span class="n">s_imaginaria</span><span class="p">;</span> <span class="c">%Definición de la variable compleja s=real+imaginaria</span>
 <span class="n">Xs</span> <span class="p">=</span> <span class="p">@(</span><span class="n">s</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">./</span><span class="p">(</span><span class="mf">2.5</span><span class="o">*</span><span class="n">s</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mi">350</span><span class="p">);</span>  <span class="c">% Transformada de Laplace de la salida de un sistema</span>
@@ -384,7 +397,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6d438ee6fb1c4ad3fee0c4cf76cd3018b534b46da37932e357ad3ed1c206c85c.png" src="_images/6d438ee6fb1c4ad3fee0c4cf76cd3018b534b46da37932e357ad3ed1c206c85c.png" />
+<img alt="_images/3a4d62cc96cad54ac46e1591aedc056181e8320591bc2873ce88426134fe5891.png" src="_images/3a4d62cc96cad54ac46e1591aedc056181e8320591bc2873ce88426134fe5891.png" />
 </div>
 </div>
 <p>Como es claro en la gráfica anterior, la variable compleja <span class="math notranslate nohighlight">\(s\)</span> tiene un caso particular cuando la parte real de <span class="math notranslate nohighlight">\(s\)</span> es identicamente cero, es ese caso, la transformada de Laplace se convierte en la transformada de Fourier. Algunas propiedades interesantes de la transformada de Laplace se presentan a continuación:</p>
@@ -408,7 +421,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 </section>
 <section id="propiedad-de-desplazamiento-en-el-tiempo">
 <h2>Propiedad de desplazamiento en el tiempo<a class="headerlink" href="#propiedad-de-desplazamiento-en-el-tiempo" title="Permalink to this heading">#</a></h2>
-<p>Un desplazamiento en el tiempo, aplicado a una función <span class="math notranslate nohighlight">\(x(t)\)</span> en el dominio del tiempo, por medio de una constante arbitraria <span class="math notranslate nohighlight">\(\tau\)</span>, corresponde al producto de la transformada de Laplace de <span class="math notranslate nohighlight">\(x(t)\)</span> con el factor <span class="math notranslate nohighlight">\(e^{-\tao s}\)</span>:</p>
+<p>Un desplazamiento en el tiempo, aplicado a una función <span class="math notranslate nohighlight">\(x(t)\)</span> en el dominio del tiempo, por medio de una constante arbitraria <span class="math notranslate nohighlight">\(\tau\)</span>, corresponde al producto de la transformada de Laplace de <span class="math notranslate nohighlight">\(x(t)\)</span> con el factor <span class="math notranslate nohighlight">\(e^{-\tau s}\)</span>:</p>
 <div class="admonition-propiedad-de-desplazamiento-en-el-tiempo-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de desplazamiento en el tiempo de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-desp-tiempo-laplace">
@@ -512,11 +525,10 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="conv_transformada.html"
@@ -536,10 +548,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -582,6 +591,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -608,8 +618,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

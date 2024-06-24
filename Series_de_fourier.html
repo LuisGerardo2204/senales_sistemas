@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -82,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -135,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -147,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -287,20 +299,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -388,7 +402,7 @@ b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a716e9efb9d9811fbafec27314ca6c0e20333765ff63f275782c9d827de5fe95.png" src="_images/a716e9efb9d9811fbafec27314ca6c0e20333765ff63f275782c9d827de5fe95.png" />
+<img alt="_images/5596039ea48cae74faf0319ac770ed143f3c6b1a7dcad6dd17f054673cd9f2fe.png" src="_images/5596039ea48cae74faf0319ac770ed143f3c6b1a7dcad6dd17f054673cd9f2fe.png" />
 </div>
 </div>
 <p>Los coeficientes <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(81)</a> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(78)</a>, <a class="reference internal" href="#equation-ak">(79)</a> y <a class="reference internal" href="#equation-bk">(80)</a>. Dado que <span class="math notranslate nohighlight">\(T=0.02\)</span> y <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>:</p>
@@ -418,7 +432,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 <p>El código de MATLAB que permite calcular la serie trigonométrica de Fourier de la función diente de sierra, considerando los primeros 15 términos de la serie, es decir, con <span class="math notranslate nohighlight">\(n=15\)</span> es el siguiente</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">   </span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">   </span>
 <span class="n">figure</span>
 <span class="s">hold</span><span class="w"> </span><span class="s">on</span><span class="w"> </span>
 
@@ -434,7 +448,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d9c14c058a31d9f043383031cd7afc8f0567129ff11b945b3fccfc83153bc574.png" src="_images/d9c14c058a31d9f043383031cd7afc8f0567129ff11b945b3fccfc83153bc574.png" />
+<img alt="_images/14a1d7f8b059264a7469d5dc53dcdc104ff21ca01b6d69fd3f03fc68e65e6765.png" src="_images/14a1d7f8b059264a7469d5dc53dcdc104ff21ca01b6d69fd3f03fc68e65e6765.png" />
 </div>
 </div>
 <p>Para comparar <span class="math notranslate nohighlight">\(g(t)\)</span> con su aproximación usando la serie trigonométrica de Fourier se unas las instrucciones siguientes:</p>
@@ -453,7 +467,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c666700af59ec567ea79533cc242870287d7cd3ee7c58835d1a396cb19dceff3.png" src="_images/c666700af59ec567ea79533cc242870287d7cd3ee7c58835d1a396cb19dceff3.png" />
+<img alt="_images/157badd51b43d90dc553017754142484dcfb6259ff2e73b57a0f3043d478340c.png" src="_images/157badd51b43d90dc553017754142484dcfb6259ff2e73b57a0f3043d478340c.png" />
 </div>
 </div>
 <p>Entre más términos se consideren de la aproximación, es decir, entre mayor sea n en el programa, más parecida será la aproximación, por ejemplo, con <span class="math notranslate nohighlight">\(n=100\)</span>:</p>
@@ -695,11 +709,10 @@ b_k=\frac{5}{k\pi}\left[1-cos\left ( \frac{k\pi}{2}t \right )\right],k=1,2,3...
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica6.html"
@@ -719,10 +732,7 @@ b_k=\frac{5}{k\pi}\left[1-cos\left ( \frac{k\pi}{2}t \right )\right],k=1,2,3...
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -761,6 +771,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -787,8 +798,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

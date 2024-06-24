@@ -148,11 +148,14 @@ Luego entonces:
 
 La gráfica de la respuesta al impulso del sistema se puede obtener en MATLAB con las siguientes líneas de código:
 
+
+
 ```{code-cell} Octave
 :tags: [remove-stderr]
 
 clear 
 close all
+clc
 
 
 t=[0:0.001:0.3];
@@ -228,13 +231,13 @@ Obteniéndose la expresión general:
 ````
 El siguiente código en MATLAB permite graficar la respuesta al escalón con diferentes valores de los parámetros RLC para fines comparativos, se genera una respuesta de referencia y después se calculan las raices del nuevo polinomio auxiliar definido en la ecuación {eq}`edo_auxRLC`, para graficar las dos respuestas y compararlas.
 
+
+
 ```{code-cell} Octave
 :tags: [remove-stderr]
 
-
 clear 
 close all
-clc
 
 
 R=1600;

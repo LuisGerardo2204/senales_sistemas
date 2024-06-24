@@ -19,12 +19,12 @@ kernelspec:
 
 La transformada de Laplace, definida  en la ecuación {eq}`transformada_def` genra una superficie en eñ espacio $\mathbb{R}^3$, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para ${-\infty}<t<{\infty}$.
 
+
 ```{code-cell} Octave
 :tags: [remove-stderr]
 
 clear 
 close all
-
 [s_real,s_imaginaria] = meshgrid([-5:0.3:5],[-20:0.5:20]);
 s = s_real+j*s_imaginaria; %Definición de la variable compleja s=real+imaginaria
 Xs = @(s) (1)./(2.5*s.^2+3*s+350);  % Transformada de Laplace de la salida de un sistema
@@ -80,7 +80,7 @@ $$
 
 ## Propiedad de desplazamiento en el tiempo
 
-Un desplazamiento en el tiempo, aplicado a una función $x(t)$ en el dominio del tiempo, por medio de una constante arbitraria $\tau$, corresponde al producto de la transformada de Laplace de $x(t)$ con el factor $e^{-\tao s}$:
+Un desplazamiento en el tiempo, aplicado a una función $x(t)$ en el dominio del tiempo, por medio de una constante arbitraria $\tau$, corresponde al producto de la transformada de Laplace de $x(t)$ con el factor $e^{-\tau s}$:
 
 
 ```{admonition} Propiedad de desplazamiento en el tiempo de la transformada de Laplace:
