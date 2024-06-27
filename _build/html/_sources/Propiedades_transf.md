@@ -17,7 +17,7 @@ kernelspec:
 # Propiedades de la transformada de Laplace.
 
 
-La transformada de Laplace, definida  en la ecuación {eq}`transformada_def` genera una superficie en el espacio $\mathbb{R}^3$, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para ${-\infty}<t<{\infty}$.
+La transformada de Laplace, definida en la ecuación {eq}`transformada_def` genera una superficie en el espacio $\mathbb{R}^3$, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para ${-\infty}<t<{\infty}$.
 
 
 ```{code-cell} Octave

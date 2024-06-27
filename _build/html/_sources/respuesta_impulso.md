@@ -206,7 +206,7 @@ Así, la respuesta al escalón en general es:
    v_c(t)=(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1
 \end{equation}
 ````
-La respuesta al ipulso se encuentra al derivar la ecuacion {eq}`sol_imp_RLC` respecto del tiempo:
+La respuesta al impulso se encuentra al derivar la ecuacion {eq}`sol_imp_RLC` respecto del tiempo:
 
 ```{math}
 :label: h_RLC_imp
