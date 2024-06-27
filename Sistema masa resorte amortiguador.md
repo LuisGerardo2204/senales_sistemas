@@ -1,6 +1,6 @@
 # Sistema masa resorte amortiguador 
 
-A continuación analizaremos el sistema masa resorte amortiugador, consistente en el juguete mostrado en la {numref}`figura11`.
+A continuación analizaremos el sistema masa resorte amortiguador, consistente en el juguete mostrado en la {numref}`figura11`.
 
 
 ## Modelo matemático del sistema masa resorte amortiguador

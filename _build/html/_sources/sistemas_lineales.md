@@ -36,7 +36,7 @@ Matemáticamente, se dice que un sistema es lineal si su estructura cumple con l
 	\end{eqnarray}
 ```
 
-La condicion expresdada en estas ecuaciones se conoce como la regla de aditividad. la cual expresa que: ``La respuesta de un sistema lineal a la suma de dos señales de entrada o estímulos es igual a la suma de las respuestas individuales``. La segunda ecuación se conoce como la regla de la homogeneidad, la cual establece que: ``El escalamiento por una constante de la señal de estímulo o entrada a un sistema, produce una salida del sistema escalada por la misma constante``. La combinación de estas dos reglas dan como resultado el proncipio de superposición de los sistemas lineales ({cite}`Alkin`). 
+La condición expresada en estas ecuaciones se conoce como la regla de aditividad. La cual establece que: ``La respuesta de un sistema lineal a la suma de dos señales de entrada o estímulos es igual a la suma de las respuestas individuales``. La segunda ecuación se conoce como la regla de la homogeneidad, la cual establece que: ``El escalamiento por una constante de la señal de estímulo o entrada a un sistema, produce una salida del sistema escalada por la misma constante``. La combinación de estas dos reglas dan como resultado el proncipio de superposición de los sistemas lineales ({cite}`Alkin`). 
 
 
 ```{admonition} Principio de superposición:

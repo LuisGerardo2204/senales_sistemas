@@ -15,9 +15,9 @@ kernelspec:
 
 # La transformada de Laplace aplicada al análisis de sistemas.
 
-Como hemos visto en secciones anteriores, un método para representar la relación que existe entre las entradas y las salidas de un sistemas es una ecuación diferencial e incluso un conjunto de ecuaciones diferenciales cuando se trata de sistemas con algún tipo de acoplamiento. Hemos mencionado tambíen que la solución de la ecuación o sistema de ecuaciones diferenciales del que modelan al sistema, representa la evolución en ele tiempo de la salida del sistema y permite conocer su comportamiento y situación en cada instante de tiempo $t$. Hemos usado un método para resolver la ecuación diferencial que consiste en proponer el uso de un polinomio auxiliar para encontrar la solución a la ecuación diferencial homogénea asociada y la solución particular, imponiendo las condiciones iniciales al sistema. Este método tiene su fundamento principalmente en el cálculo diferencial e integral, debido a que involucra derivadas e integrales.
+Como hemos visto en secciones anteriores, un método para representar la relación que existe entre las entradas y las salidas de un sistemas es una ecuación diferencial e incluso un conjunto de ecuaciones diferenciales cuando se trata de sistemas con algún tipo de acoplamiento. Hemos mencionado también que la solución de la ecuación o sistema de ecuaciones diferenciales del que modelan al sistema, representa la evolución en le tiempo de la salida del sistema y permite conocer su comportamiento y situación en cada instante de tiempo $t$. Hemos usado un método para resolver la ecuación diferencial que consiste en proponer el uso de un polinomio auxiliar para encontrar la solución a la ecuación diferencial homogénea asociada y la solución particular, imponiendo las condiciones iniciales al sistema. Este método tiene su fundamento principalmente en el cálculo diferencial e integral, debido a que involucra derivadas e integrales.
 
-Por otra parte, hemos visto la importancia del parámetro de la frecuencia en la determinación de la salida de los sistemas ante una señal armónica, es decir, una señal que involucra contenidos sinusoidales. La transformada de Laplace es una herramienta matemática que permite el análisis de los sistemas en términos de la frecuencia. dicho de manera formal, la transformada de Laplace mapea o transforma a los sistemas del dominio del tiempo al dominio de la frecuencia. La definición matemática de la transformada involucra a una integral en términos de una variable independiente que tiene una parte real y una parte imaginaria, es decir es una integral en variable compleja:
+Por otra parte, hemos visto la importancia del parámetro de la frecuencia en la determinación de la salida de los sistemas ante una señal armónica, es decir, una señal que involucra contenidos sinusoidales. La transformada de Laplace es una herramienta matemática que permite el análisis de los sistemas en términos de la frecuencia. Dicho de manera formal, la transformada de Laplace mapea o transforma a los sistemas del dominio del tiempo al dominio de la frecuencia. La definición matemática de la transformada involucra a una integral en términos de una variable independiente que tiene una parte real y una parte imaginaria, es decir es una integral en variable compleja:
 
 ```{math}
 :label: transformada_def
@@ -26,12 +26,12 @@ Por otra parte, hemos visto la importancia del parámetro de la frecuencia en la
 	\end{equation}
 ```
 
-donde $s$ es una variable compleja que se compone de una parte real y una parte imaginaria, es decir $s=\sigma+j\omega$. Como en el caso de la soulucíon de la ecuación diferencial homogénea, la parte imaginaria de $\omega$, de la variable independiente $s$, representa a la frecuencia.
+donde $s$ es una variable compleja que se compone de una parte real y una parte imaginaria, es decir $s=\sigma+j\omega$. Como en el caso de la solucíon de la ecuación diferencial homogénea, la parte imaginaria de $\omega$, de la variable independiente $s$, representa a la frecuencia.
 
 
 ```{note} 
 
-La definición y notación matemática de la transformada de Lpalace se resumen de la siguiente manera:
+La definición y notación matemática de la transformada de Lapalace se resumen de la siguiente manera:
 
 $$
 \begin{equation}
@@ -47,7 +47,7 @@ $$
  \end{equation}
  $$
 
-La Transformada de Laplace es un operador lineal y bididerccional:
+La Transformada de Laplace es un operador lineal y bi-dideccional:
 
 $$
 \begin{equation}
@@ -80,7 +80,7 @@ $$
   - $$\frac{A(s+\alpha)}{(s+\alpha)^2 + \omega^2}$$        
 ```
 
-La transformada de laplace es especialmente útil en análisis de sistemas dada su capacidad de algebrizar, o convertrir un problema de cálculo en uno de álgebra. Como se verá a continuación, al aplicar la transformada de Laplace a una ecuación diferencial, la función $x(t)$ se convierte en una incógita que es sueptible de ser despejada y, por lo tanto ser tratada como una incógnita numérica en una ecuación que antes de aplicar el operador transformada era una función del tiempo $t$, expresada en términos de sus derivadas.
+La transformada de Laplace es especialmente útil en análisis de sistemas dada su capacidad de algebrizar, o convertrir un problema de cálculo en uno de álgebra. Como se verá a continuación, al aplicar la transformada de Laplace a una ecuación diferencial, la función $x(t)$ se convierte en una incógita que es suceptible de ser despejada y, por lo tanto ser tratada como una incógnita numérica en una ecuación que antes de aplicar el operador transformada era una función del tiempo $t$, expresada en términos de sus derivadas.
 
 ## Ejemplos de aplicación de la Transformada de Laplace a la solución de ecuaciones diferenciales.
 
@@ -133,7 +133,7 @@ $$
 X(s)=\frac{0.045s+2.27}{4.5s^2+2s+350}
 $$
 
-La función solución $x(t)$ es la transformada inversa de la función $X(s)$. Para poder aplicar alguno de los pares transformados ya conocidos y reportados en la {numref}`Tabla_transformadas` es necesario manipular algrbráicamente a la expresión para $X(s)$ con el fin de asimilarla a una estructura conocida. Como primera manipulación se expresa a $X(s)$ como la suma de dos fracciones parciales:
+La función solución $x(t)$ es la transformada inversa de la función $X(s)$. Para poder aplicar alguno de los pares transformados ya conocidos y reportados en la {numref}`Tabla_transformadas` es necesario manipular algebráicamente a la expresión para $X(s)$ con el fin de asimilarla a una estructura conocida. Como primera manipulación se expresa a $X(s)$ como la suma de dos fracciones parciales:
 
 $$
 X(s)=\frac{0.045s}{4.5s^2+2s+350}+\frac{2.27}{4.5s^2+2s+350}
@@ -149,7 +149,7 @@ $$
 Ae^{-\alpha t}cos(\omega t) \leftrightarrows \frac{A(s+\alpha)}{(s+\alpha)^2 + \omega^2}  
 $$     
 
-donde $A$,$\alpha$ y $\omega$ son constantes. La diferencia principal entre esta expresión y los pares transformados de la {numref}`Tabla_transformadas` es la estrucura del denominador. Dividiendo el denominador entre $4.5$ se obtiene:
+donde $A$,$\alpha$ y $\omega$ son constantes. La diferencia principal entre esta expresión y los pares transformados de la {numref}`Tabla_transformadas` es la estructura del denominador. Dividiendo el denominador entre $4.5$ se obtiene:
 
 $$
 X(s)=\frac{0.045s}{4.5\left ( s^2+\frac{2s}{4.5}+\frac{350}{4.5} \right )}+\frac{2.27}{4.5 \left (s^2+\frac{2s}{4.5}+\frac{350}{4.5}\right )}
@@ -167,7 +167,7 @@ $$
 \left ( s+\frac{1}{4.5}\right )^2= s^2+\frac{2s}{4.5}+\left ( \frac{1}{4.5}\right ) ^2+\frac{350}{4.5}-\left ( \frac{1}{4.5}\right ) ^2
 $$
 
-Las fracciones parciales anteriormente planteadas se puede reescribor como:
+Las fracciones parciales anteriormente planteadas se puede reescribir como:
 
 $$
 X(s)=\frac{0.045s}{4.5\left ( \left ( s+\frac{1}{4.5}\right )^2+\frac{350}{4.5}-\left ( \frac{1}{4.5} \right ) ^2\right )}+\frac{2.27}{4.5\left (\left ( s+\frac{1}{4.5}\right )^2+\frac{350}{4.5}-\left ( \frac{1}{4.5} \right ) ^2\right )}
@@ -179,7 +179,7 @@ $$
 X(s)=\frac{0.01s}{ \left ( s+\frac{1}{4.5}\right )^2+77.73}+\frac{0.5044}{\left ( s+\frac{1}{4.5}\right )^2+77.73 }
 $$
 
-Se observa que el numerador de la primera fracción parcial aún no es equivalente a ninguna de las expresiones que se encuentran en la {numref}`Tabla_transformadas`, en concreto, al par transformado $\frac{As}{(s+\alpha)^2+\omega^2}$, mediante la manipulación algebraica se puede llevar a la forma adecuada para aplicar las reglas de transformacion conocidas. Sumando y restando $0.01(0.22)$ en el numerador:
+Se observa que el numerador de la primera fracción parcial aún no es equivalente a ninguna de las expresiones que se encuentran en la {numref}`Tabla_transformadas`, en concreto, al par transformado $\frac{As}{(s+\alpha)^2+\omega^2}$, mediante la manipulación algebraica se puede llevar a la forma adecuada para aplicar las reglas de transformación conocidas. Sumando y restando $0.01(0.22)$ en el numerador:
 
 
 $$
@@ -198,13 +198,13 @@ $$
 X(s)=\frac{0.01(\textcolor{red}{s+0.22})}{\left ( \textcolor{red}{s+0.22} \right )^2+77.73}+\frac{0.5044}{\left ( s+0.22\right )^2+77.73 }-\frac{0.01(0.22)}{\left ( s+0.22\right )^2+77.73 }
 $$
 
-Esta ultima expresión se simplifica al sumar las fracciones similares, es decir aquellas con constantes en el numerador, esto es posible debido al hecho de que el denominador es el mismo para ambas fracciones.
+Esta última expresión se simplifica al sumar las fracciones similares, es decir aquellas con constantes en el numerador, esto es posible debido al hecho de que el denominador es el mismo para ambas fracciones.
 
 $$
 X(s)=X_1(s)+X_2(s)=\frac{0.01(s+0.22)}{\left (s+0.22 \right )^2+77.73}+\frac{0.5022}{\left ( s+0.22\right )^2+77.73 }
 $$
 
-De esta manera es posible obtener la función solución $x(t)$ aplicando la transformada inversa de Lapalace a la expresión anterior. de la {numref}`Tabla_transformadas` se sigue que:
+De esta manera es posible obtener la función solución $x(t)$ aplicando la transformada inversa de Laplace a la expresión anterior. de la {numref}`Tabla_transformadas` se sigue que:
 
 $$
 x(t)=\mathscr{L} ^{-1} \left\{ X(s) \right \} =\mathscr{L} ^{-1} \left\{  \frac{0.01(s+0.22)}{\left (s+0.22 \right )^2+77.73}+\frac{0.5022}{\left ( s+0.22\right )^2+77.73 } \right \}
