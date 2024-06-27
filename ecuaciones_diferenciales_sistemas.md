@@ -16,7 +16,7 @@ kernelspec:
 # Ecuaciones diferenciales y sistemas lineales.
 
 Un método para representar la relación que existe entre las entradas y las salidas en los sistemas es
-una ecuación diferencial. A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incógnita a una funcion. Una ecuación diferencial en el contexto de los sistemas, involucra a las
+una ecuación diferencial. A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incógnita a una función. Una ecuación diferencial en el contexto de los sistemas, involucra a las
 señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:
 
 ```{math}
