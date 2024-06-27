@@ -17,7 +17,7 @@ kernelspec:
 # Propiedades de la transformada de Laplace.
 
 
-La transformada de Laplace, definida  en la ecuación {eq}`transformada_def` genra una superficie en eñ espacio $\mathbb{R}^3$, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para ${-\infty}<t<{\infty}$.
+La transformada de Laplace, definida  en la ecuación {eq}`transformada_def` genera una superficie en el espacio $\mathbb{R}^3$, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para ${-\infty}<t<{\infty}$.
 
 
 ```{code-cell} Octave
@@ -53,11 +53,11 @@ view(gca,[23.5,38]);
 set(gca,'fontsize',20);
 %set(gca,'fontname','Times New Roman','FontWeight','Bold'); 
 ```
-Como es claro en la gráfica anterior, la variable compleja $s$ tiene un caso particular cuando la parte real de $s$ es identicamente cero, es ese caso, la transformada de Laplace se convierte en la transformada de Fourier. Algunas propiedades interesantes de la transformada de Laplace se presentan a continuación:
+Como es claro en la gráfica anterior, la variable compleja $s$ tiene un caso particular cuando la parte real de $s$ es idénticamente cero, es ese caso, la transformada de Laplace se convierte en la transformada de Fourier. Algunas propiedades interesantes de la transformada de Laplace se presentan a continuación:
 
 ## Linealidad de la Transformada de Laplace 
 
-La transformada de Laplace es un operador lineal, de ahí que cobre una importancia particular en la ingeniería. El principio de superposición aplica a la transormada de Laplace y, por ende sustenta la porpiedad de linealidad del operador transformadad como se indica a continuación:
+La transformada de Laplace es un operador lineal, de ahí que cobre una importancia particular en la ingeniería. El principio de superposición aplica a la transormada de Laplace y, por ende sustenta la propiedad de linealidad del operador transformadad como se indica a continuación:
 
 ```{admonition} Principio de linealidad de la transformada de Laplace:
 
@@ -116,7 +116,7 @@ $$
 
 ## Propiedad de escalamiento en los dominios de $s$ y de $t$
 
-Una operacion de escalamiento de una función $x(t)$, que porduce una función $g(t)=x\left( \frac{t}{a}\right )$ tendrá como resultado una función escalada e el dominio de $s$, con escalamiento inverso:
+Una operación de escalamiento de una función $x(t)$, que produce una función $g(t)=x\left( \frac{t}{a}\right )$ tendrá como resultado una función escalada e el dominio de $s$, con escalamiento inverso:
 
 ```{admonition} Propiedad de escalamento en el tiempo y la frecuencia de la transformada de Laplace:
 

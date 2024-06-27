@@ -15,7 +15,7 @@ kernelspec:
 
 # Respuesta al impulso de sistemas de tiempo continuo.
 
-Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se puede utilizar como el modelo matemático o la respresentación de un sistema dinámico. Existe una representación alternativa que resulta muy útil para el modelado de los sistemas es llamada `la respuesta al impulso del sistema`({cite:t}`KamenMATLAB`, {cite:t}`Alkin`). La función umpulso unitario, conocida como función Delta de Dirac se define matemáticamente como:
+Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se puede utilizar como el modelo matemático o la respresentación de un sistema dinámico. Existe una representación alternativa que resulta muy útil para el modelado de los sistemas es llamada `la respuesta al impulso del sistema`({cite:t}`KamenMATLAB`, {cite:t}`Alkin`). La función impulso unitario, conocida como función Delta de Dirac se define matemáticamente como:
 
 ```{math}
 :label: impulso
@@ -24,7 +24,7 @@ Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se pued
 		 \end{equation}
 ```
 
-Cuando la función $\delta(t)$ se usa como una función estímulo para un sistema, a la salida $y(t)$ se le denomina respuesta al impulso del sistema y se usa la notación $h(t)$ para distinguirla de las posibles salidas adel sistema ante entradas o estímulos arbitrarios $x(t)$. 
+Cuando la función $\delta(t)$ se usa como una función estímulo para un sistema, a la salida $y(t)$ se le denomina respuesta al impulso del sistema y se usa la notación $h(t)$ para distinguirla de las posibles salidas del sistema ante entradas o estímulos arbitrarios $x(t)$. 
 
 ## Determinación de la respuesta al impulso de un sistema 
 
@@ -69,7 +69,7 @@ Se consideran condiciones iniciales cero, es decir: $v(0)=0$ y $\dot{v}(0)=0$ y 
   1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=1
 	\end{equation}
 ```
-De aquí se desprende que, de acuerdo con la {numref}`Tabla_sol` y deaa auerdo con el ejemplo anterior, donde se calcularon las raices complejas $-52.98 \pm 239.58i$ la solución de la homogenea asociada es:
+De aquí se desprende que, de acuerdo con la {numref}`Tabla_sol` y de acuerdo con el ejemplo anterior, donde se calcularon las raices complejas $-52.98 \pm 239.58i$ la solución de la homogenea asociada es:
 
 $$
 v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
@@ -188,7 +188,7 @@ $$
 r_{i}=\alpha \pm \beta i
 $$
 
-Usando las partes real e imaginaria de la primera raiz, se encuentra el valor de dichas constantes:
+Usando las partes real e imaginaria de la primera raíz, se encuentra el valor de dichas constantes:
 
 ```{math}
 :label: calculo_impulso

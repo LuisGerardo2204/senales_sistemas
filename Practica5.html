@@ -355,8 +355,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="practica-5-solucion-de-ecuaciones-diferenciales-ordinarias-lineales-usando-la-transformada-de-laplace">
 <h1>Práctica 5: Solución de ecuaciones diferenciales ordinarias lineales usando la transformada de Laplace.<a class="headerlink" href="#practica-5-solucion-de-ecuaciones-diferenciales-ordinarias-lineales-usando-la-transformada-de-laplace" title="Permalink to this heading">#</a></h1>
-<p>En la sección anterior, se encontró la solución a una ecuación diferencial de segundo orden usando la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> para encontrar la similitud de la función <span class="math notranslate nohighlight">\(X(s)\)</span> del caso bajo análisis con algún par de transformadas conocido. En esta práctica usaremos la herramienta MATLAB para enncotrar la solución de ecuaciones diferenciales, aplicando la transformada de Laplace.</p>
-<p>Retomaremos el caso de la ecuación difrencial ordinaria, con condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.01\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0.5\)</span>:</p>
+<p>En la sección anterior, se encontró la solución a una ecuación diferencial de segundo orden usando la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> para encontrar la similitud de la función <span class="math notranslate nohighlight">\(X(s)\)</span> del caso bajo análisis con algún par de transformadas conocido. En esta práctica usaremos la herramienta MATLAB para encontrar la solución de ecuaciones diferenciales, aplicando la transformada de Laplace.</p>
+<p>Retomaremos el caso de la ecuación diferencial ordinaria, con condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.01\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0.5\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 4.5\frac{d^2x(t)}{dt^2}+2\frac{dx(t)}{dt}+350x(t)=0
@@ -437,7 +437,7 @@ X(s)=\frac{0.045s+2.27}{4.5s^2+2s+350}
 </div>
 </div>
 </div>
-<p>En el arreglo r se almacenan los residuos o bien las raíces del polinomio en la variable compleja <span class="math notranslate nohighlight">\(s\)</span> del numerador, minetras que en la variable p se almacenan las raices del denominador que también se conocen como los polos del sistema, finalmente en el arreglo k se almacenan los valores de los coeficientes constantes.
+<p>En el arreglo r se almacenan los residuos o bien las raíces del polinomio en la variable compleja <span class="math notranslate nohighlight">\(s\)</span> del numerador, mientras que en la variable p se almacenan las raices del denominador que también se conocen como los polos del sistema, finalmente en el arreglo k se almacenan los valores de los coeficientes constantes.
 Se puede expresar la forma general de la expansión en fracciones parciales de la función <span class="math notranslate nohighlight">\(X(s)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -472,12 +472,12 @@ x(t)=e^{-0.2222t} \left ( 0.0050\left (  e^{8.8164jt}+e^{-8.8164jt}\right ) - 0.
 \[
 x(t)=e^{-0.2222t} \left ( \frac{0.01\left (  e^{8.8164jt}+e^{-8.8164jt}\right ) }{2}+ \frac{0.0570\left (  e^{8.8164jt}+e^{-8.8164jt}\right ) }{2j} \right )
 \]</div>
-<p>Usando <span class="math notranslate nohighlight">\(cos(x)=\frac{e^{jx}+e^{-jx}}{2}\)</span> y <span class="math notranslate nohighlight">\(sen(x)=\frac{e^{jx}-e^{-jx}}{2j}\)</span> se obtiene finalmente la expresión para la funcción <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
+<p>Usando <span class="math notranslate nohighlight">\(cos(x)=\frac{e^{jx}+e^{-jx}}{2}\)</span> y <span class="math notranslate nohighlight">\(sen(x)=\frac{e^{jx}-e^{-jx}}{2j}\)</span> se obtiene finalmente la expresión para la función <span class="math notranslate nohighlight">\(x(t)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=e^{-0.2222t} \left ( 0.01cos(8.8164t) + 0.0570sen(8.8164t)\right )
 \]</div>
-<p>Un ejemplo mas es el sistema masa-resorte-amortiguador resuelto en la práctica 3, donde la ecuación diferencial adquiría la forma:</p>
+<p>Un ejemplo mas es el sistema masa-resorte-amortiguador resuelto en la práctica 3, donde la ecuación diferencial adquiere la forma:</p>
 <div class="math notranslate nohighlight">
 \[
 0.043\ddot{x}+0.0015\dot{x}+4.3x=0
@@ -529,7 +529,7 @@ X(s)=\frac{(0.025)0.043s+3.75\times10^{-5}}{0.043s^2+0.0015s+4.3}
 \[
 x(t)=e^{Re(p)t} \left ( 2Re(r)cos(Im(p)t) + 2Im(r)sen(Im(p)t)\right )
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(Re(p)\)</span> es la parte real del polo almacenado en el arreglo p, <span class="math notranslate nohighlight">\(Im(p)\)</span> es la parte imaginaria del polo almacenado en el mismo arreglo p, <span class="math notranslate nohighlight">\(Re(r)\)</span> es la parte real del residuo, almacenado en el arreglo r y <span class="math notranslate nohighlight">\(Im(p)\)</span> es la parte imaginaria del reciduo almacenado en el mismo arreglo r. Sustituyendo los valores numéricos:</p>
+<p>donde <span class="math notranslate nohighlight">\(Re(p)\)</span> es la parte real del polo almacenado en el arreglo p, <span class="math notranslate nohighlight">\(Im(p)\)</span> es la parte imaginaria del polo almacenado en el mismo arreglo p, <span class="math notranslate nohighlight">\(Re(r)\)</span> es la parte real del residuo, almacenado en el arreglo r y <span class="math notranslate nohighlight">\(Im(p)\)</span> es la parte imaginaria del residuo almacenado en el mismo arreglo r. Sustituyendo los valores numéricos:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=e^{-0.0174t} \left ( 2(0.0125)cos(10t) + 2(0)sen(10t)\right )=0.025cos(10t)e^{-0.0174t}

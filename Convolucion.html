@@ -472,7 +472,7 @@ b. En <span class="math notranslate nohighlight">\(h(\tau)\)</span>, sustitúyas
 f(\tau)=x(\tau)h(t-\tau)
 \]</div>
 <ol class="arabic simple" start="4">
-<li><p>Calcular el area bajo la curva formada por el producto <span class="math notranslate nohighlight">\(f(\tau)=x(\tau)h(t-\tau)\)</span>, por medio de la integral respecto de la variable independiente <span class="math notranslate nohighlight">\(\tau\)</span>. El resultado es el valor de la señal en el instante de tiempo específico <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>Calcular el área bajo la curva formada por el producto <span class="math notranslate nohighlight">\(f(\tau)=x(\tau)h(t-\tau)\)</span>, por medio de la integral respecto de la variable independiente <span class="math notranslate nohighlight">\(\tau\)</span>. El resultado es el valor de la señal en el instante de tiempo específico <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
 <li><p>Repita los pasos 1 al 4 para todos los valores de <span class="math notranslate nohighlight">\(t\)</span> que son de interés.</p></li>
 </ol>
 <p>Usando la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema RLC como se expresa en la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-h-rlc-final">(34)</a> y la instrucción <code class="docutils literal notranslate"><span class="pre">cumtrapz()</span></code> que permite el cálculo de la respuesta al impulso se puede graficar la respuesta al est <span class="math notranslate nohighlight">\(x(t)=1.63u(t)\)</span></p>
@@ -551,7 +551,7 @@ f(\tau)=x(\tau)h(t-\tau)
 </section>
 <section id="ejemplo-de-aplicacion">
 <h2>Ejemplo de aplicación<a class="headerlink" href="#ejemplo-de-aplicacion" title="Permalink to this heading">#</a></h2>
-<p>Para ilustrar un poco más a profundidad el concepto de la integral de convolución usaremos el ejemplo propuesto en el libro (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), generaremos las gráficas usnado MATLAB y haremos el cálculo numérico de la salida del sistema usando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
+<p>Para ilustrar un poco más a profundidad el concepto de la integral de convolución usaremos el ejemplo propuesto en el libro (<span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), generaremos las gráficas usado MATLAB y haremos el cálculo numérico de la salida del sistema aplicando el comando <code class="docutils literal notranslate"><span class="pre">conv()</span></code>.</p>
 <section id="ejercicio">
 <h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
 <p>Encuentre la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema cuya respuesta al impulso es:</p>
@@ -602,7 +602,7 @@ h(t)=e^{-t}(u(t)-u(t-2))
 </div>
 <p>El cálculo de la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se desglosa en 6 diferentes casos:</p>
 <p><strong>Caso 1</strong></p>
-<p>Cuando <span class="math notranslate nohighlight">\(t \leq 0\)</span>: en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobbreponen, por lo tanto:</p>
+<p>Cuando <span class="math notranslate nohighlight">\(t \leq 0\)</span>: en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobreponen, por lo tanto:</p>
 <div class="math notranslate nohighlight">
 \[
 y(t)=0
@@ -819,7 +819,7 @@ y(t)=0.1353-7.3891e^{-t}~~si~~3 &lt; t \leq 4
 </div>
 </div>
 <p><strong>Caso 6</strong></p>
-<p>Cuando <span class="math notranslate nohighlight">\(t&gt;4\)</span>: en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobbreponen, por lo tanto:</p>
+<p>Cuando <span class="math notranslate nohighlight">\(t&gt;4\)</span>: en este caso las señales <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> no se sobreponen, por lo tanto:</p>
 <div class="math notranslate nohighlight">
 \[
 y(t)=0
