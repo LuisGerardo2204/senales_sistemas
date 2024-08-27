@@ -392,7 +392,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0b2308dbff518ed36fb15de475c87d1737cc9c2d0f86782a98763023768a6c83.png" src="_images/0b2308dbff518ed36fb15de475c87d1737cc9c2d0f86782a98763023768a6c83.png" />
+<img alt="_images/a480d7f49c6fbdf9fd29128ab98f054d60284f2264c180d7a244cab9d9213858.png" src="_images/a480d7f49c6fbdf9fd29128ab98f054d60284f2264c180d7a244cab9d9213858.png" />
 </div>
 </div>
 <p>La transformada de Fourier de la señal diente de sierra muestra su contenido en frecuencia. Como se trató en la sección aterior, en donde se calcularon los coeficientes de la serie de fourier, la señal tipo diente de sierra tiene componentes frecuenciales en múltiplos de la frecuencia original, en este caso particular, múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>. El algoritmo de la transformada de Fourier de la señal diente se ejemplifica a continuación:</p>
@@ -433,8 +433,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/abb05a5c3c2316567d154545742524c921ecf6e72086fe2d02abdf2566c3e612.png" src="_images/abb05a5c3c2316567d154545742524c921ecf6e72086fe2d02abdf2566c3e612.png" />
-<img alt="_images/cb957ffd4eaeb8cdc54a2dacf384136934e450d645a3a6496aeb0953398bdf74.png" src="_images/cb957ffd4eaeb8cdc54a2dacf384136934e450d645a3a6496aeb0953398bdf74.png" />
+<img alt="_images/f33396f765749705bbc5f19b60a62591213534c7a6cb440174b7d07f885bee90.png" src="_images/f33396f765749705bbc5f19b60a62591213534c7a6cb440174b7d07f885bee90.png" />
+<img alt="_images/07960de33a3cc6409dde8a46c88d5553ba03ef5f23ec12ff5aaa9c7d961a21ee.png" src="_images/07960de33a3cc6409dde8a46c88d5553ba03ef5f23ec12ff5aaa9c7d961a21ee.png" />
 </div>
 </div>
 </section>
@@ -482,10 +482,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/a7c6fa2e0df8638bfe24ca708f858d12b7d35ee7a263d259221b1527fcc54872.png" src="_images/a7c6fa2e0df8638bfe24ca708f858d12b7d35ee7a263d259221b1527fcc54872.png" />
-<img alt="_images/03e8a9dee1d1b4bcc2bd95338105fccfdfe96dea39e263356218d3dd92140ed2.png" src="_images/03e8a9dee1d1b4bcc2bd95338105fccfdfe96dea39e263356218d3dd92140ed2.png" />
-</div>
 </div>
 <p>En estos ejemplos se puede observar como las componentes frecuenciales son múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=1/T\)</span>, con <span class="math notranslate nohighlight">\(T\)</span> el periodo de la función. Para una señal en general se aplica el algoritmo de la FFT para encontrar su contenido frecuencial o armónico.</p>
 </section>
@@ -506,7 +502,7 @@ x(t)=3.5cos(2\pi 350 t)+2.4sen(2\pi 500 t)+1.5cos(2\pi 1000 t)+\gamma(t)
 <span class="n">freq_muestreo</span><span class="p">=</span><span class="mi">10000</span><span class="p">;</span>
 <span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_muestreo</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
 
-<span class="n">x</span><span class="p">=</span><span class="mf">3.5</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">250</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">2.4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">500</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">1500</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">rand</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="n">x</span><span class="p">=</span><span class="mf">3.5</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">1250</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">2.4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">1500</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">1100</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="nb">rand</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
 
 <span class="n">figure</span>
 <span class="s">plot(t,x,&quot;linewidth&quot;,2)</span><span class="p">;</span>
@@ -532,8 +528,8 @@ x(t)=3.5cos(2\pi 350 t)+2.4sen(2\pi 500 t)+1.5cos(2\pi 1000 t)+\gamma(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/826b22a93708f88dccc2dec1db8c1cb45cf684ea6cc7ce3d55a505e52546e4a9.png" src="_images/826b22a93708f88dccc2dec1db8c1cb45cf684ea6cc7ce3d55a505e52546e4a9.png" />
-<img alt="_images/32b44141cb8a84869b7bf6daf0a0b2ce155dcd32fc4fa620230ea23782b0a334.png" src="_images/32b44141cb8a84869b7bf6daf0a0b2ce155dcd32fc4fa620230ea23782b0a334.png" />
+<img alt="_images/4863f20bb35e7936f937f515e7e46459db18d89657d2ed4e93a8ee63e76d138c.png" src="_images/4863f20bb35e7936f937f515e7e46459db18d89657d2ed4e93a8ee63e76d138c.png" />
+<img alt="_images/c2dad0904aa3821104a0d1e916c320e9275f5e36026bb391bfa00a921105d052.png" src="_images/c2dad0904aa3821104a0d1e916c320e9275f5e36026bb391bfa00a921105d052.png" />
 </div>
 </div>
 <p>El algoritmo de la transformada rápida de Fourier permite distinguir con mucha claridad los componentes frecuenciales de la señal <span class="math notranslate nohighlight">\(x(t)\)</span>. En la gráfica se observan los picos en los valores de frecuencia de 250, 500 y 1500 Hz, a pesar de la presencia de ruido blanco aleatorio.</p>
@@ -580,18 +576,6 @@ x(t)=3.5cos(2\pi 350 t)+2.4sen(2\pi 500 t)+1.5cos(2\pi 1000 t)+\gamma(t)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G =
- 
-        9.904e04
-  ---------------------
-  s^2 + 106 s + 6.02e04
- 
-Continuous-time transfer function.
-</pre></div>
-</div>
-<img alt="_images/04b04e66bcdd0980cecae1a1fd1216797accaa54df94a5f2302cd8423a73a200.png" src="_images/04b04e66bcdd0980cecae1a1fd1216797accaa54df94a5f2302cd8423a73a200.png" />
-</div>
 </div>
 <p>Se aplica el algoritmo de la FFT para encontrar el contenido frecuencial de la señal, y por lo tanto, un bosquejo de la respuesta en frecuencia del circuito RLC.</p>
 <div class="cell docutils container">
@@ -616,9 +600,6 @@ Continuous-time transfer function.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/07c790d999d84fa44543ca03073104cade4ada4d999ec95473f65f4222b4a762.png" src="_images/07c790d999d84fa44543ca03073104cade4ada4d999ec95473f65f4222b4a762.png" />
-</div>
 </div>
 <p>Finalmente, este resultado se compara con el diagrama de bode del sistema, por medio de las siguientes instrucciones:</p>
 <div class="cell docutils container">
@@ -634,9 +615,6 @@ Continuous-time transfer function.
 <span class="nb">legend</span><span class="p">(</span><span class="s">&#39;FFT&#39;</span><span class="p">,</span><span class="s">&#39;Diagrama de Bode&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/b2931e5321bb95fbf1353ffc7293a8768ec054475d1216be6211e7eea97d61be.png" src="_images/b2931e5321bb95fbf1353ffc7293a8768ec054475d1216be6211e7eea97d61be.png" />
 </div>
 </div>
 <p>Como puede observarse, el algoritmo de la FFT es perfectamente compatible con el diagrama de Bode que permite la determinación de la respuesta en frecuencia de los sistemas, por lo tanto, un barrido frecuencial experimental, se utiliza para recolectar la información de la respuesta dinámica del sistema, se procesa la señal resultante mediante el algoritmo de la FFT y se obiente la respuesta en frecuencia experimental del sistema.</p>

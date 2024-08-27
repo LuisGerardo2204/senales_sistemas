@@ -13,7 +13,7 @@ kernelspec:
   name: Octave
 ---
 
-# Análisis de sistemas de tiempo continuo.
+# Conceptos básicos: Señales.
 
 Una vez definido el concepto de señales y las operaciones que se realizan en ellas, es posible utilizar esas herramientas para analizar a los sistemas. En general se dice que un sistema es un ente que produce una o varia señales de salida como respuesta a estímulos o señales de entrada ({cite:t}`KamenMATLAB`). En el contexto de las matemáticas, un sistema es una transformación. Una transformación en el contexto de los sistemas es un conjunto de fórmulas u operaciones matemáticas que tienen una gran diversidad de complejidades, desde la estructura más simples hasta los sistemas de ecuaciones integro-diferenciales.
 
@@ -36,7 +36,7 @@ Matemáticamente, se dice que un sistema es lineal si su estructura cumple con l
 	\end{eqnarray}
 ```
 
-La condición expresada en estas ecuaciones se conoce como la regla de aditividad. La cual establece que: ``La respuesta de un sistema lineal a la suma de dos señales de entrada o estímulos es igual a la suma de las respuestas individuales``. La segunda ecuación se conoce como la regla de la homogeneidad, la cual establece que: ``El escalamiento por una constante de la señal de estímulo o entrada a un sistema, produce una salida del sistema escalada por la misma constante``. La combinación de estas dos reglas dan como resultado el proncipio de superposición de los sistemas lineales ({cite}`Alkin`). 
+La condición expresada en estas ecuaciones se conoce como la regla de aditividad. La cual establece que: ``La respuesta de un sistema lineal a la suma de dos señales de entrada o estímulos es igual a la suma de las respuestas individuales``. La segunda ecuación se conoce como la regla de la homogeneidad, la cual establece que: ``El escalamiento por una constante de la señal de estímulo o entrada a un sistema, produce una salida del sistema escalada por la misma constante``. La combinación de estas dos reglas dan como resultado el principio de superposición de los sistemas lineales ({cite}`Alkin`). 
 
 
 ```{admonition} Principio de superposición:
