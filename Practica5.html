@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -550,7 +551,7 @@ x(t)=e^{-0.0174t} \left ( 2(0.0125)cos(10t) + 2(0)sen(10t)\right )=0.025cos(10t)
 \[
   1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=1.63
 \]</div>
-<p>Aplicado la transformada de Laplace a la ecuación <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(9)</a>, con condiciones iniciales iguales a cero se obtiene:</p>
+<p>Aplicado la transformada de Laplace a la ecuación <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(11)</a>, con condiciones iniciales iguales a cero se obtiene:</p>
 <div class="math notranslate nohighlight">
 \[
   1.661\times 10^{-5}s^2V_c(s)+ 0.0018sV_c(s)+V_c(s)=\frac{1.63}{s}
@@ -594,7 +595,7 @@ V_c(s)=\frac{1.63}{s \left ( 1.661\times 10^{-5}s^2+0.0018s+1\right )}=\frac{1.6
 </div>
 <p>En este caso se obtiene una constante con valor <span class="math notranslate nohighlight">\(1.63\)</span> que acompaña al polo en el origen <span class="math notranslate nohighlight">\(0+0j\)</span>, el resto de los residuos y polos se usan para construir la respuesta completa usando las reglas expuestas anteriormente, de manera que se obtiene:</p>
 <div class="math notranslate nohighlight" id="equation-residuos-general">
-<span class="eqno">(48)<a class="headerlink" href="#equation-residuos-general" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(50)<a class="headerlink" href="#equation-residuos-general" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 v_c(t)=e^{Re(p)t} \left ( 2Re(r)cos(Im(p)t) + 2Im(r)sen(Im(p)t)\right )
 	\end{equation}\]</div>
 <p>Sustituyendo los valores numéricos:</p>
@@ -607,7 +608,7 @@ v_c(t)=1.63+e^{-54.18t} \left ( 2(-0.8150)cos(239.31t) + 2(-0.1845)sen(239.31t)\
 \[
 v_c(t)=1.63-e^{-54.18t} \left ( 1.63cos(239.31t)-0.3690sen(239.31t)\right )
 \]</div>
-<p>cuya gráfica es similar a la de la ecuación <a class="reference internal" href="Practica3.html#equation-sol-vc">(22)</a></p>
+<p>cuya gráfica es similar a la de la ecuación <a class="reference internal" href="Practica3.html#equation-sol-vc">(24)</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>

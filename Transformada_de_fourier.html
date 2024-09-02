@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -362,19 +363,19 @@ document.write(`
 <h1>La Transformada de Fourier.<a class="headerlink" href="#la-transformada-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Hemos analizado y aplicado la transformada de Laplace al análisis de sistemas dinámicos. La transformada de Laplace permite la algebrización del problema de cálculo que implica el modelado de los sistemas por medio de ecuaciones diferenciales. Por otro lado, la serie trigonométrica de Fourier ofrece una alternativa muy útil de representación de señales en términos de sus componentes frecuenciales o armónicos. Una Herramienta para el análisis de señales y sistemas en el domino de la frecuencia es la transformada de Fourier. La transformada de Fourier no se limita al análisis de señales periódicas, dado que es un caso particular de la transformada de Laplace. La definición formal de la transformada de Fourier es:</p>
 <div class="math notranslate nohighlight" id="equation-trans-laplace">
-<span class="eqno">(84)<a class="headerlink" href="#equation-trans-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(86)<a class="headerlink" href="#equation-trans-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    X(\omega)=\int^{\infty}_{-\infty}x(t)e^{-j\omega t}dt,~~~~,-\infty &lt; \omega &lt; \infty 
  \end{equation}\]</div>
-<p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(84)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
+<p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(86)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
 <p>La transformada rápida de Fourier es un algoritmo computacional que ofrece una alternativa para el cálculo de las tranformadas analíticas de Fourier de señales provenientes de sistemas físicos, en MATLAB, el algoritmo de la FFT, siglas en inglés de Fast Fourier Transform (transformada rápida de Fourier) está incluido y optimizado para su uso en señales discretas. A continuación se muestran algunos ejemplos de su aplicación.</p>
 <section id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra-2">
-<span class="eqno">(85)<a class="headerlink" href="#equation-func-sierra-2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(87)<a class="headerlink" href="#equation-func-sierra-2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 150(t+0.02) &amp; si &amp; -0.02 \leq t \leq -0.01 \\ \\ 150t &amp; si &amp; -0.01 \leq t \leq 0.01 \\ \\ 150(t-0.02) &amp; si &amp; 0.01 &lt; t \leq 0.03 \end{array} \right.
 		 \end{equation}\end{split}\]</div>
-<p>Además, se cumple que <span class="math notranslate nohighlight">\(g(t)=g(t+0.02)\)</span>. La gráfica de esta señal, definida por la <a class="reference internal" href="Series_de_fourier.html#equation-func-sierra">(81)</a> se muestra con las líneas de código siguientes:</p>
+<p>Además, se cumple que <span class="math notranslate nohighlight">\(g(t)=g(t+0.02)\)</span>. La gráfica de esta señal, definida por la <a class="reference internal" href="Series_de_fourier.html#equation-func-sierra">(83)</a> se muestra con las líneas de código siguientes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -444,7 +445,7 @@ document.write(`
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso2">
-<span class="eqno">(86)<a class="headerlink" href="#equation-func-pulso2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(88)<a class="headerlink" href="#equation-func-pulso2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; -0.5 \leq t \leq 0.5 \\ \\ 0 &amp; si &amp; 0.5 \leq t \leq 1.5  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>El algoritmo de la FFT aplicado a la señal pulso cuadrado</p>

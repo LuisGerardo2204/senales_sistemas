@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -349,14 +350,14 @@ document.write(`
 <h1>Práctica 2: Comprobación de invarianza en el tiempo con MATLAB<a class="headerlink" href="#practica-2-comprobacion-de-invarianza-en-el-tiempo-con-matlab" title="Permalink to this heading">#</a></h1>
 <p>La invarianza en el tiempo es otra propiedad importante de los sistemas dinámicos, acompañada de la linealidad, la invarianza en el tiempo permite a los sistemas tener un comportamiento muy deseable para su aplicación en la ingeniería. Matemáticamente, para un sistema con la estructura <span class="math notranslate nohighlight">\(y(t)=Transf\{x(t)\}\)</span> la invarianza en el tiempo se expresa como:</p>
 <div class="math notranslate nohighlight" id="equation-cond-invarianza">
-<span class="eqno">(3)<a class="headerlink" href="#equation-cond-invarianza" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(5)<a class="headerlink" href="#equation-cond-invarianza" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   Transf\{x(t-\tau)\}=y(t-\tau) 
 	\end{equation}\]</div>
 <p>Esto significa que si la señal que se aplica a un sistema invariante en el tiempo se desplaza en el tiempo por <span class="math notranslate nohighlight">\(\tau\)</span> segundos, el único efecto de este retardo deberá ser un desplazamiento igual en la señal de salida.</p>
 <div class="admonition-condicion-de-invarianza-en-el-tiempo admonition">
 <p class="admonition-title">Condición de invarianza en el tiempo:</p>
 <div class="math notranslate nohighlight" id="equation-invarianza">
-<span class="eqno">(4)<a class="headerlink" href="#equation-invarianza" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(6)<a class="headerlink" href="#equation-invarianza" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   Transf\{x(t)\}=y(t)~~implica~que:~~~Transf\{x(t-\tau)\}=y(t-\tau) 
 \end{equation}\]</div>
 </div>
@@ -399,7 +400,7 @@ para los sistemas:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4eea2e2aaa90e522c1beffa67f731d6f77ebd86601109450e2c3a53409b39aea.png" src="_images/4eea2e2aaa90e522c1beffa67f731d6f77ebd86601109450e2c3a53409b39aea.png" />
+<img alt="_images/bd24549d04470c180555fb3b38bbf33a815a1403f97d175a8c0ce16f765eab76.png" src="_images/bd24549d04470c180555fb3b38bbf33a815a1403f97d175a8c0ce16f765eab76.png" />
 </div>
 </div>
 <p>Como es posible observar en la gráfica anterior, el sistema <span class="math notranslate nohighlight">\(y(t-2.5)=2.5x(t-2.5)\)</span> es invariante en el tiempo, dado que cumple con el principio de invarianza. Si el mismo código se ejecuta, pero esta vez evaluando el sistema definido como <span class="math notranslate nohighlight">\(y(t)=x(t)^2-5tx(t)+2\)</span> se obtiene:</p>
