@@ -12,6 +12,7 @@ execute:
   #execute_notebooks: cache
   #execute_notebooks: 'off'
   exclude_patterns: 
+                - modela_senales.ipynb
                 - Practica1.ipynb
                 - Practica3.ipynb
                 - Practica4.ipynb

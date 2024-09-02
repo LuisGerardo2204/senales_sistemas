@@ -175,6 +175,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -361,7 +364,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="propiedades-de-la-transformada-de-laplace">
 <h1>Propiedades de la transformada de Laplace.<a class="headerlink" href="#propiedades-de-la-transformada-de-laplace" title="Permalink to this heading">#</a></h1>
-<p>La transformada de Laplace, definida en la ecuación <a class="reference internal" href="transformada_de_Laplace.html#equation-transformada-def">(47)</a> genera una superficie en el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para <span class="math notranslate nohighlight">\({-\infty}&lt;t&lt;{\infty}\)</span>.</p>
+<p>La transformada de Laplace, definida en la ecuación <a class="reference internal" href="transformada_de_Laplace.html#equation-transformada-def">(49)</a> genera una superficie en el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para <span class="math notranslate nohighlight">\({-\infty}&lt;t&lt;{\infty}\)</span>.</p>
 <div class="cell tag_remove-stderr docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> 
@@ -407,7 +410,7 @@ document.write(`
 <div class="admonition-principio-de-linealidad-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Principio de linealidad de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-lineal-laplace">
-<span class="eqno">(50)<a class="headerlink" href="#equation-lineal-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[
+<span class="eqno">(52)<a class="headerlink" href="#equation-lineal-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[
 k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 </div>
 <p>Ejemplo: la transformada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=2.8cos(2t)+5.4e^{-3t}+3.5sen(5t)\)</span></p>
@@ -425,7 +428,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="admonition-propiedad-de-desplazamiento-en-el-tiempo-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de desplazamiento en el tiempo de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-desp-tiempo-laplace">
-<span class="eqno">(51)<a class="headerlink" href="#equation-desp-tiempo-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t-\tau) \right\} \xrightarrow{\mathscr{L}} e^{-\tau s} X(s)\]</div>
+<span class="eqno">(53)<a class="headerlink" href="#equation-desp-tiempo-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t-\tau) \right\} \xrightarrow{\mathscr{L}} e^{-\tau s} X(s)\]</div>
 </div>
 <p>Ejemplo: la transformada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=0.01cos(2(t-3))\)</span></p>
 <div class="math notranslate nohighlight">
@@ -439,7 +442,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="admonition-propiedad-de-desplazamiento-en-el-dominio-de-s-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de desplazamiento en el dominio de <span class="math notranslate nohighlight">\(s\)</span> de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-desp-freq-laplace">
-<span class="eqno">(52)<a class="headerlink" href="#equation-desp-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t)e^{s_0t} \right\} \xrightarrow{\mathscr{L}}  X(s-s_0)\]</div>
+<span class="eqno">(54)<a class="headerlink" href="#equation-desp-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t)e^{s_0t} \right\} \xrightarrow{\mathscr{L}}  X(s-s_0)\]</div>
 </div>
 <p>Ejemplo: la trasfomdada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=e^{-0.5t}sen(6\pi t)\)</span></p>
 <div class="math notranslate nohighlight">
@@ -453,7 +456,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="admonition-propiedad-de-escalamento-en-el-tiempo-y-la-frecuencia-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de escalamento en el tiempo y la frecuencia de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-esq-freq-laplace">
-<span class="eqno">(53)<a class="headerlink" href="#equation-esq-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(at) \right\} \xrightarrow{\mathscr{L}} \frac{1}{|a|} X\left ( \frac{s}{a} \right )\]</div>
+<span class="eqno">(55)<a class="headerlink" href="#equation-esq-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(at) \right\} \xrightarrow{\mathscr{L}} \frac{1}{|a|} X\left ( \frac{s}{a} \right )\]</div>
 </div>
 <p>Ejemplo: la trasfomdada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=cos \left ( 2\pi\frac{t}{3} \right )\)</span></p>
 <div class="math notranslate nohighlight">
@@ -467,7 +470,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="admonition-propiedad-de-diferenciacion-en-el-dominio-del-tiempo admonition">
 <p class="admonition-title">Propiedad de diferenciación en el dominio del tiempo:</p>
 <div class="math notranslate nohighlight" id="equation-diff-laplace">
-<span class="eqno">(54)<a class="headerlink" href="#equation-diff-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \frac{dx(t)}{dt} \right\} \xrightarrow{\mathscr{L}}  sX(s)\]</div>
+<span class="eqno">(56)<a class="headerlink" href="#equation-diff-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \frac{dx(t)}{dt} \right\} \xrightarrow{\mathscr{L}}  sX(s)\]</div>
 </div>
 <p>Por ejemplo para la transformada de la función <span class="math notranslate nohighlight">\(\frac{d\left (3cos(4\pi t)\right )}{dt}\)</span> se tiene que:</p>
 <div class="math notranslate nohighlight">
@@ -481,7 +484,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="admonition-propiedad-de-diferenciacion-en-el-dominio-de-s admonition">
 <p class="admonition-title">Propiedad de diferenciación en el dominio de <span class="math notranslate nohighlight">\(s\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-diff-laplace-s">
-<span class="eqno">(55)<a class="headerlink" href="#equation-diff-laplace-s" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ tx(t) \right\} \xrightarrow{\mathscr{L}}  -\frac{dX(s)}{ds}\]</div>
+<span class="eqno">(57)<a class="headerlink" href="#equation-diff-laplace-s" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ tx(t) \right\} \xrightarrow{\mathscr{L}}  -\frac{dX(s)}{ds}\]</div>
 </div>
 <p>Por ejemplo, para la función <span class="math notranslate nohighlight">\(x(t)=te^{-3t}\)</span>, se usa la propiedad de diferenciación en el dominio del tiempo como:</p>
 <div class="math notranslate nohighlight">
@@ -495,7 +498,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 <div class="admonition-propiedad-de-integracion admonition">
 <p class="admonition-title">Propiedad de integración:</p>
 <div class="math notranslate nohighlight" id="equation-diff-laplace-int">
-<span class="eqno">(56)<a class="headerlink" href="#equation-diff-laplace-int" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \int^{t}_{-\infty}x(\tau)d\tau \right\} \xrightarrow{\mathscr{L}}  \frac{1}{s}X(s)\]</div>
+<span class="eqno">(58)<a class="headerlink" href="#equation-diff-laplace-int" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \int^{t}_{-\infty}x(\tau)d\tau \right\} \xrightarrow{\mathscr{L}}  \frac{1}{s}X(s)\]</div>
 </div>
 </section>
 </section>
