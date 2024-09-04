@@ -6,6 +6,7 @@ root: intro
 chapters:
 - file: senales.md
 - file: modela_senales
+- file: potencia_energía.md
 - file: sistemas_lineales.md
 - file: Practica1
 - file: Practica2

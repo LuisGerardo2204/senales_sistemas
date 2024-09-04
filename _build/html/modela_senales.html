@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'modela_senales';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Análisis de sistemas de tiempo continuo." href="sistemas_lineales.html" />
+    <link rel="next" title="Otras definiciones y propiedades de las señales" href="potencia_energ%C3%ADa.html" />
     <link rel="prev" title="Conceptos básicos: Señales." href="senales.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -178,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Modelado matemático de señales y su representación.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -351,6 +352,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-dos-senales">Suma de dos señales</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-de-senales-definidas-a-pedazos">Modelado de señales definidas a pedazos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-dos-funciones-continuas-a-pedazos">Suma de dos funciones contínuas a pedazos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacion-de-desplazamiento-en-el-tiempo">Operación de desplazamiento en el tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacion-de-escalamiento-en-el-tiempo">Operación de escalamiento en el tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacion-invesrion-en-el-tiempo">Operación invesrión en el tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-derivada-e-integral">Operaciones derivada e integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ejercicio</a></li>
 </ul>
 </li>
 </ul>
@@ -373,8 +382,8 @@ document.write(`
 <li><p>Crear una expresión para generar una señal con características deseadas o bien, con especificaciones de diseño, es decir, crear o construir una señal para lograr un objetivo específico, como lo es por ejemplo, proporcionar una entrada de prueba a un sistema bajo análisis o para fines de calibración. A este proceso se le conoce como <strong>síntesis de señales</strong>.</p></li>
 </ul>
 <p>En éste último aspecto se encuentra encerrada la función principal de las señales en el contexto de este curso. El estímulo que produce una salida al interactuar con un sistema se denomina la señal de entrada al sistema y la respuesta de éste último a dicho estímulo se considera la salida del sistema. Para fines de simulación o representación numérica del comportamiento de los sistemas se trabaja con el modelo matemático de los sistemas y de las señales involucradas en su respuesta o interacción con los elementos que lo rodean.</p>
-<div class="admonition-concepto-de-senal admonition">
-<p class="admonition-title">Concepto de señal</p>
+<div class="admonition-modelo-matematico-de-una-senal admonition">
+<p class="admonition-title">Modelo matemático de una señal</p>
 <p>El modelo matemático de una señal es aquella formula o expresión matemática que describe, en forma aproximada las variaciones o evolución en el tiempo de una variable física (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>).</p>
 </div>
 <section id="modelo-matematico-de-una-senal-de-tiempo-continuo">
@@ -384,7 +393,7 @@ $<span class="math notranslate nohighlight">\(
 x(t)=11.25sen(2\pi t)+5.25e^{-0.25t}cos(4.5t)
 \)</span>$</p>
 <p>Se obtiene usando las líneas de código:</p>
-<div class="cell tag_hide_code docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
@@ -412,7 +421,7 @@ x(t)=11.25sen(2\pi t)+5.25e^{-0.25t}cos(4.5t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6ea7458f11fa56d3b14869533ccdfa772244309f2899de85a12620244a51efcd.png" src="_images/6ea7458f11fa56d3b14869533ccdfa772244309f2899de85a12620244a51efcd.png" />
+<img alt="_images/e7f70e74cd4454d46812ba0f90395fbc892c5154ea649a9c263f9ab8d420a3a6.png" src="_images/e7f70e74cd4454d46812ba0f90395fbc892c5154ea649a9c263f9ab8d420a3a6.png" />
 </div>
 </div>
 </section>
@@ -552,7 +561,7 @@ g(t)=x(t)+A
 <p>Se dice que una señal es definida a pedazos si es continua en un intervalo dado si está definida en ese intervalo y además, las expresiones matemáticas que describen o modelan a dicha señal son funciones son continuas en ese intervalo. Adicionalemente, se cumple que no hay discontinuidad en ningún punto extremo de los subintervalos. Una función contínua a pedazos se define por medio de un conjunto de expresiones, utilizando una llave, funciones locales e intervalos. Por ejemplo, considere la función contínua a pedazos definida en la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos">
 <span class="eqno">(1)<a class="headerlink" href="#equation-func-pedazos" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
-         g(t)= \left\{ \begin{array}{lcc} t &amp; si &amp; 0 \leq t \leq 1 \\ \\ -t &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1 &amp; si &amp; 3 &lt; t &lt; 4 \\ \\ t-5 &amp; si &amp; 4&lt; t \leq 5  \end{array} \right.
+         g(t)= \left\{ \begin{array}{lcc} t &amp; si &amp; 0 \leq t \leq 1 \\ \\ -(t-2) &amp; si &amp; 1 &lt; t \leq 3 \\ \\ -1 &amp; si &amp; 3 &lt; t &lt; 4 \\ \\ t-5 &amp; si &amp; 4&lt; t \leq 5  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Como puede observarse, los subintervalos se pueden definir en MATLAB:</p>
 <div class="cell docutils container">
@@ -597,6 +606,268 @@ g_4(t)=-1.3x_2(t)+2x(t)
          x_2(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; 0 \leq t \leq 2 \\ \\ t^2-t+10 &amp; si &amp; 2 &lt; t \leq 5 \\ \\ -4t-15 &amp; si &amp; 5 &lt; t &lt; 7 \\ \\ 0 &amp; si &amp; 7 \leq t  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 </section>
+<section id="suma-de-dos-funciones-continuas-a-pedazos">
+<h3>Suma de dos funciones contínuas a pedazos<a class="headerlink" href="#suma-de-dos-funciones-continuas-a-pedazos" title="Permalink to this heading">#</a></h3>
+<p>Para hacer la suma de dos o mas funciones continuas a pedazos se opta por la representación usando llaves de las funciones. Si se tienen las gráficas de las señales, se obtiene el modelo de las señales a partir de las gráficas de las funciones. Para ilustrar esto, considérense las funciones <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> definidas por las gráficas:</p>
+<figure class="align-default" id="senales-pedazos">
+<a class="reference internal image-reference" href="_images/senales_1_2.png"><img alt="_images/senales_1_2.png" src="_images/senales_1_2.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 1 </span><span class="caption-text">Dos senales contínuas a pedazos.</span><a class="headerlink" href="#senales-pedazos" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>De acuerdo con las gráficas mostradas, los modelos matemáticos de las señales <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> son:</p>
+<div class="math notranslate nohighlight" id="equation-func-pedazos-x1">
+<span class="eqno">(3)<a class="headerlink" href="#equation-func-pedazos-x1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         x_1(t)= \left\{ \begin{array}{lcc} 4 &amp; si &amp; 0 \leq t \leq 1 \\ \\ 1.5 &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1.5t &amp; si &amp; 2 &lt; t &lt; 4 \\ \\ 0 &amp; si &amp; 4 \leq t  \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>En cuanto a la señal <span class="math notranslate nohighlight">\(x_2(t)\)</span>, esta se define como:</p>
+<div class="math notranslate nohighlight" id="equation-func-pedazos-x2">
+<span class="eqno">(4)<a class="headerlink" href="#equation-func-pedazos-x2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         x_2(t)= \left\{ \begin{array}{lcc} 0.5t &amp; si &amp; 0 \leq t \leq 2 \\ \\ -2(t-3) &amp; si &amp; 2 &lt; t \leq 5 \\ \\ 1.5(t-6) &amp; si &amp; 5 &lt; t &lt; 7 \\ \\ 0 &amp; si &amp; 7 \leq t  \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>La suma de las señales <span class="math notranslate nohighlight">\(x_1\)</span> y <span class="math notranslate nohighlight">\(x_2\)</span> resulta en una tercera función <span class="math notranslate nohighlight">\(g(t)\)</span> que se puede construir considerando el valor de la función en cada segmento como a continuación se describe:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+         g(t)=x_1(t)+\textcolor{red}{x_2(t)}= \left\{ \begin{array}{lcc} 4+\textcolor{red}{0.5t} &amp; si &amp; 0 \leq t \leq 1 \\ \\ 1.5+\textcolor{red}{0.5t} &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1.5t-\textcolor{red}{2(t-3)} &amp; si &amp; 2 &lt; t &lt; 4 \\ \\ 0-\textcolor{red}{2(t-3)} &amp; si &amp;  4 \leq t &lt; 5  \\ \\ \textcolor{red}{1.5(t-6)} &amp; si &amp; 5 \leq t &lt; 7 \\ \\ \textcolor{red}{0} &amp; si &amp; 7 \leq t \end{array} \right.
+		 \end{equation}
+\end{split}\]</div>
+<p>la gráfica de <span class="math notranslate nohighlight">\(g(t)\)</span> se obtiene usando MATLAB con el código siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">8</span><span class="p">];</span>
+<span class="n">x1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">t</span><span class="p">)</span><span class="w">  </span><span class="mi">4</span><span class="o">*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mi">4</span><span class="p">));</span>
+<span class="n">x2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">t</span><span class="p">)</span><span class="w">  </span><span class="mf">0.5</span><span class="o">*</span><span class="n">t</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">))</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">6</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mi">7</span><span class="p">));</span>
+
+<span class="n">g_t</span><span class="p">=</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">grid</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x_1(t) y x_2(t)&quot;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;x_1&quot;</span><span class="p">,</span><span class="s">&quot;x_2&quot;</span><span class="p">)</span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span><span class="c"> %Ajustes de rótulos y formato de letra</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;$x_1$,$x_2$&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="w"> </span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span><span class="w"> </span>
+
+<span class="n">g</span><span class="p">=</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">,</span><span class="s">&quot;k&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g(t)=x_1+x_2&quot;</span><span class="p">)</span>
+
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span><span class="c"> %Ajustes de rótulos y formato de letra</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;$g(t)$&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="w"> </span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/89a534ce0c637b5c018a224bfbc8d323b1a85d4b3f34b7deba2f3e2497aeb599.png" src="_images/89a534ce0c637b5c018a224bfbc8d323b1a85d4b3f34b7deba2f3e2497aeb599.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h3>Ejercicio<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Obtenga <span class="math notranslate nohighlight">\(g_2(t)=x_1x_2\)</span></p>
+</section>
+<section id="operacion-de-desplazamiento-en-el-tiempo">
+<h3>Operación de desplazamiento en el tiempo<a class="headerlink" href="#operacion-de-desplazamiento-en-el-tiempo" title="Permalink to this heading">#</a></h3>
+<p>Una versión, desplazada en el tiempo de una señal dada <span class="math notranslate nohighlight">\(x(t)\)</span> se obtiene si se considera la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+g(t)=x(t-tr)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(t_r\)</span> es un número positivo o negativo. Lo anterior se muestra en la siguiente figura:</p>
+<figure class="align-default" id="retardo">
+<a class="reference internal image-reference" href="_images/retardo.png"><img alt="_images/retardo.png" src="_images/retardo.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 2 </span><span class="caption-text">Señal desplazada en el tiempo.</span><a class="headerlink" href="#retardo" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="operacion-de-escalamiento-en-el-tiempo">
+<h3>Operación de escalamiento en el tiempo<a class="headerlink" href="#operacion-de-escalamiento-en-el-tiempo" title="Permalink to this heading">#</a></h3>
+<p>Una versión, escalada en el tiempo de una señal dada <span class="math notranslate nohighlight">\(x(t)\)</span> se obtiene si se considera la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+g(t)=x(at)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(a\)</span> es un número positivo o negativo. Lo anterior se muestra en la siguiente figura:</p>
+<figure class="align-default" id="retardo1">
+<a class="reference internal image-reference" href="_images/escalada_tiempo.png"><img alt="_images/escalada_tiempo.png" src="_images/escalada_tiempo.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 3 </span><span class="caption-text">Señal escalada en el tiempo.</span><a class="headerlink" href="#retardo1" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h3>Ejercicio<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Dada <span class="math notranslate nohighlight">\(x(t)=2.5sen(4\pi t)+5.25e^(-0.25t)cos(14.5t)\)</span> obtenga:</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[
+g_1(t)=x(t-1.5)
+\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[
+g_2(t)=x(1.5t)
+\]</div>
+</li>
+</ul>
+</section>
+<section id="operacion-invesrion-en-el-tiempo">
+<h3>Operación invesrión en el tiempo<a class="headerlink" href="#operacion-invesrion-en-el-tiempo" title="Permalink to this heading">#</a></h3>
+<p>Se obtiene una versión con la característica de inversión en el tiempo mediante la siguiente expresión:
+$<span class="math notranslate nohighlight">\(
+y(t)=x(-t)
+\)</span>$</p>
+<p>como se ilustra en la siguiente figura:</p>
+<figure class="align-default" id="invertida">
+<a class="reference internal image-reference" href="_images/tiempo_invertida.png"><img alt="_images/tiempo_invertida.png" src="_images/tiempo_invertida.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 4 </span><span class="caption-text">Operación de inversión en el tiempo.</span><a class="headerlink" href="#invertida" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Esta operación en particular se aplica en operaciones más complejas como la convolución que se expone más adelante en el curso. Las siguientes líneas de código generan la versión invertida en el tiempo de la función</p>
+<div class="math notranslate nohighlight">
+\[
+x_1(t)=11.25sen(2\pi t)+5.25e^{-0.5t}cos(24.5t)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">x1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="mf">11.25</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">5.25</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">24.5</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">grid</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x_1(t)&quot;</span><span class="p">)</span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span><span class="c"> %Ajustes de rótulos y formato de letra</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;$x_1(t)$&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="w"> </span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span><span class="w"> </span>
+
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">,</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="s">&quot;r-&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x_1(-t)&quot;</span><span class="p">)</span>
+
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span><span class="c"> %Ajustes de rótulos y formato de letra</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;$x_1(-t)$&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="w"> </span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9fce3853c959d4fc878fb1e9d32a294515b45b9d9de9406c85483da66e814e21.png" src="_images/9fce3853c959d4fc878fb1e9d32a294515b45b9d9de9406c85483da66e814e21.png" />
+</div>
+</div>
+</section>
+<section id="operaciones-derivada-e-integral">
+<h3>Operaciones derivada e integral<a class="headerlink" href="#operaciones-derivada-e-integral" title="Permalink to this heading">#</a></h3>
+<p>Las señales también son compatibles con los operadores lineales derivada e integral. por ejemplo para la señal definida como:</p>
+<div class="math notranslate nohighlight" id="equation-func-periodica">
+<span class="eqno">(5)<a class="headerlink" href="#equation-func-periodica" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         x(t)= \left\{ \begin{array}{lcc} t^2 &amp; si &amp; 0 \leq t \leq 1 \\ \\ -(t^2) &amp; si &amp; 1 &lt; t \leq 2  \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>con <span class="math notranslate nohighlight">\(x(t)=x(t+2)\)</span></p>
+<p>El hecho de que se cumpla que <span class="math notranslate nohighlight">\(x(t)=x(t+2)\)</span> significa que la función es periódica, es decir se repite cada 2 segundos. Una función <span class="math notranslate nohighlight">\(x_p(t)\)</span> es periódica si se cumple que <span class="math notranslate nohighlight">\(x_p(t)=x_p(t+T)\)</span>, con <span class="math notranslate nohighlight">\(T\)</span> un número positivo denominado periodo. Por ejemplo, se cumple que
+<span class="math notranslate nohighlight">\(sen(t)=sen(t+2\pi)\)</span>, dado que el periodo del la función seno es <span class="math notranslate nohighlight">\(T=2\pi\)</span>.</p>
+<p>Considere la señal periódica <span class="math notranslate nohighlight">\(x_p\)</span> definida por la ecuación <a class="reference internal" href="#equation-func-periodica">(5)</a>, gráficamente la señal toma la forma:</p>
+<figure class="align-default" id="periodica">
+<a class="reference internal image-reference" href="_images/periodica.png"><img alt="_images/periodica.png" src="_images/periodica.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 5 </span><span class="caption-text">Señal periódica.</span><a class="headerlink" href="#periodica" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Las operaciones derivada e integral se pueden aplicar a la señal <span class="math notranslate nohighlight">\(x(t)\)</span>, para obtener las funciones:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+g_d(t)=\frac{dx}{dt}\\ 
+g_i(t)=\int xdt
+\end{eqnarray}
+\end{split}\]</div>
+<p>las cuales se definen como:</p>
+<div class="math notranslate nohighlight" id="equation-func-periodica-der">
+<span class="eqno">(6)<a class="headerlink" href="#equation-func-periodica-der" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         g_d(t)= \left\{ \begin{array}{lcc} 2t &amp; si &amp; 0 \leq t \leq 1 \\ \\ -2t &amp; si &amp; 1 &lt; t \leq 2  \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-func-int">
+<span class="eqno">(7)<a class="headerlink" href="#equation-func-int" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         g_i(t)= \left\{ \begin{array}{lcc} \frac{t^3}{3} &amp; si &amp; 0 \leq t \leq 1 \\ \\ -\frac{t^3}{3} &amp; si &amp; 1 &lt; t \leq 2  \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>Las gráficas de las funciones <span class="math notranslate nohighlight">\(g_d\)</span> y <span class="math notranslate nohighlight">\(g_i\)</span> se muestran a continuación:</p>
+<figure class="align-default" id="int-derivada">
+<a class="reference internal image-reference" href="_images/int_derivada.png"><img alt="_images/int_derivada.png" src="_images/int_derivada.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 6 </span><span class="caption-text">Operaciones derivada e integral.</span><a class="headerlink" href="#int-derivada" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
+<h3>Ejercicio<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>Aplique la operación integral y derivada a las funciones definidas en las ecuaciones <a class="reference internal" href="#equation-func-pedazos-x1">(3)</a> y <a class="reference internal" href="#equation-func-pedazos-x2">(4)</a>.</p>
+</section>
 </section>
 </section>
 
@@ -640,11 +911,11 @@ g_4(t)=-1.3x_2(t)+2x(t)
       </div>
     </a>
     <a class="right-next"
-       href="sistemas_lineales.html"
+       href="potencia_energ%C3%ADa.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Análisis de sistemas de tiempo continuo.</p>
+        <p class="prev-next-title">Otras definiciones y propiedades de las señales</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -670,6 +941,14 @@ g_4(t)=-1.3x_2(t)+2x(t)
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-dos-senales">Suma de dos señales</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-de-senales-definidas-a-pedazos">Modelado de señales definidas a pedazos</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio">Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-dos-funciones-continuas-a-pedazos">Suma de dos funciones contínuas a pedazos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacion-de-desplazamiento-en-el-tiempo">Operación de desplazamiento en el tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacion-de-escalamiento-en-el-tiempo">Operación de escalamiento en el tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Ejercicio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacion-invesrion-en-el-tiempo">Operación invesrión en el tiempo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-derivada-e-integral">Operaciones derivada e integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Ejercicio</a></li>
 </ul>
 </li>
 </ul>
