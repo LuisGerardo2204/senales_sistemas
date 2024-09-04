@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diagramas de bode &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -303,22 +290,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -366,10 +351,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="diagramas-de-bode">
+  <div class="tex2jax_ignore mathjax_ignore section" id="diagramas-de-bode">
 <h1>Diagramas de bode<a class="headerlink" href="#diagramas-de-bode" title="Permalink to this heading">#</a></h1>
 <p>Un diagrama de Bode es una representación gráfica de la respuesta en frecuencia de un sistema dinámico. El diagrama de bode permite una representación asintótica de la respuesta en frecuencia por medio de la consideración de los factores independientes que componen a una función de transferencia sin la necesidad de conocer de manera exacta a la transformada inversa. Los diagramas de bode se usan en el análisis y diseño de sistemas de control dada su utilidad para mostrar gráficamente la respuesta dinámica de los sistemas.</p>
-<section id="respuesta-de-los-sistemas-a-funciones-sinusoides">
+<div class="section" id="respuesta-de-los-sistemas-a-funciones-sinusoides">
 <h2>Respuesta de los sistemas a funciones sinusoides<a class="headerlink" href="#respuesta-de-los-sistemas-a-funciones-sinusoides" title="Permalink to this heading">#</a></h2>
 <p>Dado un sistema con una función de transferencia <span class="math notranslate nohighlight">\(G(s)=\frac{N(s)}{D(s)}\)</span>, donde el grado del polinomio del numerador, o bien de la función <span class="math notranslate nohighlight">\(N(s)\)</span> es menor que el del denominador <span class="math notranslate nohighlight">\(D(s)\)</span>, la respuesta <span class="math notranslate nohighlight">\(y(t)\)</span> de dicho sistema ante un estímulo o entrada <span class="math notranslate nohighlight">\(x(t)=Acos(\omega_0 t)\)</span>, para <span class="math notranslate nohighlight">\(t\geq 0\)</span>, donde <span class="math notranslate nohighlight">\(A,\omega_0 \in \mathbb{R}\)</span> se obtiene aplicando la transformada de Laplace:</p>
 <div class="math notranslate nohighlight">
@@ -400,8 +385,8 @@ X(s)=\frac{Cs}{(s+j\omega_0)(s-j\omega_0)}
 \end{eqnarray}
 \end{split}\]</div>
 <p>Si se considera la respuesta al impulso de un sistema <span class="math notranslate nohighlight">\(h(t)\)</span>, el resultado anterior permite concluir que la transformada de Fourier de <span class="math notranslate nohighlight">\(h(t)\)</span>, es decir <span class="math notranslate nohighlight">\(\mathscr{F} \left \{ h(t) \right \}=H(j\omega)\)</span> es exactamente <span class="math notranslate nohighlight">\(H(s)|_{s=j\omega}\)</span>. Esto justifica matemáticamente el uso de la función de respuesta en frecuencia como la determinación de la salida de los sistemas ante entradas sinusoides.</p>
-</section>
-<section id="diagramas-o-graficas-de-bode-asintoticas">
+</div>
+<div class="section" id="diagramas-o-graficas-de-bode-asintoticas">
 <h2>Diagramas o gráficas de Bode asintóticas.<a class="headerlink" href="#diagramas-o-graficas-de-bode-asintoticas" title="Permalink to this heading">#</a></h2>
 <p>Un diagrama de bode es esencialmente una gráfica de la magnitud en decibeles <strong>dB</strong> de una función de transferencia <span class="math notranslate nohighlight">\(G(s)\)</span> bajo análisis. Los decibeles se definen como:</p>
 <div class="math notranslate nohighlight">
@@ -429,8 +414,8 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 \end{eqnarray}
 \end{split}\]</div>
 <p>De esta manera, se puede calcular y considerar a cada uno de los factores y su contribución a la función de respuesta en frecuencia de manera individual, debido a que la operación logaritmo convierte al producto en una suma y en una resta para el caso de los factores en el denominador.</p>
-</section>
-<section id="grafica-y-contribucion-del-factor-cero-en-el-origen">
+</div>
+<div class="section" id="grafica-y-contribucion-del-factor-cero-en-el-origen">
 <h2>Gráfica y contribución del factor cero en el origen.<a class="headerlink" href="#grafica-y-contribucion-del-factor-cero-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Cuando se considera el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=s|_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -463,8 +448,8 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 <img alt="_images/cd0a171a2fe88872f689d341545a1f3077dcfd17e6fa9870a495768518214c95.png" src="_images/cd0a171a2fe88872f689d341545a1f3077dcfd17e6fa9870a495768518214c95.png" />
 </div>
 </div>
-</section>
-<section id="grafica-y-contribucion-del-factor-polo-en-el-origen">
+</div>
+<div class="section" id="grafica-y-contribucion-del-factor-polo-en-el-origen">
 <h2>Gráfica y contribución del factor polo en el origen.<a class="headerlink" href="#grafica-y-contribucion-del-factor-polo-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea ahora el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\frac{1}{s}|_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -497,8 +482,8 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 <img alt="_images/2f4ab11f6a92917492a030aea830693c1b7c49299c043dd1e7defd8abc9fe125.png" src="_images/2f4ab11f6a92917492a030aea830693c1b7c49299c043dd1e7defd8abc9fe125.png" />
 </div>
 </div>
-</section>
-<section id="cero-real-en-el-origen">
+</div>
+<div class="section" id="cero-real-en-el-origen">
 <h2>Cero real en el origen.<a class="headerlink" href="#cero-real-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\left | 1-\frac{j\omega}{z_i} \right |_{s=j\omega}\)</span> , la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -554,8 +539,8 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 <img alt="_images/e1d377649289a696836bb9c6300223535d9dc99b05d8e946f94c7d89be77b225.png" src="_images/e1d377649289a696836bb9c6300223535d9dc99b05d8e946f94c7d89be77b225.png" />
 </div>
 </div>
-</section>
-<section id="polo-real-en-el-origen">
+</div>
+<div class="section" id="polo-real-en-el-origen">
 <h2>Polo real en el origen.<a class="headerlink" href="#polo-real-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\left | \frac{1}{s-\frac{j\omega}{p_i}}\right |_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
@@ -611,8 +596,8 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 <img alt="_images/3e8061ebf2749047035e7e589137445838c37e66efe526a1c85f667486e16ff2.png" src="_images/3e8061ebf2749047035e7e589137445838c37e66efe526a1c85f667486e16ff2.png" />
 </div>
 </div>
-</section>
-<section id="polos-con-parte-imaginaria-o-polos-conjugados">
+</div>
+<div class="section" id="polos-con-parte-imaginaria-o-polos-conjugados">
 <h2>Polos con parte imaginaria o polos conjugados.<a class="headerlink" href="#polos-con-parte-imaginaria-o-polos-conjugados" title="Permalink to this heading">#</a></h2>
 <p>Hemos analizado sistemas en los que las raíces del polinomio característico o el denominador de la función de transferencia tiene raices de la forma <span class="math notranslate nohighlight">\(r_{1,2}=\alpha \pm j\beta\)</span>, con <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span>, estos sistemas pueden considerarse como factores que son parte de un sistema más complejo. Sea el factor dado por la estructura:</p>
 <div class="math notranslate nohighlight">
@@ -623,8 +608,8 @@ G(s)=\frac{1}{a_2s^2+a_1s+a_0}=\frac{p_1p_1^{*}}{(1-s/p_1)(1-s/p_1^{*})}=\frac{|
 <div class="math notranslate nohighlight" id="equation-trasfun-damping">
 <span class="eqno">(80)<a class="headerlink" href="#equation-trasfun-damping" title="Enlace permanente a esta ecuación">#</a></span>\[G(s)=\frac{\omega_n}{s^2+2\xi\omega_n s+\omega_n^2}\]</div>
 <p>de donde se sigue que: <span class="math notranslate nohighlight">\(\omega_n^2=|p_1|^2\)</span> y <span class="math notranslate nohighlight">\(2\xi\omega_n=-2Real\{p_1\}\)</span>. Es importante mencionar, que para un sistema causal y estable, la magnitud <span class="math notranslate nohighlight">\(Real\{p_1\}\)</span> es negativa, mientras que el factor de amortiguamiento <span class="math notranslate nohighlight">\(\xi\)</span> es tal que <span class="math notranslate nohighlight">\(0&lt;\xi&lt;1\)</span> (<span id="id3">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>).</p>
-</section>
-<section id="sistemas-de-segundo-orden">
+</div>
+<div class="section" id="sistemas-de-segundo-orden">
 <h2>Sistemas de segundo orden.<a class="headerlink" href="#sistemas-de-segundo-orden" title="Permalink to this heading">#</a></h2>
 <p>La ecuación <a class="reference internal" href="#equation-trasfun-damping">(80)</a> expresa de forma muy conveniente la dinámica de los sistemas de segundo orden sin restringirse al caso sub-amortiguado, es decir, sin restringirse al caso en el que solo existe un par de polos complejos conjugados, sabemos que la parte imaginaria de un par de polos complejos conjugados se relaciona con la oscilación. Usando la ecuación <a class="reference internal" href="#equation-trasfun-damping">(80)</a> para el caso general en el que se tienen dos raices o polos <span class="math notranslate nohighlight">\(p_1\)</span> y <span class="math notranslate nohighlight">\(p_2\)</span> en general, es decir, pueden ser reales o complejos, se puede expresar a la función de transferencia <span class="math notranslate nohighlight">\(G(s)\)</span> como  (<span id="id4">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
 <div class="math notranslate nohighlight">
@@ -658,8 +643,8 @@ p_{1,2}=-\xi\omega_n \pm j\omega_n\sqrt{1-\xi^2}
 \]</div>
 <p>En el caso sub-amortiguado <strong><span class="math notranslate nohighlight">\(\xi&lt;1\)</span></strong>.</p>
 </div>
-</section>
-<section id="contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode">
+</div>
+<div class="section" id="contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode">
 <h2>Contribución del factor de segundo orden en el diagrama de Bode.<a class="headerlink" href="#contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode" title="Permalink to this heading">#</a></h2>
 <p>Para determinar la contribución en forma asintótica de un factor de segundo orden, considérese la estructura de la ecuación <a class="reference internal" href="#equation-trasfun-damping">(80)</a>:</p>
 <div class="math notranslate nohighlight">
@@ -725,8 +710,8 @@ G_i(j\omega)=\left | \frac{\omega_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j\o
 <img alt="_images/40ef3be5c1da71420cf7b24ded80b84bf86e5486cdf62f3ce723e2dc350fb315.png" src="_images/40ef3be5c1da71420cf7b24ded80b84bf86e5486cdf62f3ce723e2dc350fb315.png" />
 </div>
 </div>
-</section>
-<section id="ejemplo-diagrama-de-bode-de-una-funcion-de-transferencia">
+</div>
+<div class="section" id="ejemplo-diagrama-de-bode-de-una-funcion-de-transferencia">
 <h2>Ejemplo: diagrama de bode de una función de transferencia<a class="headerlink" href="#ejemplo-diagrama-de-bode-de-una-funcion-de-transferencia" title="Permalink to this heading">#</a></h2>
 <p>Considerese el sistema cuya función de transferencia es:</p>
 <div class="math notranslate nohighlight">
@@ -985,8 +970,8 @@ Continuous-time transfer function.
 <img alt="_images/82e1930a2cc2e430ac049bfcfc219dae69dc90e90e5736cd5464898186b97e30.png" src="_images/82e1930a2cc2e430ac049bfcfc219dae69dc90e90e5736cd5464898186b97e30.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1013,10 +998,11 @@ Continuous-time transfer function.
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="funcion_de_transferencia.html"
@@ -1036,7 +1022,10 @@ Continuous-time transfer function.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1082,7 +1071,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -1109,8 +1097,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

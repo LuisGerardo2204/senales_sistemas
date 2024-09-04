@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Transformada de Fourier. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -303,22 +290,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -360,7 +345,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="la-transformada-de-fourier">
+  <div class="tex2jax_ignore mathjax_ignore section" id="la-transformada-de-fourier">
 <h1>La Transformada de Fourier.<a class="headerlink" href="#la-transformada-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Hemos analizado y aplicado la transformada de Laplace al análisis de sistemas dinámicos. La transformada de Laplace permite la algebrización del problema de cálculo que implica el modelado de los sistemas por medio de ecuaciones diferenciales. Por otro lado, la serie trigonométrica de Fourier ofrece una alternativa muy útil de representación de señales en términos de sus componentes frecuenciales o armónicos. Una Herramienta para el análisis de señales y sistemas en el domino de la frecuencia es la transformada de Fourier. La transformada de Fourier no se limita al análisis de señales periódicas, dado que es un caso particular de la transformada de Laplace. La definición formal de la transformada de Fourier es:</p>
 <div class="math notranslate nohighlight" id="equation-trans-laplace">
@@ -369,7 +354,7 @@ document.write(`
  \end{equation}\]</div>
 <p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(97)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
 <p>La transformada rápida de Fourier es un algoritmo computacional que ofrece una alternativa para el cálculo de las tranformadas analíticas de Fourier de señales provenientes de sistemas físicos, en MATLAB, el algoritmo de la FFT, siglas en inglés de Fast Fourier Transform (transformada rápida de Fourier) está incluido y optimizado para su uso en señales discretas. A continuación se muestran algunos ejemplos de su aplicación.</p>
-<section id="ejemplo-1-senal-diente-de-sierra">
+<div class="section" id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra-2">
@@ -441,8 +426,8 @@ document.write(`
 <img alt="_images/651afd95604ccee469192b5018774cbb3d107997725e72f4d55aa44d4966cec3.png" src="_images/651afd95604ccee469192b5018774cbb3d107997725e72f4d55aa44d4966cec3.png" />
 </div>
 </div>
-</section>
-<section id="ejemplo-2-pulso-cuadrado">
+</div>
+<div class="section" id="ejemplo-2-pulso-cuadrado">
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso2">
@@ -492,8 +477,8 @@ document.write(`
 </div>
 </div>
 <p>En estos ejemplos se puede observar como las componentes frecuenciales son múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=1/T\)</span>, con <span class="math notranslate nohighlight">\(T\)</span> el periodo de la función. Para una señal en general se aplica el algoritmo de la FFT para encontrar su contenido frecuencial o armónico.</p>
-</section>
-<section id="ejemplo-3-senal-con-tres-componentes-frecuenciales-y-ruido-blanco-aleatorio">
+</div>
+<div class="section" id="ejemplo-3-senal-con-tres-componentes-frecuenciales-y-ruido-blanco-aleatorio">
 <h2>Ejemplo 3, señal con tres componentes frecuenciales y ruido blanco aleatorio.<a class="headerlink" href="#ejemplo-3-senal-con-tres-componentes-frecuenciales-y-ruido-blanco-aleatorio" title="Permalink to this heading">#</a></h2>
 <p>Considérese ahora el caso de una señal definida por la expresión:</p>
 <div class="math notranslate nohighlight">
@@ -541,8 +526,8 @@ x(t)=3.5cos(2\pi 350 t)+2.4sen(2\pi 500 t)+1.5cos(2\pi 1000 t)+\gamma(t)
 </div>
 </div>
 <p>El algoritmo de la transformada rápida de Fourier permite distinguir con mucha claridad los componentes frecuenciales de la señal <span class="math notranslate nohighlight">\(x(t)\)</span>. En la gráfica se observan los picos en los valores de frecuencia de 250, 500 y 1500 Hz, a pesar de la presencia de ruido blanco aleatorio.</p>
-</section>
-<section id="aplicacion-a-un-sistema-dinamico">
+</div>
+<div class="section" id="aplicacion-a-un-sistema-dinamico">
 <h2>Aplicación a un sistema dinámico<a class="headerlink" href="#aplicacion-a-un-sistema-dinamico" title="Permalink to this heading">#</a></h2>
 <p>La respuesta en frecuencia de un circuito RLC serie ha sido plenamente analizada en secciones anteriores, en esta sección se usará para ejemplificar el uso de la FFT para la determinación de la respuesta en frecuencia de forma numérica de los sistemas dinámicos a partir de mediciones de su salida. En las siguietes líneas se calcula la respuesta del circuito RLC.</p>
 <div class="cell docutils container">
@@ -644,8 +629,8 @@ Continuous-time transfer function.
 </div>
 </div>
 <p>Como puede observarse, el algoritmo de la FFT es perfectamente compatible con el diagrama de Bode que permite la determinación de la respuesta en frecuencia de los sistemas, por lo tanto, un barrido frecuencial experimental, se utiliza para recolectar la información de la respuesta dinámica del sistema, se procesa la señal resultante mediante el algoritmo de la FFT y se obiente la respuesta en frecuencia experimental del sistema.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -672,10 +657,11 @@ Continuous-time transfer function.
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Series_de_fourier.html"
@@ -695,7 +681,10 @@ Continuous-time transfer function.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -735,7 +724,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -762,8 +750,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

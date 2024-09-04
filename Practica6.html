@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 6: Diagrama de bode de un sistema de dos grados de libertad. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -303,22 +290,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -357,25 +342,21 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-6-diagrama-de-bode-de-un-sistema-de-dos-grados-de-libertad">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-6-diagrama-de-bode-de-un-sistema-de-dos-grados-de-libertad">
 <h1>Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.<a class="headerlink" href="#practica-6-diagrama-de-bode-de-un-sistema-de-dos-grados-de-libertad" title="Permalink to this heading">#</a></h1>
 <p>En esta práctica, usaremos la herramienta del análisis de la respuesta en frecuencia para analizar un sitema de dos grados de libertad. El sistema bajo análisis tiene por ende dos diagramas de dode diferentes, aunque dependientes el uno del otro.</p>
-<section id="sistema-mecanico-vibratorio">
+<div class="section" id="sistema-mecanico-vibratorio">
 <h2>Sistema mecánico vibratorio.<a class="headerlink" href="#sistema-mecanico-vibratorio" title="Permalink to this heading">#</a></h2>
 <p>Considere el sistema mecánico vibratorio de dos grados de libertad que se muestra en la <a class="reference internal" href="#dosgdl"><span class="std std-numref">Figura 12</span></a>.</p>
-<figure class="align-default" id="dosgdl">
+<div class="figure align-default" id="dosgdl">
 <a class="reference internal image-reference" href="_images/2GDL.png"><img alt="_images/2GDL.png" src="_images/2GDL.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 12 </span><span class="caption-text">Sistema mecánico vibratorio.</span><a class="headerlink" href="#dosgdl" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 12 </span><span class="caption-text">Sistema mecánico vibratorio.</span><a class="headerlink" href="#dosgdl" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Las ruedas representan una fricción nula entre la base y las dos masas por lo que los últimos elementos disipativos son los amortiguadores <span class="math notranslate nohighlight">\(b_1\)</span> y <span class="math notranslate nohighlight">\(b_2\)</span>. Aplicando la segunda ley de Newton a cada una de las masas se obtienen las ecuaciones de movimiento del sistema. El diagrama de cuerpo libre de ambas masas y sus interacciones se muestran en la <a class="reference internal" href="#dosgdl-dcl"><span class="std std-numref">Figura 13</span></a></p>
-<figure class="align-default" id="dosgdl-dcl">
+<div class="figure align-default" id="dosgdl-dcl">
 <a class="reference internal image-reference" href="_images/2GDL_cuerpo_libre.png"><img alt="_images/2GDL_cuerpo_libre.png" src="_images/2GDL_cuerpo_libre.png" style="height: 350px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 13 </span><span class="caption-text">Diagrama de cuerpo libre del sistema de dos grados de libertad.</span><a class="headerlink" href="#dosgdl-dcl" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 13 </span><span class="caption-text">Diagrama de cuerpo libre del sistema de dos grados de libertad.</span><a class="headerlink" href="#dosgdl-dcl" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{eqnarray}\nonumber
 m_1\ddot{x}_1=f_1(t)-k_1x_1-b_1\dot{x}_1+k_2(x_2-x_1)+b_2(\dot{x}_2-\dot{x}_1)\\
@@ -561,8 +542,8 @@ G(s)=\begin{bmatrix}
 <img alt="_images/1e8b53bef1995079e863aeb06bf76497482e58162e2aaec3564eff88243f19ce.png" src="_images/1e8b53bef1995079e863aeb06bf76497482e58162e2aaec3564eff88243f19ce.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -589,10 +570,11 @@ G(s)=\begin{bmatrix}
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Bode.html"
@@ -612,7 +594,10 @@ G(s)=\begin{bmatrix}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -649,7 +634,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -676,8 +660,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

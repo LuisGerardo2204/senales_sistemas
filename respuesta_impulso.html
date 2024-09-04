@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Respuesta al impulso de sistemas de tiempo continuo. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -303,22 +290,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -358,7 +343,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="respuesta-al-impulso-de-sistemas-de-tiempo-continuo">
+  <div class="tex2jax_ignore mathjax_ignore section" id="respuesta-al-impulso-de-sistemas-de-tiempo-continuo">
 <h1>Respuesta al impulso de sistemas de tiempo continuo.<a class="headerlink" href="#respuesta-al-impulso-de-sistemas-de-tiempo-continuo" title="Permalink to this heading">#</a></h1>
 <p>Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se puede utilizar como el modelo matemático o la respresentación de un sistema dinámico. Existe una representación alternativa que resulta muy útil para el modelado de los sistemas es llamada <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">respuesta</span> <span class="pre">al</span> <span class="pre">impulso</span> <span class="pre">del</span> <span class="pre">sistema</span></code>(<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>, <span id="id2">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La función impulso unitario, conocida como función Delta de Dirac se define matemáticamente como:</p>
 <div class="math notranslate nohighlight" id="equation-impulso">
@@ -366,7 +351,7 @@ document.write(`
          \delta(t)= \left\{ \begin{array}{lcc} 1 &amp; si &amp; 0 = t \\ \\ 0 &amp; si &amp;  t \neq 0   \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Cuando la función <span class="math notranslate nohighlight">\(\delta(t)\)</span> se usa como una función estímulo para un sistema, a la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se le denomina respuesta al impulso del sistema y se usa la notación <span class="math notranslate nohighlight">\(h(t)\)</span> para distinguirla de las posibles salidas del sistema ante entradas o estímulos arbitrarios <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
-<section id="determinacion-de-la-respuesta-al-impulso-de-un-sistema">
+<div class="section" id="determinacion-de-la-respuesta-al-impulso-de-un-sistema">
 <h2>Determinación de la respuesta al impulso de un sistema<a class="headerlink" href="#determinacion-de-la-respuesta-al-impulso-de-un-sistema" title="Permalink to this heading">#</a></h2>
 <p>Como hemos observado en la Práctica 3, es posible determinar la salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema, al resolver la ecuación diferencial que modela al sistema. Esta ecuación puede ser homogénea o forzada, con las soluciones candidatas condensadas en
 <a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y <a class="reference internal" href="Practica3.html#tabla-forzada"><span class="std std-numref">Tabla 3</span></a>. Entre las funciones candidatas mostradas en tales tablas, no se presenta en ningún caso la función impulso unitario definida en la ecuación <a class="reference internal" href="#equation-impulso">(38)</a>, sin embargo se cumple que:</p>
@@ -469,12 +454,12 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1=0\Longrightarrow C_1=-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/57e053c816d7b1519635e8c8698f0c965230c09912c3020f71f6ee1f60c895bc.png" src="_images/57e053c816d7b1519635e8c8698f0c965230c09912c3020f71f6ee1f60c895bc.png" />
+<img alt="_images/cbdfc141baf5c4fbf0d4ae3093b8c2dd7726662078af1033f62521ed5a88c8f3.png" src="_images/cbdfc141baf5c4fbf0d4ae3093b8c2dd7726662078af1033f62521ed5a88c8f3.png" />
 </div>
 </div>
 <p>En este caso, tambien se puede obtener una generalización de la respuesta al impulso, ante cambios en alguno de los parámetros del sistema R, L o C dado que la estructura es la misma.</p>
-</section>
-<section id="respuesta-al-impulso-con-diferentes-parametros">
+</div>
+<div class="section" id="respuesta-al-impulso-con-diferentes-parametros">
 <h2>Respuesta al impulso con diferentes parámetros.<a class="headerlink" href="#respuesta-al-impulso-con-diferentes-parametros" title="Permalink to this heading">#</a></h2>
 <p>Es posible encontrar diferentes respuestas del sistema usando una estructura general para el caso particular cuando la función de estímulo es una constante. Para el caso particular del circuito RLC serie, en el que la respuesta forzada completa obedece la estructura:</p>
 <div class="math notranslate nohighlight" id="equation-sol-comprlc-unitario">
@@ -570,11 +555,11 @@ r_{i}=\alpha \pm \beta i
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bc13911ff28bcd118e4146f8df9b90359f6916b3afac88301ffa70c868fdd400.png" src="_images/bc13911ff28bcd118e4146f8df9b90359f6916b3afac88301ffa70c868fdd400.png" />
+<img alt="_images/49feaa193580fe792b51edd2f7bc0d6f603276b595c48a872ff7ee8171c32a7e.png" src="_images/49feaa193580fe792b51edd2f7bc0d6f603276b595c48a872ff7ee8171c32a7e.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -601,10 +586,11 @@ r_{i}=\alpha \pm \beta i
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica3.html"
@@ -624,7 +610,10 @@ r_{i}=\alpha \pm \beta i
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -662,7 +651,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -689,8 +677,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
