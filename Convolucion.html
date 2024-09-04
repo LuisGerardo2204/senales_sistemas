@@ -178,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -364,19 +365,19 @@ document.write(`
 <h1>Integral de convolución en sistemas lineales.<a class="headerlink" href="#integral-de-convolucion-en-sistemas-lineales" title="Permalink to this heading">#</a></h1>
 <p>Para un sistema lineal e invariante en el tiempo, la operación de convolución permite el cálculo de la salida, como la respuesta a una señal arbitraria de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span>, en términos de su respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span>, por medio de la integral de convolución definida como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion">
-<span class="eqno">(43)<a class="headerlink" href="#equation-convolucion" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(54)<a class="headerlink" href="#equation-convolucion" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   y(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau
 	\end{equation}\]</div>
-<p>La ecuación <a class="reference internal" href="#equation-convolucion">(43)</a> se conoce como la integral de convolución para sistemas de tiempo continuo (<span id="id1">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Se dice entonces, que la señal de salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema se obtiene aplicando la convolución de la señal de entrada o estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> con la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema. La convolución se representa por medio del operador <span class="math notranslate nohighlight">\(*\)</span>, el cual se denomina el operador convolución.</p>
+<p>La ecuación <a class="reference internal" href="#equation-convolucion">(54)</a> se conoce como la integral de convolución para sistemas de tiempo continuo (<span id="id1">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). Se dice entonces, que la señal de salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema se obtiene aplicando la convolución de la señal de entrada o estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> con la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema. La convolución se representa por medio del operador <span class="math notranslate nohighlight">\(*\)</span>, el cual se denomina el operador convolución.</p>
 <div class="math notranslate nohighlight" id="equation-convolucion-operador">
-<span class="eqno">(44)<a class="headerlink" href="#equation-convolucion-operador" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(55)<a class="headerlink" href="#equation-convolucion-operador" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   y(t)=x(t)*h(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau
 	\end{equation}\]</div>
 <div class="admonition-convolucion-de-sistemas-de-tiempo-continuo admonition">
 <p class="admonition-title">Convolución de sistemas de tiempo contínuo:</p>
 <p>El operador convolución de la señal de entrada <span class="math notranslate nohighlight">\(x(t)\)</span> y la respuesta al impulso de un sistema <span class="math notranslate nohighlight">\(h(t)\)</span> proporciona la salida <span class="math notranslate nohighlight">\(y(t)\)</span> del sistema como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion-conmuta">
-<span class="eqno">(45)<a class="headerlink" href="#equation-convolucion-conmuta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(56)<a class="headerlink" href="#equation-convolucion-conmuta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
   y(t)=x(t)*h(t)=\int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau\\
   y(t)=h(t)*x(t)=\int^{\infty}_{-\infty}h(\tau)x(t-\tau)d\tau\\
 	\end{eqnarray}\end{split}\]</div>
@@ -478,7 +479,7 @@ f(\tau)=x(\tau)h(t-\tau)
 <li><p>Calcular el área bajo la curva formada por el producto <span class="math notranslate nohighlight">\(f(\tau)=x(\tau)h(t-\tau)\)</span>, por medio de la integral respecto de la variable independiente <span class="math notranslate nohighlight">\(\tau\)</span>. El resultado es el valor de la señal en el instante de tiempo específico <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
 <li><p>Repita los pasos 1 al 4 para todos los valores de <span class="math notranslate nohighlight">\(t\)</span> que son de interés.</p></li>
 </ol>
-<p>Usando la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema RLC como se expresa en la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-h-rlc-final">(36)</a> y la instrucción <code class="docutils literal notranslate"><span class="pre">cumtrapz()</span></code> que permite el cálculo de la respuesta al impulso se puede graficar la respuesta al est <span class="math notranslate nohighlight">\(x(t)=1.63u(t)\)</span></p>
+<p>Usando la respuesta al impulso <span class="math notranslate nohighlight">\(h(t)\)</span> del sistema RLC como se expresa en la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-h-rlc-final">(47)</a> y la instrucción <code class="docutils literal notranslate"><span class="pre">cumtrapz()</span></code> que permite el cálculo de la respuesta al impulso se puede graficar la respuesta al est <span class="math notranslate nohighlight">\(x(t)=1.63u(t)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
@@ -523,7 +524,7 @@ f(\tau)=x(\tau)h(t-\tau)
 </div>
 <section id="calculo-de-la-integral-de-convolucion-usando-la-funcion-conv">
 <h2>Calculo de la integral de convolución usando la función conv()<a class="headerlink" href="#calculo-de-la-integral-de-convolucion-usando-la-funcion-conv" title="Permalink to this heading">#</a></h2>
-<p>En MATLAB, es posible calcular la integral de convolución de forma numérica usando una sola instrucción, tomando en consideración algunos aspectos importantes como la necesidad de escalar la salida unsando el incremento del vector de tiempo y el desplazamiento en el tiempo de la señal que resulta de usar esta función nativa de MATLAB. El siguiente código calcula la salida del sistema RLC modelado por la ecuación diferencial <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(11)</a>.</p>
+<p>En MATLAB, es posible calcular la integral de convolución de forma numérica usando una sola instrucción, tomando en consideración algunos aspectos importantes como la necesidad de escalar la salida unsando el incremento del vector de tiempo y el desplazamiento en el tiempo de la señal que resulta de usar esta función nativa de MATLAB. El siguiente código calcula la salida del sistema RLC modelado por la ecuación diferencial <a class="reference internal" href="ecuaciones_diferenciales_sistemas.html#equation-edorlc">(22)</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -564,7 +565,7 @@ h(t)=e^{-t}(u(t)-u(t-2))
 \]</div>
 <p>Cuando la señal de excitación es:</p>
 <div class="math notranslate nohighlight" id="equation-pulso-entrada">
-<span class="eqno">(46)<a class="headerlink" href="#equation-pulso-entrada" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(57)<a class="headerlink" href="#equation-pulso-entrada" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          x(t)= \left\{ \begin{array}{lcc} 1 &amp; si &amp; 0 \leq t &lt; 1\\ -1 &amp; si &amp; 1 \leq t &lt;2\\ 0 &amp; en~otro~caso &amp;   \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Las gráficas correspondientes a la señal de estímulo <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(h(t)\)</span> se generan en MATLAB con el siguiente código:</p>
