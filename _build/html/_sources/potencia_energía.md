@@ -15,7 +15,7 @@ kernelspec:
 
 # Otras definiciones y propiedades de las señales
 
-## Señales deterministicas y aleatorias
+## Señales determinísticas y aleatorias
 
 Como hemos visto, las señales describen la evolución en el tiempo de alguna variable física presente en un sistema, sea esta variable una entrada o salida al sistema. *Las señales que tienen un modelo matemático en forma cerrada o aproximada se denominan señales determinísticas*, dado que es posible predecir por completo su comportamiento en cualquier instante de tiempo $t$. Un ejemplo claro es la señal que modela al voltaje de alimentación doméstico de 127 volts RMS de amplitud y 60 Hz de frecuencia. 
 
