@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Otras definiciones y propiedades de las señales &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -290,20 +303,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -334,6 +349,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potencia-y-energia-en-senales">Potencia y energía en señales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-operacion-de-promediacion">La operación de promediación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potencia-de-una-senal">Potencia de una señal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-rms-de-las-senales">El valor RMS de las señales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par-e-impar">Simetría par e impar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par">Simetría par</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Simetría par</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -345,14 +366,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="otras-definiciones-y-propiedades-de-las-senales">
+  <section class="tex2jax_ignore mathjax_ignore" id="otras-definiciones-y-propiedades-de-las-senales">
 <h1>Otras definiciones y propiedades de las señales<a class="headerlink" href="#otras-definiciones-y-propiedades-de-las-senales" title="Permalink to this heading">#</a></h1>
-<div class="section" id="senales-deterministicas-y-aleatorias">
+<section id="senales-deterministicas-y-aleatorias">
 <h2>Señales deterministicas y aleatorias<a class="headerlink" href="#senales-deterministicas-y-aleatorias" title="Permalink to this heading">#</a></h2>
 <p>Como hemos visto, las señales describen la evolución en el tiempo de alguna variable física presente en un sistema, sea esta variable una entrada o salida al sistema. <em>Las señales que tienen un modelo matemático en forma cerrada o aproximada se denominan señales determinísticas</em>, dado que es posible predecir por completo su comportamiento en cualquier instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>. Un ejemplo claro es la señal que modela al voltaje de alimentación doméstico de 127 volts RMS de amplitud y 60 Hz de frecuencia.</p>
-<p>Una señal aleatoria por su parte es aquella que <em>no tiene un modelo matemático en forma cerrada</em> por ejemplo la señal de un micrófono en un sistema de audio o la aceleración de la tierra durante un sismo. Dado que muchas de las señales que se encuentran en los fenómenos físicos presentes en la ingeniería, es importante contar con un método que permita estudiar o comprender este tipo de señales, a menudo se utilizan parámetros estadísticos como los valores promedio y distribuciones probabilísticas. A continuación se definen dos propiedades para el análisis y caracterización de las señales.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/dd982774f554f89291fe81cba02f154e41628e7ee7b5bbe9a9dbf21e81d59c96.png" src="_images/dd982774f554f89291fe81cba02f154e41628e7ee7b5bbe9a9dbf21e81d59c96.png" />
 </div>
-<div class="section" id="potencia-y-energia-en-senales">
+</div>
+<p>Una señal aleatoria por su parte es aquella que <em>no tiene un modelo matemático en forma cerrada</em> por ejemplo la señal de un micrófono en un sistema de audio o la aceleración de la tierra durante un sismo. Dado que muchas de las señales que se encuentran en los fenómenos físicos presentes en la ingeniería, es importante contar con un método que permita estudiar o comprender este tipo de señales, a menudo se utilizan parámetros estadísticos como los valores promedio y distribuciones probabilísticas. A continuación se definen dos propiedades para el análisis y caracterización de las señales.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/e48f41b7711213b5e09b9426a9dcf86e37eb4b284fddbcf900415d3fe609197f.png" src="_images/e48f41b7711213b5e09b9426a9dcf86e37eb4b284fddbcf900415d3fe609197f.png" />
+</div>
+</div>
+</section>
+<section id="potencia-y-energia-en-senales">
 <h2>Potencia y energía en señales<a class="headerlink" href="#potencia-y-energia-en-senales" title="Permalink to this heading">#</a></h2>
 <p>La energía de una señal se define como <span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>:</p>
 <div class="math notranslate nohighlight" id="equation-energia">
@@ -365,8 +396,8 @@ E_x=\int^{\infty}_\infty x^2(t) dt
 E_x=\int^{\infty}_\infty |x(t)|^2 dt
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(|x(t)|\)</span> es la magnitud en el caso de funciones complejas.</p>
-</div>
-<div class="section" id="la-operacion-de-promediacion">
+</section>
+<section id="la-operacion-de-promediacion">
 <h2>La operación de promediación<a class="headerlink" href="#la-operacion-de-promediacion" title="Permalink to this heading">#</a></h2>
 <p>La definición matemática de la operación de promediado en el tiempo de una señal es <span id="id2">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>:</p>
 <div class="math notranslate nohighlight" id="equation-promedia">
@@ -378,8 +409,8 @@ E_x=\int^{\infty}_\infty |x(t)|^2 dt
 <span class="eqno">(11)<a class="headerlink" href="#equation-promedia-per" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 \langle x(t) \rangle = \lim_{T\to\infty} \left [ \frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}} x(t) dt \right ] 
 \end{equation}\]</div>
-</div>
-<div class="section" id="potencia-de-una-senal">
+</section>
+<section id="potencia-de-una-senal">
 <h2>Potencia de una señal<a class="headerlink" href="#potencia-de-una-senal" title="Permalink to this heading">#</a></h2>
 <p>La potencia de una señal periódica se calcula usando la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-potencia">
@@ -399,8 +430,53 @@ P_x= \lim_{T\to\infty} \left [ \frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}} |x(t
 <span id="id3">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span></p></li>
 </ul>
 </div>
+</section>
+<section id="el-valor-rms-de-las-senales">
+<h2>El valor RMS de las señales<a class="headerlink" href="#el-valor-rms-de-las-senales" title="Permalink to this heading">#</a></h2>
+<p>En sistemas eléctricos y electrónicos, es muy común usar el parámetro conocido como raíz cuadrada media o root-mean-square por sus sigrlas en inglés. El valor RMS se una señal <span class="math notranslate nohighlight">\(x(t)\)</span> se define como <span id="id4">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>:</p>
+<div class="math notranslate nohighlight" id="equation-rms">
+<span class="eqno">(14)<a class="headerlink" href="#equation-rms" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+X_{RMS}= \sqrt{\frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}} x^2(t) dt} = \left [ \langle x^2(t) \rangle \right ]^{\frac{1}{2}}  
+\end{equation}\]</div>
+<p>Un ejemplo de aplicación muy común es el cálculo del valor RMS de una señal sinusoide. Por ejemplo, el valor RMS de una señal definida como <span class="math notranslate nohighlight">\(x(t)=Asen(\omega t+\theta)\)</span> se obtiene usando la ecuación <a class="reference internal" href="#equation-rms">(14)</a></p>
+<div class="math notranslate nohighlight">
+\[
+X_{RMS}=\sqrt{\frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}} x^2(t) dt}=\sqrt{\omega\int^{\frac{1}{2\omega}}_{-\frac{1}{2\omega}} (sen(\omega t+\theta))^2 dt}
+\]</div>
+<p>Usando la identidad trigonométrica <span class="math notranslate nohighlight">\((Asen(a))^2=\frac{A^2}{2}-\frac{A^2}{2}cos(2a)\)</span> y considerando que <span class="math notranslate nohighlight">\(T_0=\frac{1}{\omega_0}\)</span>, se obtiene:</p>
+<div class="math notranslate nohighlight">
+\[
+X_{RMS}=\sqrt{\omega\int^{\frac{1}{2\omega}}_{-\frac{1}{2\omega}}\frac{1}{2}-\frac{1}{2}cos(2\theta)  dt}=\sqrt{\omega\int^{\frac{1}{2\omega}}_{-\frac{1}{2\omega}}\frac{A^2}{2}dt-\omega\int^{\frac{1}{2\omega}}_{-\frac{1}{2\omega}}\frac{A^2}{2}cos(2\omega+2\theta)  dt}
+\]</div>
+<p>Esta última expresión se simplifica considerando que <span class="math notranslate nohighlight">\(\omega\int^{\frac{1}{2\omega}}_{-\frac{1}{2\omega}}\frac{A^2}{2}cos(2\omega+2\theta)  dt=0\)</span>, dado que se calcula la integral del coseno en dos periodos completos, por lo tanto, el valor RMS de la sinusoide considerada es:</p>
+<div class="math notranslate nohighlight">
+\[
+X_{RMS}=\frac{A}{\sqrt{2}}
+\]</div>
+<p>Note que el valor RMS de una señal sinusoide no depende de otro parámetro que no sea su amplitud pico.</p>
+</section>
+<section id="simetria-par-e-impar">
+<h2>Simetría par e impar<a class="headerlink" href="#simetria-par-e-impar" title="Permalink to this heading">#</a></h2>
+<section id="simetria-par">
+<h3>Simetría par<a class="headerlink" href="#simetria-par" title="Permalink to this heading">#</a></h3>
+<p>Una señal valuada en los reales tiene simetría par si se cumple que <span class="math notranslate nohighlight">\(x(t)=x(-t)\)</span>, por ejemplo las funciones <span class="math notranslate nohighlight">\(x(t)=cos(t)\)</span> y <span class="math notranslate nohighlight">\(x(t)=t^2\)</span></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/dc241f5eb4d312bb460a0e04f2e758c8cf901bcf053a9d71440bca61a5e8f0be.png" src="_images/dc241f5eb4d312bb460a0e04f2e758c8cf901bcf053a9d71440bca61a5e8f0be.png" />
 </div>
 </div>
+</section>
+<section id="id5">
+<h3>Simetría par<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p>Una señal valuada en los reales tiene simetría impar si se cumple que <span class="math notranslate nohighlight">\(x(-t)=-x(t)\)</span>, por ejemplo las funciones <span class="math notranslate nohighlight">\(x(t)=sen(t)\)</span> y <span class="math notranslate nohighlight">\(x(t)=t^3\)</span></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/05218a0c8622c09e34829f275e9159baa5a56d077be26e3bedd22898db29f88e.png" src="_images/05218a0c8622c09e34829f275e9159baa5a56d077be26e3bedd22898db29f88e.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -427,11 +503,10 @@ P_x= \lim_{T\to\infty} \left [ \frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}} |x(t
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="modela_senales.html"
@@ -451,10 +526,7 @@ P_x= \lim_{T\to\infty} \left [ \frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}} |x(t
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -473,6 +545,12 @@ P_x= \lim_{T\to\infty} \left [ \frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}} |x(t
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potencia-y-energia-en-senales">Potencia y energía en señales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-operacion-de-promediacion">La operación de promediación</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potencia-de-una-senal">Potencia de una señal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-rms-de-las-senales">El valor RMS de las señales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par-e-impar">Simetría par e impar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par">Simetría par</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Simetría par</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -494,6 +572,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -520,8 +599,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

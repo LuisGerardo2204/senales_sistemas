@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Propiedades de la transformada de Laplace. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -290,20 +303,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -348,9 +363,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="propiedades-de-la-transformada-de-laplace">
+  <section class="tex2jax_ignore mathjax_ignore" id="propiedades-de-la-transformada-de-laplace">
 <h1>Propiedades de la transformada de Laplace.<a class="headerlink" href="#propiedades-de-la-transformada-de-laplace" title="Permalink to this heading">#</a></h1>
-<p>La transformada de Laplace, definida en la ecuación <a class="reference internal" href="transformada_de_Laplace.html#equation-transformada-def">(60)</a> genera una superficie en el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para <span class="math notranslate nohighlight">\({-\infty}&lt;t&lt;{\infty}\)</span>.</p>
+<p>La transformada de Laplace, definida en la ecuación <a class="reference internal" href="transformada_de_Laplace.html#equation-transformada-def">(61)</a> genera una superficie en el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, cuando se grafica su magnitud. El siguiente código de MATLAB genera dicha superficie, para la transformada de Laplace bilateral, es decir para la transformada de Laplace definida para <span class="math notranslate nohighlight">\({-\infty}&lt;t&lt;{\infty}\)</span>.</p>
 <div class="cell tag_remove-stderr docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> 
@@ -386,17 +401,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dc39c5960ff2c60f24ea867273610accd9e51864558bda27275ab85e33eac5eb.png" src="_images/dc39c5960ff2c60f24ea867273610accd9e51864558bda27275ab85e33eac5eb.png" />
+<img alt="_images/3a4d62cc96cad54ac46e1591aedc056181e8320591bc2873ce88426134fe5891.png" src="_images/3a4d62cc96cad54ac46e1591aedc056181e8320591bc2873ce88426134fe5891.png" />
 </div>
 </div>
 <p>Como es claro en la gráfica anterior, la variable compleja <span class="math notranslate nohighlight">\(s\)</span> tiene un caso particular cuando la parte real de <span class="math notranslate nohighlight">\(s\)</span> es idénticamente cero, es ese caso, la transformada de Laplace se convierte en la transformada de Fourier. Algunas propiedades interesantes de la transformada de Laplace se presentan a continuación:</p>
-<div class="section" id="linealidad-de-la-transformada-de-laplace">
+<section id="linealidad-de-la-transformada-de-laplace">
 <h2>Linealidad de la Transformada de Laplace<a class="headerlink" href="#linealidad-de-la-transformada-de-laplace" title="Permalink to this heading">#</a></h2>
 <p>La transformada de Laplace es un operador lineal, de ahí que cobre una importancia particular en la ingeniería. El principio de superposición aplica a la transormada de Laplace y, por ende sustenta la propiedad de linealidad del operador transformadad como se indica a continuación:</p>
 <div class="admonition-principio-de-linealidad-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Principio de linealidad de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-lineal-laplace">
-<span class="eqno">(63)<a class="headerlink" href="#equation-lineal-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[
+<span class="eqno">(64)<a class="headerlink" href="#equation-lineal-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[
 k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 </div>
 <p>Ejemplo: la transformada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=2.8cos(2t)+5.4e^{-3t}+3.5sen(5t)\)</span></p>
@@ -407,87 +422,87 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 &amp;X(s)=\frac{2.8s}{s^2+4}+\frac{5.4}{s+3}+\frac{87.5}{s^2+25}
 \end{eqnarray}
 \end{split}\]</div>
-</div>
-<div class="section" id="propiedad-de-desplazamiento-en-el-tiempo">
+</section>
+<section id="propiedad-de-desplazamiento-en-el-tiempo">
 <h2>Propiedad de desplazamiento en el tiempo<a class="headerlink" href="#propiedad-de-desplazamiento-en-el-tiempo" title="Permalink to this heading">#</a></h2>
 <p>Un desplazamiento en el tiempo, aplicado a una función <span class="math notranslate nohighlight">\(x(t)\)</span> en el dominio del tiempo, por medio de una constante arbitraria <span class="math notranslate nohighlight">\(\tau\)</span>, corresponde al producto de la transformada de Laplace de <span class="math notranslate nohighlight">\(x(t)\)</span> con el factor <span class="math notranslate nohighlight">\(e^{-\tau s}\)</span>:</p>
 <div class="admonition-propiedad-de-desplazamiento-en-el-tiempo-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de desplazamiento en el tiempo de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-desp-tiempo-laplace">
-<span class="eqno">(64)<a class="headerlink" href="#equation-desp-tiempo-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t-\tau) \right\} \xrightarrow{\mathscr{L}} e^{-\tau s} X(s)\]</div>
+<span class="eqno">(65)<a class="headerlink" href="#equation-desp-tiempo-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t-\tau) \right\} \xrightarrow{\mathscr{L}} e^{-\tau s} X(s)\]</div>
 </div>
 <p>Ejemplo: la transformada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=0.01cos(2(t-3))\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{L} \left \{ 0.01cos(2(t-3)) \right\} = \frac{se^{-3\tau s}}{s^2+4} 
 \]</div>
-</div>
-<div class="section" id="propiedad-de-desplazamiento-en-el-dominio-de-s">
+</section>
+<section id="propiedad-de-desplazamiento-en-el-dominio-de-s">
 <h2>Propiedad de desplazamiento en el dominio de <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#propiedad-de-desplazamiento-en-el-dominio-de-s" title="Permalink to this heading">#</a></h2>
 <p>Dada una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la transformada de Laplace del producto de tal función con el factor <span class="math notranslate nohighlight">\(s_0\)</span> implica que la transformada de Laplace de <span class="math notranslate nohighlight">\(x(t)\)</span>, sea desplazada <span class="math notranslate nohighlight">\(s_0\)</span> veces en el dominio complejo.</p>
 <div class="admonition-propiedad-de-desplazamiento-en-el-dominio-de-s-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de desplazamiento en el dominio de <span class="math notranslate nohighlight">\(s\)</span> de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-desp-freq-laplace">
-<span class="eqno">(65)<a class="headerlink" href="#equation-desp-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t)e^{s_0t} \right\} \xrightarrow{\mathscr{L}}  X(s-s_0)\]</div>
+<span class="eqno">(66)<a class="headerlink" href="#equation-desp-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(t)e^{s_0t} \right\} \xrightarrow{\mathscr{L}}  X(s-s_0)\]</div>
 </div>
 <p>Ejemplo: la trasfomdada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=e^{-0.5t}sen(6\pi t)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{L} \left \{ e^{-0.5t}cos(6\pi t) \right\} = \frac{6\pi(s+0.5)}{(s+0.5)^2+36\pi^2} 
 \]</div>
-</div>
-<div class="section" id="propiedad-de-escalamiento-en-los-dominios-de-s-y-de-t">
+</section>
+<section id="propiedad-de-escalamiento-en-los-dominios-de-s-y-de-t">
 <h2>Propiedad de escalamiento en los dominios de <span class="math notranslate nohighlight">\(s\)</span> y de <span class="math notranslate nohighlight">\(t\)</span><a class="headerlink" href="#propiedad-de-escalamiento-en-los-dominios-de-s-y-de-t" title="Permalink to this heading">#</a></h2>
 <p>Una operación de escalamiento de una función <span class="math notranslate nohighlight">\(x(t)\)</span>, que produce una función <span class="math notranslate nohighlight">\(g(t)=x\left( \frac{t}{a}\right )\)</span> tendrá como resultado una función escalada e el dominio de <span class="math notranslate nohighlight">\(s\)</span>, con escalamiento inverso:</p>
 <div class="admonition-propiedad-de-escalamento-en-el-tiempo-y-la-frecuencia-de-la-transformada-de-laplace admonition">
 <p class="admonition-title">Propiedad de escalamento en el tiempo y la frecuencia de la transformada de Laplace:</p>
 <div class="math notranslate nohighlight" id="equation-esq-freq-laplace">
-<span class="eqno">(66)<a class="headerlink" href="#equation-esq-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(at) \right\} \xrightarrow{\mathscr{L}} \frac{1}{|a|} X\left ( \frac{s}{a} \right )\]</div>
+<span class="eqno">(67)<a class="headerlink" href="#equation-esq-freq-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ x(at) \right\} \xrightarrow{\mathscr{L}} \frac{1}{|a|} X\left ( \frac{s}{a} \right )\]</div>
 </div>
 <p>Ejemplo: la trasfomdada de Laplace de la función <span class="math notranslate nohighlight">\(x(t)=cos \left ( 2\pi\frac{t}{3} \right )\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{L} \left \{ cos \left ( 2\pi\frac{t}{3} \right ) \right \} = 3\frac{3s}{9s^2+4\pi^2}
 \]</div>
-</div>
-<div class="section" id="diferenciacion-en-el-dominio-del-tiempo">
+</section>
+<section id="diferenciacion-en-el-dominio-del-tiempo">
 <h2>Diferenciación en el dominio del tiempo<a class="headerlink" href="#diferenciacion-en-el-dominio-del-tiempo" title="Permalink to this heading">#</a></h2>
 <p>Dada una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la transformada de Laplace de su derivada se expresa como:</p>
 <div class="admonition-propiedad-de-diferenciacion-en-el-dominio-del-tiempo admonition">
 <p class="admonition-title">Propiedad de diferenciación en el dominio del tiempo:</p>
 <div class="math notranslate nohighlight" id="equation-diff-laplace">
-<span class="eqno">(67)<a class="headerlink" href="#equation-diff-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \frac{dx(t)}{dt} \right\} \xrightarrow{\mathscr{L}}  sX(s)\]</div>
+<span class="eqno">(68)<a class="headerlink" href="#equation-diff-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \frac{dx(t)}{dt} \right\} \xrightarrow{\mathscr{L}}  sX(s)\]</div>
 </div>
 <p>Por ejemplo para la transformada de la función <span class="math notranslate nohighlight">\(\frac{d\left (3cos(4\pi t)\right )}{dt}\)</span> se tiene que:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{L} \left \{ \frac{d\left (3cos(4\pi t)\right )}{dt} \right \} = s\mathscr{L} \left \{ 3cos(4\pi t)\right \}=\frac{3s^2}{s^2+16\pi^2}
 \]</div>
-</div>
-<div class="section" id="diferenciacion-en-el-dominio-de-s">
+</section>
+<section id="diferenciacion-en-el-dominio-de-s">
 <h2>Diferenciación en el dominio de <span class="math notranslate nohighlight">\(s\)</span><a class="headerlink" href="#diferenciacion-en-el-dominio-de-s" title="Permalink to this heading">#</a></h2>
 <p>Dada una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la operación producto de <span class="math notranslate nohighlight">\(x(t)\)</span> con la variable independiente <span class="math notranslate nohighlight">\(t\)</span>, implica diferenciación o derivada en el dominio de <span class="math notranslate nohighlight">\(s\)</span> de su transformada <span class="math notranslate nohighlight">\(X(s)\)</span>.</p>
 <div class="admonition-propiedad-de-diferenciacion-en-el-dominio-de-s admonition">
 <p class="admonition-title">Propiedad de diferenciación en el dominio de <span class="math notranslate nohighlight">\(s\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-diff-laplace-s">
-<span class="eqno">(68)<a class="headerlink" href="#equation-diff-laplace-s" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ tx(t) \right\} \xrightarrow{\mathscr{L}}  -\frac{dX(s)}{ds}\]</div>
+<span class="eqno">(69)<a class="headerlink" href="#equation-diff-laplace-s" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ tx(t) \right\} \xrightarrow{\mathscr{L}}  -\frac{dX(s)}{ds}\]</div>
 </div>
 <p>Por ejemplo, para la función <span class="math notranslate nohighlight">\(x(t)=te^{-3t}\)</span>, se usa la propiedad de diferenciación en el dominio del tiempo como:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{L} \left \{ te^{-3t} \right \} = -\frac{\mathscr{L} \left \{ e^{-3t} \right\}}{ds} =\frac{d \left (  \frac{1}{s+3} \right ) }{ds}=\frac{1}{(s+3)^2}  
 \]</div>
-</div>
-<div class="section" id="propiedad-de-integracion">
+</section>
+<section id="propiedad-de-integracion">
 <h2>Propiedad de integración<a class="headerlink" href="#propiedad-de-integracion" title="Permalink to this heading">#</a></h2>
 <p>Dada la integral de una función <span class="math notranslate nohighlight">\(x(t)\)</span>, la transformada de la integral, al ser la operación inversa de la diferenciación se expresa como:</p>
 <div class="admonition-propiedad-de-integracion admonition">
 <p class="admonition-title">Propiedad de integración:</p>
 <div class="math notranslate nohighlight" id="equation-diff-laplace-int">
-<span class="eqno">(69)<a class="headerlink" href="#equation-diff-laplace-int" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \int^{t}_{-\infty}x(\tau)d\tau \right\} \xrightarrow{\mathscr{L}}  \frac{1}{s}X(s)\]</div>
+<span class="eqno">(70)<a class="headerlink" href="#equation-diff-laplace-int" title="Enlace permanente a esta ecuación">#</a></span>\[\mathscr{L} \left \{ \int^{t}_{-\infty}x(\tau)d\tau \right\} \xrightarrow{\mathscr{L}}  \frac{1}{s}X(s)\]</div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -514,11 +529,10 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="conv_transformada.html"
@@ -538,10 +552,7 @@ k_1 x_1(t)+k_2 x_2 (t)\xrightarrow{\mathscr{L}} k_1X_1(s)+k_2X_2(s)\]</div>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -584,6 +595,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -610,8 +622,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

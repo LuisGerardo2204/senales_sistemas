@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Modelado matemático de señales y su representación. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -290,20 +303,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -358,7 +373,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="modelado-matematico-de-senales-y-su-representacion">
+  <section class="tex2jax_ignore mathjax_ignore" id="modelado-matematico-de-senales-y-su-representacion">
 <h1>Modelado matemático de señales y su representación.<a class="headerlink" href="#modelado-matematico-de-senales-y-su-representacion" title="Permalink to this heading">#</a></h1>
 <p>Hemos visto que las señales representan la evolución en el tiempo de una variable de interés en un sistema. Esta evolución en el tiempo se representa usando funciones que involucran expresiones matemáticas en forma cerrada, aunque cabe aclarar que no siempre existe una función en concreto o un conjunto de funciones que combinadas representen de manera fiel a una señal experimental. Cuando se trata con señales se busca principalmente lograr objetivos como:</p>
 <ul class="simple">
@@ -371,7 +386,7 @@ document.write(`
 <p class="admonition-title">Modelo matemático de una señal</p>
 <p>El modelo matemático de una señal es aquella formula o expresión matemática que describe, en forma aproximada las variaciones o evolución en el tiempo de una variable física (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>).</p>
 </div>
-<div class="section" id="modelo-matematico-de-una-senal-de-tiempo-continuo">
+<section id="modelo-matematico-de-una-senal-de-tiempo-continuo">
 <h2>Modelo matemático de una señal de tiempo contínuo<a class="headerlink" href="#modelo-matematico-de-una-senal-de-tiempo-continuo" title="Permalink to this heading">#</a></h2>
 <p>Dada una señal <span class="math notranslate nohighlight">\(x(t)\)</span>, una función que aproxima el comportamiento de una cantidad física en cada instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>. En esta relación entre la variable independiente <span class="math notranslate nohighlight">\(t\)</span> y la función <span class="math notranslate nohighlight">\(x(t)\)</span>, la señal se denomina de tiempo continuo o señal analógica. Por ejemplo la representación usando MATLAB de la señal:
 $<span class="math notranslate nohighlight">\(
@@ -409,14 +424,14 @@ x(t)=11.25sen(2\pi t)+5.25e^{-0.25t}cos(4.5t)
 <img alt="_images/e7f70e74cd4454d46812ba0f90395fbc892c5154ea649a9c263f9ab8d420a3a6.png" src="_images/e7f70e74cd4454d46812ba0f90395fbc892c5154ea649a9c263f9ab8d420a3a6.png" />
 </div>
 </div>
-</div>
-<div class="section" id="operaciones-con-senales">
+</section>
+<section id="operaciones-con-senales">
 <h2>Operaciones con señales<a class="headerlink" href="#operaciones-con-senales" title="Permalink to this heading">#</a></h2>
 <p>Las señales, al ser funciones del tiempo, son compatibles con operaciones aritméticas comunes, como lo son la suma, la resta, la multiplicación y la división. Además, existen otras operaciones matemáticas que se puede aplicar a las señales como veremos más adelante como lo son el desplazamiento en el tiempo, el escalamiento en el tiempo y la inversión del vector de tiempo.</p>
-</div>
-<div class="section" id="operaciones-aritmeticas">
+</section>
+<section id="operaciones-aritmeticas">
 <h2>Operaciones aritméticas<a class="headerlink" href="#operaciones-aritmeticas" title="Permalink to this heading">#</a></h2>
-<div class="section" id="adicion-de-una-constante">
+<section id="adicion-de-una-constante">
 <h3>Adición de una constante<a class="headerlink" href="#adicion-de-una-constante" title="Permalink to this heading">#</a></h3>
 <p>La primera operación a considerar es la adición de una constante <span class="math notranslate nohighlight">\(A\)</span> a una señal, esta constante se conoce como offset. La expresión para esta operación es:</p>
 <div class="math notranslate nohighlight">
@@ -475,8 +490,8 @@ g(t)=x(t)+A
 <img alt="_images/69c2595e7fd1894133e2747a5429fa0bd3d6c1671e5ddd7557610cc8c05b4a83.png" src="_images/69c2595e7fd1894133e2747a5429fa0bd3d6c1671e5ddd7557610cc8c05b4a83.png" />
 </div>
 </div>
-</div>
-<div class="section" id="suma-de-dos-senales">
+</section>
+<section id="suma-de-dos-senales">
 <h3>Suma de dos señales<a class="headerlink" href="#suma-de-dos-senales" title="Permalink to this heading">#</a></h3>
 <p>Dadas dos señales <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span>, se obtiene una señal <span class="math notranslate nohighlight">\(g(t)\)</span> al sumar ambas señales individuales, esta operación significa sumar el valor de cada una de las dos señales en cada isntante de tiempo <span class="math notranslate nohighlight">\(t\)</span>:</p>
 <div class="cell docutils container">
@@ -540,8 +555,8 @@ g(t)=x(t)+A
 <img alt="_images/63a58a58eaf0ebaa05654a7397c11ea70b76f7ee6b0da70dd648e45806d3cc6a.png" src="_images/63a58a58eaf0ebaa05654a7397c11ea70b76f7ee6b0da70dd648e45806d3cc6a.png" />
 </div>
 </div>
-</div>
-<div class="section" id="modelado-de-senales-definidas-a-pedazos">
+</section>
+<section id="modelado-de-senales-definidas-a-pedazos">
 <h3>Modelado de señales definidas a pedazos<a class="headerlink" href="#modelado-de-senales-definidas-a-pedazos" title="Permalink to this heading">#</a></h3>
 <p>Se dice que una señal es definida a pedazos si es continua en un intervalo dado si está definida en ese intervalo y además, las expresiones matemáticas que describen o modelan a dicha señal son funciones son continuas en ese intervalo. Adicionalemente, se cumple que no hay discontinuidad en ningún punto extremo de los subintervalos. Una función contínua a pedazos se define por medio de un conjunto de expresiones, utilizando una llave, funciones locales e intervalos. Por ejemplo, considere la función contínua a pedazos definida en la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos">
@@ -566,8 +581,8 @@ g(t)=x(t)+A
 <img alt="_images/61b10ae925ab4926722367868c814ccfc9dac02f4fe129f21bee1cc77bb11e39.png" src="_images/61b10ae925ab4926722367868c814ccfc9dac02f4fe129f21bee1cc77bb11e39.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ejercicio">
+</section>
+<section id="ejercicio">
 <h3>Ejercicio<a class="headerlink" href="#ejercicio" title="Permalink to this heading">#</a></h3>
 <p>Encuentre las funciones:</p>
 <div class="math notranslate nohighlight">
@@ -590,14 +605,16 @@ g_4(t)=-1.3x_2(t)+2x(t)
 <span class="eqno">(2)<a class="headerlink" href="#equation-func-pedazos2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          x_2(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; 0 \leq t \leq 2 \\ \\ t^2-t+10 &amp; si &amp; 2 &lt; t \leq 5 \\ \\ -4t-15 &amp; si &amp; 5 &lt; t &lt; 7 \\ \\ 0 &amp; si &amp; 7 \leq t  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
-</div>
-<div class="section" id="suma-de-dos-funciones-continuas-a-pedazos">
+</section>
+<section id="suma-de-dos-funciones-continuas-a-pedazos">
 <h3>Suma de dos funciones contínuas a pedazos<a class="headerlink" href="#suma-de-dos-funciones-continuas-a-pedazos" title="Permalink to this heading">#</a></h3>
 <p>Para hacer la suma de dos o mas funciones continuas a pedazos se opta por la representación usando llaves de las funciones. Si se tienen las gráficas de las señales, se obtiene el modelo de las señales a partir de las gráficas de las funciones. Para ilustrar esto, considérense las funciones <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> definidas por las gráficas:</p>
-<div class="figure align-default" id="senales-pedazos">
+<figure class="align-default" id="senales-pedazos">
 <a class="reference internal image-reference" href="_images/senales_1_2.png"><img alt="_images/senales_1_2.png" src="_images/senales_1_2.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 1 </span><span class="caption-text">Dos senales contínuas a pedazos.</span><a class="headerlink" href="#senales-pedazos" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 1 </span><span class="caption-text">Dos senales contínuas a pedazos.</span><a class="headerlink" href="#senales-pedazos" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <p>De acuerdo con las gráficas mostradas, los modelos matemáticos de las señales <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> son:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos-x1">
 <span class="eqno">(3)<a class="headerlink" href="#equation-func-pedazos-x1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
@@ -678,12 +695,12 @@ g_4(t)=-1.3x_2(t)+2x(t)
 <img alt="_images/89a534ce0c637b5c018a224bfbc8d323b1a85d4b3f34b7deba2f3e2497aeb599.png" src="_images/89a534ce0c637b5c018a224bfbc8d323b1a85d4b3f34b7deba2f3e2497aeb599.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ejercicio-1">
+</section>
+<section id="ejercicio-1">
 <h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this heading">#</a></h3>
 <p>Obtenga <span class="math notranslate nohighlight">\(g_2(t)=x_1x_2\)</span></p>
-</div>
-<div class="section" id="operacion-de-desplazamiento-en-el-tiempo">
+</section>
+<section id="operacion-de-desplazamiento-en-el-tiempo">
 <h3>Operación de desplazamiento en el tiempo<a class="headerlink" href="#operacion-de-desplazamiento-en-el-tiempo" title="Permalink to this heading">#</a></h3>
 <p>Una versión, desplazada en el tiempo de una señal dada <span class="math notranslate nohighlight">\(x(t)\)</span> se obtiene si se considera la expresión:</p>
 <div class="math notranslate nohighlight">
@@ -691,12 +708,14 @@ g_4(t)=-1.3x_2(t)+2x(t)
 g(t)=x(t-tr)
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(t_r\)</span> es un número positivo o negativo. Lo anterior se muestra en la siguiente figura:</p>
-<div class="figure align-default" id="retardo">
+<figure class="align-default" id="retardo">
 <a class="reference internal image-reference" href="_images/retardo.png"><img alt="_images/retardo.png" src="_images/retardo.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 2 </span><span class="caption-text">Señal desplazada en el tiempo.</span><a class="headerlink" href="#retardo" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-</div>
-<div class="section" id="operacion-de-escalamiento-en-el-tiempo">
+<figcaption>
+<p><span class="caption-number">Figura 2 </span><span class="caption-text">Señal desplazada en el tiempo.</span><a class="headerlink" href="#retardo" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="operacion-de-escalamiento-en-el-tiempo">
 <h3>Operación de escalamiento en el tiempo<a class="headerlink" href="#operacion-de-escalamiento-en-el-tiempo" title="Permalink to this heading">#</a></h3>
 <p>Una versión, escalada en el tiempo de una señal dada <span class="math notranslate nohighlight">\(x(t)\)</span> se obtiene si se considera la expresión:</p>
 <div class="math notranslate nohighlight">
@@ -704,12 +723,14 @@ g(t)=x(t-tr)
 g(t)=x(at)
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(a\)</span> es un número positivo o negativo. Lo anterior se muestra en la siguiente figura:</p>
-<div class="figure align-default" id="retardo1">
+<figure class="align-default" id="retardo1">
 <a class="reference internal image-reference" href="_images/escalada_tiempo.png"><img alt="_images/escalada_tiempo.png" src="_images/escalada_tiempo.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 3 </span><span class="caption-text">Señal escalada en el tiempo.</span><a class="headerlink" href="#retardo1" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-</div>
-<div class="section" id="ejercicio-2">
+<figcaption>
+<p><span class="caption-number">Figura 3 </span><span class="caption-text">Señal escalada en el tiempo.</span><a class="headerlink" href="#retardo1" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ejercicio-2">
 <h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this heading">#</a></h3>
 <p>Dada <span class="math notranslate nohighlight">\(x(t)=2.5sen(4\pi t)+5.25e^(-0.25t)cos(14.5t)\)</span> obtenga:</p>
 <ul>
@@ -724,18 +745,20 @@ g_2(t)=x(1.5t)
 \]</div>
 </li>
 </ul>
-</div>
-<div class="section" id="operacion-inversion-en-el-tiempo">
+</section>
+<section id="operacion-inversion-en-el-tiempo">
 <h3>Operación inversión en el tiempo<a class="headerlink" href="#operacion-inversion-en-el-tiempo" title="Permalink to this heading">#</a></h3>
 <p>Se obtiene una versión con la característica de inversión en el tiempo mediante la siguiente expresión:
 $<span class="math notranslate nohighlight">\(
 y(t)=x(-t)
 \)</span>$</p>
 <p>como se ilustra en la siguiente figura:</p>
-<div class="figure align-default" id="invertida">
+<figure class="align-default" id="invertida">
 <a class="reference internal image-reference" href="_images/tiempo_invertida.png"><img alt="_images/tiempo_invertida.png" src="_images/tiempo_invertida.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 4 </span><span class="caption-text">Operación de inversión en el tiempo.</span><a class="headerlink" href="#invertida" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 4 </span><span class="caption-text">Operación de inversión en el tiempo.</span><a class="headerlink" href="#invertida" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <p>Esta operación en particular se aplica en operaciones más complejas como la convolución que se expone más adelante en el curso. Las siguientes líneas de código generan la versión invertida en el tiempo de la función</p>
 <div class="math notranslate nohighlight">
 \[
@@ -798,8 +821,8 @@ x_1(t)=11.25sen(2\pi t)+5.25e^{-0.5t}cos(24.5t)
 <img alt="_images/9fce3853c959d4fc878fb1e9d32a294515b45b9d9de9406c85483da66e814e21.png" src="_images/9fce3853c959d4fc878fb1e9d32a294515b45b9d9de9406c85483da66e814e21.png" />
 </div>
 </div>
-</div>
-<div class="section" id="operaciones-derivada-e-integral">
+</section>
+<section id="operaciones-derivada-e-integral">
 <h3>Operaciones derivada e integral<a class="headerlink" href="#operaciones-derivada-e-integral" title="Permalink to this heading">#</a></h3>
 <p>Las señales también son compatibles con los operadores lineales derivada e integral. por ejemplo para la señal definida como:</p>
 <div class="math notranslate nohighlight" id="equation-func-periodica">
@@ -810,10 +833,12 @@ x_1(t)=11.25sen(2\pi t)+5.25e^{-0.5t}cos(24.5t)
 <p>El hecho de que se cumpla que <span class="math notranslate nohighlight">\(x(t)=x(t+2)\)</span> significa que la función es periódica, es decir se repite cada 2 segundos. Una función <span class="math notranslate nohighlight">\(x_p(t)\)</span> es periódica si se cumple que <span class="math notranslate nohighlight">\(x_p(t)=x_p(t+T)\)</span>, con <span class="math notranslate nohighlight">\(T\)</span> un número positivo denominado periodo. Por ejemplo, se cumple que
 <span class="math notranslate nohighlight">\(sen(t)=sen(t+2\pi)\)</span>, dado que el periodo del la función seno es <span class="math notranslate nohighlight">\(T=2\pi\)</span>.</p>
 <p>Considere la señal periódica <span class="math notranslate nohighlight">\(x_p\)</span> definida por la ecuación <a class="reference internal" href="#equation-func-periodica">(5)</a>, gráficamente la señal toma la forma:</p>
-<div class="figure align-default" id="periodica">
+<figure class="align-default" id="periodica">
 <a class="reference internal image-reference" href="_images/periodica.png"><img alt="_images/periodica.png" src="_images/periodica.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 5 </span><span class="caption-text">Señal periódica.</span><a class="headerlink" href="#periodica" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 5 </span><span class="caption-text">Señal periódica.</span><a class="headerlink" href="#periodica" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <p>Las operaciones derivada e integral se pueden aplicar a la señal <span class="math notranslate nohighlight">\(x(t)\)</span>, para obtener las funciones:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -832,17 +857,19 @@ g_i(t)=\int xdt
          g_i(t)= \left\{ \begin{array}{lcc} \frac{t^3}{3} &amp; si &amp; 0 \leq t \leq 1 \\ \\ -\frac{t^3}{3} &amp; si &amp; 1 &lt; t \leq 2  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Las gráficas de las funciones <span class="math notranslate nohighlight">\(g_d\)</span> y <span class="math notranslate nohighlight">\(g_i\)</span> se muestran a continuación:</p>
-<div class="figure align-default" id="int-derivada">
+<figure class="align-default" id="int-derivada">
 <a class="reference internal image-reference" href="_images/int_derivada.png"><img alt="_images/int_derivada.png" src="_images/int_derivada.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 6 </span><span class="caption-text">Operaciones derivada e integral.</span><a class="headerlink" href="#int-derivada" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-</div>
-<div class="section" id="ejercicio-3">
+<figcaption>
+<p><span class="caption-number">Figura 6 </span><span class="caption-text">Operaciones derivada e integral.</span><a class="headerlink" href="#int-derivada" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="ejercicio-3">
 <h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this heading">#</a></h3>
 <p>Aplique la operación integral y derivada a las funciones definidas en las ecuaciones <a class="reference internal" href="#equation-func-pedazos-x1">(3)</a> y <a class="reference internal" href="#equation-func-pedazos-x2">(4)</a>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -869,11 +896,10 @@ g_i(t)=\int xdt
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="senales.html"
@@ -893,10 +919,7 @@ g_i(t)=\int xdt
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -949,6 +972,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -975,8 +999,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
