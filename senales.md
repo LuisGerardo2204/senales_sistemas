@@ -81,6 +81,7 @@ La versión discreta se presenta usando las siguientes líneas de código:
 
 ```{code-cell} Octave
 :tags: [remove-stderr]
+#:tags: ["remove-input"]
 clear
 close all
 n=[0:15:800];%Se define un vector de valores de tiempo.

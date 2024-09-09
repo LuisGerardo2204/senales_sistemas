@@ -363,30 +363,30 @@ document.write(`
 <h1>La serie trigonométrica de Fourier.<a class="headerlink" href="#la-serie-trigonometrica-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>), una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-serie-fourier">
-<span class="eqno">(90)<a class="headerlink" href="#equation-serie-fourier" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(91)<a class="headerlink" href="#equation-serie-fourier" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    x(t)=a_0+\sum^{\infty}_{k=1}\left[a_kcos(k\omega_0t)+b_ksen(k\omega_0t)\right],~~-\infty&lt;t&lt;\infty
  \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}\)</span> y los términos <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> se calculan como</p>
 <div class="math notranslate nohighlight" id="equation-a0">
-<span class="eqno">(91)<a class="headerlink" href="#equation-a0" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(92)<a class="headerlink" href="#equation-a0" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 a_0=\frac{1}{T}\int^{T}_{0}x(t)dt
 \end{equation}\]</div>
 <div class="math notranslate nohighlight" id="equation-ak">
-<span class="eqno">(92)<a class="headerlink" href="#equation-ak" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(93)<a class="headerlink" href="#equation-ak" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 a_k=\frac{2}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt
 \end{equation}\]</div>
 <div class="math notranslate nohighlight" id="equation-bk">
-<span class="eqno">(93)<a class="headerlink" href="#equation-bk" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(94)<a class="headerlink" href="#equation-bk" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 \end{equation}\]</div>
 <section id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra">
-<span class="eqno">(94)<a class="headerlink" href="#equation-func-sierra" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(95)<a class="headerlink" href="#equation-func-sierra" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 150(t+0.02) &amp; si &amp; -0.02 \leq t \leq -0.01 \\ \\ 150t &amp; si &amp; -0.01 \leq t \leq 0.01 \\ \\ 150(t-0.02) &amp; si &amp; 0.01 &lt; t \leq 0.03 \end{array} \right.
 		 \end{equation}\end{split}\]</div>
-<p>Además, se cumple que <span class="math notranslate nohighlight">\(g(t)=g(t+0.02)\)</span>. La gráfica de esta señal, definida por la <a class="reference internal" href="#equation-func-sierra">(94)</a> se muestra con las líneas de código siguientes:</p>
+<p>Además, se cumple que <span class="math notranslate nohighlight">\(g(t)=g(t+0.02)\)</span>. La gráfica de esta señal, definida por la <a class="reference internal" href="#equation-func-sierra">(95)</a> se muestra con las líneas de código siguientes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -409,7 +409,7 @@ b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 <img alt="_images/5596039ea48cae74faf0319ac770ed143f3c6b1a7dcad6dd17f054673cd9f2fe.png" src="_images/5596039ea48cae74faf0319ac770ed143f3c6b1a7dcad6dd17f054673cd9f2fe.png" />
 </div>
 </div>
-<p>Los coeficientes <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(94)</a> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(91)</a>, <a class="reference internal" href="#equation-ak">(92)</a> y <a class="reference internal" href="#equation-bk">(93)</a>. Dado que <span class="math notranslate nohighlight">\(T=0.02\)</span> y <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>:</p>
+<p>Los coeficientes <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(95)</a> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(92)</a>, <a class="reference internal" href="#equation-ak">(93)</a> y <a class="reference internal" href="#equation-bk">(94)</a>. Dado que <span class="math notranslate nohighlight">\(T=0.02\)</span> y <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{equation}\nonumber
 a_0=\frac{1}{T}\int^{T}_{0}x(t)dt=\frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}}x(t)dt=\frac{1}{0.02}\int^{-0.01}_{0.01}150tdt=7500\left[{\frac{t^2}{2}}_{t=-0.01}^{t=0.01}\right]=0
@@ -504,7 +504,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso">
-<span class="eqno">(95)<a class="headerlink" href="#equation-func-pulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(96)<a class="headerlink" href="#equation-func-pulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; -0.5 \leq t \leq 0.5 \\ \\ 0 &amp; si &amp; 0.5 \leq t \leq 1.5  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <div class="cell docutils container">
@@ -528,7 +528,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 <img alt="_images/02404b22cbcb4a55c9c9967af0c16298ae4c028c868ed9d96e0a4ebae9429784.png" src="_images/02404b22cbcb4a55c9c9967af0c16298ae4c028c868ed9d96e0a4ebae9429784.png" />
 </div>
 </div>
-<p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(91)</a> a <a class="reference internal" href="#equation-bk">(93)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{2}=\pi\)</span></p>
+<p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(92)</a> a <a class="reference internal" href="#equation-bk">(94)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{2}=\pi\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\nonumber
@@ -572,7 +572,7 @@ b_k=\int^{0.5}_{0}sen(k\omega_0t)dt+\int^{1}_{1.5}sen(k\omega_0t)dt={\frac{-1}{\
 b_k=\frac{-1}{k\pi}\left[-1+1\right]=0,~~~k=1,2,3...
 \end{equation}
 \]</div>
-<p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(91)</a> a <a class="reference internal" href="#equation-bk">(93)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{0.2}=10\pi\)</span>, como se muestra en la figura generada en MATLAB como sigue:</p>
+<p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(92)</a> a <a class="reference internal" href="#equation-bk">(94)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{0.2}=10\pi\)</span>, como se muestra en la figura generada en MATLAB como sigue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">   </span>
@@ -599,11 +599,11 @@ b_k=\frac{-1}{k\pi}\left[-1+1\right]=0,~~~k=1,2,3...
 <h2>Ejemplo 3, señal modulada por ancho de pulso.<a class="headerlink" href="#ejemplo-3-senal-modulada-por-ancho-de-pulso" title="Permalink to this heading">#</a></h2>
 <p>Considere ahora una señal modulada por ancho de pulso definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pwm">
-<span class="eqno">(96)<a class="headerlink" href="#equation-func-pwm" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(97)<a class="headerlink" href="#equation-func-pwm" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; -1.5 \leq t \leq 0.5 \\ \\ 0 &amp; si &amp; 0.2 \leq t \leq 0.25  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(g(t)=g(t+0.2)\)</span></p>
-<p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(91)</a> a <a class="reference internal" href="#equation-bk">(93)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{0.2}=10\pi\)</span>, como se muestra en la figura generada en MATLAB como sigue:</p>
+<p>La aproximación por medio de la serie trigonométrica de Fourier se obtiene usando las ecuaciones <a class="reference internal" href="#equation-a0">(92)</a> a <a class="reference internal" href="#equation-bk">(94)</a> y considerando que <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}=\frac{2\pi}{0.2}=10\pi\)</span>, como se muestra en la figura generada en MATLAB como sigue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -625,7 +625,7 @@ b_k=\frac{-1}{k\pi}\left[-1+1\right]=0,~~~k=1,2,3...
 <img alt="_images/288fe12afdfeae9118194b6d5f91bcf91a70c46333a32b08b5f9d99a5843b126.png" src="_images/288fe12afdfeae9118194b6d5f91bcf91a70c46333a32b08b5f9d99a5843b126.png" />
 </div>
 </div>
-<p>Los coficientes de la serie trigonométrica de fourier para la aproximación de la señal <span class="math notranslate nohighlight">\(s(t)\)</span> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(91)</a>, <a class="reference internal" href="#equation-ak">(92)</a> y <a class="reference internal" href="#equation-bk">(93)</a> para obtener:</p>
+<p>Los coficientes de la serie trigonométrica de fourier para la aproximación de la señal <span class="math notranslate nohighlight">\(s(t)\)</span> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(92)</a>, <a class="reference internal" href="#equation-ak">(93)</a> y <a class="reference internal" href="#equation-bk">(94)</a> para obtener:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}

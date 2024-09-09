@@ -353,12 +353,12 @@ document.write(`
 una ecuación diferencial. A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incógnita a una función. Una ecuación diferencial en el contexto de los sistemas, involucra a las
 señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:</p>
 <div class="math notranslate nohighlight" id="equation-edo1">
-<span class="eqno">(18)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(19)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   2\frac{d^2y(t)}{dt^2}+5x(t)+300y(t)=4.5x(t)
 	\end{equation}\]</div>
-<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(18)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar tambien aceleración. En el caso de los sistemas eléctricos, los alamacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las realciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
+<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(19)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar tambien aceleración. En el caso de los sistemas eléctricos, los alamacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las realciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
 <div class="math notranslate nohighlight" id="equation-relconst1">
-<span class="eqno">(19)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(20)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
      m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
 	\end{equation}\]</div>
 <p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acuerdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posicion y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 7</span></a> muestra un típico sistema masa resorte amortiguador:</p>
@@ -370,7 +370,7 @@ señales de entrada y salida, así como diversas derivadas de cualquiera de ella
 </figure>
 <p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
 <div class="math notranslate nohighlight" id="equation-edombk1">
-<span class="eqno">(20)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(21)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   m\frac{d^2x(t)}{dt^2}+b_1\frac{dx(t)}{dt}+k_1x(t)=f(t)
 	\end{equation}\]</div>
 <p>En este caso, la salida se nombra <span class="math notranslate nohighlight">\(x(t)\)</span> dado que es un desplazamiento causado por la fuerza de entrada <span class="math notranslate nohighlight">\(f(t)\)</span>, que sería equivalente a la función estímulo o de entrada, se dice entoces que para este sistema, la entrada es una fuerza y la salida un desplazamiento.</p>
@@ -396,12 +396,12 @@ m\ddot{x}+b\dot{x}+kx=f
 </figure>
 <p>Las relaciones constitutivas del sistema eléctrico son:</p>
 <div class="math notranslate nohighlight" id="equation-relconst2">
-<span class="eqno">(21)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(22)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
      v_L=L\frac{di(t)}{dt}~~i_C=C\frac{dv_c(t)}{dt}~~v_R=i(t)R
 	\end{equation}\]</div>
 <p>Con <span class="math notranslate nohighlight">\(L\)</span> la inductancia en <span class="math notranslate nohighlight">\([H]\)</span>, <span class="math notranslate nohighlight">\(C\)</span> la capacitancia en <span class="math notranslate nohighlight">\([F]\)</span> y <span class="math notranslate nohighlight">\(R\)</span> la resistencia en <span class="math notranslate nohighlight">\([\Omega]\)</span>. Además, por la ley de Kirchoff, la corriente en el capacitor <span class="math notranslate nohighlight">\(i_C(t)=i(t)\)</span>. En este caso, la salida se nombra <span class="math notranslate nohighlight">\(v_c(t)\)</span> el voltaje en el capacitor, debido a la presencia de la fuente de alimentación <span class="math notranslate nohighlight">\(V_s(t)\)</span>, que sería equivalente a la función estímulo o de entrada. La ecuación diferencial que modela a este sistema eléctrico es:</p>
 <div class="math notranslate nohighlight" id="equation-edorlc">
-<span class="eqno">(22)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(23)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
 	\end{equation}\]</div>
 </section>

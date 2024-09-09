@@ -389,11 +389,11 @@ m_2\ddot{x}_2-b_2(\dot{x}_2-\dot{x}_1)+k_2(x_2-x_1)=f_2(t)
 \end{eqnarray}\end{split}\]</div>
 <p>También se puede escribir como:</p>
 <div class="math notranslate nohighlight" id="equation-2gdl">
-<span class="eqno">(81)<a class="headerlink" href="#equation-2gdl" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(82)<a class="headerlink" href="#equation-2gdl" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
 m_1\ddot{x}_1+(b_1+b_2)\dot{x}_1-b_2\dot{x}_2+(k_1+k_2)x_1+k_2x_2=f_1(t)\\
 m_2\ddot{x}_2-b_2\dot{x}_1-b_2\dot{x}_2-k_2x_1+k_2x_2=f_2(t)
 \end{eqnarray}\end{split}\]</div>
-<p>Aplicando la transformada de Laplace a la ecuación <a class="reference internal" href="#equation-2gdl">(81)</a> se obtiene:</p>
+<p>Aplicando la transformada de Laplace a la ecuación <a class="reference internal" href="#equation-2gdl">(82)</a> se obtiene:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \small
@@ -404,16 +404,16 @@ m_2\left [s^2X_2(s)-sx_2(0)-\dot{x}_2(0) \right ]-b_2\left [ sX_1(s)-x_1(0)\righ
 \end{split}\]</div>
 <p>Agrupando <span class="math notranslate nohighlight">\(X_1(s)\)</span> y <span class="math notranslate nohighlight">\(X_2(s)\)</span> se obtiene:</p>
 <div class="math notranslate nohighlight" id="equation-e1s">
-<span class="eqno">(82)<a class="headerlink" href="#equation-e1s" title="Enlace permanente a esta ecuación">#</a></span>\[\small
+<span class="eqno">(83)<a class="headerlink" href="#equation-e1s" title="Enlace permanente a esta ecuación">#</a></span>\[\small
 \begin{equation}
 \left [m_1s^2+(b_1+b_2)s+(k_1+k_2)\right ]X_1(s)-[b_2s+k_2]X_2(s)=F_1(s)+m_1[sx_1(0)-\dot{x}_1(0)]+(b_1+b_2)x_1(0)-b_2x_2(0)
 \end{equation}\]</div>
 <div class="math notranslate nohighlight" id="equation-e2s">
-<span class="eqno">(83)<a class="headerlink" href="#equation-e2s" title="Enlace permanente a esta ecuación">#</a></span>\[\small
+<span class="eqno">(84)<a class="headerlink" href="#equation-e2s" title="Enlace permanente a esta ecuación">#</a></span>\[\small
 \begin{equation}
 -\left [b_2s+k_2\right ]X_1(s)+\left [ m_2s^2+b_2s+k_2\right ]X_2(s)=F_2(s)+m_2[sx_2(0)-\dot{x}_2(0)]-b_2x_1(0)+b_2x_2(0)
 \end{equation}\]</div>
-<p>Las ecuaciones <a class="reference internal" href="#equation-e1s">(82)</a> y <a class="reference internal" href="#equation-e2s">(83)</a> son un conjunto o sistema de ecuaciones linealmente indendientes, que es posible resolver para las incógnitas <span class="math notranslate nohighlight">\(X_1(s)\)</span> y <span class="math notranslate nohighlight">\(X_2(s)\)</span>. Resolviendo para <span class="math notranslate nohighlight">\(X_1(s)\)</span> por regla de Crammer se tiene que:</p>
+<p>Las ecuaciones <a class="reference internal" href="#equation-e1s">(83)</a> y <a class="reference internal" href="#equation-e2s">(84)</a> son un conjunto o sistema de ecuaciones linealmente indendientes, que es posible resolver para las incógnitas <span class="math notranslate nohighlight">\(X_1(s)\)</span> y <span class="math notranslate nohighlight">\(X_2(s)\)</span>. Resolviendo para <span class="math notranslate nohighlight">\(X_1(s)\)</span> por regla de Crammer se tiene que:</p>
 <div class="math notranslate nohighlight">
 \[
 X_1(s)=\frac{\Delta X_1}{\Delta} 
@@ -428,7 +428,7 @@ m_1s^2+(b_1+b_2)s+(k_1+k_2)&amp;-[b_2s+k_2]\\
 \end{split}\]</div>
 <p>De donde se desprende que:</p>
 <div class="math notranslate nohighlight" id="equation-polcaract">
-<span class="eqno">(84)<a class="headerlink" href="#equation-polcaract" title="Enlace permanente a esta ecuación">#</a></span>\[\Delta=\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2\]</div>
+<span class="eqno">(85)<a class="headerlink" href="#equation-polcaract" title="Enlace permanente a esta ecuación">#</a></span>\[\Delta=\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2\]</div>
 <p>El determinante <span class="math notranslate nohighlight">\(\Delta\)</span> resulta ser el polinomio característico del sistema, las raices del polinomio característico contienen las frecuencias naturales <span class="math notranslate nohighlight">\(\omega_1\)</span> y <span class="math notranslate nohighlight">\(\omega_2\)</span> y los fractores de amortiguamiento <span class="math notranslate nohighlight">\(\xi_1\)</span> y <span class="math notranslate nohighlight">\(\xi_2\)</span>. El determinante <span class="math notranslate nohighlight">\(\Delta X_1\)</span> se obtiene al reemplazar a la primera columna por el vector de resultados del sistema de ecuaciones cuando se expresa en forma matricial:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -447,7 +447,7 @@ F_2(s)+m_2[sx_2(0)-\dot{x}_2(0)]-b_2x_1(0)+b_2x_2(0)&amp;m_2s^2+b_2s+k_2
 \end{split}\]</div>
 <p>Finalmente <span class="math notranslate nohighlight">\(X_1(s)\)</span> se expresa como:</p>
 <div class="math notranslate nohighlight" id="equation-x1s">
-<span class="eqno">(85)<a class="headerlink" href="#equation-x1s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
+<span class="eqno">(86)<a class="headerlink" href="#equation-x1s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
 \begin{eqnarray}
 X_1(s)=\frac{\left ( F_1(s)+m_1[sx_1(0)-\dot{x}_1(0)]+(b_1+b_2)x_1(0)-b_2x_2(0) \right )\left ( m_2s^2+b_2s+k_2 \right )}{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}+...\\
 ...+\frac{\left ( F_2(s)+m_2[sx_2(0)-\dot{x}_2(0)]-b_2x_1(0)+b_2x_2(0) \right ) \left( [b_2s+k_2] \right )}{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}
@@ -476,27 +476,27 @@ m_1s^2+(b_1+b_2)s+(k_1+k_2)&amp;F_1(s)+m_1[sx_1(0)-\dot{x}_1(0)]+(b_1+b_2)x_1(0)
 \end{split}\]</div>
 <p>Así, <span class="math notranslate nohighlight">\(X_2(s)\)</span> se expresa como:</p>
 <div class="math notranslate nohighlight" id="equation-x2s">
-<span class="eqno">(86)<a class="headerlink" href="#equation-x2s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
+<span class="eqno">(87)<a class="headerlink" href="#equation-x2s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
 \begin{eqnarray}
 X_2(s)=\frac{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)  \right )\left ( F_2(s)+m_2[sx_2(0)-\dot{x}_2(0)]-b_2x_1(0)+b_2x_2(0)\right ) }{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}+...\\
 ...+\frac{\left ( \left [b_2s+k_2\right ] \right ) \left( F_1(s)+m_1[sx_1(0)-\dot{x}_1(0)]+(b_1+b_2)x_1(0)-b_2x_2(0) \right )}{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}
 \end{eqnarray}\end{split}\]</div>
 <p>Las funciones de transferencia <span class="math notranslate nohighlight">\(G_1(s)\)</span> y <span class="math notranslate nohighlight">\(G_2(s)\)</span> se obtienen cuando se considera a todas las condiciones iniciales nulas, es decir  <span class="math notranslate nohighlight">\(x_1(0)=x_2(0)=\dot{x}_1(0)=\dot{x}_2(0)=0\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-g1s">
-<span class="eqno">(87)<a class="headerlink" href="#equation-g1s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
+<span class="eqno">(88)<a class="headerlink" href="#equation-g1s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
 \begin{eqnarray}
 X_1(s)=\frac{F_1(s)\left ( m_2s^2+b_2s+k_2 \right )}{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}+...\\
 ...+\frac{F_2(s) \left( [b_2s+k_2] \right )}{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}
 \end{eqnarray}\end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-g2s">
-<span class="eqno">(88)<a class="headerlink" href="#equation-g2s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
+<span class="eqno">(89)<a class="headerlink" href="#equation-g2s" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\small
 \begin{eqnarray}
 X_2(s)=\frac{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)  \right ) F_2(s) }{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}+...\\
 ...+\frac{\left ( \left [b_2s+k_2\right ] \right ) F_1(s)}{\left ( m_1s^2+(b_1+b_2)s+(k_1+k_2)\right )\left ( m_2s^2+b_2s+k_2\right )-[b_2s+k_2]^2}
 \end{eqnarray}\end{split}\]</div>
 <p>Para el caso de sistemas de múltiples grados de libertad se obtiene un matriz de transferencia, en el caso particular de este sistema, la ecuación en forma matricial es:</p>
 <div class="math notranslate nohighlight" id="equation-matformg">
-<span class="eqno">(89)<a class="headerlink" href="#equation-matformg" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{bmatrix}
+<span class="eqno">(90)<a class="headerlink" href="#equation-matformg" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{bmatrix}
 X_1(s)\\
 X_2(s)
 \end{bmatrix}=\begin{bmatrix}
