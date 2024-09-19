@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Función de transferencia. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -166,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senales_discreto.html">Señales en tiempo discreto.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -290,20 +304,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -342,41 +358,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="funcion-de-transferencia">
+  <section class="tex2jax_ignore mathjax_ignore" id="funcion-de-transferencia">
 <h1>Función de transferencia.<a class="headerlink" href="#funcion-de-transferencia" title="Permalink to this heading">#</a></h1>
-<p>Como se trató en secciones anteriores, la integral de convolución <a class="reference internal" href="Convolucion.html#equation-convolucion">(55)</a> permite encontrar la respuesta de los sistemas lineales e invariantes en el tiempo a partir del conocimiento de su respuesta al impulso. En general, sabemos que la respuesta <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema dinámico, modelado por medio de una ecuación diferencial de un orden arbitrario, se encuentra al encontrar la función solución a dicha ecuación diferencial. El modelo general de un sistema lineal, invariante en el tiempo adquiere la forma:</p>
+<p>Como se trató en secciones anteriores, la integral de convolución <a class="reference internal" href="Convolucion.html#equation-convolucion">(59)</a> permite encontrar la respuesta de los sistemas lineales e invariantes en el tiempo a partir del conocimiento de su respuesta al impulso. En general, sabemos que la respuesta <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema dinámico, modelado por medio de una ecuación diferencial de un orden arbitrario, se encuentra al encontrar la función solución a dicha ecuación diferencial. El modelo general de un sistema lineal, invariante en el tiempo adquiere la forma:</p>
 <div class="math notranslate nohighlight" id="equation-edo-sistema-gral">
-<span class="eqno">(71)<a class="headerlink" href="#equation-edo-sistema-gral" title="Enlace permanente a esta ecuación">#</a></span>\[a_n\frac{d^ny}{dt^n}+ a_{n-1}\frac{d^{n-1}y}{dt^{n-1}}+...+a_2\frac{d^2y}{dt^2}+ a_1\frac{dy}{dt}+a_0y=b_m\frac{d^mx}{dt^m}+ b_{m-1}\frac{d^{m-1}x}{dt^{m-1}}+...+b_2\frac{d^2x}{dt^2}+ b_1\frac{dx}{dt}+b_0x\]</div>
+<span class="eqno">(75)<a class="headerlink" href="#equation-edo-sistema-gral" title="Enlace permanente a esta ecuación">#</a></span>\[a_n\frac{d^ny}{dt^n}+ a_{n-1}\frac{d^{n-1}y}{dt^{n-1}}+...+a_2\frac{d^2y}{dt^2}+ a_1\frac{dy}{dt}+a_0y=b_m\frac{d^mx}{dt^m}+ b_{m-1}\frac{d^{m-1}x}{dt^{m-1}}+...+b_2\frac{d^2x}{dt^2}+ b_1\frac{dx}{dt}+b_0x\]</div>
 <p>Donde los coeficientes <span class="math notranslate nohighlight">\(a_n\)</span> y <span class="math notranslate nohighlight">\(b_n\)</span> son constantes, además <span class="math notranslate nohighlight">\(m\)</span> y <span class="math notranslate nohighlight">\(n\)</span> son enteros positivos, usualmente se considera que <span class="math notranslate nohighlight">\(n&gt;m\)</span>. Como se ha comprobado en secciones antariores, la transformada de Laplace permite encontrar la función solución, algebrizando el problema de cálculo, es decir convierte a la funcion <span class="math notranslate nohighlight">\(y(y)\)</span> en una función que aparace de forma algebraica, es decir, de forma que puede ser despejada o expresada en términos de <span class="math notranslate nohighlight">\(a_n\)</span>, <span class="math notranslate nohighlight">\(b_n\)</span> y <span class="math notranslate nohighlight">\(X(s)\)</span>. De maneta que al aplicar la transformada de Laplace a la ecuación diferencial, considerando todas las condiciones iniciales iguales a cero:</p>
 <div class="math notranslate nohighlight" id="equation-edo-sistema-laplace">
-<span class="eqno">(72)<a class="headerlink" href="#equation-edo-sistema-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[a_ns^{n}Y(s)+ a_{n-1}s^{n-1}Y(s)+...+a_1sY(s)+a_0Y(s)=b_ms^{m}X(s)+ b_{m-1}s^{m1}X(s)+...+b_1sX(s)+b_0X(s)\]</div>
+<span class="eqno">(76)<a class="headerlink" href="#equation-edo-sistema-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[a_ns^{n}Y(s)+ a_{n-1}s^{n-1}Y(s)+...+a_1sY(s)+a_0Y(s)=b_ms^{m}X(s)+ b_{m-1}s^{m1}X(s)+...+b_1sX(s)+b_0X(s)\]</div>
 <p>Es posible entonces despejar <span class="math notranslate nohighlight">\(Y(s)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-ys">
-<span class="eqno">(73)<a class="headerlink" href="#equation-ys" title="Enlace permanente a esta ecuación">#</a></span>\[Y(s)=\frac{b_ms^{m}+ b_{m-1}s^{m-1}+...+b_2s^2+ b_1s+b_0}{a_ns^{n}+ a_{n-1}s^{n-1}+...+a_2s^2+ a_1s+a_0}X(s)\]</div>
-<p>Si se realiza una representación alternativa de la ecuación <a class="reference internal" href="#equation-ys">(73)</a> en forma de un cociente se obtiene:</p>
+<span class="eqno">(77)<a class="headerlink" href="#equation-ys" title="Enlace permanente a esta ecuación">#</a></span>\[Y(s)=\frac{b_ms^{m}+ b_{m-1}s^{m-1}+...+b_2s^2+ b_1s+b_0}{a_ns^{n}+ a_{n-1}s^{n-1}+...+a_2s^2+ a_1s+a_0}X(s)\]</div>
+<p>Si se realiza una representación alternativa de la ecuación <a class="reference internal" href="#equation-ys">(77)</a> en forma de un cociente se obtiene:</p>
 <div class="math notranslate nohighlight" id="equation-tras-fun">
-<span class="eqno">(74)<a class="headerlink" href="#equation-tras-fun" title="Enlace permanente a esta ecuación">#</a></span>\[\frac{Y(s)}{X(s)}=\textcolor{red}{\frac{b_ms^{m}+ b_{m-1}s^{m-1}+...+b_2s^2+ b_1s+b_0}{a_ns^{n}+ a_{n-1}s^{n-1}+...+a_2s^2+ a_1s+a_0}}\]</div>
+<span class="eqno">(78)<a class="headerlink" href="#equation-tras-fun" title="Enlace permanente a esta ecuación">#</a></span>\[\frac{Y(s)}{X(s)}=\textcolor{red}{\frac{b_ms^{m}+ b_{m-1}s^{m-1}+...+b_2s^2+ b_1s+b_0}{a_ns^{n}+ a_{n-1}s^{n-1}+...+a_2s^2+ a_1s+a_0}}\]</div>
 <p>La expresion en color rojo no depende en absoluto del estímulo o perturbación <span class="math notranslate nohighlight">\(X(s)\)</span>, solo depende de los coeficientes de la ecuación diferencial, que son los que determinan las características del sistema en su estructura como transformación. A este cociente se le conoce como la <strong>Funcion de transferencia del sistema</strong>. En esta función, como ya se ha mencionado la variable independiente es <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span>, con <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span>, además considérese que <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\omega\)</span> son números reales.</p>
-<p>En la función de transferencia expresada en la <a class="reference internal" href="#equation-tras-fun">(74)</a>, las raices del numerador son los <strong>ceros del sistema</strong> y las raices del denominador se conocen como los <strong>polos del sistema</strong>. En sistemas eléctricos y mecánicos, estos polos están íntimamente relacionados con las resonancias o frecuencias naturales del sistema.
+<p>En la función de transferencia expresada en la <a class="reference internal" href="#equation-tras-fun">(78)</a>, las raices del numerador son los <strong>ceros del sistema</strong> y las raices del denominador se conocen como los <strong>polos del sistema</strong>. En sistemas eléctricos y mecánicos, estos polos están íntimamente relacionados con las resonancias o frecuencias naturales del sistema.
 Dado que la función de transferencia tiene una analogía con el concepto de ganancia, que es muy utilizado en ingeniería electrónica para describir el desempeño de los amplificadores, en ocaciones a la función de transferencia se le denota como <span class="math notranslate nohighlight">\(G(s)\)</span>, de manera que la salida <span class="math notranslate nohighlight">\(Y(s)\)</span> se puede expresar como:</p>
 <div class="math notranslate nohighlight">
 \[
 Y(s)=G(s)X(s)
 \]</div>
-<p>Esta última expresión indica que la entrada <span class="math notranslate nohighlight">\(X(s)\)</span>, al ser multiplicada por la ganancia <span class="math notranslate nohighlight">\(G(s)\)</span> produce la salida <span class="math notranslate nohighlight">\(Y(s)\)</span>. Si se sustituye en la ecuación <a class="reference internal" href="#equation-tras-fun">(74)</a> el caso particular cuando la parte real de la variable compeja <span class="math notranslate nohighlight">\(s\)</span> es igual a cero, es decir, se sustituye <span class="math notranslate nohighlight">\(s=j\omega\)</span>. Se obtiene la función de respuesta en frecuencia del sistema.</p>
-<div class="section" id="funcion-de-respuesta-en-frecuencia">
+<p>Esta última expresión indica que la entrada <span class="math notranslate nohighlight">\(X(s)\)</span>, al ser multiplicada por la ganancia <span class="math notranslate nohighlight">\(G(s)\)</span> produce la salida <span class="math notranslate nohighlight">\(Y(s)\)</span>. Si se sustituye en la ecuación <a class="reference internal" href="#equation-tras-fun">(78)</a> el caso particular cuando la parte real de la variable compeja <span class="math notranslate nohighlight">\(s\)</span> es igual a cero, es decir, se sustituye <span class="math notranslate nohighlight">\(s=j\omega\)</span>. Se obtiene la función de respuesta en frecuencia del sistema.</p>
+<section id="funcion-de-respuesta-en-frecuencia">
 <h2>Función de respuesta en frecuencia.<a class="headerlink" href="#funcion-de-respuesta-en-frecuencia" title="Permalink to this heading">#</a></h2>
 <p>Como un ejemplo de aplicación de la función de respuesta en frecuencia, analizaremos nuevamente al sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk-simple"><span class="std std-numref">Figura 8</span></a> y cuyos parámetros se presentan en la <a class="reference internal" href="#tabla-param-simple"><span class="std std-numref">Tabla 6</span></a>,con las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0~[m]\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)=0~[m/s]\)</span></p>
-<div class="figure align-default" id="mbk-simple">
+<figure class="align-default" id="mbk-simple">
 <a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 8 </span><span class="caption-text">Sistema masa resorte amortigador.</span><a class="headerlink" href="#mbk-simple" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 8 </span><span class="caption-text">Sistema masa resorte amortigador.</span><a class="headerlink" href="#mbk-simple" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <table class="table" id="tabla-param-simple">
 <caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Tabla de parámetros del sistema masa resorte amortiguador</span><a class="headerlink" href="#tabla-param-simple" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -412,17 +426,17 @@ Y(s)=G(s)X(s)
 </table>
 <p>En este caso, la ecuación diferencial, se encuentra sustituyendo los valores de <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(b\)</span> y <span class="math notranslate nohighlight">\(k\)</span> para obtener:</p>
 <div class="math notranslate nohighlight" id="equation-edombk-simple">
-<span class="eqno">(75)<a class="headerlink" href="#equation-edombk-simple" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(79)<a class="headerlink" href="#equation-edombk-simple" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   4.3\frac{d^2x(t)}{dt^2}+1.5\frac{dx(t)}{dt}+430x(t)=f(t)
 	\end{equation}\]</div>
 <p>Si <span class="math notranslate nohighlight">\(f(t)=cos(\omega_0t)\)</span> se obtiene la función de transferencia:</p>
 <div class="math notranslate nohighlight" id="equation-tras-fun-simple">
-<span class="eqno">(76)<a class="headerlink" href="#equation-tras-fun-simple" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(80)<a class="headerlink" href="#equation-tras-fun-simple" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   \frac{X(s)}{F(s)}=\frac{1}{4.3s^{2}+1.5s+430}
 	\end{equation}\]</div>
 <p>La función de respuesta en frecuencia del sistema se obtiene al sustituir <span class="math notranslate nohighlight">\(s=j\omega\)</span> en la función de transferencia:</p>
 <div class="math notranslate nohighlight" id="equation-frf-mbk">
-<span class="eqno">(77)<a class="headerlink" href="#equation-frf-mbk" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(81)<a class="headerlink" href="#equation-frf-mbk" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   X(j\omega)=\frac{1}{4.3(j\omega)^{2}+1.5(j\omega)+430}
 	\end{equation}\]</div>
 <p>Dado que <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span>:</p>
@@ -448,8 +462,8 @@ X(j\omega)=\frac{1}{4.3(\sqrt{-1}\omega)^2+1.5\sqrt{-1}\omega+430}=\frac{1}{-4.3
 </div>
 </div>
 <p>Como puede observarse, el pico de la gráfica de la función de respuesta en frecuencia coincide con el valor de la frecuencia natural del sistema <span class="math notranslate nohighlight">\(\omega_n=\sqrt{\frac{k}{m}-\frac{b^2}{4m^2}}=\sqrt{\frac{430}{4.3}-\frac{1.5^2}{4(4.3)^2}}=9.9985~rad/s\)</span></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -476,11 +490,10 @@ X(j\omega)=\frac{1}{4.3(\sqrt{-1}\omega)^2+1.5\sqrt{-1}\omega+430}=\frac{1}{-4.3
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Propiedades_transf.html"
@@ -500,10 +513,7 @@ X(j\omega)=\frac{1}{4.3(\sqrt{-1}\omega)^2+1.5\sqrt{-1}\omega+430}=\frac{1}{-4.3
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -540,6 +550,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -566,8 +577,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

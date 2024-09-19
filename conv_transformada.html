@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Transformada de Laplace aplicada al análisis de sistemas lineales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -166,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senales_discreto.html">Señales en tiempo discreto.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -290,20 +304,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -332,26 +348,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="transformada-de-laplace-aplicada-al-analisis-de-sistemas-lineales">
+  <section class="tex2jax_ignore mathjax_ignore" id="transformada-de-laplace-aplicada-al-analisis-de-sistemas-lineales">
 <h1>Transformada de Laplace aplicada al análisis de sistemas lineales.<a class="headerlink" href="#transformada-de-laplace-aplicada-al-analisis-de-sistemas-lineales" title="Permalink to this heading">#</a></h1>
-<p>Como se trató en secciones anteriores, la integral de convolución <a class="reference internal" href="Convolucion.html#equation-convolucion">(55)</a> permite encontrar la respuesta de los sistemas lineales e invariantes en el tiempo a partir del conocimiento de su respuesta al impulso. La transformada de Laplace permite convertir un problema de cálculo en uno de álgebra, entonces, la transformada de laplace al ser aplicada a la integral de convolución convierte esta operación en un producto tal que</p>
+<p>Como se trató en secciones anteriores, la integral de convolución <a class="reference internal" href="Convolucion.html#equation-convolucion">(59)</a> permite encontrar la respuesta de los sistemas lineales e invariantes en el tiempo a partir del conocimiento de su respuesta al impulso. La transformada de Laplace permite convertir un problema de cálculo en uno de álgebra, entonces, la transformada de laplace al ser aplicada a la integral de convolución convierte esta operación en un producto tal que</p>
 <div class="math notranslate nohighlight" id="equation-conv-laplace">
-<span class="eqno">(63)<a class="headerlink" href="#equation-conv-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[ \mathscr{L} \left\{ y(t) \right\}= Y(s)=\mathscr{L} \left\{ x(t)*h(t) \right\}=\mathscr{L} \left\{ \int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau \right\}=X(s)H(s)\]</div>
+<span class="eqno">(67)<a class="headerlink" href="#equation-conv-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[ \mathscr{L} \left\{ y(t) \right\}= Y(s)=\mathscr{L} \left\{ x(t)*h(t) \right\}=\mathscr{L} \left\{ \int^{\infty}_{-\infty}x(\tau)h(t-\tau)d\tau \right\}=X(s)H(s)\]</div>
 <p>Como era de esperarse, el operador transformada convierte a la integral de convolución en un producto simple de transformadas. Este concepto es ampliamente utilizado en teoría de control de sistemas lineales por que permite el uso de las herramientas del álgebra en el modelado de sistemas dinámicos. Es claro que la señal de salida <span class="math notranslate nohighlight">\(y(t)\)</span> es la transformada inversa de <span class="math notranslate nohighlight">\(Y(s)\)</span>, es decir:</p>
 <div class="math notranslate nohighlight">
 \[
 y(t)= \mathscr{L}^{-1} \left\{ Y(s) \right\}
 \]</div>
-<p>Es importante mencionar que la respuesta al impulso de un sistema lineal invariante en el tiempo se puede obtener fácilmente aplicando la transformada de Laplace, dado que según se reporta en la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> la transformada de Laplace del impulso unitario es igual a uno. Esta propiedad permite encontrar la respuesta a la entrada tipo impulso de un sistema de forma directa, en vez de calcular primero la respuesta al escalón y derivando como se establece en la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-deriv-impulso">(40)</a>.</p>
+<p>Es importante mencionar que la respuesta al impulso de un sistema lineal invariante en el tiempo se puede obtener fácilmente aplicando la transformada de Laplace, dado que según se reporta en la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> la transformada de Laplace del impulso unitario es igual a uno. Esta propiedad permite encontrar la respuesta a la entrada tipo impulso de un sistema de forma directa, en vez de calcular primero la respuesta al escalón y derivando como se establece en la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-deriv-impulso">(44)</a>.</p>
 <div class="admonition-determinacion-de-la-respuesta-de-un-sistema-lineal-e-invariante-en-el-tiempo admonition">
 <p class="admonition-title">Determinación de la respuesta de un sistema lineal e invariante en el tiempo</p>
 <p>Para encontrar la respuesta de un sistema lineal usando la trasformada de Laplace se sigue el siguiente procedimiento:</p>
 <ol class="arabic simple">
-<li><p>Encuentre la respuesta al impulso del sistema usando como estímulo la función <span class="math notranslate nohighlight">\(\delta(t)\)</span>, tal como se define el la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-impulso">(39)</a>.</p></li>
+<li><p>Encuentre la respuesta al impulso del sistema usando como estímulo la función <span class="math notranslate nohighlight">\(\delta(t)\)</span>, tal como se define el la ecuación <a class="reference internal" href="respuesta_impulso.html#equation-impulso">(43)</a>.</p></li>
 </ol>
 <p>2.- Encuentre la transformada de Laplace del estímulo o entrada <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <p>3.- Determine la salida <span class="math notranslate nohighlight">\(y(t)\)</span> obteniendo la transformada inversa del producto <span class="math notranslate nohighlight">\(X(s)H(s)\)</span>.</p>
-<p>Este procedimiento es válido debido a la propiedad de la transformada de Laplace definida en la ecuación <a class="reference internal" href="#equation-conv-laplace">(63)</a>.</p>
+<p>Este procedimiento es válido debido a la propiedad de la transformada de Laplace definida en la ecuación <a class="reference internal" href="#equation-conv-laplace">(67)</a>.</p>
 </div>
 <p>Por ejemplo, la respuesta al impulso del circuito RLC, aplicando la trasformada de Laplace se obtiene al pantear la ecuación diferencial</p>
 <div class="math notranslate nohighlight">
@@ -427,7 +443,7 @@ V_c(s)=H(s)V_s(s)=\left ( \frac{1}{1.661\times 10^{-5}s^2+0.0018s+1}\right )\lef
 \[
 V_c(s)=\frac{3.4266}{s+4.5}+\frac{-1.7133+0.3557j}{s+54.18 + 239.31j}+\frac{-1.7133-0.3557j}{s+54.18 - 239.31j}
 \]</div>
-<p>con <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span>. La salida <span class="math notranslate nohighlight">\(v_c(t)\)</span> es la transformada inversa de Laplace de esta última expresión, de manera que se puede aplicar directamente, de acuerdo con la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> <span class="math notranslate nohighlight">\( \mathscr{L}^{-1} \left\{ \frac{3.4266}{s+4.5} \right\}=3.4266e^{-4.5t}\)</span> y al resto de la expresión se le aplica la equivalencia expresada en la ecuación <a class="reference internal" href="Practica5.html#equation-residuos-general">(62)</a> para obtener:</p>
+<p>con <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span>. La salida <span class="math notranslate nohighlight">\(v_c(t)\)</span> es la transformada inversa de Laplace de esta última expresión, de manera que se puede aplicar directamente, de acuerdo con la <a class="reference internal" href="transformada_de_Laplace.html#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> <span class="math notranslate nohighlight">\( \mathscr{L}^{-1} \left\{ \frac{3.4266}{s+4.5} \right\}=3.4266e^{-4.5t}\)</span> y al resto de la expresión se le aplica la equivalencia expresada en la ecuación <a class="reference internal" href="Practica5.html#equation-residuos-general">(66)</a> para obtener:</p>
 <div class="math notranslate nohighlight">
 \[
 v_c(t)=3.4266e^{-4.5t}+e^{-54.18t}\left ( -3.4266cos(239.31t)- 0.7114sen(239.31t)\right )
@@ -467,7 +483,7 @@ v_c(t)=3.4266e^{-4.5t}+e^{-54.18t}\left ( -3.4266cos(239.31t)- 0.7114sen(239.31t
 <img alt="_images/a577de16f901e6c9aa1f7f0b310e30be061db6cb9bfab779d33c20cd0a816462.png" src="_images/a577de16f901e6c9aa1f7f0b310e30be061db6cb9bfab779d33c20cd0a816462.png" />
 </div>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -494,11 +510,10 @@ v_c(t)=3.4266e^{-4.5t}+e^{-54.18t}\left ( -3.4266cos(239.31t)- 0.7114sen(239.31t
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica5.html"
@@ -518,10 +533,7 @@ v_c(t)=3.4266e^{-4.5t}+e^{-54.18t}\left ( -3.4266cos(239.31t)- 0.7114sen(239.31t
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -544,6 +556,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -570,8 +583,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 4: Convolución en sistemas discretos. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -166,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senales_discreto.html">Señales en tiempo discreto.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -290,20 +304,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -342,11 +358,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-4-convolucion-en-sistemas-discretos">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-4-convolucion-en-sistemas-discretos">
 <h1>Práctica 4: Convolución en sistemas discretos.<a class="headerlink" href="#practica-4-convolucion-en-sistemas-discretos" title="Permalink to this heading">#</a></h1>
 <p>La operación de convolución en los sistemas de tiempo discreto se basa en la descomposición en términos de la función impulso de una señal de tiempo discreto (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La operación de convolución para sistemas de tiempo discreto se define como:</p>
 <div class="math notranslate nohighlight" id="equation-conv-discreta">
-<span class="eqno">(59)<a class="headerlink" href="#equation-conv-discreta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(63)<a class="headerlink" href="#equation-conv-discreta" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(n=0,1,2,3...n\)</span>, <span class="math notranslate nohighlight">\(h[n]\)</span> es la versión en tiempo discreto de la respuesta al impulso y <span class="math notranslate nohighlight">\(x[n]\)</span> es la función de entrada al sistema o estímulo.</p>
@@ -354,12 +370,12 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 <p class="admonition-title">Convolución de sistemas de tiempo discreto:</p>
 <p>El operador convolución de la señal de entrada <span class="math notranslate nohighlight">\(x[n]\)</span> y la respuesta al impulso de un sistema de tiempo discreto <span class="math notranslate nohighlight">\(h[n]\)</span> proporciona la salida <span class="math notranslate nohighlight">\(y[n]\)</span> del sistema como:</p>
 <div class="math notranslate nohighlight" id="equation-convolucion-conmuta-1">
-<span class="eqno">(60)<a class="headerlink" href="#equation-convolucion-conmuta-1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(64)<a class="headerlink" href="#equation-convolucion-conmuta-1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
   y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty}h[k]x[n-k]\\
   y[n]=h[n]*x[n]=\sum^{\infty}_{k=-\infty}x[k]h[n-k]\\
 	\end{eqnarray}\end{split}\]</div>
 </div>
-<div class="section" id="filtrado-de-senales">
+<section id="filtrado-de-senales">
 <h2>Filtrado de señales<a class="headerlink" href="#filtrado-de-senales" title="Permalink to this heading">#</a></h2>
 <p>Una de las aplicaciónes de la convolución es el filtrado de señales. Hemos calculado la respuesta al impulso de los sistemas RLC y masa-resorte-amortiguador. Estos dos sistemas son considerados filtros pasa bajas, dado que presentan una respuesta ante una señal tipo barrido frecuencial que tiene un máximo en la frecuencia natural o resonancia. El circuito RC es considerado un filtro de primer orden y permite en aplicaciones de electrónica filtrar altas frecuencias e incluso disminuir el ruido.</p>
 <p>El siguiente ejemplo muestra el uso de un sistema o circuito RC como un filtro pasa bajas. Suponga que se desea retirar el ruido de una señal que se obtiene de un micrófono dinámico, el ruido alcanza los 15 milivolts mientras que la señal del micrófono alcanza máximo 10 milivolts. Si el ruido es de alta frecuencia, un circuito RC permitirá eliminarlo de la señal original.</p>
@@ -452,8 +468,8 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 <img alt="_images/aa6a64f670da988d60a3c871e1c4bdd02ba66fe6e08225e7149903677c9ed9fb.png" src="_images/aa6a64f670da988d60a3c871e1c4bdd02ba66fe6e08225e7149903677c9ed9fb.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -480,11 +496,10 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Convolucion.html"
@@ -504,10 +519,7 @@ y[n]=x[n]*h[n]=\sum^{\infty}_{k=-\infty} h[k]x[n-k]
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -544,6 +556,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -570,8 +583,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

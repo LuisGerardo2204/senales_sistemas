@@ -225,7 +225,7 @@ set(gca,'fontsize',20);
 set(gca,'fontname','Times New Roman','FontWeight','Bold'); 
 ```
 
-### Simetría par
+### Simetría impar
 
 Una señal valuada en los reales tiene simetría impar si se cumple que $x(-t)=-x(t)$, por ejemplo las funciones $x(t)=sen(t)$ y $x(t)=t^3$
 
