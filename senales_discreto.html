@@ -753,58 +753,7 @@ y[t]=x(-n)
 x_1[n]=2.5sen(0.2\pi n)+5.25e^{-0.15n}cos(0.45n)
 \]</div>
 <p>gráficamente se tiene:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
-<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
-<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">40</span><span class="p">];</span>
-<span class="n">x1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="mf">5.25</span><span class="o">*</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">0.45</span><span class="o">*</span><span class="n">n</span><span class="p">);</span>
-
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">stem</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x1</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x_1[n]&quot;</span><span class="p">)</span>
-
-<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
-<span class="w">  </span>
-<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span><span class="c"> %Ajustes de rótulos y formato de letra</span>
-<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="c">% </span>
-<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;$x_1[n]$&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-
-<span class="w"> </span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span><span class="w"> </span>
-
-
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">stem</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">,</span><span class="n">x1</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
-<span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g[n]=x_1[-n]&quot;</span><span class="p">)</span>
-
-<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
-<span class="w">  </span>
-<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span><span class="c"> %Ajustes de rótulos y formato de letra</span>
-<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-<span class="c">% </span>
-<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;$g[n]$&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
-
-<span class="w"> </span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span><span class="w"> </span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="_images/5292fb21331e90b2d790da4a6c207560cb9ea8e87cb890bf0810a2034d0f5aa8.png" src="_images/5292fb21331e90b2d790da4a6c207560cb9ea8e87cb890bf0810a2034d0f5aa8.png" />
 </div>
