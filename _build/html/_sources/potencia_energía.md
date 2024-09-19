@@ -25,6 +25,8 @@ t=[0:0.0001:0.04];
 vs=127*sin(120*pi*t);
 
 plot(t,vs)
+set(gcf,'Visible','on')
+
 grid
 title("Señal determinística")
  set(gca,'defaulttextinterpreter','latex')
@@ -53,6 +55,7 @@ t=[0:0.0001:0.1];
 vs=0.3*sin(2*pi*2*t)+0.25*cos(2.5*pi*150.0*t)+0.5*rand(size(t));
 
 plot(t,vs)
+set(gcf,'Visible','on')
 grid
 title("Señal aleatoria")
  set(gca,'defaulttextinterpreter','latex')
@@ -82,7 +85,7 @@ La energía de una señal se define como {cite}`Alkin`:
 ```{math}
 :label: energia
 \begin{equation}
-E_x=\int^{\infty}_\infty x^2(t) dt
+E_x=\int^{\infty}_{-\infty} x^2(t) dt
 \end{equation}
 ```
 La ecuación {eq}`energia` también se expresa como 
@@ -90,7 +93,7 @@ La ecuación {eq}`energia` también se expresa como
 ```{math}
 :label: energia_abs
 \begin{equation}
-E_x=\int^{\infty}_\infty |x(t)|^2 dt
+E_x=\int^{\infty}_{-\infty} |x(t)|^2 dt
 \end{equation}
 ```
 donde $|x(t)|$ es la magnitud en el caso de funciones complejas.
@@ -120,7 +123,7 @@ La potencia de una señal periódica se calcula usando la expresión:
 ```{math}
 :label: potencia
 \begin{equation}
-P_x= \frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}} |x(t)|^2 dt 
+P_x= \frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}} x^2(t) dt 
 \end{equation}
 ```
 para señales en la variable compleja:
@@ -182,6 +185,7 @@ t=[-pi:0.001:pi];
 
 subplot(1,2,1)
 plot(t,cos(t))
+set(gcf,'Visible','on')
 grid
 title("x(t)=cos(t)")
  set(gca,'defaulttextinterpreter','latex')
@@ -221,7 +225,7 @@ set(gca,'fontsize',20);
 set(gca,'fontname','Times New Roman','FontWeight','Bold'); 
 ```
 
-### Simetría par
+### Simetría impar
 
 Una señal valuada en los reales tiene simetría impar si se cumple que $x(-t)=-x(t)$, por ejemplo las funciones $x(t)=sen(t)$ y $x(t)=t^3$
 
@@ -233,6 +237,7 @@ t=[-pi:0.001:pi];
 
 subplot(1,2,1)
 plot(t,sin(t))
+set(gcf,'Visible','on')
 grid
 title("x(t)=sen(t)")
  set(gca,'defaulttextinterpreter','latex')

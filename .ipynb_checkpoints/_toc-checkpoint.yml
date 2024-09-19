@@ -4,10 +4,26 @@
 format: jb-book
 root: intro
 chapters:
-- file: SoftwareMATLAB.md
+- file: senales.md
+- file: modela_senales
+- file: potencia_energía.md
+#- file: senales_discreto
+- file: sistemas_lineales.md
 - file: Practica1
 - file: Practica2
+- file: ecuaciones_diferenciales_sistemas.md
 - file: Practica3
+- file: respuesta_impulso.md
+- file: Convolucion
 - file: Practica4
+- file: transformada_de_Laplace.md
+- file: Practica5
+- file: conv_transformada
+- file: Propiedades_transf
+- file: funcion_de_transferencia
+- file: Bode
+- file: Practica6
+- file: Series_de_fourier.ipynb
+- file: Transformada_de_fourier.ipynb
 - file: Bibliografía
 

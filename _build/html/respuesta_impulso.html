@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senales_discreto.html">Señales en tiempo discreto.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -362,16 +363,16 @@ document.write(`
 <h1>Respuesta al impulso de sistemas de tiempo continuo.<a class="headerlink" href="#respuesta-al-impulso-de-sistemas-de-tiempo-continuo" title="Permalink to this heading">#</a></h1>
 <p>Una ecuación diferencial ordinaria, lineal y de coeficientes constantes se puede utilizar como el modelo matemático o la respresentación de un sistema dinámico. Existe una representación alternativa que resulta muy útil para el modelado de los sistemas es llamada <code class="docutils literal notranslate"><span class="pre">la</span> <span class="pre">respuesta</span> <span class="pre">al</span> <span class="pre">impulso</span> <span class="pre">del</span> <span class="pre">sistema</span></code>(<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>, <span id="id2">Alkin [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>). La función impulso unitario, conocida como función Delta de Dirac se define matemáticamente como:</p>
 <div class="math notranslate nohighlight" id="equation-impulso">
-<span class="eqno">(39)<a class="headerlink" href="#equation-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(43)<a class="headerlink" href="#equation-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          \delta(t)= \left\{ \begin{array}{lcc} 1 &amp; si &amp; 0 = t \\ \\ 0 &amp; si &amp;  t \neq 0   \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Cuando la función <span class="math notranslate nohighlight">\(\delta(t)\)</span> se usa como una función estímulo para un sistema, a la salida <span class="math notranslate nohighlight">\(y(t)\)</span> se le denomina respuesta al impulso del sistema y se usa la notación <span class="math notranslate nohighlight">\(h(t)\)</span> para distinguirla de las posibles salidas del sistema ante entradas o estímulos arbitrarios <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <section id="determinacion-de-la-respuesta-al-impulso-de-un-sistema">
 <h2>Determinación de la respuesta al impulso de un sistema<a class="headerlink" href="#determinacion-de-la-respuesta-al-impulso-de-un-sistema" title="Permalink to this heading">#</a></h2>
 <p>Como hemos observado en la Práctica 3, es posible determinar la salida <span class="math notranslate nohighlight">\(y(t)\)</span> de un sistema, al resolver la ecuación diferencial que modela al sistema. Esta ecuación puede ser homogénea o forzada, con las soluciones candidatas condensadas en
-<a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y <a class="reference internal" href="Practica3.html#tabla-forzada"><span class="std std-numref">Tabla 3</span></a>. Entre las funciones candidatas mostradas en tales tablas, no se presenta en ningún caso la función impulso unitario definida en la ecuación <a class="reference internal" href="#equation-impulso">(39)</a>, sin embargo se cumple que:</p>
+<a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y <a class="reference internal" href="Practica3.html#tabla-forzada"><span class="std std-numref">Tabla 3</span></a>. Entre las funciones candidatas mostradas en tales tablas, no se presenta en ningún caso la función impulso unitario definida en la ecuación <a class="reference internal" href="#equation-impulso">(43)</a>, sin embargo se cumple que:</p>
 <div class="math notranslate nohighlight" id="equation-deriv-impulso">
-<span class="eqno">(40)<a class="headerlink" href="#equation-deriv-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(44)<a class="headerlink" href="#equation-deriv-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
           \frac{du(t)}{dt}=\delta(t)
 		 \end{equation}\]</div>
 <div class="admonition-determinacion-de-la-respuesta-al-impulso-de-un-sistema admonition">
@@ -379,18 +380,18 @@ document.write(`
 <p>Para poder encontrar la respuesta forzada de un sistema cuando el estímulo o entrada es una señal del tipo impulso unitario se procede a encontrar la respuesta al escalón unitario del sistema (caso cuando la entrada es una constante de amlitud 1) y se obtiene la derivada de la respuesta resultante.</p>
 <p>Sea <span class="math notranslate nohighlight">\(y(t)\)</span> la respuesta al escalón unitario <span class="math notranslate nohighlight">\(u(t)\)</span> de un sistema, es decir <span class="math notranslate nohighlight">\(y(t)=Transf\{u(t)\}\)</span>, la respuesta al impulso unitario <span class="math notranslate nohighlight">\(h(t)=Transf\{\delta(t)\}\)</span> de ese sistema es:</p>
 <div class="math notranslate nohighlight" id="equation-resp-impulso">
-<span class="eqno">(41)<a class="headerlink" href="#equation-resp-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(45)<a class="headerlink" href="#equation-resp-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
           \frac{dy(t)}{dt}=h(t)
 		 \end{equation}\]</div>
 </div>
-<p>Por ejemplo para el sistema eléctrico analizado en el caso anterior, cuyo diagrama se muestra en la <a class="reference internal" href="Practica3.html#rlceq1"><span class="std std-numref">Figura 10</span></a> y cuyos parámetros son los de la <a class="reference internal" href="Practica3.html#tabla-paramrlc"><span class="std std-numref">Tabla 4</span></a>, la respuesta al impulso de obtiene encontrando primero su respuesta al escalón unitario, es decir, cuando el modelo del sistema es:</p>
+<p>Por ejemplo para el sistema eléctrico analizado en el caso anterior, cuyo diagrama se muestra en la <a class="reference internal" href="Practica3.html#rlceq1"><span class="std std-numref">Figura 7</span></a> y cuyos parámetros son los de la <a class="reference internal" href="Practica3.html#tabla-paramrlc"><span class="std std-numref">Tabla 4</span></a>, la respuesta al impulso de obtiene encontrando primero su respuesta al escalón unitario, es decir, cuando el modelo del sistema es:</p>
 <div class="math notranslate nohighlight" id="equation-rlc-escalon">
-<span class="eqno">(42)<a class="headerlink" href="#equation-rlc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(46)<a class="headerlink" href="#equation-rlc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=u(t)
 	\end{equation}\]</div>
 <p>Se consideran condiciones iniciales cero, es decir: <span class="math notranslate nohighlight">\(v(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}(0)=0\)</span> y además <span class="math notranslate nohighlight">\(u(t)=1\)</span> para <span class="math notranslate nohighlight">\(t&gt;0\)</span> para obtener:</p>
 <div class="math notranslate nohighlight" id="equation-rlc-escalon2">
-<span class="eqno">(43)<a class="headerlink" href="#equation-rlc-escalon2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(47)<a class="headerlink" href="#equation-rlc-escalon2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   1.661\times 10^{-5}\frac{d^2v_c(t)}{dt^2}+ 0.0018\frac{dv_c(t)}{dt}+v_c(t)=1
 	\end{equation}\]</div>
 <p>De aquí se desprende que, de acuerdo con la <a class="reference internal" href="Practica3.html#tabla-sol"><span class="std std-numref">Tabla 1</span></a> y de acuerdo con el ejemplo anterior, donde se calcularon las raices complejas <span class="math notranslate nohighlight">\(-52.98 \pm 239.58i\)</span> la solución de la homogenea asociada es:</p>
@@ -400,10 +401,10 @@ v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
 \]</div>
 <p>Para este sistema, se cumple que la solución particular es una constante, <span class="math notranslate nohighlight">\(v_{cp}=1\)</span>, por lo tanto la solución completa para el voltaje en el capacitor adquiere la forma:</p>
 <div class="math notranslate nohighlight" id="equation-sol-rlc-escalon">
-<span class="eqno">(44)<a class="headerlink" href="#equation-sol-rlc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(48)<a class="headerlink" href="#equation-sol-rlc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    v_c(t)=v_{ch}+v_{p}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}+1
 \end{equation}\]</div>
-<p>Sabiendo que <span class="math notranslate nohighlight">\(v_c(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)=0\)</span> y sustituyendo la ecuación <a class="reference internal" href="#equation-sol-rlc-escalon">(44)</a> en la ecuación <a class="reference internal" href="#equation-rlc-escalon">(42)</a> se obiene el valor de los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span>.</p>
+<p>Sabiendo que <span class="math notranslate nohighlight">\(v_c(0)=0\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)=0\)</span> y sustituyendo la ecuación <a class="reference internal" href="#equation-sol-rlc-escalon">(48)</a> en la ecuación <a class="reference internal" href="#equation-rlc-escalon">(46)</a> se obiene el valor de los coeficientes <span class="math notranslate nohighlight">\(C_1\)</span> y <span class="math notranslate nohighlight">\(C_2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -413,16 +414,16 @@ v_{ch}=(C_1cos(239.58t)+C_2sen(239.58t))e^{-52.98t}
 \end{split}\]</div>
 <p>Evaluando <span class="math notranslate nohighlight">\(v_c(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eval-v0-escalon">
-<span class="eqno">(45)<a class="headerlink" href="#equation-eval-v0-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(49)<a class="headerlink" href="#equation-eval-v0-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
  v_c(0)=(C_1cos(239.58(0))+C_2sen(239.58(0)))e^{-52.98(0)}+1=0\\
 \dot{v}_c(0)=(-239.58C_1sen(0)+239.58C_2cos(0))e^{0}-52.98(C_1cos(0)+C_2sen(0))e^{0}
 \end{eqnarray}\end{split}\]</div>
-<p>Las ecuaciones <a class="reference internal" href="#equation-eval-v0-escalon">(45)</a> conducen a:</p>
+<p>Las ecuaciones <a class="reference internal" href="#equation-eval-v0-escalon">(49)</a> conducen a:</p>
 <div class="math notranslate nohighlight">
 \[
 v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1=0\Longrightarrow C_1=-1
 \]</div>
-<p>Sustituyendo <span class="math notranslate nohighlight">\(C_1\)</span> en la ecuación <a class="reference internal" href="Practica3.html#equation-eval-v0">(35)</a></p>
+<p>Sustituyendo <span class="math notranslate nohighlight">\(C_1\)</span> en la ecuación <a class="reference internal" href="Practica3.html#equation-eval-v0">(39)</a></p>
 <div class="math notranslate nohighlight">
 \[
 \dot{v}_c(0)=(390.5154sen(0)+239.58C_2cos(0))e^{0}-52.98(-cos(0)+C_2sen(0))e^{0}=0
@@ -434,17 +435,17 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1=0\Longrightarrow C_1=-1
 \]</div>
 <p>Luego entonces, la solución completa de la ecuación diferencial, o bien el voltaje en el capacitor <span class="math notranslate nohighlight">\(v_c(t)\)</span> es:</p>
 <div class="math notranslate nohighlight" id="equation-sol-vc-escalon">
-<span class="eqno">(46)<a class="headerlink" href="#equation-sol-vc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(50)<a class="headerlink" href="#equation-sol-vc-escalon" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    v_c(t)=v_{ch}+v_{cp}=(-cos(239.58t)-0.2211sen(239.58t))e^{-52.98t}+1
 \end{equation}\]</div>
 <p>La respuesta al impulso es la derivada de <span class="math notranslate nohighlight">\(v_c(t)\)</span> respecto del tiempo, entonces:</p>
 <div class="math notranslate nohighlight" id="equation-h-rlc-deriv">
-<span class="eqno">(47)<a class="headerlink" href="#equation-h-rlc-deriv" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(51)<a class="headerlink" href="#equation-h-rlc-deriv" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    h(t)=\frac{v_c(t)}{dt}=\frac{(-cos(239.58t)-0.2211sen(239.58t))e^{-52.98t}+1}{dt}
 \end{equation}\]</div>
 <p>Luego entonces:</p>
 <div class="math notranslate nohighlight" id="equation-h-rlc-final">
-<span class="eqno">(48)<a class="headerlink" href="#equation-h-rlc-final" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{eqnarray}
+<span class="eqno">(52)<a class="headerlink" href="#equation-h-rlc-final" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{eqnarray}
    h(t)=(261.7287sen(239.58t))e^{-52.98t}
 \end{eqnarray}\]</div>
 <p>La gráfica de la respuesta al impulso del sistema se puede obtener en MATLAB con las siguientes líneas de código:</p>
@@ -478,41 +479,41 @@ v_c(0)=(C_1cos(0)+C_2sen(0))e^{0}+1=0\Longrightarrow C_1=-1
 <h2>Respuesta al impulso con diferentes parámetros.<a class="headerlink" href="#respuesta-al-impulso-con-diferentes-parametros" title="Permalink to this heading">#</a></h2>
 <p>Es posible encontrar diferentes respuestas del sistema usando una estructura general para el caso particular cuando la función de estímulo es una constante. Para el caso particular del circuito RLC serie, en el que la respuesta forzada completa obedece la estructura:</p>
 <div class="math notranslate nohighlight" id="equation-sol-comprlc-unitario">
-<span class="eqno">(49)<a class="headerlink" href="#equation-sol-comprlc-unitario" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(53)<a class="headerlink" href="#equation-sol-comprlc-unitario" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    v_c(t)=(C_1cos(\beta t)+C_2sen(\beta t))e^{\alpha t}+1
 \end{equation}\]</div>
-<p>En este caso, dado que se usa un escalón unitario, se determina que <span class="math notranslate nohighlight">\(k=1\)</span>. Cuando las condiciones iniciales <span class="math notranslate nohighlight">\(v_c(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)\)</span> las constantes <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span> y <span class="math notranslate nohighlight">\(k\)</span> se pueden obtener al encontrar las raices <span class="math notranslate nohighlight">\(r_{i},~i=1,2\)</span> del polinomio auxiliar <a class="reference internal" href="Practica3.html#equation-edo-auxrlc">(33)</a>:</p>
+<p>En este caso, dado que se usa un escalón unitario, se determina que <span class="math notranslate nohighlight">\(k=1\)</span>. Cuando las condiciones iniciales <span class="math notranslate nohighlight">\(v_c(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{v}_c(0)\)</span> las constantes <span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span> y <span class="math notranslate nohighlight">\(k\)</span> se pueden obtener al encontrar las raices <span class="math notranslate nohighlight">\(r_{i},~i=1,2\)</span> del polinomio auxiliar <a class="reference internal" href="Practica3.html#equation-edo-auxrlc">(37)</a>:</p>
 <div class="math notranslate nohighlight">
 \[
 r_{i}=\alpha \pm \beta i
 \]</div>
 <p>Usando las partes real e imaginaria de la primera raíz, se encuentra el valor de dichas constantes:</p>
 <div class="math notranslate nohighlight" id="equation-calculo-impulso">
-<span class="eqno">(50)<a class="headerlink" href="#equation-calculo-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(54)<a class="headerlink" href="#equation-calculo-impulso" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
    k=1\\
    C_1=-1\\
    C_2=\frac{-\alpha C_1}{\beta}=\frac{\alpha}{\beta}
 \end{eqnarray}\end{split}\]</div>
 <p>Así, la respuesta al escalón en general es:</p>
 <div class="math notranslate nohighlight" id="equation-sol-imp-rlc">
-<span class="eqno">(51)<a class="headerlink" href="#equation-sol-imp-rlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(55)<a class="headerlink" href="#equation-sol-imp-rlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    v_c(t)=(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1
 \end{equation}\]</div>
-<p>La respuesta al impulso se encuentra al derivar la ecuacion <a class="reference internal" href="#equation-sol-imp-rlc">(51)</a> respecto del tiempo:</p>
+<p>La respuesta al impulso se encuentra al derivar la ecuacion <a class="reference internal" href="#equation-sol-imp-rlc">(55)</a> respecto del tiempo:</p>
 <div class="math notranslate nohighlight" id="equation-h-rlc-imp">
-<span class="eqno">(52)<a class="headerlink" href="#equation-h-rlc-imp" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(56)<a class="headerlink" href="#equation-h-rlc-imp" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    h(t)=\frac{(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t))e^{\alpha t}+1}{dt}
 \end{equation}\]</div>
 <p>Obteniéndose la expresión general:</p>
 <div class="math notranslate nohighlight" id="equation-h-final1">
-<span class="eqno">(53)<a class="headerlink" href="#equation-h-final1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(57)<a class="headerlink" href="#equation-h-final1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    h(t)=(\beta sen(\beta t)+\alpha cos(\beta t))e^{\alpha t}+\alpha\left(-cos(\beta t)+\frac{\alpha}{\beta}sen(\beta t)\right)e^{\alpha t}
 \end{equation}\]</div>
 <div class="math notranslate nohighlight" id="equation-h-final2">
-<span class="eqno">(54)<a class="headerlink" href="#equation-h-final2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(58)<a class="headerlink" href="#equation-h-final2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    h(t)=\left( \beta+\frac{\alpha^2}{\beta} \right)sen(\beta t)e^{\alpha t}
 \end{equation}\]</div>
-<p>El siguiente código en MATLAB permite graficar la respuesta al escalón con diferentes valores de los parámetros RLC para fines comparativos, se genera una respuesta de referencia y después se calculan las raices del nuevo polinomio auxiliar definido en la ecuación <a class="reference internal" href="Practica3.html#equation-edo-auxrlc">(33)</a>, para graficar las dos respuestas y compararlas.</p>
+<p>El siguiente código en MATLAB permite graficar la respuesta al escalón con diferentes valores de los parámetros RLC para fines comparativos, se genera una respuesta de referencia y después se calculan las raices del nuevo polinomio auxiliar definido en la ecuación <a class="reference internal" href="Practica3.html#equation-edo-auxrlc">(37)</a>, para graficar las dos respuestas y compararlas.</p>
 <div class="cell tag_remove-stderr docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> 

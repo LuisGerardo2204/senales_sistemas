@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'potencia_energía';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Análisis de sistemas de tiempo continuo." href="sistemas_lineales.html" />
+    <link rel="next" title="Señales en tiempo discreto." href="senales_discreto.html" />
     <link rel="prev" title="Modelado matemático de señales y su representación." href="modela_senales.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -179,6 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Otras definiciones y propiedades de las señales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senales_discreto.html">Señales en tiempo discreto.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
@@ -352,7 +353,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-rms-de-las-senales">El valor RMS de las señales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par-e-impar">Simetría par e impar</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par">Simetría par</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Simetría par</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-impar">Simetría impar</a></li>
 </ul>
 </li>
 </ul>
@@ -373,13 +374,13 @@ document.write(`
 <p>Como hemos visto, las señales describen la evolución en el tiempo de alguna variable física presente en un sistema, sea esta variable una entrada o salida al sistema. <em>Las señales que tienen un modelo matemático en forma cerrada o aproximada se denominan señales determinísticas</em>, dado que es posible predecir por completo su comportamiento en cualquier instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>. Un ejemplo claro es la señal que modela al voltaje de alimentación doméstico de 127 volts RMS de amplitud y 60 Hz de frecuencia.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/dd982774f554f89291fe81cba02f154e41628e7ee7b5bbe9a9dbf21e81d59c96.png" src="_images/dd982774f554f89291fe81cba02f154e41628e7ee7b5bbe9a9dbf21e81d59c96.png" />
+<img alt="_images/a609421d42487f35b04fa073d05ea30e1d457ddd5bb4ecbfc4c876b635df7ce4.png" src="_images/a609421d42487f35b04fa073d05ea30e1d457ddd5bb4ecbfc4c876b635df7ce4.png" />
 </div>
 </div>
 <p>Una señal aleatoria por su parte es aquella que <em>no tiene un modelo matemático en forma cerrada</em> por ejemplo la señal de un micrófono en un sistema de audio o la aceleración de la tierra durante un sismo. Dado que muchas de las señales que se encuentran en los fenómenos físicos presentes en la ingeniería, es importante contar con un método que permita estudiar o comprender este tipo de señales, a menudo se utilizan parámetros estadísticos como los valores promedio y distribuciones probabilísticas. A continuación se definen dos propiedades para el análisis y caracterización de las señales.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/fcb7b30e128faa7b3764913fc5495aed446eca68bcd99989256f0d58d37dcd84.png" src="_images/fcb7b30e128faa7b3764913fc5495aed446eca68bcd99989256f0d58d37dcd84.png" />
+<img alt="_images/8edcea3cdd083187faad734ce6af64fcedd36d6d01ce8b664875a6b9e34c2e96.png" src="_images/8edcea3cdd083187faad734ce6af64fcedd36d6d01ce8b664875a6b9e34c2e96.png" />
 </div>
 </div>
 </section>
@@ -388,12 +389,12 @@ document.write(`
 <p>La energía de una señal se define como <span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>:</p>
 <div class="math notranslate nohighlight" id="equation-energia">
 <span class="eqno">(8)<a class="headerlink" href="#equation-energia" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-E_x=\int^{\infty}_\infty x^2(t) dt
+E_x=\int^{\infty}_{-\infty} x^2(t) dt
 \end{equation}\]</div>
 <p>La ecuación <a class="reference internal" href="#equation-energia">(8)</a> también se expresa como</p>
 <div class="math notranslate nohighlight" id="equation-energia-abs">
 <span class="eqno">(9)<a class="headerlink" href="#equation-energia-abs" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-E_x=\int^{\infty}_\infty |x(t)|^2 dt
+E_x=\int^{\infty}_{-\infty} |x(t)|^2 dt
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(|x(t)|\)</span> es la magnitud en el caso de funciones complejas.</p>
 </section>
@@ -415,7 +416,7 @@ E_x=\int^{\infty}_\infty |x(t)|^2 dt
 <p>La potencia de una señal periódica se calcula usando la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-potencia">
 <span class="eqno">(12)<a class="headerlink" href="#equation-potencia" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-P_x= \frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}} |x(t)|^2 dt 
+P_x= \frac{1}{T_0}\int^{\frac{T_0}{2}}_{-\frac{T_0}{2}} x^2(t) dt 
 \end{equation}\]</div>
 <p>para señales en la variable compleja:</p>
 <div class="math notranslate nohighlight" id="equation-potencia-complex">
@@ -462,16 +463,16 @@ X_{RMS}=\frac{A}{\sqrt{2}}
 <p>Una señal valuada en los reales tiene simetría par si se cumple que <span class="math notranslate nohighlight">\(x(t)=x(-t)\)</span>, por ejemplo las funciones <span class="math notranslate nohighlight">\(x(t)=cos(t)\)</span> y <span class="math notranslate nohighlight">\(x(t)=t^2\)</span></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/dc241f5eb4d312bb460a0e04f2e758c8cf901bcf053a9d71440bca61a5e8f0be.png" src="_images/dc241f5eb4d312bb460a0e04f2e758c8cf901bcf053a9d71440bca61a5e8f0be.png" />
+<img alt="_images/93e95815c1e6b97fc0e9331a1a6cad33798c5c7c87649030f0df2553daa8c3f1.png" src="_images/93e95815c1e6b97fc0e9331a1a6cad33798c5c7c87649030f0df2553daa8c3f1.png" />
 </div>
 </div>
 </section>
-<section id="id5">
-<h3>Simetría par<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="simetria-impar">
+<h3>Simetría impar<a class="headerlink" href="#simetria-impar" title="Permalink to this heading">#</a></h3>
 <p>Una señal valuada en los reales tiene simetría impar si se cumple que <span class="math notranslate nohighlight">\(x(-t)=-x(t)\)</span>, por ejemplo las funciones <span class="math notranslate nohighlight">\(x(t)=sen(t)\)</span> y <span class="math notranslate nohighlight">\(x(t)=t^3\)</span></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/05218a0c8622c09e34829f275e9159baa5a56d077be26e3bedd22898db29f88e.png" src="_images/05218a0c8622c09e34829f275e9159baa5a56d077be26e3bedd22898db29f88e.png" />
+<img alt="_images/e0675ba4a97ab2075127a7afd20a18781f2cb0cf527a47e886fe28d9b3844b4d.png" src="_images/e0675ba4a97ab2075127a7afd20a18781f2cb0cf527a47e886fe28d9b3844b4d.png" />
 </div>
 </div>
 </section>
@@ -518,11 +519,11 @@ X_{RMS}=\frac{A}{\sqrt{2}}
       </div>
     </a>
     <a class="right-next"
-       href="sistemas_lineales.html"
+       href="senales_discreto.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Análisis de sistemas de tiempo continuo.</p>
+        <p class="prev-next-title">Señales en tiempo discreto.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -548,7 +549,7 @@ X_{RMS}=\frac{A}{\sqrt{2}}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-valor-rms-de-las-senales">El valor RMS de las señales</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par-e-impar">Simetría par e impar</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-par">Simetría par</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Simetría par</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simetria-impar">Simetría impar</a></li>
 </ul>
 </li>
 </ul>
