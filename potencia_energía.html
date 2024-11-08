@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +40,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +82,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +135,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +147,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -304,22 +292,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -374,13 +360,13 @@ document.write(`
 <p>Como hemos visto, las señales describen la evolución en el tiempo de alguna variable física presente en un sistema, sea esta variable una entrada o salida al sistema. <em>Las señales que tienen un modelo matemático en forma cerrada o aproximada se denominan señales determinísticas</em>, dado que es posible predecir por completo su comportamiento en cualquier instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>. Un ejemplo claro es la señal que modela al voltaje de alimentación doméstico de 127 volts RMS de amplitud y 60 Hz de frecuencia.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/a609421d42487f35b04fa073d05ea30e1d457ddd5bb4ecbfc4c876b635df7ce4.png" src="_images/a609421d42487f35b04fa073d05ea30e1d457ddd5bb4ecbfc4c876b635df7ce4.png" />
+<img alt="_images/7add58382f6ebf169fa99e1ded9217aa628810593a17ad8ca0df2829412bf450.png" src="_images/7add58382f6ebf169fa99e1ded9217aa628810593a17ad8ca0df2829412bf450.png" />
 </div>
 </div>
 <p>Una señal aleatoria por su parte es aquella que <em>no tiene un modelo matemático en forma cerrada</em> por ejemplo la señal de un micrófono en un sistema de audio o la aceleración de la tierra durante un sismo. Dado que muchas de las señales que se encuentran en los fenómenos físicos presentes en la ingeniería, es importante contar con un método que permita estudiar o comprender este tipo de señales, a menudo se utilizan parámetros estadísticos como los valores promedio y distribuciones probabilísticas. A continuación se definen dos propiedades para el análisis y caracterización de las señales.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/4e7e7240100f465db9de0523eece51f465db806053bdbea1087d35a1dee78bd4.png" src="_images/4e7e7240100f465db9de0523eece51f465db806053bdbea1087d35a1dee78bd4.png" />
+<img alt="_images/5f21d776ca3a2a784d6a9addaaf262f002abd0324029d698fdccd983214abc8b.png" src="_images/5f21d776ca3a2a784d6a9addaaf262f002abd0324029d698fdccd983214abc8b.png" />
 </div>
 </div>
 </section>
@@ -463,7 +449,7 @@ X_{RMS}=\frac{A}{\sqrt{2}}
 <p>Una señal valuada en los reales tiene simetría par si se cumple que <span class="math notranslate nohighlight">\(x(t)=x(-t)\)</span>, por ejemplo las funciones <span class="math notranslate nohighlight">\(x(t)=cos(t)\)</span> y <span class="math notranslate nohighlight">\(x(t)=t^2\)</span></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/93e95815c1e6b97fc0e9331a1a6cad33798c5c7c87649030f0df2553daa8c3f1.png" src="_images/93e95815c1e6b97fc0e9331a1a6cad33798c5c7c87649030f0df2553daa8c3f1.png" />
+<img alt="_images/18e4c61ee03e9acf1d8ce15898e7370263fec023011cce87344eaca8000df0c4.png" src="_images/18e4c61ee03e9acf1d8ce15898e7370263fec023011cce87344eaca8000df0c4.png" />
 </div>
 </div>
 </section>
@@ -472,7 +458,7 @@ X_{RMS}=\frac{A}{\sqrt{2}}
 <p>Una señal valuada en los reales tiene simetría impar si se cumple que <span class="math notranslate nohighlight">\(x(-t)=-x(t)\)</span>, por ejemplo las funciones <span class="math notranslate nohighlight">\(x(t)=sen(t)\)</span> y <span class="math notranslate nohighlight">\(x(t)=t^3\)</span></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/e0675ba4a97ab2075127a7afd20a18781f2cb0cf527a47e886fe28d9b3844b4d.png" src="_images/e0675ba4a97ab2075127a7afd20a18781f2cb0cf527a47e886fe28d9b3844b4d.png" />
+<img alt="_images/a5e4c9b80e74218edcbe250083a4eb22aa7b03f906cc896a0dbdd730073448be.png" src="_images/a5e4c9b80e74218edcbe250083a4eb22aa7b03f906cc896a0dbdd730073448be.png" />
 </div>
 </div>
 </section>
@@ -504,10 +490,11 @@ X_{RMS}=\frac{A}{\sqrt{2}}
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="modela_senales.html"
@@ -527,7 +514,10 @@ X_{RMS}=\frac{A}{\sqrt{2}}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -573,7 +563,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -600,8 +589,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
