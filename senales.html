@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conceptos básicos: Señales. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -184,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -349,7 +349,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="conceptos-basicos-senales">
+  <div class="tex2jax_ignore mathjax_ignore section" id="conceptos-basicos-senales">
 <h1>Conceptos básicos: Señales.<a class="headerlink" href="#conceptos-basicos-senales" title="Permalink to this heading">#</a></h1>
 <p>Para comenzar con el curso de análisis de señales y sistemas, estableceremos los conceptos más importantes que constituyen el punto de partida. Los objetivos de esta sección se presentan a continuación:</p>
 <ul class="simple">
@@ -359,8 +359,8 @@ document.write(`
 <li><p>Realizar algunas prácticas con MATLAB u Octave para construir señales y realizar operaciones con ellas.</p></li>
 <li><p>Explorar las características principales de las señales.</p></li>
 </ul>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="primera-parte-que-es-una-senal">
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="primera-parte-que-es-una-senal">
 <h1>Primera parte: ¿Qué es una señal?<a class="headerlink" href="#primera-parte-que-es-una-senal" title="Permalink to this heading">#</a></h1>
 <p>Una señal es una función que en ingeniería se concibe como una función valuada en los reales, es decir, una señal es una función escalar de la variable independiente <span class="math notranslate nohighlight">\(t\)</span>(<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>). En el contexto de este curso, la variable independiente <span class="math notranslate nohighlight">\(t\)</span>, representa al tiempo, entendido como un número real, es decir <span class="math notranslate nohighlight">\(t\in \mathbb{R}\)</span>. A menudo, para fines de simplificación, se expresa a una señal en general como <span class="math notranslate nohighlight">\(x(t)\)</span>. Otra manera de entender el concepto de señal, es usando la siguiente definición:</p>
 <div class="admonition-concepto-de-senal admonition">
@@ -372,7 +372,7 @@ document.write(`
 </ul>
 </div>
 <p>Ejemplos de señales analógicas o continuas son: El voltaje de alimentación de una toma de pared, la señal de voz recopilada por un micrófono y la salida de un sensor de presión del tipo piezo-eléctrico. Ejemplos de señales de tiempo discreto son: Las muestras de un sensor de temperatura, colectadas por un sistema digital, la señal de un micrófono almacenada en un archivo .mp3.</p>
-<section id="representacion-numerica-de-senales">
+<div class="section" id="representacion-numerica-de-senales">
 <h2>Representación numérica de señales<a class="headerlink" href="#representacion-numerica-de-senales" title="Permalink to this heading">#</a></h2>
 <p>Las señales se pueden representar usando software de matemáticas, el software especializado de matemáticas MATLAB ofrece una excelente opción para la representación numérica de señales y sistemas. Una alternativa a MATLAB la constituye el software de libre descarga llamado Octave. A continuación se presenta un ejemplo de la representación de una señal usando software. Se representará numéricamente a la señal que representa al voltaje RMS (RMS es el valor que registra un multímetro común) disponible en una toma de pared común, en este caso particular, dicha señal es representada por la expresión matemática:</p>
 <div class="math notranslate nohighlight">
@@ -410,7 +410,7 @@ x(t)=127sen(120\pi t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/be6c177f88d817e3e929850ca1c0c67fb598774d09abc8a28e30ae10ef481d99.png" src="_images/be6c177f88d817e3e929850ca1c0c67fb598774d09abc8a28e30ae10ef481d99.png" />
+<img alt="_images/12be3298b80b60725e92a01ad2645645fdb4a47890c238c47515b912caf4066e.png" src="_images/12be3298b80b60725e92a01ad2645645fdb4a47890c238c47515b912caf4066e.png" />
 </div>
 </div>
 <p>La versión discreta se presenta usando las siguientes líneas de código:</p>
@@ -445,11 +445,11 @@ x(t)=127sen(120\pi t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4f7906979f5fa5265d4f52622ebe5f38f274e37d337924f79c1d5393e4001eae.png" src="_images/4f7906979f5fa5265d4f52622ebe5f38f274e37d337924f79c1d5393e4001eae.png" />
+<img alt="_images/913029fb0d40e31c5f4d1bc2e02c218cda225077f0fcd6ae609ebbac2f2d6bda.png" src="_images/913029fb0d40e31c5f4d1bc2e02c218cda225077f0fcd6ae609ebbac2f2d6bda.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

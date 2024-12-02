@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La serie trigonométrica de Fourier. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Series_de_fourier';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="La Transformada de Fourier." href="Transformada_de_fourier.html" />
+    <link rel="next" title="La serie exponencial compleja de Fourier" href="Serie_compleja.html" />
     <link rel="prev" title="Práctica 6: Diagrama de bode de un sistema de dos grados de libertad." href="Practica6.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -184,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -346,7 +346,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="la-serie-trigonometrica-de-fourier">
+  <div class="tex2jax_ignore mathjax_ignore section" id="la-serie-trigonometrica-de-fourier">
 <h1>La serie trigonométrica de Fourier.<a class="headerlink" href="#la-serie-trigonometrica-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>), una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-serie-fourier">
@@ -366,7 +366,7 @@ a_k=\frac{2}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt
 <span class="eqno">(98)<a class="headerlink" href="#equation-bk" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 \end{equation}\]</div>
-<section id="ejemplo-1-senal-diente-de-sierra">
+<div class="section" id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra">
@@ -486,8 +486,8 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 </div>
 </div>
 <p>A la distorción en las discontinuidades o cambios en la señal se le conoce como fenómeno de Gibbs <span id="id2">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>.</p>
-</section>
-<section id="ejemplo-2-pulso-cuadrado">
+</div>
+<div class="section" id="ejemplo-2-pulso-cuadrado">
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso">
@@ -519,19 +519,19 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi)\right],k=1,2,3...
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\nonumber
-a_0=\frac{1}{T}\int^{T}_{0}x(t)dt=\frac{1}{2}\int^{2}_{0}x(t)dt=\frac{1}{2}\int^{0.5}_{0}(1)dt+\frac{1}{2}\int^{1.5}_{0.5}(0)dt+\frac{1}{2}\int^{2}_{1.5}(1)dt=\frac{1}{2}
+a_0=\frac{1}{T}\int^{T}_{0}x(t)dt=\frac{1}{2}\int^{2}_{0}x(t)dt=\frac{1}{2}\int^{0.5}_{0}(1)dt+\frac{1}{2}\int^{2}_{1.5}(0)dt+\frac{1}{2}\int^{2}_{1.5}(1)dt=\frac{1}{2}
 \end{equation}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\nonumber
-a_k=\frac{2}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt=\frac{2}{2}\int^{2}_{0}x(t)cos(k\omega_0t)dt=\int^{0.5}_{0}cos(k\omega_0t)dt+\int^{1}_{1.5}cos(k\omega_0t)dt
+a_k=\frac{2}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt=\frac{2}{2}\int^{2}_{0}x(t)cos(k\omega_0t)dt=\int^{0.5}_{0}cos(k\omega_0t)dt+\int^{2}_{1.5}cos(k\omega_0t)dt
 \end{equation}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}\nonumber
-a_k=\int^{0.5}_{0}cos(k\omega_0t)dt+\int^{1}_{1.5}cos(k\omega_0t)dt={\frac{1}{\pi k}sen(k\pi t)}_{t=0}^{t=0.5}+{\frac{1}{\pi k}sen(k\pi t)}_{t=1.5}^{t=2}
+a_k=\int^{0.5}_{0}cos(k\omega_0t)dt+\int^{2}_{1.5}cos(k\omega_0t)dt={\frac{1}{\pi k}sen(k\pi t)}_{t=0}^{t=0.5}+{\frac{1}{\pi k}sen(k\pi t)}_{t=1.5}^{t=2}
 \end{equation}
 \]</div>
 <div class="math notranslate nohighlight">
@@ -581,8 +581,8 @@ b_k=\frac{-1}{k\pi}\left[-1+1\right]=0,~~~k=1,2,3...
 <img alt="_images/2b2630c5e0d8f76cda8c4b1c82e691844f0c598fb46f22f80bcd62d08d3f434e.png" src="_images/2b2630c5e0d8f76cda8c4b1c82e691844f0c598fb46f22f80bcd62d08d3f434e.png" />
 </div>
 </div>
-</section>
-<section id="ejemplo-3-senal-modulada-por-ancho-de-pulso">
+</div>
+<div class="section" id="ejemplo-3-senal-modulada-por-ancho-de-pulso">
 <h2>Ejemplo 3, señal modulada por ancho de pulso.<a class="headerlink" href="#ejemplo-3-senal-modulada-por-ancho-de-pulso" title="Permalink to this heading">#</a></h2>
 <p>Considere ahora una señal modulada por ancho de pulso definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pwm">
@@ -672,8 +672,8 @@ b_k=\frac{5}{k\pi}\left[1-cos\left ( \frac{k\pi}{2}t \right )\right],k=1,2,3...
 <img alt="_images/64df03b266e196112f302c53e638d5064489cfa984dcf2bb6186cf2927f2898e.png" src="_images/64df03b266e196112f302c53e638d5064489cfa984dcf2bb6186cf2927f2898e.png" />
 </div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -716,11 +716,11 @@ b_k=\frac{5}{k\pi}\left[1-cos\left ( \frac{k\pi}{2}t \right )\right],k=1,2,3...
       </div>
     </a>
     <a class="right-next"
-       href="Transformada_de_fourier.html"
+       href="Serie_compleja.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">La Transformada de Fourier.</p>
+        <p class="prev-next-title">La serie exponencial compleja de Fourier</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

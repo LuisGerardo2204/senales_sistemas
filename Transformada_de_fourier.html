@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Transformada de Fourier. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -71,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
-    <link rel="prev" title="La serie trigonométrica de Fourier." href="Series_de_fourier.html" />
+    <link rel="prev" title="La serie exponencial compleja de Fourier" href="Serie_compleja.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -184,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -347,20 +347,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="la-transformada-de-fourier">
+  <div class="tex2jax_ignore mathjax_ignore section" id="la-transformada-de-fourier">
 <h1>La Transformada de Fourier.<a class="headerlink" href="#la-transformada-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Hemos analizado y aplicado la transformada de Laplace al análisis de sistemas dinámicos. La transformada de Laplace permite la algebrización del problema de cálculo que implica el modelado de los sistemas por medio de ecuaciones diferenciales. Por otro lado, la serie trigonométrica de Fourier ofrece una alternativa muy útil de representación de señales en términos de sus componentes frecuenciales o armónicos. Una Herramienta para el análisis de señales y sistemas en el domino de la frecuencia es la transformada de Fourier. La transformada de Fourier no se limita al análisis de señales periódicas, dado que es un caso particular de la transformada de Laplace. La definición formal de la transformada de Fourier es:</p>
 <div class="math notranslate nohighlight" id="equation-trans-laplace">
-<span class="eqno">(102)<a class="headerlink" href="#equation-trans-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(106)<a class="headerlink" href="#equation-trans-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    X(\omega)=\int^{\infty}_{-\infty}x(t)e^{-j\omega t}dt,~~~~,-\infty &lt; \omega &lt; \infty 
  \end{equation}\]</div>
-<p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(102)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
+<p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(106)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
 <p>La transformada rápida de Fourier es un algoritmo computacional que ofrece una alternativa para el cálculo de las tranformadas analíticas de Fourier de señales provenientes de sistemas físicos, en MATLAB, el algoritmo de la FFT, siglas en inglés de Fast Fourier Transform (transformada rápida de Fourier) está incluido y optimizado para su uso en señales discretas. A continuación se muestran algunos ejemplos de su aplicación.</p>
-<section id="ejemplo-1-senal-diente-de-sierra">
+<div class="section" id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra-2">
-<span class="eqno">(103)<a class="headerlink" href="#equation-func-sierra-2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(107)<a class="headerlink" href="#equation-func-sierra-2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 150(t+0.02) &amp; si &amp; -0.02 \leq t \leq -0.01 \\ \\ 150t &amp; si &amp; -0.01 \leq t \leq 0.01 \\ \\ 150(t-0.02) &amp; si &amp; 0.01 &lt; t \leq 0.03 \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Además, se cumple que <span class="math notranslate nohighlight">\(g(t)=g(t+0.02)\)</span>. La gráfica de esta señal, definida por la <a class="reference internal" href="Series_de_fourier.html#equation-func-sierra">(99)</a> se muestra con las líneas de código siguientes:</p>
@@ -383,7 +383,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/30d13b10aefa6c82a40bce27ae1dd5c559ca68e6ebb7a84d741f61d41dd13903.png" src="_images/30d13b10aefa6c82a40bce27ae1dd5c559ca68e6ebb7a84d741f61d41dd13903.png" />
+<img alt="_images/9cecd2f3facbe5b0998a4fb6124a5874e293ce337c1cf8d026c739d8906f28d8.png" src="_images/9cecd2f3facbe5b0998a4fb6124a5874e293ce337c1cf8d026c739d8906f28d8.png" />
 </div>
 </div>
 <p>La transformada de Fourier de la señal diente de sierra muestra su contenido en frecuencia. Como se trató en la sección aterior, en donde se calcularon los coeficientes de la serie de fourier, la señal tipo diente de sierra tiene componentes frecuenciales en múltiplos de la frecuencia original, en este caso particular, múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>. El algoritmo de la transformada de Fourier de la señal diente se ejemplifica a continuación:</p>
@@ -394,7 +394,7 @@ document.write(`
 <span class="nb">clc</span>
 
 <span class="n">freq_muestreo</span><span class="p">=</span><span class="mi">10000</span><span class="p">;</span>
-<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_muestreo</span><span class="p">:</span><span class="mf">0.03</span><span class="p">];</span>
+<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_muestreo</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
 
 <span class="n">g</span><span class="p">=(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=-</span><span class="mf">0.03</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;-</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;-</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="k">...</span>
 <span class="w">   </span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.03</span><span class="p">));</span>
@@ -423,17 +423,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/711f5656f2aede289afa55344469715ec13a948cefa827c914f841810b8a9c25.png" src="_images/711f5656f2aede289afa55344469715ec13a948cefa827c914f841810b8a9c25.png" />
-<img alt="_images/651afd95604ccee469192b5018774cbb3d107997725e72f4d55aa44d4966cec3.png" src="_images/651afd95604ccee469192b5018774cbb3d107997725e72f4d55aa44d4966cec3.png" />
 </div>
 </div>
-</section>
-<section id="ejemplo-2-pulso-cuadrado">
+<div class="section" id="ejemplo-2-pulso-cuadrado">
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso2">
-<span class="eqno">(104)<a class="headerlink" href="#equation-func-pulso2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(108)<a class="headerlink" href="#equation-func-pulso2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; -0.5 \leq t \leq 0.5 \\ \\ 0 &amp; si &amp; 0.5 \leq t \leq 1.5  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>El algoritmo de la FFT aplicado a la señal pulso cuadrado</p>
@@ -479,8 +475,8 @@ document.write(`
 </div>
 </div>
 <p>En estos ejemplos se puede observar como las componentes frecuenciales son múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=1/T\)</span>, con <span class="math notranslate nohighlight">\(T\)</span> el periodo de la función. Para una señal en general se aplica el algoritmo de la FFT para encontrar su contenido frecuencial o armónico.</p>
-</section>
-<section id="ejemplo-3-senal-con-tres-componentes-frecuenciales-y-ruido-blanco-aleatorio">
+</div>
+<div class="section" id="ejemplo-3-senal-con-tres-componentes-frecuenciales-y-ruido-blanco-aleatorio">
 <h2>Ejemplo 3, señal con tres componentes frecuenciales y ruido blanco aleatorio.<a class="headerlink" href="#ejemplo-3-senal-con-tres-componentes-frecuenciales-y-ruido-blanco-aleatorio" title="Permalink to this heading">#</a></h2>
 <p>Considérese ahora el caso de una señal definida por la expresión:</p>
 <div class="math notranslate nohighlight">
@@ -528,8 +524,8 @@ x(t)=3.5cos(2\pi 350 t)+2.4sen(2\pi 500 t)+1.5cos(2\pi 1000 t)+\gamma(t)
 </div>
 </div>
 <p>El algoritmo de la transformada rápida de Fourier permite distinguir con mucha claridad los componentes frecuenciales de la señal <span class="math notranslate nohighlight">\(x(t)\)</span>. En la gráfica se observan los picos en los valores de frecuencia de 250, 500 y 1500 Hz, a pesar de la presencia de ruido blanco aleatorio.</p>
-</section>
-<section id="aplicacion-a-un-sistema-dinamico">
+</div>
+<div class="section" id="aplicacion-a-un-sistema-dinamico">
 <h2>Aplicación a un sistema dinámico<a class="headerlink" href="#aplicacion-a-un-sistema-dinamico" title="Permalink to this heading">#</a></h2>
 <p>La respuesta en frecuencia de un circuito RLC serie ha sido plenamente analizada en secciones anteriores, en esta sección se usará para ejemplificar el uso de la FFT para la determinación de la respuesta en frecuencia de forma numérica de los sistemas dinámicos a partir de mediciones de su salida. En las siguietes líneas se calcula la respuesta del circuito RLC.</p>
 <div class="cell docutils container">
@@ -631,8 +627,8 @@ Continuous-time transfer function.
 </div>
 </div>
 <p>Como puede observarse, el algoritmo de la FFT es perfectamente compatible con el diagrama de Bode que permite la determinación de la respuesta en frecuencia de los sistemas, por lo tanto, un barrido frecuencial experimental, se utiliza para recolectar la información de la respuesta dinámica del sistema, se procesa la señal resultante mediante el algoritmo de la FFT y se obiente la respuesta en frecuencia experimental del sistema.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -666,12 +662,12 @@ Continuous-time transfer function.
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Series_de_fourier.html"
+       href="Serie_compleja.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">La serie trigonométrica de Fourier.</p>
+        <p class="prev-next-title">La serie exponencial compleja de Fourier</p>
       </div>
     </a>
     <a class="right-next"
