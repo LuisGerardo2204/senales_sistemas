@@ -171,7 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Convolucion.html">Integral de convolución en sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Convolución en sistemas discretos.</a></li>
@@ -179,7 +178,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica5.html">Práctica 5: Solución de ecuaciones diferenciales ordinarias lineales usando la transformada de Laplace.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conv_transformada.html">Transformada de Laplace aplicada al análisis de sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Propiedades_transf.html">Propiedades de la transformada de Laplace.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
@@ -349,7 +347,7 @@ document.write(`
 <p>Como hemos visto en secciones anteriores, un método para representar la relación que existe entre las entradas y las salidas de un sistemas es una ecuación diferencial e incluso un conjunto de ecuaciones diferenciales cuando se trata de sistemas con algún tipo de acoplamiento. Hemos mencionado también que la solución de la ecuación o sistema de ecuaciones diferenciales del que modelan al sistema, representa la evolución en le tiempo de la salida del sistema y permite conocer su comportamiento y situación en cada instante de tiempo <span class="math notranslate nohighlight">\(t\)</span>. Hemos usado un método para resolver la ecuación diferencial que consiste en proponer el uso de un polinomio auxiliar para encontrar la solución a la ecuación diferencial homogénea asociada y la solución particular, imponiendo las condiciones iniciales al sistema. Este método tiene su fundamento principalmente en el cálculo diferencial e integral, debido a que involucra derivadas e integrales.</p>
 <p>Por otra parte, hemos visto la importancia del parámetro de la frecuencia en la determinación de la salida de los sistemas ante una señal armónica, es decir, una señal que involucra contenidos sinusoidales. La transformada de Laplace es una herramienta matemática que permite el análisis de los sistemas en términos de la frecuencia. Dicho de manera formal, la transformada de Laplace mapea o transforma a los sistemas del dominio del tiempo al dominio de la frecuencia. La definición matemática de la transformada involucra a una integral en términos de una variable independiente que tiene una parte real y una parte imaginaria, es decir es una integral en variable compleja:</p>
 <div class="math notranslate nohighlight" id="equation-transformada-def">
-<span class="eqno">(65)<a class="headerlink" href="#equation-transformada-def" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(50)<a class="headerlink" href="#equation-transformada-def" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   X(s)=\int^{\infty}_{-\infty}x(t)e^{-st}dt
 	\end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(s\)</span> es una variable compleja que se compone de una parte real y una parte imaginaria, es decir <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span>. Como en el caso de la solucíon de la ecuación diferencial homogénea, la parte imaginaria de <span class="math notranslate nohighlight">\(\omega\)</span>, de la variable independiente <span class="math notranslate nohighlight">\(s\)</span>, representa a la frecuencia.</p>
@@ -378,7 +376,7 @@ document.write(`
  \]</div>
 </div>
 <table class="table" id="tabla-transformadas">
-<caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Tabla de transformadas de Laplace comunes</span><a class="headerlink" href="#tabla-transformadas" title="Enlace permanente a esta tabla">#</a></caption>
+<caption><span class="caption-number">Tabla 1 </span><span class="caption-text">Tabla de transformadas de Laplace comunes</span><a class="headerlink" href="#tabla-transformadas" title="Enlace permanente a esta tabla">#</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -467,7 +465,7 @@ document.write(`
 \[
 \mathscr{L} \left\{ 4.5\ddot{x}+2\dot{x}+350x \right\} =\mathscr{L} \left\{ 0 \right\}
 \]</div>
-<p>Haciendo uso de la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> y considerando que la transformada de Laplace es un operador lineal (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), encontramos que:</p>
+<p>Haciendo uso de la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 1</span></a> y considerando que la transformada de Laplace es un operador lineal (<span id="id1">[<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="O. Alkin. Signals and Systems: A MATLAB Integrated Approach. Taylor &amp; Francis Group, LLC, Boca Raton, FL 33487-2742, 1st edition, 2014. ISBN 978-1-4665-9854-6. doi:https://doi.org/10.1201/b16652.">Alk14</a>]</span>), encontramos que:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathscr{L} \left\{ 4.5 \ddot{x}  \right\}+\mathscr{L} \left\{ 2\dot{x} \right\}+\mathscr{L} \left\{ 350 \right\} =0
@@ -496,7 +494,7 @@ document.write(`
 \[
 X(s)=\frac{0.045s+2.27}{4.5s^2+2s+350}
 \]</div>
-<p>La función solución <span class="math notranslate nohighlight">\(x(t)\)</span> es la transformada inversa de la función <span class="math notranslate nohighlight">\(X(s)\)</span>. Para poder aplicar alguno de los pares transformados ya conocidos y reportados en la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> es necesario manipular algebráicamente a la expresión para <span class="math notranslate nohighlight">\(X(s)\)</span> con el fin de asimilarla a una estructura conocida. Como primera manipulación se expresa a <span class="math notranslate nohighlight">\(X(s)\)</span> como la suma de dos fracciones parciales:</p>
+<p>La función solución <span class="math notranslate nohighlight">\(x(t)\)</span> es la transformada inversa de la función <span class="math notranslate nohighlight">\(X(s)\)</span>. Para poder aplicar alguno de los pares transformados ya conocidos y reportados en la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 1</span></a> es necesario manipular algebráicamente a la expresión para <span class="math notranslate nohighlight">\(X(s)\)</span> con el fin de asimilarla a una estructura conocida. Como primera manipulación se expresa a <span class="math notranslate nohighlight">\(X(s)\)</span> como la suma de dos fracciones parciales:</p>
 <div class="math notranslate nohighlight">
 \[
 X(s)=\frac{0.045s}{4.5s^2+2s+350}+\frac{2.27}{4.5s^2+2s+350}
@@ -510,7 +508,7 @@ Ae^{-\alpha t}sin(\omega t) \leftrightarrows \frac{A\omega}{(s+\alpha)^2 + \omeg
 \[
 Ae^{-\alpha t}cos(\omega t) \leftrightarrows \frac{A(s+\alpha)}{(s+\alpha)^2 + \omega^2}  
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(A\)</span>,<span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\omega\)</span> son constantes. La diferencia principal entre esta expresión y los pares transformados de la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> es la estructura del denominador. Dividiendo el denominador entre <span class="math notranslate nohighlight">\(4.5\)</span> se obtiene:</p>
+<p>donde <span class="math notranslate nohighlight">\(A\)</span>,<span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\omega\)</span> son constantes. La diferencia principal entre esta expresión y los pares transformados de la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 1</span></a> es la estructura del denominador. Dividiendo el denominador entre <span class="math notranslate nohighlight">\(4.5\)</span> se obtiene:</p>
 <div class="math notranslate nohighlight">
 \[
 X(s)=\frac{0.045s}{4.5\left ( s^2+\frac{2s}{4.5}+\frac{350}{4.5} \right )}+\frac{2.27}{4.5 \left (s^2+\frac{2s}{4.5}+\frac{350}{4.5}\right )}
@@ -535,7 +533,7 @@ X(s)=\frac{0.045s}{4.5\left ( \left ( s+\frac{1}{4.5}\right )^2+\frac{350}{4.5}-
 \[
 X(s)=\frac{0.01s}{ \left ( s+\frac{1}{4.5}\right )^2+77.73}+\frac{0.5044}{\left ( s+\frac{1}{4.5}\right )^2+77.73 }
 \]</div>
-<p>Se observa que el numerador de la primera fracción parcial aún no es equivalente a ninguna de las expresiones que se encuentran en la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a>, en concreto, al par transformado <span class="math notranslate nohighlight">\(\frac{As}{(s+\alpha)^2+\omega^2}\)</span>, mediante la manipulación algebraica se puede llevar a la forma adecuada para aplicar las reglas de transformación conocidas. Sumando y restando <span class="math notranslate nohighlight">\(0.01(0.22)\)</span> en el numerador:</p>
+<p>Se observa que el numerador de la primera fracción parcial aún no es equivalente a ninguna de las expresiones que se encuentran en la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 1</span></a>, en concreto, al par transformado <span class="math notranslate nohighlight">\(\frac{As}{(s+\alpha)^2+\omega^2}\)</span>, mediante la manipulación algebraica se puede llevar a la forma adecuada para aplicar las reglas de transformación conocidas. Sumando y restando <span class="math notranslate nohighlight">\(0.01(0.22)\)</span> en el numerador:</p>
 <div class="math notranslate nohighlight">
 \[
 X(s)=\frac{0.01s+0.01(0.22)\textcolor{red}{-0.01(0.22)}}{ \left ( s+0.22\right )^2+77.73}+\frac{0.5044}{\left ( s+0.22\right)^2+77.73 }
@@ -555,12 +553,12 @@ X(s)=\frac{0.01(\textcolor{red}{s+0.22})}{\left ( \textcolor{red}{s+0.22} \right
 \[
 X(s)=X_1(s)+X_2(s)=\frac{0.01(s+0.22)}{\left (s+0.22 \right )^2+77.73}+\frac{0.5022}{\left ( s+0.22\right )^2+77.73 }
 \]</div>
-<p>De esta manera es posible obtener la función solución <span class="math notranslate nohighlight">\(x(t)\)</span> aplicando la transformada inversa de Laplace a la expresión anterior. de la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> se sigue que:</p>
+<p>De esta manera es posible obtener la función solución <span class="math notranslate nohighlight">\(x(t)\)</span> aplicando la transformada inversa de Laplace a la expresión anterior. de la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 1</span></a> se sigue que:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\mathscr{L} ^{-1} \left\{ X(s) \right \} =\mathscr{L} ^{-1} \left\{  \frac{0.01(s+0.22)}{\left (s+0.22 \right )^2+77.73}+\frac{0.5022}{\left ( s+0.22\right )^2+77.73 } \right \}
 \]</div>
-<p>Las fracciones parciales de la expresión anterior tienen caracteristicas comunes con pares trasformados específicos mostrados en la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 5</span></a> de la forma:</p>
+<p>Las fracciones parciales de la expresión anterior tienen caracteristicas comunes con pares trasformados específicos mostrados en la <a class="reference internal" href="#tabla-transformadas"><span class="std std-numref">Tabla 1</span></a> de la forma:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\mathscr{L} ^{-1} \left\{  \frac{\textcolor{red}{0.01}(s+\textcolor{orange}{0.22})}{\left (s+\textcolor{orange}{0.22} \right )^2+\textcolor{green}{77.73}}+\frac{\textcolor{blue}{0.5022}}{\left ( s+\textcolor{orange}{0.22}\right )^2+\textcolor{green}{77.73} } \right \}
