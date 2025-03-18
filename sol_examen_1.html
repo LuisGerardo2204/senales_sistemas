@@ -1,0 +1,888 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Solución al primer examen parcial. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/myfile-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sol_examen_1';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Ecuaciones diferenciales y sistemas lineales." href="ecuaciones_diferenciales_sistemas.html" />
+    <link rel="prev" title="Práctica 2: Comprobación de invarianza en el tiempo con MATLAB" href="Practica2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Análisis de señales y sistemas
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="senales.html">Conceptos básicos: Señales.</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="modela_senales.html">Modelado matemático de señales y su representación.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="potencia_energ%C3%ADa.html">Otras definiciones y propiedades de las señales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="senales_discreto.html">Señales en tiempo discreto.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Solución al primer examen parcial.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Convolucion.html">Integral de convolución en sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Convolución en sistemas discretos.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transformada_de_Laplace.html">La transformada de Laplace aplicada al análisis de sistemas.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica5.html">Práctica 5: Solución de ecuaciones diferenciales ordinarias lineales usando la transformada de Laplace.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conv_transformada.html">Transformada de Laplace aplicada al análisis de sistemas lineales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Propiedades_transf.html">Propiedades de la transformada de Laplace.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/sol_examen_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solución al primer examen parcial.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-con-senales">Operaciones con señales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique">Determinar si las siguiente señales son de potencia o de energía y calcular el valor RMS cuando aplique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-discreta-de-una-senal">Versión discreta de una señal</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="solucion-al-primer-examen-parcial">
+<h1>Solución al primer examen parcial.<a class="headerlink" href="#solucion-al-primer-examen-parcial" title="Permalink to this heading">#</a></h1>
+<p>Considere las siguientes señales:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+		\begin{eqnarray}
+		&amp;x_1(t)=e^{-3t}+2\\
+		&amp;x_2(t)=9.5sen(24\pi t)\\
+		&amp;x_3(t)=2.5cos(15t+1.2)+4sen(19t+1.5)\\
+		&amp;x_4(t)=2t^2-5t+15~si~-2 &lt; t &lt; 2~~x_4(t)=0~en~otro~caso
+		\end{eqnarray}
+\end{split}\]</div>
+<p>Grafique las siguientes señales, aplicando las operaciones indicadas:</p>
+<p>a)  <span class="math notranslate nohighlight">\(g_1(t)=x_1x_2+2x_4-3\)</span></p>
+<p>b)  <span class="math notranslate nohighlight">\(g_2(t)=(x_1x_2)^2+2.5x_3(2t)+2x_2\left( \frac{t}{3} \right )\)</span></p>
+<p>c)  <span class="math notranslate nohighlight">\(g_3(t)=x_1(-3.5t)+2x_4\)</span></p>
+<p>d)  <span class="math notranslate nohighlight">\(g_4(t)=0.2x_1^3-0.5x_2^2-7.2x_3\)</span></p>
+<p>Se obtiene usando las líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span>
+<span class="nb">close</span> <span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">t</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">x1</span><span class="p">=@(</span><span class="n">t</span><span class="p">)</span> <span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="p">=</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">x2</span><span class="p">=@(</span><span class="n">t</span><span class="p">)</span> <span class="mf">9.5</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="n">x3</span><span class="p">=@(</span><span class="n">t</span><span class="p">)</span> <span class="mf">2.5</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">15</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mf">1.2</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">19</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mf">1.5</span><span class="p">);</span>
+<span class="n">x4</span><span class="p">=@(</span><span class="n">t</span><span class="p">)</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">15</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;-</span><span class="mi">2</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">));</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">0</span> <span class="mi">4</span><span class="p">])</span>
+<span class="nb">grid</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x1(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span> <span class="mf">0.5</span> <span class="o">-</span><span class="mi">11</span> <span class="mi">11</span><span class="p">])</span>
+<span class="nb">grid</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x_2(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+
+
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x3</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">10</span> <span class="mi">10</span><span class="p">])</span>
+<span class="nb">grid</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x_3(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x4</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">grid</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x_4(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b3da5da4cab722c1be73dde126355f68dfef0e3ce15a2004fd70044bc087dd3e.png" src="_images/b3da5da4cab722c1be73dde126355f68dfef0e3ce15a2004fd70044bc087dd3e.png" />
+</div>
+</div>
+<section id="operaciones-con-senales">
+<h2>Operaciones con señales<a class="headerlink" href="#operaciones-con-senales" title="Permalink to this heading">#</a></h2>
+<p>A continuación se presentan las opraciones solicitadas:</p>
+<p>a)  <span class="math notranslate nohighlight">\(g_1(t)=x_1x_2+2x_4-3\)</span></p>
+<p>Se obtiene usando las líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">g1</span><span class="p">=</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x4</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">;</span>
+<span class="nb">grid</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g1</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g_1(t)=x_1x_2+2x_4-3&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;g_1(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c483e9068333e60fbb5569006ca7c04cc3b71908c17cf4bab69c34f6676c3789.png" src="_images/c483e9068333e60fbb5569006ca7c04cc3b71908c17cf4bab69c34f6676c3789.png" />
+</div>
+</div>
+<p>b)  <span class="math notranslate nohighlight">\(g_2(t)=(x_1x_2)^2+2.5x_3(2t)+2x_2\left( \frac{t}{3} \right )\)</span></p>
+<p>Se obtiene usando las líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">g2</span><span class="p">=(</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mf">2.5</span><span class="o">*</span><span class="n">x3</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="mi">3</span><span class="p">);</span>
+<span class="nb">figure</span>
+<span class="nb">grid</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g2</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g_2(t)=(x_1x_2)^2+2.5x_3(2t)+2x_2(t/3)&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;g_2(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05204d3b985d90860f6466bd4d41719a07ef7aa00bde3bee0f9df22d15366ded.png" src="_images/05204d3b985d90860f6466bd4d41719a07ef7aa00bde3bee0f9df22d15366ded.png" />
+</div>
+</div>
+<p>c)  <span class="math notranslate nohighlight">\(g_3(t)=x_1(-3.5t)+2x_4\)</span></p>
+<p>En este caso, es necesario representar a la señal <span class="math notranslate nohighlight">\(x_1(t)\)</span> de manera reflejada respecto del eje <span class="math notranslate nohighlight">\(y\)</span>, lo cual se logra con la siguiente representación usando las líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%En este caso, es necesario representar a la señal x1 de manera reflejada respecto del eje y</span>
+<span class="c">% Lo cual se logra con la siguiente representación:</span>
+<span class="n">x_reflejo</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x_reflejo</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x_1(-t)&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x_1(-t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+                     <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/96d9b8cb25244bfa3b246214b4829f9fc99076aacc2f2934c7f5b7a7a8fb8365.png" src="_images/96d9b8cb25244bfa3b246214b4829f9fc99076aacc2f2934c7f5b7a7a8fb8365.png" />
+</div>
+</div>
+<p>Después, se representa <span class="math notranslate nohighlight">\(x_1(-3.5t)\)</span> con las siguientes líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x_reflejo_escalada</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="mf">3.5</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x_reflejo_escalada</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;x_1(-3.5t)&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x_1(-3.5t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+                     <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/65244013eda2d79c7b108e44c06a9cb80384eb5d12a583faf948f29e35ff0168.png" src="_images/65244013eda2d79c7b108e44c06a9cb80384eb5d12a583faf948f29e35ff0168.png" />
+</div>
+</div>
+<p>Finalemente, se obtiene <span class="math notranslate nohighlight">\(g_3(t)=x_1(-3.5t)+2x_4\)</span> usando el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">x_reflejo_escalada</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="mf">3.5</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;</span><span class="p">=</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x_reflejo_escalada</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">x4</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g_3(t)=x_1(-3.5t)+2x_4(t)&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;g_3(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+                     <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b7f2fd9108ffefbfc95ac9e432eb2217c180122515fee77793887b6dcd88ebcc.png" src="_images/b7f2fd9108ffefbfc95ac9e432eb2217c180122515fee77793887b6dcd88ebcc.png" />
+</div>
+</div>
+<p>d) g_4(t)=0.2x_1^3-0.5x_2^2-7.2x_3</p>
+<p>Se obtiene usando las líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">g4</span><span class="p">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">x1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">x2</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mf">7.2</span><span class="o">*</span><span class="n">x3</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+<span class="nb">figure</span>
+<span class="nb">grid</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g4</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">100</span> <span class="mi">60</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g_4(t)=0.2x_1(t)^3-0.5x_2(t)^2-7.2x_3(t)&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;g_4(t)&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+ 
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9927f4f13dc08a268880ae8c07464a193d4fdcff0adbc2f8b0756bb5ad265c14.png" src="_images/9927f4f13dc08a268880ae8c07464a193d4fdcff0adbc2f8b0756bb5ad265c14.png" />
+</div>
+</div>
+</section>
+<section id="determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique">
+<h2>Determinar si las siguiente señales son de potencia o de energía y calcular el valor RMS cuando aplique<a class="headerlink" href="#determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique" title="Permalink to this heading">#</a></h2>
+<p>a) <span class="math notranslate nohighlight">\(x(t)=4.5cos(4\pi t)+6.75sen(4\pi t)-7.2cos(12\pi t)\)</span></p>
+<p>b) <span class="math notranslate nohighlight">\(y(t)=e^{-\frac{3t}{2}}\)</span> para <span class="math notranslate nohighlight">\(t \ge 0\)</span>.</p>
+<p>c) La función definida como:</p>
+<div class="math notranslate nohighlight" id="equation-func-pedazos-examen">
+<span class="eqno">(23)<a class="headerlink" href="#equation-func-pedazos-examen" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}    \begin{equation}\nonumber
+			      z(t)= \left\{ \begin{array}{lcc} 5.25 &amp; si &amp; 0 \leq t \leq 2 \\ \\ -5.25 &amp; si &amp; 2 &lt; t \leq 4 \\ \end{array} \right.
+	\end{equation}    \end{split}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(z(t)=z(t+4)\)</span></p>
+<p>Solución:</p>
+<p>a) La función <span class="math notranslate nohighlight">\(x(t)=4.5cos(4\pi t)+6.75sen(4\pi t)-7.2cos(12\pi t)\)</span> está compuesta por tres señales periódicas, que se pueden simplificar usando la identidad trigonométrica siguiente:</p>
+<div class="math notranslate nohighlight">
+\[
+Acos(\omega t +\theta)=Acos(\theta)cos(\omega t)-Asen(\theta)sen(\omega t)
+\]</div>
+<p>Para simplificar la suma: <span class="math notranslate nohighlight">\(4.5cos(4\pi t)+6.75sen(4\pi t)\)</span>, se observa que, si se considera <span class="math notranslate nohighlight">\(\omega=4\pi\)</span> se puede expresar:</p>
+<p><span class="math notranslate nohighlight">\(Acos(4\pi t+\theta)=4.5cos(4\pi t)-6.75sen(4\pi t)\)</span></p>
+<p>De donde se desprende que:</p>
+<p><span class="math notranslate nohighlight">\(Acos(\theta)=4.5\)</span> y <span class="math notranslate nohighlight">\(-Asen(\theta)=6.75\)</span></p>
+<p>Resolviendo para <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{-Asen(\theta)}{Acos(\theta)}=-tan(\theta)=\frac{6.75}{4.5}=1.5\)</span></p>
+<p>finalmente <span class="math notranslate nohighlight">\(\theta=-tan^-1(1.5)=-0.9827~rad\)</span></p>
+<p>El valor de la constante <span class="math notranslate nohighlight">\(A\)</span> se obtiene como:</p>
+<p><span class="math notranslate nohighlight">\(-Asen(\theta)=6.75\)</span>, resolviendo para <span class="math notranslate nohighlight">\(A\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(A=\frac{-6.75}{sen(-0.9827)}=8.1129\)</span></p>
+<p>Sustituyendo en la expresión equivalente:</p>
+<p><span class="math notranslate nohighlight">\(x(t)=8.1129cos(4\pi t -0.9827)-7.2cos(12\pi t)\)</span></p>
+<p>De manera que el valor RMS de la señal está dado por:</p>
+<p><span class="math notranslate nohighlight">\(X_{RMS}=\sqrt{\frac{8.1129^2}{2}+\frac{7.2^2}{2}}=7.67\)</span></p>
+<p>en este caso. <span class="math notranslate nohighlight">\(x(t)\)</span> es una señal de potencia.</p>
+<p>b) La señal <span class="math notranslate nohighlight">\(y(t)=e^{-\frac{3t}{2}}\)</span> para <span class="math notranslate nohighlight">\(t \ge 0\)</span> es una señal de decaimiento, la cual no es periódica, por lo tanto, es una señal de energía y es el único parámetro que hace sentido calular:</p>
+<p><span class="math notranslate nohighlight">\(E_x=\int_{-\infty}^{\infty}x^{2}dt=\int_{0}^{\infty}(e^{-\frac{3t}{2}})^{2}dt=\int_{0}^{\infty}e^{-3t}dt=-\frac{e^{-3(\infty)}}{3}+\frac{e^{0}}{3}=\frac{1}{3}\)</span></p>
+<p>c) La señal <span class="math notranslate nohighlight">\(z(t)\)</span>  una señal cuadrada de ampitud <span class="math notranslate nohighlight">\(A=5.25\)</span> con periodo <span class="math notranslate nohighlight">\(4\)</span>, por lo tanto se trata de una señal de potencia, por lo cual hace sentido calcular su valor RMS:</p>
+<p><span class="math notranslate nohighlight">\(Z_{RMS}=\sqrt{\frac{1}{T}\int^{T}_{0} z^2(t) dt}=\sqrt{\frac{1}{4}\int^{4}_{0} z^2(t) dt}=\sqrt{\frac{1}{4}\int^{2}_{0}(5.25)^2dt+\frac{1}{4}\int^{4}_{2} (-5.25)^2dt}\)</span></p>
+<p><span class="math notranslate nohighlight">\(Z_{RMS}=\sqrt{\frac{1}{4}2(5.25)^2-\frac{1}{4}4(-5.25)^2-\frac{1}{4}2(-5.25)^2}=5.25\)</span></p>
+</section>
+<section id="version-discreta-de-una-senal">
+<h2>Versión discreta de una señal<a class="headerlink" href="#version-discreta-de-una-senal" title="Permalink to this heading">#</a></h2>
+<p>Genere la versión discreta de la señal <span class="math notranslate nohighlight">\(x(t) = 2.5sen(60\pi t)+2.5\)</span>, seleccione un periodo de muestreo <span class="math notranslate nohighlight">\(T\)</span> adecuado para generar la gráfica en tiempo discreto de la operación:</p>
+<div class="math notranslate nohighlight">
+\[
+g[n]=x[n](u[n-80]-u[n-4500])
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(u[n]\)</span> es el escalón unitario.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/c995d19b1c232393655d159dcc1f6746b9f71ece05d7f1fdc1d0740eb8cd9465.png" src="_images/c995d19b1c232393655d159dcc1f6746b9f71ece05d7f1fdc1d0740eb8cd9465.png" />
+</div>
+</div>
+<p>La señal se obtiene en detalle, en los extremos del intervalo con las siguientes líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">stem</span><span class="p">(</span><span class="n">gn</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span> <span class="mi">200</span> <span class="mi">0</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">grid</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g[n]=x[n](u[n-80]-u[n-4500])&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;g[n]&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+  <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>   
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">stem</span><span class="p">(</span><span class="n">gn</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">4400</span> <span class="mi">4600</span> <span class="mi">0</span> <span class="mi">6</span><span class="p">])</span>
+<span class="nb">grid</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;g[n]=x[n](u[n-80]-u[n-4500])&quot;</span><span class="p">)</span>
+ <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+  
+   <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span> <span class="c">%Ajustes de rótulos y formato de letra</span>
+                    <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                    <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+ <span class="k">set</span><span class="p">(</span><span class="k">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;g[n]&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;times news roman&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,...</span>
+                     <span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+  <span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="k">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/99da7a26bda7698ccc69fe3aa6b87937643fd2c68f0b05656da8395d1dee30b5.png" src="_images/99da7a26bda7698ccc69fe3aa6b87937643fd2c68f0b05656da8395d1dee30b5.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "octave"
+        },
+        kernelOptions: {
+            name: "octave",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'octave'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Practica2.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ecuaciones_diferenciales_sistemas.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Ecuaciones diferenciales y sistemas lineales.</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-con-senales">Operaciones con señales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique">Determinar si las siguiente señales son de potencia o de energía y calcular el valor RMS cuando aplique</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-discreta-de-una-senal">Versión discreta de una señal</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Dr. Luis Gerardo Trujillo Franco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
