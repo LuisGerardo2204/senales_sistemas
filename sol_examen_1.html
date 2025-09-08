@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Solución al primer examen parcial. &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -294,20 +307,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -348,7 +363,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="solucion-al-primer-examen-parcial">
+  <section class="tex2jax_ignore mathjax_ignore" id="solucion-al-primer-examen-parcial">
 <h1>Solución al primer examen parcial.<a class="headerlink" href="#solucion-al-primer-examen-parcial" title="Permalink to this heading">#</a></h1>
 <p>Considere las siguientes señales:</p>
 <div class="math notranslate nohighlight">
@@ -467,7 +482,7 @@ document.write(`
 <img alt="_images/b3da5da4cab722c1be73dde126355f68dfef0e3ce15a2004fd70044bc087dd3e.png" src="_images/b3da5da4cab722c1be73dde126355f68dfef0e3ce15a2004fd70044bc087dd3e.png" />
 </div>
 </div>
-<div class="section" id="operaciones-con-senales">
+<section id="operaciones-con-senales">
 <h2>Operaciones con señales<a class="headerlink" href="#operaciones-con-senales" title="Permalink to this heading">#</a></h2>
 <p>A continuación se presentan las opraciones solicitadas:</p>
 <p>a)  <span class="math notranslate nohighlight">\(g_1(t)=x_1x_2+2x_4-3\)</span></p>
@@ -647,8 +662,8 @@ document.write(`
 <img alt="_images/9927f4f13dc08a268880ae8c07464a193d4fdcff0adbc2f8b0756bb5ad265c14.png" src="_images/9927f4f13dc08a268880ae8c07464a193d4fdcff0adbc2f8b0756bb5ad265c14.png" />
 </div>
 </div>
-</div>
-<div class="section" id="determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique">
+</section>
+<section id="determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique">
 <h2>Determinar si las siguiente señales son de potencia o de energía y calcular el valor RMS cuando aplique<a class="headerlink" href="#determinar-si-las-siguiente-senales-son-de-potencia-o-de-energia-y-calcular-el-valor-rms-cuando-aplique" title="Permalink to this heading">#</a></h2>
 <p>a) <span class="math notranslate nohighlight">\(x(t)=4.5cos(4\pi t)+6.75sen(4\pi t)-7.2cos(12\pi t)\)</span></p>
 <p>b) <span class="math notranslate nohighlight">\(y(t)=e^{-\frac{3t}{2}}\)</span> para <span class="math notranslate nohighlight">\(t \ge 0\)</span>.</p>
@@ -684,8 +699,8 @@ Acos(\omega t +\theta)=Acos(\theta)cos(\omega t)-Asen(\theta)sen(\omega t)
 <p>c) La señal <span class="math notranslate nohighlight">\(z(t)\)</span>  una señal cuadrada de ampitud <span class="math notranslate nohighlight">\(A=5.25\)</span> con periodo <span class="math notranslate nohighlight">\(4\)</span>, por lo tanto se trata de una señal de potencia, por lo cual hace sentido calcular su valor RMS:</p>
 <p><span class="math notranslate nohighlight">\(Z_{RMS}=\sqrt{\frac{1}{T}\int^{T}_{0} z^2(t) dt}=\sqrt{\frac{1}{4}\int^{4}_{0} z^2(t) dt}=\sqrt{\frac{1}{4}\int^{2}_{0}(5.25)^2dt+\frac{1}{4}\int^{4}_{2} (-5.25)^2dt}\)</span></p>
 <p><span class="math notranslate nohighlight">\(Z_{RMS}=\sqrt{\frac{1}{4}2(5.25)^2-\frac{1}{4}4(-5.25)^2-\frac{1}{4}2(-5.25)^2}=5.25\)</span></p>
-</div>
-<div class="section" id="version-discreta-de-una-senal">
+</section>
+<section id="version-discreta-de-una-senal">
 <h2>Versión discreta de una señal<a class="headerlink" href="#version-discreta-de-una-senal" title="Permalink to this heading">#</a></h2>
 <p>Genere la versión discreta de la señal <span class="math notranslate nohighlight">\(x(t) = 2.5sen(60\pi t)+2.5\)</span>, seleccione un periodo de muestreo <span class="math notranslate nohighlight">\(T\)</span> adecuado para generar la gráfica en tiempo discreto de la operación:</p>
 <div class="math notranslate nohighlight">
@@ -748,8 +763,8 @@ g[n]=x[n](u[n-80]-u[n-4500])
 <img alt="_images/99da7a26bda7698ccc69fe3aa6b87937643fd2c68f0b05656da8395d1dee30b5.png" src="_images/99da7a26bda7698ccc69fe3aa6b87937643fd2c68f0b05656da8395d1dee30b5.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -776,11 +791,10 @@ g[n]=x[n](u[n-80]-u[n-4500])
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica2.html"
@@ -800,10 +814,7 @@ g[n]=x[n](u[n-80]-u[n-4500])
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -842,6 +853,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -868,8 +880,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Validación de la respuesta teórica al escalón de un circuito RLC &#8212; Apuntes de análisis de señales y sistemas UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Apuntes de análisis de señales y sistemas UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -294,20 +307,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -349,14 +364,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="validacion-de-la-respuesta-teorica-al-escalon-de-un-circuito-rlc">
+  <section class="tex2jax_ignore mathjax_ignore" id="validacion-de-la-respuesta-teorica-al-escalon-de-un-circuito-rlc">
 <h1>Validación de la respuesta teórica al escalón de un circuito RLC<a class="headerlink" href="#validacion-de-la-respuesta-teorica-al-escalon-de-un-circuito-rlc" title="Permalink to this heading">#</a></h1>
 <p>En esta sección se presenta el procedimiento y el código para la obtención de la respueta al escalón de un circuito RLC serie, para la validación de conceptos teóricos como la función de transferencia y la respuesta al escalón. El circuto se compone de un transformador de 127 a 12 volts con una corriente de salida máxima de 0.25 Amperes, cuya bobina primara es la que te utiliza como la inductancia, la resistencia es un potenciómetro de 5 <span class="math notranslate nohighlight">\(K\Omega\)</span> y el capacitor es electrolítico de 1 <span class="math notranslate nohighlight">\(\mu F\)</span>. El escalón tiene una amplitud de 1.63 Volts generados por medio del convertidor digital-analógico de una placa Arduino Due. Los elementos mencionados se muestran en la  <a class="reference internal" href="#rlc-step"><span class="std std-numref">Figura 9</span></a> .</p>
-<div class="figure align-default" id="rlc-step">
+<figure class="align-default" id="rlc-step">
 <a class="reference internal image-reference" href="_images/RLC.jpg"><img alt="_images/RLC.jpg" src="_images/RLC.jpg" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 9 </span><span class="caption-text">Circuito RLC serie.</span><a class="headerlink" href="#rlc-step" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<div class="section" id="codigo-para-la-tarjeta-ardino-due">
+<figcaption>
+<p><span class="caption-number">Figura 9 </span><span class="caption-text">Circuito RLC serie.</span><a class="headerlink" href="#rlc-step" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<section id="codigo-para-la-tarjeta-ardino-due">
 <h2>Código para la tarjeta Ardino Due<a class="headerlink" href="#codigo-para-la-tarjeta-ardino-due" title="Permalink to this heading">#</a></h2>
 <p>El código para la adquisición de datos se encuentra en la siguiente liga:</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/Open_source_data_acquisition/refs/heads/main/Data_aquisition/Data_aquisition.ino">https://raw.githubusercontent.com/LuisGerardo2204/Open_source_data_acquisition/refs/heads/main/Data_aquisition/Data_aquisition.ino</a></p>
@@ -364,26 +381,32 @@ document.write(`
 <ul class="simple">
 <li><p>Tarjetas: Arduino Sam Boards</p></li>
 </ul>
-<div class="figure align-default" id="sam-board">
+<figure class="align-default" id="sam-board">
 <a class="reference internal image-reference" href="_images/tarjetas_SAM.png"><img alt="_images/tarjetas_SAM.png" src="_images/tarjetas_SAM.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Figura 10 </span><span class="caption-text">Instalación de la tarjeta arduino Due.</span><a class="headerlink" href="#sam-board" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 10 </span><span class="caption-text">Instalación de la tarjeta arduino Due.</span><a class="headerlink" href="#sam-board" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <ul class="simple">
 <li><p>Librerias: Scheduler</p></li>
 </ul>
-<div class="figure align-default" id="sam-board2">
+<figure class="align-default" id="sam-board2">
 <a class="reference internal image-reference" href="_images/scheduler.png"><img alt="_images/scheduler.png" src="_images/scheduler.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Figura 11 </span><span class="caption-text">Instalación de la librería Scheduler.</span><a class="headerlink" href="#sam-board2" title="Enlace permanente a esta imagen">#</a></p>
+<figcaption>
+<p><span class="caption-number">Figura 11 </span><span class="caption-text">Instalación de la librería Scheduler.</span><a class="headerlink" href="#sam-board2" title="Enlace permanente a esta imagen">#</a></p>
 <div class="legend">
 <p>El diagrama a blouqes de la interconexión del experimento, la tarjeta y la computadora se muestra en la <a class="reference internal" href="#rlc-usb"><span class="std std-numref">Figura 12</span></a>.</p>
-<div class="figure align-default" id="rlc-usb">
+<figure class="align-default" id="rlc-usb">
 <a class="reference internal image-reference" href="_images/diagrama_USB_Due.png"><img alt="_images/diagrama_USB_Due.png" src="_images/diagrama_USB_Due.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 12 </span><span class="caption-text">Diagrama de bloques del sistema de adquisición de datos.</span><a class="headerlink" href="#rlc-usb" title="Enlace permanente a esta imagen">#</a></p>
+<figcaption>
+<p><span class="caption-number">Figura 12 </span><span class="caption-text">Diagrama de bloques del sistema de adquisición de datos.</span><a class="headerlink" href="#rlc-usb" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="codigo-matlab-para-la-adquisicion-de-los-datos-experimentales">
+</figcaption>
+</figure>
+</section>
+<section id="codigo-matlab-para-la-adquisicion-de-los-datos-experimentales">
 <h2>Código MATLAB para la adquisición de los datos experimentales<a class="headerlink" href="#codigo-matlab-para-la-adquisicion-de-los-datos-experimentales" title="Permalink to this heading">#</a></h2>
 <p>Las siguientes líneas de código se usan para establecer una comunicación por puerto USB con la tarjeta Arduino Due y el circuito RLC serie:</p>
 <div class="cell docutils container">
@@ -487,8 +510,8 @@ Continuous-time transfer function.
 <img alt="_images/d26c9e34074b4f3d2d1b0078780096a83e17803f593b63f44a684dd1f78a68a9.png" src="_images/d26c9e34074b4f3d2d1b0078780096a83e17803f593b63f44a684dd1f78a68a9.png" />
 </div>
 </div>
-</div>
-<div class="section" id="codigo-completo-en-lenguaje-matlab">
+</section>
+<section id="codigo-completo-en-lenguaje-matlab">
 <h2>Código completo en lenguaje MATLAB<a class="headerlink" href="#codigo-completo-en-lenguaje-matlab" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -559,8 +582,8 @@ Continuous-time transfer function.
 <img alt="_images/b265bf5ea706a02d00ac2f25c95b844ec22531f8e953dda0aaa27ab5f89cef2b.png" src="_images/b265bf5ea706a02d00ac2f25c95b844ec22531f8e953dda0aaa27ab5f89cef2b.png" />
 </div>
 </div>
-</div>
-<div class="section" id="codigo-completo-en-octave">
+</section>
+<section id="codigo-completo-en-octave">
 <h2>Código completo en Octave<a class="headerlink" href="#codigo-completo-en-octave" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,8 +658,8 @@ Continuous-time transfer function.
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -663,11 +686,10 @@ Continuous-time transfer function.
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="funcion_de_transferencia.html"
@@ -687,10 +709,7 @@ Continuous-time transfer function.
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -730,6 +749,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -756,8 +776,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
