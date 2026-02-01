@@ -414,11 +414,84 @@ c_0=a_0,~~~~c_k=-j\frac{1}{2}b_k,~~~~c_{-k}=j\frac{1}{2}b_k,~~~~k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[ck =\left(\begin{array}{ccccc}
-\frac{2}{\pi } &amp; 0 &amp; -\frac{2}{3\,\pi } &amp; 0 &amp; \frac{2}{5\,\pi }
-\end{array}\right)\]</div>
-</div>
+<div class="output text_html"><html><body><pre><math xmlns='http://www.w3.org/1998/Math/MathML' display='block' xmlns:mw='https://www.mathworks.com/MathML/extensions'>
+  <semantics>
+    <mrow mw:template='matrix' mw:dataCategory='structure'>
+      <mo form='prefix' mw:dataCategory='static'>(</mo>
+      <mtable>
+        <mtr>
+          <mtd>
+            <mrow mw:dataCategory='placeholder'>
+              <mfrac mw:template='divide' mw:dataCategory='structure'>
+                <mrow mw:dataCategory='placeholder'>
+                  <mn>2</mn>
+                </mrow>
+                <mrow mw:dataCategory='placeholder'>
+                  <mi>&pi;</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mtd>
+          <mtd>
+            <mn>0</mn>
+          </mtd>
+          <mtd>
+            <mrow mw:dataCategory='placeholder'>
+              <mrow mw:template='plus' mw:dataCategory='structure'>
+                <mrow mw:dataCategory='placeholder'>
+                  <mo>-</mo>
+                  <mfrac mw:template='divide' mw:dataCategory='structure'>
+                    <mrow mw:dataCategory='placeholder'>
+                      <mn>2</mn>
+                    </mrow>
+                    <mrow mw:dataCategory='placeholder'>
+                      <mrow mw:template='times' mw:dataCategory='structure'>
+                        <mrow mw:dataCategory='placeholder'>
+                          <mn>3</mn>
+                          <mo form='infix' mw:dataCategory='static'>&InvisibleTimes;</mo>
+                          <mi>&pi;</mi>
+                        </mrow>
+                      </mrow>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mrow>
+            </mrow>
+          </mtd>
+          <mtd>
+            <mn>0</mn>
+          </mtd>
+          <mtd>
+            <mrow mw:dataCategory='placeholder'>
+              <mfrac mw:template='divide' mw:dataCategory='structure'>
+                <mrow mw:dataCategory='placeholder'>
+                  <mn>2</mn>
+                </mrow>
+                <mrow mw:dataCategory='placeholder'>
+                  <mrow mw:template='times' mw:dataCategory='structure'>
+                    <mrow mw:dataCategory='placeholder'>
+                      <mn>5</mn>
+                      <mo form='infix' mw:dataCategory='static'>&InvisibleTimes;</mo>
+                      <mi>&pi;</mi>
+                    </mrow>
+                  </mrow>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mtd>
+        </mtr>
+      </mtable>
+      <mo form='postfix' mw:dataCategory='static'>)</mo>
+    </mrow>
+    <annotation encoding='OutputVersion'>
+      1.0
+    </annotation>
+    <annotation encoding='Suggestions'>
+      [{"entryType":"function","ID":"vpa","text":"Approximate numerically","description":"Approximate numerically using variable precision floating point arithmetic","code":"vpa(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"jacobian","text":"Compute Jacobian matrix of vector","description":"Compute Jacobian matrix","code":"jacobian(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"double","text":"Convert to double","description":"Convert symbolic expression or matrix to MATLAB double","code":"double(ck)","runOnInsert":true,"nargOut":1},{"entryType":"menu","ID":"menuCalculus","text":"Applying calculus functions","description":"Applying calculus functions","children":[{"entryType":"function","ID":"diff","text":"Differentiate function","description":"Compute derivative of function with respect to specific variable","code":"diff(ck,sym(\"x\"))","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"int","text":"Integrate function","description":"Compute indefinite integral of function with respect to specific variable","code":"int(ck,sym(\"x\"))","runOnInsert":true,"nargOut":1}]},{"entryType":"menu","ID":"menuTransform","text":"Computing integral transforms","description":"Computing integral transforms","children":[{"entryType":"function","ID":"fourier","text":"Compute Fourier transform","description":"Compute Fourier transform","code":"fourier(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"htrans","text":"Compute Hilbert transform","description":"Compute Hilbert transform","code":"htrans(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"laplace","text":"Compute Laplace transform","description":"Compute Laplace transform","code":"laplace(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"ztrans","text":"Compute Z-transform","description":"Compute Z-transform","code":"ztrans(ck)","runOnInsert":true,"nargOut":1},{"entryType":"separator","ID":"menuSeparator"},{"entryType":"function","ID":"ifourier","text":"Compute inverse Fourier transform","description":"Compute inverse Fourier transform","code":"ifourier(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"ihtrans","text":"Compute inverse Hilbert transform","description":"Compute inverse Hilbert transform","code":"ihtrans(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"ilaplace","text":"Compute inverse Laplace transform","description":"Compute inverse Laplace transform","code":"ilaplace(ck)","runOnInsert":true,"nargOut":1},{"entryType":"function","ID":"iztrans","text":"Compute inverse Z-transform","description":"Compute inverse Z-transform","code":"iztrans(ck)","runOnInsert":true,"nargOut":1}]},{"entryType":"menu","ID":"menuNumber","text":"Plotting functions","description":"Plotting functions, expressions, and equations","children":[{"entryType":"function","ID":"fplot","text":"Plot function","description":"Plot function f(x) or expression","code":"fplot(ck)","runOnInsert":true,"nargOut":0},{"entryType":"function","ID":"fimplicit","text":"Plot implicit equation in 2-D","description":"Plot 2-D implicit equation or function f(x,y)","code":"fimplicit(ck)","runOnInsert":true,"nargOut":0},{"entryType":"function","ID":"fimplicit3","text":"Plot implicit equation in 3-D","description":"Plot 3-D implicit equation or function f(x,y,z)","code":"fimplicit3(ck)","runOnInsert":true,"nargOut":0}]},{"entryType":"menu","ID":"menuRewriting","text":"Rewriting and simplifying expressions","description":"Rewriting and simplifying symbolic expressions","children":[{"entryType":"task","ID":"taskSimplifyCombine","text":"Combine expression","description":"Combine terms of the same algebraic structure","pseudoCode":"The Simplify Symbolic Expression task will be inserted here with Method set to 'Combine'","appConfig":{"appIdentifier":"matlab.internal.symbolic.task.Simplify","runOnInsert":true},"appState":{"Expression":"ck","DisplayExpression":false,"Method":"combine"}},{"entryType":"task","ID":"taskSimplifyExpand","text":"Expand expression","description":"Write each element of expression as product of its factors","pseudoCode":"The Simplify Symbolic Expression task will be inserted here with Method set to 'Expand'","appConfig":{"appIdentifier":"matlab.internal.symbolic.task.Simplify","runOnInsert":true},"appState":{"Expression":"ck","DisplayExpression":false,"Method":"expand"}},{"entryType":"task","ID":"taskSimplifyRewrite","text":"Rewrite expression","description":"Rewrite expression in terms of specific function","pseudoCode":"The Simplify Symbolic Expression task will be inserted here with Method set to 'Rewrite'","appConfig":{"appIdentifier":"matlab.internal.symbolic.task.Simplify","runOnInsert":true},"appState":{"Expression":"ck","DisplayExpression":false,"Method":"rewrite"}},{"entryType":"task","ID":"taskSimplifySimplify","text":"Simplify expression","description":"Simplify each element of matrix or expression","pseudoCode":"The Simplify Symbolic Expression task will be inserted here with Method set to 'Simplify'","appConfig":{"appIdentifier":"matlab.internal.symbolic.task.Simplify","runOnInsert":true},"appState":{"Expression":"ck","DisplayExpression":false,"Method":"simplify"}},{"entryType":"task","ID":"taskSimplifySimplifyFraction","text":"Simplify fractions","description":"Compute simplified form of rational expression","pseudoCode":"The Simplify Symbolic Expression task will be inserted here with Method set to 'Simplify Fraction'","appConfig":{"appIdentifier":"matlab.internal.symbolic.task.Simplify","runOnInsert":true},"appState":{"Expression":"ck","DisplayExpression":false,"Method":"simplifyFraction"}}]}]
+    </annotation>
+  </semantics>
+</math>
+</pre></body></html></div></div>
 </div>
 <section id="el-espectro-de-lineas-o-barras">
 <h2>El espectro de líneas o barras<a class="headerlink" href="#el-espectro-de-lineas-o-barras" title="Permalink to this heading">#</a></h2>
@@ -451,7 +524,7 @@ x(t)=\frac{1}{2}+\frac{1}{\pi}\sum^{\infty}_{k=-\infty}\frac{1}{k}sen\left ( \fr
 \]</div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/50dd7e48c2b550ab2effd0401c53abb2c0883bbcd26c0005f31b1d3fc7bbe719.png" src="_images/50dd7e48c2b550ab2effd0401c53abb2c0883bbcd26c0005f31b1d3fc7bbe719.png" />
+<img alt="_images/5de8054f9ca0def7d75c3124a04f844579b308dce8ae016fe8c845fcb8973f65.png" src="_images/5de8054f9ca0def7d75c3124a04f844579b308dce8ae016fe8c845fcb8973f65.png" />
 </div>
 </div>
 </section>
@@ -492,7 +565,7 @@ x(t)=\frac{1}{2}+\frac{1}{\pi}\sum^{\infty}_{k=-\infty}\frac{1}{k}sen\left ( \fr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6d7b452ac02af8ba7333c5bbd2720c224c039d90ab2dea8b3503a40dd2df1220.png" src="_images/6d7b452ac02af8ba7333c5bbd2720c224c039d90ab2dea8b3503a40dd2df1220.png" />
+<img alt="_images/c7d5421abcb4c9309b34a9a00b8b9c24be94fa715a455a35d387c3eaf8f54468.png" src="_images/c7d5421abcb4c9309b34a9a00b8b9c24be94fa715a455a35d387c3eaf8f54468.png" />
 </div>
 </div>
 </section>

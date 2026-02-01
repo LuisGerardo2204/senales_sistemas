@@ -400,7 +400,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9cecd2f3facbe5b0998a4fb6124a5874e293ce337c1cf8d026c739d8906f28d8.png" src="_images/9cecd2f3facbe5b0998a4fb6124a5874e293ce337c1cf8d026c739d8906f28d8.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Starting MATLAB ...
+</pre></div>
+</div>
 </div>
 </div>
 <p>La transformada de Fourier de la señal diente de sierra muestra su contenido en frecuencia. Como se trató en la sección aterior, en donde se calcularon los coeficientes de la serie de fourier, la señal tipo diente de sierra tiene componentes frecuenciales en múltiplos de la frecuencia original, en este caso particular, múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>. El algoritmo de la transformada de Fourier de la señal diente se ejemplifica a continuación:</p>
@@ -411,13 +413,47 @@ document.write(`
 <span class="nb">clc</span>
 
 <span class="n">freq_muestreo</span><span class="p">=</span><span class="mi">10000</span><span class="p">;</span>
+
+
+<span class="n">syms</span><span class="w"> </span><span class="s">v1(t)</span><span class="w"> </span><span class="s">t</span><span class="w"> </span><span class="s">k</span>
+<span class="n">T</span><span class="p">=</span><span class="mf">0.02</span><span class="p">;</span>
+<span class="n">w0</span><span class="p">=(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="o">/</span><span class="n">T</span><span class="p">;</span>
+
+<span class="c">%a_0=(1/T)*int(110*sin(w0*t),t,0,T/2);</span>
+<span class="c">%a_k=(2/T)*int(110*sin(w0*t)*cos(k*w0*t),t,0,T/2);</span>
+<span class="c">%b_k=(2/T)*int(110*sin(w0*t)*sin(k*w0*t),t,0,T/2);</span>
+
+<span class="c">% a_0=(1/T)*int(110*sin(w0*t),t,T/4,T/2)+(1/T)*int(110*sin(w0*t),t,3*T/4,T);</span>
+<span class="c">% a_k=(2/T)*int(110*sin(w0*t)*cos(k*w0*t),t,T/4,T/2)+(2/T)*int(110*sin(w0*t)*cos(k*w0*t),t,3*T/4,T);</span>
+<span class="c">% b_k=(2/T)*int(110*sin(w0*t)*sin(k*w0*t),t,T/4,T/2)+(2/T)*int(110*sin(w0*t)*sin(k*w0*t),t,3*T/4,T);</span>
+
+<span class="w"> </span><span class="n">a_0</span><span class="p">=(</span><span class="mi">1</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">int</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="w"> </span><span class="n">a_k</span><span class="p">=(</span><span class="mi">2</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">int</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="w"> </span><span class="n">b_k</span><span class="p">=(</span><span class="mi">2</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">int</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+
+
+<span class="n">clear</span><span class="w"> </span><span class="s">t</span><span class="w"> </span><span class="s">k</span><span class="p">;</span>
+
+
 <span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_muestreo</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
-
-<span class="n">g</span><span class="p">=(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=-</span><span class="mf">0.03</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;-</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;-</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="k">...</span>
-<span class="w">   </span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.03</span><span class="p">));</span>
-
+<span class="w">   </span>
 <span class="n">figure</span>
-<span class="s">plot(t,g)</span><span class="p">;</span>
+<span class="s">hold</span><span class="w"> </span><span class="s">on</span><span class="w"> </span>
+
+<span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="nb">double</span><span class="p">(</span><span class="n">subs</span><span class="p">(</span><span class="n">a_0</span><span class="p">));</span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">   </span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">   </span>
+<span class="w">     </span><span class="n">an</span><span class="p">=</span><span class="n">subs</span><span class="p">(</span><span class="n">a_k</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">     </span><span class="n">bn</span><span class="p">=</span><span class="n">subs</span><span class="p">(</span><span class="n">b_k</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+
+<span class="w">     </span><span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">bn</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">+</span><span class="nb">double</span><span class="p">(</span><span class="n">an</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
+<span class="k">end</span>
+
+
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">);</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">);</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;g(t)&quot;</span><span class="p">)</span>
 <span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.03</span><span class="w"> </span><span class="mf">0.03</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="c">%La istrucción axis ajusta los ejes de la gráfica</span>
@@ -428,7 +464,7 @@ document.write(`
 <span class="n">NFFT</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>^<span class="nb">nextpow2</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">));</span><span class="c">% resolución óptima para el cálculo de la FFT</span>
 <span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">freq_muestreo</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.*</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">NFFT</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
 
-<span class="n">Y</span><span class="p">=</span><span class="w"> </span><span class="nb">fft</span><span class="p">((</span><span class="n">g</span><span class="o">-</span><span class="nb">mean</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="n">NFFT</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="c">%Calculo de la FFT, Y es el nombre del vector de salida</span>
+<span class="n">Y</span><span class="p">=</span><span class="w"> </span><span class="nb">fft</span><span class="p">(((</span><span class="n">g</span><span class="p">)</span><span class="o">-</span><span class="nb">mean</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="n">NFFT</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="c">%Calculo de la FFT, Y es el nombre del vector de salida</span>
 <span class="n">r</span><span class="p">=</span><span class="n">Y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">NFFT</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="c">%sólo se toma la parte de las frecuencias positivas es decir, la mitad del espectro</span>
 <span class="w"> </span>
 <span class="nb">figure</span>
@@ -439,6 +475,10 @@ document.write(`
 <span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mf">1.1</span><span class="p">])</span><span class="w"> </span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/1c2f78d174404a82d8193423c8f60ad5188c2ebdce5698911f260be536db2095.png" src="_images/1c2f78d174404a82d8193423c8f60ad5188c2ebdce5698911f260be536db2095.png" />
+<img alt="_images/35a306a9c386b9a0d972746112a238d9ea55ee54f34d05fe2a9dd39f903c2794.png" src="_images/35a306a9c386b9a0d972746112a238d9ea55ee54f34d05fe2a9dd39f903c2794.png" />
 </div>
 </div>
 </section>
