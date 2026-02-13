@@ -183,7 +183,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="sistemas_lineales.html">Análisis de sistemas de tiempo continuo.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Comprobación de linealidad con MATLAB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Comprobación de invarianza en el tiempo con MATLAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sol_examen_1.html">Solución al primer examen parcial.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ecuaciones_diferenciales_sistemas.html">Ecuaciones diferenciales y sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Solución de ecuaciones diferenciales lineales con coeficientes constantes.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="respuesta_impulso.html">Respuesta al impulso de sistemas de tiempo continuo.</a></li>
@@ -364,24 +363,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="la-serie-exponencial-compleja-de-fourier">
 <h1>La serie exponencial compleja de Fourier<a class="headerlink" href="#la-serie-exponencial-compleja-de-fourier" title="Permalink to this heading">#</a></h1>
-<p>Una alternativa para la representación de las señales en téminos de una suma de sub-funciones o componentes  es la serie exponencial de Fourier. Considere la ecuación  <a class="reference internal" href="Series_de_fourier.html#equation-serie-fourier">(96)</a>, como es sabido, las funciones seno y coseno se pueden representar en forma de una función exponencial compleja, de manera que la forma exponencial compleja de dicha expresión adquiere la estructura (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
+<p>Una alternativa para la representación de las señales en téminos de una suma de sub-funciones o componentes  es la serie exponencial de Fourier. Considere la ecuación  <a class="reference internal" href="Series_de_fourier.html#equation-serie-fourier">(95)</a>, como es sabido, las funciones seno y coseno se pueden representar en forma de una función exponencial compleja, de manera que la forma exponencial compleja de dicha expresión adquiere la estructura (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
 <div class="math notranslate nohighlight" id="equation-serie-fourier-compleja">
-<span class="eqno">(103)<a class="headerlink" href="#equation-serie-fourier-compleja" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(102)<a class="headerlink" href="#equation-serie-fourier-compleja" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    x(t)=\sum^{\infty}_{k=-\infty}c_k e ^{jk\omega_0t},~~-\infty&lt;t&lt;\infty
  \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(c_0\)</span> es un número real, <span class="math notranslate nohighlight">\(j=\sqrt{-1}\)</span> y el resto de los coeficientes <span class="math notranslate nohighlight">\(c_k\)</span> son diferentes de cero. De la misma manera que en el caso de la serie trigonométrica, la frecuencia fundamental es el término <span class="math notranslate nohighlight">\(\omega_0\)</span> expresada en radianes por segundo y expresada como <span class="math notranslate nohighlight">\(\omega_0=2\pi / T\)</span>, con <span class="math notranslate nohighlight">\(T\)</span> el periodo de la señal. Los coeficientes <span class="math notranslate nohighlight">\(c_k\)</span> se obtienen de la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-ck">
-<span class="eqno">(104)<a class="headerlink" href="#equation-ck" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(103)<a class="headerlink" href="#equation-ck" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 c_k=\frac{1}{T}\int^T_{0}x(t)e^{-jk\omega_0t}dt,~~~~k=0,\pm 1,\pm 2,...
 \end{equation}\]</div>
-<p>Además, existe una relación directa entre los coeficientes de la serie trigonométrica, que se obtienen usando las ecuaciones <a class="reference internal" href="Series_de_fourier.html#equation-serie-fourier">(96)</a>, <a class="reference internal" href="Series_de_fourier.html#equation-a0">(97)</a>, <a class="reference internal" href="Series_de_fourier.html#equation-ak">(98)</a> y <a class="reference internal" href="Series_de_fourier.html#equation-bk">(99)</a> con la serie compleja:</p>
+<p>Además, existe una relación directa entre los coeficientes de la serie trigonométrica, que se obtienen usando las ecuaciones <a class="reference internal" href="Series_de_fourier.html#equation-serie-fourier">(95)</a>, <a class="reference internal" href="Series_de_fourier.html#equation-a0">(96)</a>, <a class="reference internal" href="Series_de_fourier.html#equation-ak">(97)</a> y <a class="reference internal" href="Series_de_fourier.html#equation-bk">(98)</a> con la serie compleja:</p>
 <div class="math notranslate nohighlight" id="equation-coef-complex">
-<span class="eqno">(105)<a class="headerlink" href="#equation-coef-complex" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(104)<a class="headerlink" href="#equation-coef-complex" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 c_0=a_0,~~~~c_k=\frac{1}{2}(a_k-jb_k),~~~~c_{-k}=\frac{1}{2}(a_k+jb_k),~~~~k=1,2,...
 \end{equation}\]</div>
 <p>De forma equivalente, se pueden recuperar los coeficientes de la serie trigonométrica de Fourier a partir de la serie exponencial compleja con las expresiones:</p>
 <div class="math notranslate nohighlight" id="equation-coef-trig">
-<span class="eqno">(106)<a class="headerlink" href="#equation-coef-trig" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(105)<a class="headerlink" href="#equation-coef-trig" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 z_0=c_0,~~~~a_k=2Re(c_k),~~~~b_{k}=-2Im(c_k),~~~~k=1,2,...
 \end{equation}\]</div>
 <div class="admonition-implicaciones-de-la-paridad-de-las-senales admonition">
@@ -398,7 +397,7 @@ c_0=a_0,~~~~c_k=\frac{1}{2}a_k,~~~~c_{-k}=\frac{1}{2}a_k,~~~~k=1,2,3...
 c_0=a_0,~~~~c_k=-j\frac{1}{2}b_k,~~~~c_{-k}=j\frac{1}{2}b_k,~~~~k=1,2,3...
 \]</div>
 </div>
-<p>Una forma sencilla de calcular los coeficientes <span class="math notranslate nohighlight">\(c_k\)</span> es utilizando las herramientas de cálculo simbólico del software MATLAB. Por ejemplo, para determinar los coeficientes de la señal pulso cuadrado vista en el tema antarior y definida por la ecuación (<a class="reference internal" href="Series_de_fourier.html#equation-func-pulso">(101)</a>) se usan las instrucciones:</p>
+<p>Una forma sencilla de calcular los coeficientes <span class="math notranslate nohighlight">\(c_k\)</span> es utilizando las herramientas de cálculo simbólico del software MATLAB. Por ejemplo, para determinar los coeficientes de la señal pulso cuadrado vista en el tema antarior y definida por la ecuación (<a class="reference internal" href="Series_de_fourier.html#equation-func-pulso">(100)</a>) se usan las instrucciones:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Código para la determinación de los coeficientes ck de la serie exponencial compleja</span>
@@ -495,7 +494,7 @@ c_0=a_0,~~~~c_k=-j\frac{1}{2}b_k,~~~~c_{-k}=j\frac{1}{2}b_k,~~~~k=1,2,3...
 </div>
 <section id="el-espectro-de-lineas-o-barras">
 <h2>El espectro de líneas o barras<a class="headerlink" href="#el-espectro-de-lineas-o-barras" title="Permalink to this heading">#</a></h2>
-<p>Un espectro de líneas es una gráfica de espigas que relaciona a la amplitud de los coeficientes <span class="math notranslate nohighlight">\(c_k\)</span> de la serie compleja de Fourier, definida por la ecuación (<a class="reference internal" href="#equation-serie-fourier-compleja">(103)</a>) contra la frecuencia <span class="math notranslate nohighlight">\(\omega=k\omega_0\)</span>, es decir, considerando a los múltiplos de la frecuencia natura como la variable independiente, dado que <span class="math notranslate nohighlight">\(k=1,2,3...\)</span>. La ecuación  (<a class="reference internal" href="#equation-serie-fourier-compleja">(103)</a>) implica frecuencias positivas y negativas, sin embrago, en la práctica solo se consideran frecuencias positivas por que son las que tienen sentido físico. El espectro de amplitud es simétrico respecto del eje vertical, es decir, cuando <span class="math notranslate nohighlight">\(\omega=0\)</span>. A partir de la expresión para la determinación de los coeficientes de la serie trigonométrica de Fourier estan dados por (<span id="id3">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
+<p>Un espectro de líneas es una gráfica de espigas que relaciona a la amplitud de los coeficientes <span class="math notranslate nohighlight">\(c_k\)</span> de la serie compleja de Fourier, definida por la ecuación (<a class="reference internal" href="#equation-serie-fourier-compleja">(102)</a>) contra la frecuencia <span class="math notranslate nohighlight">\(\omega=k\omega_0\)</span>, es decir, considerando a los múltiplos de la frecuencia natura como la variable independiente, dado que <span class="math notranslate nohighlight">\(k=1,2,3...\)</span>. La ecuación  (<a class="reference internal" href="#equation-serie-fourier-compleja">(102)</a>) implica frecuencias positivas y negativas, sin embrago, en la práctica solo se consideran frecuencias positivas por que son las que tienen sentido físico. El espectro de amplitud es simétrico respecto del eje vertical, es decir, cuando <span class="math notranslate nohighlight">\(\omega=0\)</span>. A partir de la expresión para la determinación de los coeficientes de la serie trigonométrica de Fourier estan dados por (<span id="id3">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 |c_k|=\sqrt{a^2_k+b^2_k},~~~~k=1,2,3...
@@ -512,7 +511,7 @@ c_0=a_0,~~~~c_k=-j\frac{1}{2}b_k,~~~~c_{-k}=j\frac{1}{2}b_k,~~~~k=1,2,3...
 \[
 |c_k|=\frac{1}{2}A_k,~~~~\angle c_k=\theta_k,~~~~k=1,2,3... 
 \]</div>
-<p>Para aclarar lo anterior, considere la función tipo pulso cuadrado definido por la ecuación (<a class="reference internal" href="Series_de_fourier.html#equation-func-pulso">(101)</a>), cuya serie trigonométrica de fourier está definida como:</p>
+<p>Para aclarar lo anterior, considere la función tipo pulso cuadrado definido por la ecuación (<a class="reference internal" href="Series_de_fourier.html#equation-func-pulso">(100)</a>), cuya serie trigonométrica de fourier está definida como:</p>
 <div class="math notranslate nohighlight">
 \[
 x(t)=\frac{1}{2}+\frac{2}{\pi}\sum^{\infty}_{k=1}\frac{1}{k}sen\left ( \frac{k\pi}{2} \right ),~~-\infty&lt;t&lt;\infty
@@ -530,7 +529,7 @@ x(t)=\frac{1}{2}+\frac{1}{\pi}\sum^{\infty}_{k=-\infty}\frac{1}{k}sen\left ( \fr
 </section>
 <section id="representacion-de-senales">
 <h2>Representación de señales<a class="headerlink" href="#representacion-de-senales" title="Permalink to this heading">#</a></h2>
-<p>La representación de el tren de pulsos definido por la ecuación (<a class="reference internal" href="Series_de_fourier.html#equation-func-pulso">(101)</a>) en términos de la serie compleja exponencial se puede representar usando el siguiente código (<span id="id4">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
+<p>La representación de el tren de pulsos definido por la ecuación (<a class="reference internal" href="Series_de_fourier.html#equation-func-pulso">(100)</a>) en términos de la serie compleja exponencial se puede representar usando el siguiente código (<span id="id4">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -538,7 +537,7 @@ x(t)=\frac{1}{2}+\frac{1}{\pi}\sum^{\infty}_{k=-\infty}\frac{1}{k}sen\left ( \fr
 <span class="nb">clc</span>
 
 <span class="n">t</span><span class="p">=</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">3</span><span class="p">;</span>
-<span class="n">N</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">N</span><span class="p">=</span><span class="mi">20</span><span class="p">;</span>
 
 <span class="n">c0</span><span class="p">=</span><span class="mf">0.5</span><span class="p">;</span>
 <span class="n">omega0</span><span class="p">=</span><span class="nb">pi</span><span class="p">;</span>
@@ -565,7 +564,7 @@ x(t)=\frac{1}{2}+\frac{1}{\pi}\sum^{\infty}_{k=-\infty}\frac{1}{k}sen\left ( \fr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c7d5421abcb4c9309b34a9a00b8b9c24be94fa715a455a35d387c3eaf8f54468.png" src="_images/c7d5421abcb4c9309b34a9a00b8b9c24be94fa715a455a35d387c3eaf8f54468.png" />
+<img alt="_images/637c2431407fab01df208297efe8be855599e15fd549e8a937cfa9a04d1b8513.png" src="_images/637c2431407fab01df208297efe8be855599e15fd549e8a937cfa9a04d1b8513.png" />
 </div>
 </div>
 </section>
