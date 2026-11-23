@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Práctica 6: Diagrama de bode de un sistema de dos grados de libertad." href="Practica6.html" />
-    <link rel="prev" title="Validación de la respuesta teórica al escalón de un circuito RLC" href="Experimento_RLC.html" />
+    <link rel="prev" title="Función de transferencia." href="funcion_de_transferencia.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -193,11 +193,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="conv_transformada.html">Transformada de Laplace aplicada al análisis de sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Propiedades_transf.html">Propiedades de la transformada de Laplace.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Experimento_RLC.html">Validación de la respuesta teórica al escalón de un circuito RLC</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -352,8 +350,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramas-o-graficas-de-bode-asintoticas">Diagramas o gráficas de Bode asintóticas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-y-contribucion-del-factor-cero-en-el-origen">Gráfica y contribución del factor cero en el origen.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-y-contribucion-del-factor-polo-en-el-origen">Gráfica y contribución del factor polo en el origen.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cero-real-fuera-del-origen">Cero real fuera del origen.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polo-real-fuera-del-origen">Polo real fuera del origen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cero-real-en-el-origen">Cero real en el origen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polo-real-en-el-origen">Polo real en el origen.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polos-con-parte-imaginaria-o-polos-conjugados">Polos con parte imaginaria o polos conjugados.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-segundo-orden">Sistemas de segundo orden.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode">Contribución del factor de segundo orden en el diagrama de Bode.</a></li>
@@ -463,7 +461,7 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b6b6f33820fd420adf39c264c38963039e5fe72fd1f7580da91061341afc4705.png" src="_images/b6b6f33820fd420adf39c264c38963039e5fe72fd1f7580da91061341afc4705.png" />
+<img alt="_images/cd0a171a2fe88872f689d341545a1f3077dcfd17e6fa9870a495768518214c95.png" src="_images/cd0a171a2fe88872f689d341545a1f3077dcfd17e6fa9870a495768518214c95.png" />
 </div>
 </div>
 </section>
@@ -497,12 +495,12 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eb6aa45520c7f4471e5b556940db0747c311ee5225c03da9663a25998cca0e58.png" src="_images/eb6aa45520c7f4471e5b556940db0747c311ee5225c03da9663a25998cca0e58.png" />
+<img alt="_images/2f4ab11f6a92917492a030aea830693c1b7c49299c043dd1e7defd8abc9fe125.png" src="_images/2f4ab11f6a92917492a030aea830693c1b7c49299c043dd1e7defd8abc9fe125.png" />
 </div>
 </div>
 </section>
-<section id="cero-real-fuera-del-origen">
-<h2>Cero real fuera del origen.<a class="headerlink" href="#cero-real-fuera-del-origen" title="Permalink to this heading">#</a></h2>
+<section id="cero-real-en-el-origen">
+<h2>Cero real en el origen.<a class="headerlink" href="#cero-real-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\left | 1-\frac{j\omega}{z_i} \right |_{s=j\omega}\)</span> , la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -554,12 +552,12 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8f24ac4a8cca5b7051c4730d67584e93d01390ee0691e97999d79733a393ea84.png" src="_images/8f24ac4a8cca5b7051c4730d67584e93d01390ee0691e97999d79733a393ea84.png" />
+<img alt="_images/e1d377649289a696836bb9c6300223535d9dc99b05d8e946f94c7d89be77b225.png" src="_images/e1d377649289a696836bb9c6300223535d9dc99b05d8e946f94c7d89be77b225.png" />
 </div>
 </div>
 </section>
-<section id="polo-real-fuera-del-origen">
-<h2>Polo real fuera del origen.<a class="headerlink" href="#polo-real-fuera-del-origen" title="Permalink to this heading">#</a></h2>
+<section id="polo-real-en-el-origen">
+<h2>Polo real en el origen.<a class="headerlink" href="#polo-real-en-el-origen" title="Permalink to this heading">#</a></h2>
 <p>Sea el <span class="math notranslate nohighlight">\(i\)</span>-ésimo factor independiente que surge al considerar <span class="math notranslate nohighlight">\(G_i(s)=\left | \frac{1}{s-\frac{j\omega}{p_i}}\right |_{s=j\omega}\)</span>, la magnitud y la fase de esta estructura particular se calcula como:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -611,7 +609,7 @@ El uso de una escala de naturaleza logaritmica permite que los factores independ
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8af736a69212c3fdb5f80ea3d52939b08517f1b30bd379001ece3b3bb43960e.png" src="_images/a8af736a69212c3fdb5f80ea3d52939b08517f1b30bd379001ece3b3bb43960e.png" />
+<img alt="_images/3e8061ebf2749047035e7e589137445838c37e66efe526a1c85f667486e16ff2.png" src="_images/3e8061ebf2749047035e7e589137445838c37e66efe526a1c85f667486e16ff2.png" />
 </div>
 </div>
 </section>
@@ -624,7 +622,7 @@ G(s)=\frac{1}{a_2s^2+a_1s+a_0}=\frac{p_1p_1^{*}}{(1-s/p_1)(1-s/p_1^{*})}=\frac{|
 \]</div>
 <p>La función <span class="math notranslate nohighlight">\(G(s)\)</span> se puede expresar en una forma conocida que describe las características dinámicas de los sistemas, es decir, en términos de la frecuencia natural <span class="math notranslate nohighlight">\(\omega_n\)</span> no amortiguada y la razón de amortiguamiento <span class="math notranslate nohighlight">\(\xi\)</span> como sigue:</p>
 <div class="math notranslate nohighlight" id="equation-trasfun-damping">
-<span class="eqno">(85)<a class="headerlink" href="#equation-trasfun-damping" title="Enlace permanente a esta ecuación">#</a></span>\[G(s)=\frac{\omega^2_n}{s^2+2\xi\omega_n s+\omega_n^2}\]</div>
+<span class="eqno">(85)<a class="headerlink" href="#equation-trasfun-damping" title="Enlace permanente a esta ecuación">#</a></span>\[G(s)=\frac{\omega_n}{s^2+2\xi\omega_n s+\omega_n^2}\]</div>
 <p>de donde se sigue que: <span class="math notranslate nohighlight">\(\omega_n^2=|p_1|^2\)</span> y <span class="math notranslate nohighlight">\(2\xi\omega_n=-2Real\{p_1\}\)</span>. Es importante mencionar, que para un sistema causal y estable, la magnitud <span class="math notranslate nohighlight">\(Real\{p_1\}\)</span> es negativa, mientras que el factor de amortiguamiento <span class="math notranslate nohighlight">\(\xi\)</span> es tal que <span class="math notranslate nohighlight">\(0&lt;\xi&lt;1\)</span> (<span id="id3">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>).</p>
 </section>
 <section id="sistemas-de-segundo-orden">
@@ -667,7 +665,7 @@ p_{1,2}=-\xi\omega_n \pm j\omega_n\sqrt{1-\xi^2}
 <p>Para determinar la contribución en forma asintótica de un factor de segundo orden, considérese la estructura de la ecuación <a class="reference internal" href="#equation-trasfun-damping">(85)</a>:</p>
 <div class="math notranslate nohighlight">
 \[
-G_i(j\omega)=\left | \frac{\omega^2_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j\omega}= \frac{\omega^2_n}{(j\omega)^2+2\xi\omega_n(j\omega)+\omega_n^2}=\frac{1}{1-\left ( \frac{\omega}{\omega_n} \right )^2+2\xi j\left ( \frac{\omega}{\omega_n} \right )}
+G_i(j\omega)=\left | \frac{\omega_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j\omega}= \frac{\omega_n}{(j\omega)^2+2\xi\omega_n(j\omega)+\omega_n^2}=\frac{1}{1-\left ( \frac{\omega}{\omega_n} \right )^2+2\xi j\left ( \frac{\omega}{\omega_n} \right )}
 \]</div>
 <p>La magnitud en decibeles se obtiene como:</p>
 <div class="math notranslate nohighlight">
@@ -682,7 +680,7 @@ G_i(j\omega)=\left | \frac{\omega^2_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j
 <p>La magnitud de este factor también se grafica como una función de <span class="math notranslate nohighlight">\(log_{10}(\omega)\)</span>. Cuando se consideran valores de frecuencia mucho menores y mucho mayores al polo <span class="math notranslate nohighlight">\(p_i\)</span>, es decir una década antes y una década después a <span class="math notranslate nohighlight">\(\omega=p_i\)</span> se aplican simplificaciones para determinar el comportamiento de las asíntotas de magnitud y fase.</p>
 <div class="admonition-contribucion-de-un-factor-de-segundo-orden admonition">
 <p class="admonition-title">Contribución de un factor de segundo orden:</p>
-<p>Para el término <span class="math notranslate nohighlight">\(G_i(j\omega)= \frac{\omega^2_n}{s^2+2\xi\omega_ns+\omega_n^2}\)</span> se considera que:</p>
+<p>Para el término <span class="math notranslate nohighlight">\(G_i(j\omega)= \frac{\omega_n}{s^2+2\xi\omega_ns+\omega_n^2}\)</span> se considera que:</p>
 <p><strong>La magnitud</strong>: Es una recta con pendiente <span class="math notranslate nohighlight">\(0\)</span> dB cuando <span class="math notranslate nohighlight">\(\omega&lt;&lt;\omega_n\)</span> dado que la magnitud tiende asintóticamente a <span class="math notranslate nohighlight">\(0\)</span> dB. Para valores de <span class="math notranslate nohighlight">\(\omega\)</span> tales que  <span class="math notranslate nohighlight">\(\omega&gt;&gt;\omega_n\)</span> la contribución es una recta con pendiente de -40dB por década, que cruza con cero dB en <span class="math notranslate nohighlight">\(\omega=\omega_n\)</span>. En la frecuencia <span class="math notranslate nohighlight">\(\omega=\omega_n\)</span> la magnitud real es <span class="math notranslate nohighlight">\(|G(j\omega_n)|=-10log_{10}(2\xi)\)</span> dB.</p>
 <p><strong>La fase</strong>: es una recta con pendiente <span class="math notranslate nohighlight">\(0°\)</span> por década para valores de <span class="math notranslate nohighlight">\(\omega&lt;&lt;\omega_n\)</span>. Para valores de <span class="math notranslate nohighlight">\(\omega\)</span> tales que <span class="math notranslate nohighlight">\(\omega&gt;&gt;\omega_n\)</span>, la fase converge asintóticamente a -180° para <span class="math notranslate nohighlight">\(p_i&lt;0\)</span>. El valor de frecuencia <span class="math notranslate nohighlight">\(\omega=\omega_n\)</span> se conoce como frecuencia esquina, para un factor de segundo orden cuando <span class="math notranslate nohighlight">\(\omega=\omega_n\)</span> la fase es exactamente <span class="math notranslate nohighlight">\(90°\)</span> (<span id="id5">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id2" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>).</p>
 </div>
@@ -725,7 +723,7 @@ G_i(j\omega)=\left | \frac{\omega^2_n}{s^2+2\xi\omega_ns+\omega_n^2}\right|_{s=j
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1be4cb704f472319c9e3a9e09329ce31ccd297fa3535d701e020ec99e6a0afe0.png" src="_images/1be4cb704f472319c9e3a9e09329ce31ccd297fa3535d701e020ec99e6a0afe0.png" />
+<img alt="_images/40ef3be5c1da71420cf7b24ded80b84bf86e5486cdf62f3ce723e2dc350fb315.png" src="_images/40ef3be5c1da71420cf7b24ded80b84bf86e5486cdf62f3ce723e2dc350fb315.png" />
 </div>
 </div>
 </section>
@@ -787,7 +785,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">semilogx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">fact2</span><span class="p">)</span>
 <span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}(1+s/40)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}|1+s/40|&quot;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;log_{10}(\omega)&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;|Factor2(j\omega)| dB&quot;</span><span class="p">)</span>
 <span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="mi">80</span><span class="p">])</span>
@@ -795,7 +793,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">semilogx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">fact3</span><span class="p">)</span>
 <span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}(1/(1+s/60))&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}|1/(1+s/40)|&quot;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;log_{10}(\omega)&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;|Factor3(j\omega)| dB&quot;</span><span class="p">)</span>
 <span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="mi">20</span><span class="p">])</span>
@@ -803,7 +801,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">semilogx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">fact4</span><span class="p">)</span>
 <span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}(\omega_n^2/(s^2+2\xi\omega_ns+\omega_n^2))&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}|\omega_n^2/(s^2+2\xi\omega_ns+\omega_n^2)|&quot;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;log_{10}(\omega)&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;|Factor4(j\omega)| dB&quot;</span><span class="p">)</span>
 <span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="mi">100</span><span class="w"> </span><span class="mi">20</span><span class="p">])</span>
@@ -811,7 +809,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0521e62b20884997c2c2ce203f5b5596b33f68ad7e2c41fb4948e93bc7b682f4.png" src="_images/0521e62b20884997c2c2ce203f5b5596b33f68ad7e2c41fb4948e93bc7b682f4.png" />
+<img alt="_images/050403c02c5ce62f041e6de18dc00ebd5ec3b56ca519fa10125762bd28bb5bc5.png" src="_images/050403c02c5ce62f041e6de18dc00ebd5ec3b56ca519fa10125762bd28bb5bc5.png" />
 </div>
 </div>
 <p>Las fases de cada factor independiente se ilustran en las siguientes figuras:</p>
@@ -828,28 +826,28 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">semilogx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">fase2</span><span class="p">)</span>
 <span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;\angle (1+s/40)&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;\angle |1+s/40|&quot;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;log_{10}(\omega)&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;\angle Factor2(j\omega)°&quot;</span><span class="p">)</span>
 
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">semilogx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">fase3</span><span class="p">)</span>
 <span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}(1/(1+s/60))&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}|1/(1+s/40)|&quot;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;log_{10}(\omega)&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;\angle Factor3(j\omega)°&quot;</span><span class="p">)</span>
 
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">semilogx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span><span class="n">fase4</span><span class="p">)</span>
 <span class="nb">grid</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}(\omega_n^2/(s^2+2\xi\omega_ns+\omega_n^2))&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;20log_{10}|\omega_n^2/(s^2+2\xi\omega_ns+\omega_n^2)|&quot;</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;log_{10}(\omega)&quot;</span><span class="p">)</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;\angle Factor4(j\omega)°&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/13fb6cf296f269b05ec45b3d435f0176be0cba9fb70495ce5e664494efc36098.png" src="_images/13fb6cf296f269b05ec45b3d435f0176be0cba9fb70495ce5e664494efc36098.png" />
+<img alt="_images/48882f78757331aa7551cc2a57bad0eba5ef29f0d52a00554df37d564a71abfc.png" src="_images/48882f78757331aa7551cc2a57bad0eba5ef29f0d52a00554df37d564a71abfc.png" />
 </div>
 </div>
 <p>La gráfica asintótica de Bode final es la suma de las curvas anteriores, tanto en magnitud como en fase, en concreto, la obtención de la gráfica de bode consiste en sumar todas las pendientes de cada uno de los factores.</p>
@@ -877,7 +875,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/47871b2f0166e2c26f37c3f31648ad999a7e443d1efd7485b20fa648fa4d8d0f.png" src="_images/47871b2f0166e2c26f37c3f31648ad999a7e443d1efd7485b20fa648fa4d8d0f.png" />
+<img alt="_images/4c7aaa6a1dc7fd9d1752e84632721464c6478878abaa8f893e2db4cf9b35c999.png" src="_images/4c7aaa6a1dc7fd9d1752e84632721464c6478878abaa8f893e2db4cf9b35c999.png" />
 </div>
 </div>
 <p>El comportamiento asintótico de la fase se obtiene también sumando las pendientes de las aportaciones en fase de los componentes individuales:</p>
@@ -900,7 +898,7 @@ K=\frac{40}{60\left ( \frac{350}{2.5} \right )2.5}=0.0019
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ebd678f02ba66ffcf483926b3724cfffcde88b94a713a3d681f5f6e52e54a30c.png" src="_images/ebd678f02ba66ffcf483926b3724cfffcde88b94a713a3d681f5f6e52e54a30c.png" />
+<img alt="_images/b6d3b7c505865bb72b9ae514497bc79f2dba03ea51bbf015bd5654874a914471.png" src="_images/b6d3b7c505865bb72b9ae514497bc79f2dba03ea51bbf015bd5654874a914471.png" />
 </div>
 </div>
 <p>Un ultimo ejemplo ilustrará el uso MATLAB para le generación de diagramas de Bode de forma automática e intuitiva. El comando <code class="docutils literal notranslate"><span class="pre">bode(G)</span></code> permite generar gráficas de Bode en escala logarítmica o lineal. Por ejemplo, para la función de transferencia:</p>
@@ -963,7 +961,7 @@ G(s)=\frac{s(s+450)}{(s+15)(s+50)}
 Continuous-time transfer function.
 </pre></div>
 </div>
-<img alt="_images/4c3bb6d5e30bab1ab6c5be6ab9db28215921993cb5542e25d7b2b99eacbfc45d.png" src="_images/4c3bb6d5e30bab1ab6c5be6ab9db28215921993cb5542e25d7b2b99eacbfc45d.png" />
+<img alt="_images/16289aedf214ab822eef3cddf79f4174e54a8d4eed9225f971fb24192e174e9c.png" src="_images/16289aedf214ab822eef3cddf79f4174e54a8d4eed9225f971fb24192e174e9c.png" />
 </div>
 </div>
 <p>La fase se obtiene de la misma manera y se compara con la curva asintótica.</p>
@@ -985,7 +983,7 @@ Continuous-time transfer function.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8551bb17e1f3dc4972eba53130b0448d65b46426843482a24d31b24d020dc0d6.png" src="_images/8551bb17e1f3dc4972eba53130b0448d65b46426843482a24d31b24d020dc0d6.png" />
+<img alt="_images/82e1930a2cc2e430ac049bfcfc219dae69dc90e90e5736cd5464898186b97e30.png" src="_images/82e1930a2cc2e430ac049bfcfc219dae69dc90e90e5736cd5464898186b97e30.png" />
 </div>
 </div>
 </section>
@@ -1022,12 +1020,12 @@ Continuous-time transfer function.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Experimento_RLC.html"
+       href="funcion_de_transferencia.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Validación de la respuesta teórica al escalón de un circuito RLC</p>
+        <p class="prev-next-title">Función de transferencia.</p>
       </div>
     </a>
     <a class="right-next"
@@ -1058,8 +1056,8 @@ Continuous-time transfer function.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagramas-o-graficas-de-bode-asintoticas">Diagramas o gráficas de Bode asintóticas.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-y-contribucion-del-factor-cero-en-el-origen">Gráfica y contribución del factor cero en el origen.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-y-contribucion-del-factor-polo-en-el-origen">Gráfica y contribución del factor polo en el origen.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cero-real-fuera-del-origen">Cero real fuera del origen.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polo-real-fuera-del-origen">Polo real fuera del origen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cero-real-en-el-origen">Cero real en el origen.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polo-real-en-el-origen">Polo real en el origen.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polos-con-parte-imaginaria-o-polos-conjugados">Polos con parte imaginaria o polos conjugados.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sistemas-de-segundo-orden">Sistemas de segundo orden.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contribucion-del-factor-de-segundo-orden-en-el-diagrama-de-bode">Contribución del factor de segundo orden en el diagrama de Bode.</a></li>
