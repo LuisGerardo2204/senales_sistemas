@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
-    <link rel="prev" title="La serie trigonométrica de Fourier." href="Series_de_fourier.html" />
+    <link rel="prev" title="La serie exponencial compleja de Fourier" href="Serie_compleja.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -193,9 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="conv_transformada.html">Transformada de Laplace aplicada al análisis de sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Propiedades_transf.html">Propiedades de la transformada de Laplace.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Experimento_RLC.html">Validación de la respuesta teórica al escalón de un circuito RLC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -365,16 +367,16 @@ document.write(`
 <h1>La Transformada de Fourier.<a class="headerlink" href="#la-transformada-de-fourier" title="Permalink to this heading">#</a></h1>
 <p>Hemos analizado y aplicado la transformada de Laplace al análisis de sistemas dinámicos. La transformada de Laplace permite la algebrización del problema de cálculo que implica el modelado de los sistemas por medio de ecuaciones diferenciales. Por otro lado, la serie trigonométrica de Fourier ofrece una alternativa muy útil de representación de señales en términos de sus componentes frecuenciales o armónicos. Una Herramienta para el análisis de señales y sistemas en el domino de la frecuencia es la transformada de Fourier. La transformada de Fourier no se limita al análisis de señales periódicas, dado que es un caso particular de la transformada de Laplace. La definición formal de la transformada de Fourier es:</p>
 <div class="math notranslate nohighlight" id="equation-trans-laplace">
-<span class="eqno">(102)<a class="headerlink" href="#equation-trans-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(106)<a class="headerlink" href="#equation-trans-laplace" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    X(\omega)=\int^{\infty}_{-\infty}x(t)e^{-j\omega t}dt,~~~~,-\infty &lt; \omega &lt; \infty 
  \end{equation}\]</div>
-<p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(102)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
+<p>Nótese que en la <a class="reference internal" href="#equation-trans-laplace">(106)</a> se ha hecho la sustitución <span class="math notranslate nohighlight">\(s=j\omega\)</span>, es decir la parte real de la variable compleja <span class="math notranslate nohighlight">\(s=\sigma+j\omega\)</span> se iguala a cero: <span class="math notranslate nohighlight">\(\sigma=0\)</span>.</p>
 <p>La transformada rápida de Fourier es un algoritmo computacional que ofrece una alternativa para el cálculo de las tranformadas analíticas de Fourier de señales provenientes de sistemas físicos, en MATLAB, el algoritmo de la FFT, siglas en inglés de Fast Fourier Transform (transformada rápida de Fourier) está incluido y optimizado para su uso en señales discretas. A continuación se muestran algunos ejemplos de su aplicación.</p>
 <section id="ejemplo-1-senal-diente-de-sierra">
 <h2>Ejemplo 1, señal diente de sierra.<a class="headerlink" href="#ejemplo-1-senal-diente-de-sierra" title="Permalink to this heading">#</a></h2>
 <p>Considere la señal tipo diente de sierra, definida por la expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-sierra-2">
-<span class="eqno">(103)<a class="headerlink" href="#equation-func-sierra-2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(107)<a class="headerlink" href="#equation-func-sierra-2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 150(t+0.02) &amp; si &amp; -0.02 \leq t \leq -0.01 \\ \\ 150t &amp; si &amp; -0.01 \leq t \leq 0.01 \\ \\ 150(t-0.02) &amp; si &amp; 0.01 &lt; t \leq 0.03 \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>Además, se cumple que <span class="math notranslate nohighlight">\(g(t)=g(t+0.02)\)</span>. La gráfica de esta señal, definida por la <a class="reference internal" href="Series_de_fourier.html#equation-func-sierra">(99)</a> se muestra con las líneas de código siguientes:</p>
@@ -397,7 +399,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/30d13b10aefa6c82a40bce27ae1dd5c559ca68e6ebb7a84d741f61d41dd13903.png" src="_images/30d13b10aefa6c82a40bce27ae1dd5c559ca68e6ebb7a84d741f61d41dd13903.png" />
+<img alt="_images/cc355a1cfd9f5580055c226cc0e69d86830cf0bd91012554b6f9da6cab7ea96b.png" src="_images/cc355a1cfd9f5580055c226cc0e69d86830cf0bd91012554b6f9da6cab7ea96b.png" />
 </div>
 </div>
 <p>La transformada de Fourier de la señal diente de sierra muestra su contenido en frecuencia. Como se trató en la sección aterior, en donde se calcularon los coeficientes de la serie de fourier, la señal tipo diente de sierra tiene componentes frecuenciales en múltiplos de la frecuencia original, en este caso particular, múltiplos de la frecuencia fundamental <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>. El algoritmo de la transformada de Fourier de la señal diente se ejemplifica a continuación:</p>
@@ -408,13 +410,47 @@ document.write(`
 <span class="nb">clc</span>
 
 <span class="n">freq_muestreo</span><span class="p">=</span><span class="mi">10000</span><span class="p">;</span>
-<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_muestreo</span><span class="p">:</span><span class="mf">0.03</span><span class="p">];</span>
 
-<span class="n">g</span><span class="p">=(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=-</span><span class="mf">0.03</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;-</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;-</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="k">...</span>
-<span class="w">   </span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.03</span><span class="p">));</span>
 
+<span class="n">syms</span><span class="w"> </span><span class="s">v1(t)</span><span class="w"> </span><span class="s">t</span><span class="w"> </span><span class="s">k</span>
+<span class="n">T</span><span class="p">=</span><span class="mf">0.02</span><span class="p">;</span>
+<span class="n">w0</span><span class="p">=(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="o">/</span><span class="n">T</span><span class="p">;</span>
+
+<span class="c">%a_0=(1/T)*int(110*sin(w0*t),t,0,T/2);</span>
+<span class="c">%a_k=(2/T)*int(110*sin(w0*t)*cos(k*w0*t),t,0,T/2);</span>
+<span class="c">%b_k=(2/T)*int(110*sin(w0*t)*sin(k*w0*t),t,0,T/2);</span>
+
+<span class="c">% a_0=(1/T)*int(110*sin(w0*t),t,T/4,T/2)+(1/T)*int(110*sin(w0*t),t,3*T/4,T);</span>
+<span class="c">% a_k=(2/T)*int(110*sin(w0*t)*cos(k*w0*t),t,T/4,T/2)+(2/T)*int(110*sin(w0*t)*cos(k*w0*t),t,3*T/4,T);</span>
+<span class="c">% b_k=(2/T)*int(110*sin(w0*t)*sin(k*w0*t),t,T/4,T/2)+(2/T)*int(110*sin(w0*t)*sin(k*w0*t),t,3*T/4,T);</span>
+
+<span class="w"> </span><span class="n">a_0</span><span class="p">=(</span><span class="mi">1</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">int</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="w"> </span><span class="n">a_k</span><span class="p">=(</span><span class="mi">2</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">int</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+<span class="w"> </span><span class="n">b_k</span><span class="p">=(</span><span class="mi">2</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="n">int</span><span class="p">((</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">),</span><span class="n">t</span><span class="p">,</span><span class="o">-</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+
+
+<span class="n">clear</span><span class="w"> </span><span class="s">t</span><span class="w"> </span><span class="s">k</span><span class="p">;</span>
+
+
+<span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">:</span><span class="mi">1</span><span class="o">/</span><span class="n">freq_muestreo</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
+<span class="w">   </span>
 <span class="n">figure</span>
-<span class="s">plot(t,g)</span><span class="p">;</span>
+<span class="s">hold</span><span class="w"> </span><span class="s">on</span><span class="w"> </span>
+
+<span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="nb">double</span><span class="p">(</span><span class="n">subs</span><span class="p">(</span><span class="n">a_0</span><span class="p">));</span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">   </span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">   </span>
+<span class="w">     </span><span class="n">an</span><span class="p">=</span><span class="n">subs</span><span class="p">(</span><span class="n">a_k</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+<span class="w">     </span><span class="n">bn</span><span class="p">=</span><span class="n">subs</span><span class="p">(</span><span class="n">b_k</span><span class="p">,</span><span class="n">k</span><span class="p">);</span>
+
+<span class="w">     </span><span class="n">g</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">double</span><span class="p">(</span><span class="n">bn</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">+</span><span class="nb">double</span><span class="p">(</span><span class="n">an</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">));</span>
+<span class="k">end</span>
+
+
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">);</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">);</span>
 <span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;g(t)&quot;</span><span class="p">)</span>
 <span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.03</span><span class="w"> </span><span class="mf">0.03</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="c">%La istrucción axis ajusta los ejes de la gráfica</span>
@@ -425,7 +461,7 @@ document.write(`
 <span class="n">NFFT</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span>^<span class="nb">nextpow2</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">));</span><span class="c">% resolución óptima para el cálculo de la FFT</span>
 <span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">freq_muestreo</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.*</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">NFFT</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
 
-<span class="n">Y</span><span class="p">=</span><span class="w"> </span><span class="nb">fft</span><span class="p">((</span><span class="n">g</span><span class="o">-</span><span class="nb">mean</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="n">NFFT</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="c">%Calculo de la FFT, Y es el nombre del vector de salida</span>
+<span class="n">Y</span><span class="p">=</span><span class="w"> </span><span class="nb">fft</span><span class="p">(((</span><span class="n">g</span><span class="p">)</span><span class="o">-</span><span class="nb">mean</span><span class="p">(</span><span class="n">g</span><span class="p">)),</span><span class="n">NFFT</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="c">%Calculo de la FFT, Y es el nombre del vector de salida</span>
 <span class="n">r</span><span class="p">=</span><span class="n">Y</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">NFFT</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span><span class="c">%sólo se toma la parte de las frecuencias positivas es decir, la mitad del espectro</span>
 <span class="w"> </span>
 <span class="nb">figure</span>
@@ -438,8 +474,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/711f5656f2aede289afa55344469715ec13a948cefa827c914f841810b8a9c25.png" src="_images/711f5656f2aede289afa55344469715ec13a948cefa827c914f841810b8a9c25.png" />
-<img alt="_images/651afd95604ccee469192b5018774cbb3d107997725e72f4d55aa44d4966cec3.png" src="_images/651afd95604ccee469192b5018774cbb3d107997725e72f4d55aa44d4966cec3.png" />
+<img alt="_images/1c2f78d174404a82d8193423c8f60ad5188c2ebdce5698911f260be536db2095.png" src="_images/1c2f78d174404a82d8193423c8f60ad5188c2ebdce5698911f260be536db2095.png" />
+<img alt="_images/35a306a9c386b9a0d972746112a238d9ea55ee54f34d05fe2a9dd39f903c2794.png" src="_images/35a306a9c386b9a0d972746112a238d9ea55ee54f34d05fe2a9dd39f903c2794.png" />
 </div>
 </div>
 </section>
@@ -447,7 +483,7 @@ document.write(`
 <h2>Ejemplo 2, pulso cuadrado.<a class="headerlink" href="#ejemplo-2-pulso-cuadrado" title="Permalink to this heading">#</a></h2>
 <p>Cosidere una función tipo pulso cuadrado, definida por la ecuación:</p>
 <div class="math notranslate nohighlight" id="equation-func-pulso2">
-<span class="eqno">(104)<a class="headerlink" href="#equation-func-pulso2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+<span class="eqno">(108)<a class="headerlink" href="#equation-func-pulso2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; -0.5 \leq t \leq 0.5 \\ \\ 0 &amp; si &amp; 0.5 \leq t \leq 1.5  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>El algoritmo de la FFT aplicado a la señal pulso cuadrado</p>
@@ -679,12 +715,12 @@ Continuous-time transfer function.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Series_de_fourier.html"
+       href="Serie_compleja.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">La serie trigonométrica de Fourier.</p>
+        <p class="prev-next-title">La serie exponencial compleja de Fourier</p>
       </div>
     </a>
     <a class="right-next"

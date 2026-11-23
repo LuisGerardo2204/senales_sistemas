@@ -193,9 +193,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="conv_transformada.html">Transformada de Laplace aplicada al análisis de sistemas lineales.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Propiedades_transf.html">Propiedades de la transformada de Laplace.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="funcion_de_transferencia.html">Función de transferencia.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Experimento_RLC.html">Validación de la respuesta teórica al escalón de un circuito RLC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bode.html">Diagramas de bode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Diagrama de bode de un sistema de dos grados de libertad.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Series_de_fourier.html">La serie trigonométrica de Fourier.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Serie_compleja.html">La serie exponencial compleja de Fourier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Transformada_de_fourier.html">La Transformada de Fourier.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -422,7 +424,9 @@ x(t)=11.25sen(2\pi t)+5.25e^{-0.25t}cos(4.5t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/83d428d4d39f48e15044a0a2e7793dad77569033a7be87b99abaf6d06d0ff79f.png" src="_images/83d428d4d39f48e15044a0a2e7793dad77569033a7be87b99abaf6d06d0ff79f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error connecting to MATLAB. Check the status of MATLAB by clicking the &quot;Open MATLAB&quot; button. Retry after ensuring MATLAB is running successfully
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -488,7 +492,7 @@ g(t)=x(t)+A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/69c2595e7fd1894133e2747a5429fa0bd3d6c1671e5ddd7557610cc8c05b4a83.png" src="_images/69c2595e7fd1894133e2747a5429fa0bd3d6c1671e5ddd7557610cc8c05b4a83.png" />
+<img alt="_images/d3c132c8473fa80de589e1189b6f00499f56e97cd78e2d67b828fc47940166c1.png" src="_images/d3c132c8473fa80de589e1189b6f00499f56e97cd78e2d67b828fc47940166c1.png" />
 </div>
 </div>
 </section>
@@ -553,7 +557,7 @@ g(t)=x(t)+A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/63a58a58eaf0ebaa05654a7397c11ea70b76f7ee6b0da70dd648e45806d3cc6a.png" src="_images/63a58a58eaf0ebaa05654a7397c11ea70b76f7ee6b0da70dd648e45806d3cc6a.png" />
+<img alt="_images/c23fd9a9797f3fb36f2795d788aba219e6dfd54a0a9dc042ada53f1583d27dce.png" src="_images/c23fd9a9797f3fb36f2795d788aba219e6dfd54a0a9dc042ada53f1583d27dce.png" />
 </div>
 </div>
 </section>
@@ -579,7 +583,7 @@ g(t)=x(t)+A
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/61b10ae925ab4926722367868c814ccfc9dac02f4fe129f21bee1cc77bb11e39.png" src="_images/61b10ae925ab4926722367868c814ccfc9dac02f4fe129f21bee1cc77bb11e39.png" />
+<img alt="_images/3d4bd6dd1db6c9ec335092dd96a809a64dc9b15274af4ca0f695acc2bc388f67.png" src="_images/3d4bd6dd1db6c9ec335092dd96a809a64dc9b15274af4ca0f695acc2bc388f67.png" />
 </div>
 </div>
 </section>
@@ -612,13 +616,13 @@ g_4(t)=-1.3x_2(t)+2x(t)
 <p>Para hacer la suma de dos o mas funciones continuas a pedazos se opta por la representación usando llaves de las funciones. Si se tienen las gráficas de las señales, se obtiene el modelo de las señales a partir de las gráficas de las funciones. Para ilustrar esto, considérense las funciones <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> definidas por las gráficas:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/bd3eb8dd0d5b2252d37830cbf5c5b1f46bccab2f7a25a6d59ed6c97a8f19cd23.png" src="_images/bd3eb8dd0d5b2252d37830cbf5c5b1f46bccab2f7a25a6d59ed6c97a8f19cd23.png" />
+<img alt="_images/bd8cbe0cf6b111169ae0ae0bb5b6daeb91db05ecb27623c9f2714a807bbd5c28.png" src="_images/bd8cbe0cf6b111169ae0ae0bb5b6daeb91db05ecb27623c9f2714a807bbd5c28.png" />
 </div>
 </div>
 <p>De acuerdo con las gráficas mostradas, los modelos matemáticos de las señales <span class="math notranslate nohighlight">\(x_1(t)\)</span> y <span class="math notranslate nohighlight">\(x_2(t)\)</span> son:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos-x1">
 <span class="eqno">(3)<a class="headerlink" href="#equation-func-pedazos-x1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
-         x_1(t)= \left\{ \begin{array}{lcc} 4 &amp; si &amp; 0 \leq t \leq 1 \\ \\ 1.5 &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1.5t &amp; si &amp; 2 &lt; t &lt; 4 \\ \\ 0 &amp; si &amp; 4 \leq t  \end{array} \right.
+         x_1(t)= \left\{ \begin{array}{lcc} 4 &amp; si &amp; 0 \leq t \leq 1 \\ \\ 1.5 &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1.5 &amp; si &amp; 2 &lt; t &lt; 4 \\ \\ 0 &amp; si &amp; 4 \leq t  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
 <p>En cuanto a la señal <span class="math notranslate nohighlight">\(x_2(t)\)</span>, esta se define como:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos-x2">
@@ -629,7 +633,7 @@ g_4(t)=-1.3x_2(t)+2x(t)
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation}
-         g(t)=x_1(t)+\textcolor{red}{x_2(t)}= \left\{ \begin{array}{lcc} 4+\textcolor{red}{0.5t} &amp; si &amp; 0 \leq t \leq 1 \\ \\ 1.5+\textcolor{red}{0.5t} &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1.5t-\textcolor{red}{2(t-3)} &amp; si &amp; 2 &lt; t &lt; 4 \\ \\ 0-\textcolor{red}{2(t-3)} &amp; si &amp;  4 \leq t &lt; 5  \\ \\ \textcolor{red}{1.5(t-6)} &amp; si &amp; 5 \leq t &lt; 7 \\ \\ \textcolor{red}{0} &amp; si &amp; 7 \leq t \end{array} \right.
+         g(t)=x_1(t)+\textcolor{red}{x_2(t)}= \left\{ \begin{array}{lcc} 4+\textcolor{red}{0.5t} &amp; si &amp; 0 \leq t \leq 1 \\ \\ 1.5+\textcolor{red}{0.5t} &amp; si &amp; 1 &lt; t \leq 2 \\ \\ -1.5-\textcolor{red}{2(t-3)} &amp; si &amp; 2 &lt; t &lt; 4 \\ \\ 0-\textcolor{red}{2(t-3)} &amp; si &amp;  4 \leq t &lt; 5  \\ \\ \textcolor{red}{1.5(t-6)} &amp; si &amp; 5 \leq t &lt; 7 \\ \\ \textcolor{red}{0} &amp; si &amp; 7 \leq t \end{array} \right.
 		 \end{equation}
 \end{split}\]</div>
 <p>la gráfica de <span class="math notranslate nohighlight">\(g(t)\)</span> se obtiene usando MATLAB con el código siguiente:</p>
@@ -692,7 +696,7 @@ g_4(t)=-1.3x_2(t)+2x(t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/89a534ce0c637b5c018a224bfbc8d323b1a85d4b3f34b7deba2f3e2497aeb599.png" src="_images/89a534ce0c637b5c018a224bfbc8d323b1a85d4b3f34b7deba2f3e2497aeb599.png" />
+<img alt="_images/c54f2bf03f779a9eea93e8077964fb9661fca707c7ed13b8f7f7ec611f8a9f60.png" src="_images/c54f2bf03f779a9eea93e8077964fb9661fca707c7ed13b8f7f7ec611f8a9f60.png" />
 </div>
 </div>
 </section>
@@ -748,10 +752,11 @@ g_2(t)=x(1.5t)
 </section>
 <section id="operacion-inversion-en-el-tiempo">
 <h3>Operación inversión en el tiempo<a class="headerlink" href="#operacion-inversion-en-el-tiempo" title="Permalink to this heading">#</a></h3>
-<p>Se obtiene una versión con la característica de inversión en el tiempo mediante la siguiente expresión:
-$<span class="math notranslate nohighlight">\(
+<p>Se obtiene una versión con la característica de inversión en el tiempo mediante la siguiente expresión:</p>
+<div class="math notranslate nohighlight">
+\[
 y(t)=x(-t)
-\)</span>$</p>
+\]</div>
 <p>como se ilustra en la siguiente figura:</p>
 <figure class="align-default" id="invertida">
 <a class="reference internal image-reference" href="_images/tiempo_invertida.png"><img alt="_images/tiempo_invertida.png" src="_images/tiempo_invertida.png" style="height: 400px;" /></a>
@@ -818,7 +823,7 @@ x_1(t)=11.25sen(2\pi t)+5.25e^{-0.5t}cos(24.5t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9fce3853c959d4fc878fb1e9d32a294515b45b9d9de9406c85483da66e814e21.png" src="_images/9fce3853c959d4fc878fb1e9d32a294515b45b9d9de9406c85483da66e814e21.png" />
+<img alt="_images/295eb5599da868e94c601bc04e937a2ae8457d79d4fa6840fa0d707f26a2c1e7.png" src="_images/295eb5599da868e94c601bc04e937a2ae8457d79d4fa6840fa0d707f26a2c1e7.png" />
 </div>
 </div>
 </section>
@@ -835,7 +840,7 @@ x_1(t)=11.25sen(2\pi t)+5.25e^{-0.5t}cos(24.5t)
 <p>Considere la señal periódica <span class="math notranslate nohighlight">\(x_p\)</span> definida por la ecuación <a class="reference internal" href="#equation-func-periodica">(5)</a>, gráficamente la señal toma la forma:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/0696223b2564abaec4bf5feea6712558245316e665f082eb344b555a6e374519.png" src="_images/0696223b2564abaec4bf5feea6712558245316e665f082eb344b555a6e374519.png" />
+<img alt="_images/bcdd4906d9629d7164d68c1cb9efa6b472be424b40b044b25c1ccc655703cd59.png" src="_images/bcdd4906d9629d7164d68c1cb9efa6b472be424b40b044b25c1ccc655703cd59.png" />
 </div>
 </div>
 <p>Las operaciones derivada e integral se pueden aplicar a la señal <span class="math notranslate nohighlight">\(x(t)\)</span>, para obtener las funciones:</p>
@@ -858,7 +863,7 @@ g_i(t)=\int xdt
 <p>Las gráficas de las funciones <span class="math notranslate nohighlight">\(g_d\)</span> y <span class="math notranslate nohighlight">\(g_i\)</span> se muestran a continuación:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/ce09effd4f3a4500e2e8805b3483d0672502ae9a9860fc0e6b2586f9118281c0.png" src="_images/ce09effd4f3a4500e2e8805b3483d0672502ae9a9860fc0e6b2586f9118281c0.png" />
+<img alt="_images/9fdad1c868abeeb51891a1e43f4cc70e0d45665b389b52083d31bf96f2403b7e.png" src="_images/9fdad1c868abeeb51891a1e43f4cc70e0d45665b389b52083d31bf96f2403b7e.png" />
 </div>
 </div>
 <p>El código para generar las gráficas anteriores se muestra abajo:</p>
