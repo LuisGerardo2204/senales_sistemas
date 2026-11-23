@@ -7,10 +7,11 @@ chapters:
 - file: senales.md
 - file: modela_senales
 - file: potencia_energía.md
-#- file: senales_discreto
+- file: senales_discreto
 - file: sistemas_lineales.md
 - file: Practica1
 - file: Practica2
+#- file: sol_examen_1.ipynb
 - file: ecuaciones_diferenciales_sistemas.md
 - file: Practica3
 - file: respuesta_impulso.md
@@ -21,9 +22,11 @@ chapters:
 - file: conv_transformada
 - file: Propiedades_transf
 - file: funcion_de_transferencia
+- file: Experimento_RLC.ipynb
 - file: Bode
 - file: Practica6
 - file: Series_de_fourier.ipynb
+- file: Serie_compleja.ipynb 
 - file: Transformada_de_fourier.ipynb
 - file: Bibliografía
 

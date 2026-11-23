@@ -23,7 +23,10 @@ execute:
                 - Bode.ipynb
                 - Series_de_fourier.ipynb
                 - Practica6.ipynb
+                - Serie_compleja.ipynb
                 - Transformada_de_fourier.ipynb
+                - sol_examen_1.ipynb
+                - Experimento_RLC.ipynb
                 
 # Define the name of the latex output file for PDF builds
 latex:
